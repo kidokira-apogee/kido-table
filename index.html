@@ -206,6 +206,24 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .run-summary span{font-size:8px}
 }
 
+
+/* Pedigree details and source-defined colors */
+.pedigree{display:flex;flex-direction:column;gap:4px;padding:8px 10px}
+.pedigree-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:5px}
+.pedigree-row small{width:auto;flex:none;font-size:8px;color:#27372e;font-weight:900}
+.pedigree-row strong{display:block;min-width:0;max-width:100%;border-radius:4px;padding:3px 6px;font-size:9px;line-height:1.3;font-weight:850;white-space:normal;overflow-wrap:anywhere}
+.pedigree-row .dam{background:#f3f6f3}
+/* Stable comment text must wrap fully instead of being clipped. */
+.comment-current,.comment-previous{display:block!important;max-height:none!important;height:auto!important;min-height:0!important;overflow:visible!important;white-space:normal!important;text-overflow:clip!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;overflow-wrap:anywhere;word-break:normal}
+.comments{overflow:visible!important}
+.comment-current{white-space:normal!important;overflow-wrap:anywhere;line-height:1.65}
+.previous-result{white-space:normal!important;overflow-wrap:anywhere}
+@media(max-width:620px){
+ .pedigree{padding:7px 8px;gap:3px}
+ .pedigree-row{grid-template-columns:30px minmax(0,1fr)}
+ .pedigree-row strong{font-size:8px;padding:3px 5px}
+ .comment-current{font-size:10px!important;line-height:1.65!important}
+}
 </style>
 </head>
 <body>
@@ -238,15 +256,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">原優介</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">矢野英一</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">原優介</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">矢野英一</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ゴールドドリーム</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">Cherokee Run（ナスルーラ系）</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">ゴールドドリーム</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">マダムチェロキー</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#00ff00;color:#17251e">Cherokee Run</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#00ff00;color:#17251e">ナスルーラ系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -278,7 +293,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-10)</strong><span>全ダート</span><strong class="record">(2-1-1-10)</strong><span>ダート良</span><strong class="record">(1-1-0-8)</strong></div></div>
@@ -294,11 +309,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-3)</strong><span>外枠</span><strong class="record">(1-1-0-3)</strong><span>1枠</span><strong class="record">(1-0-0-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>原優介</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>矢野英一</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ゴールドドリーム</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：原優介</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="4">4%</strong>
+  <span>全複勝率</span><strong data-rate="14">14%</strong>
+  <span>コース勝率</span><strong data-rate="7">7%</strong>
+  <span>コース複勝率</span><strong data-rate="21">21%</strong>
+  </div></div><div class="panel-card"><h4>調教師：矢野英一</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="6">6%</strong>
+  <span>全複勝率</span><strong data-rate="19">19%</strong>
+  <span>コース勝率</span><strong data-rate="2">2%</strong>
+  <span>コース複勝率</span><strong data-rate="13">13%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ゴールドドリーム</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="7">7%</strong>
+  <span>全複勝率</span><strong data-rate="23">23%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="18">18%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -314,15 +340,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝3／栗</strong></span>
      <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">石田拓郎</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">尾形和幸</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">石田拓郎</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">尾形和幸</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">ルーラーシップ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">タイセイブランシュ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#00ffff;color:#17251e">ルーラーシップ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#00ffff;color:#17251e">ネイティヴダンサー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -354,7 +377,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-1-3)</strong><span>全ダート</span><strong class="record">(2-0-1-2)</strong><span>ダート良</span><strong class="record">(0-0-1-2)</strong></div></div>
@@ -370,11 +393,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-1-1)</strong><span>外枠</span><strong class="record">(0-0-0-0)</strong><span>2枠</span><strong class="record">(0-0-1-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>石田拓郎</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>尾形和幸</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：石田拓郎</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="3">3%</strong>
+  <span>全複勝率</span><strong data-rate="10">10%</strong>
+  <span>コース勝率</span><strong data-rate="7">7%</strong>
+  <span>コース複勝率</span><strong data-rate="13">13%</strong>
+  </div></div><div class="panel-card"><h4>調教師：尾形和幸</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="7">7%</strong>
+  <span>全複勝率</span><strong data-rate="19">19%</strong>
+  <span>コース勝率</span><strong data-rate="3">3%</strong>
+  <span>コース複勝率</span><strong data-rate="13">13%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ルヴァンスレーヴ</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="10">10%</strong>
+  <span>全複勝率</span><strong data-rate="29">29%</strong>
+  <span>コース勝率</span><strong data-rate="12">12%</strong>
+  <span>コース複勝率</span><strong data-rate="30">30%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -390,15 +424,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡4／青鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>56kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">三浦皇成</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">高木登</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">三浦皇成</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">高木登</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">カレンブラックヒル</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">フリオーソ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">カレンブラックヒル</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">ドナプリモ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffc0ff;color:#17251e">フリオーソ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -430,7 +461,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-10)</strong><span>全ダート</span><strong class="record">(2-1-1-10)</strong><span>ダート良</span><strong class="record">(2-1-0-8)</strong></div></div>
@@ -446,11 +477,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-6)</strong><span>外枠</span><strong class="record">(1-0-1-4)</strong><span>3枠</span><strong class="record">(0-0-0-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>三浦皇成</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>高木登</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>カレンブラックヒル</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：三浦皇成</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="31">31%</strong>
+  <span>コース勝率</span><strong data-rate="10">10%</strong>
+  <span>コース複勝率</span><strong data-rate="33">33%</strong>
+  </div></div><div class="panel-card"><h4>調教師：高木登</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="27">27%</strong>
+  <span>コース勝率</span><strong data-rate="13">13%</strong>
+  <span>コース複勝率</span><strong data-rate="35">35%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：カレンブラックヒル</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="5">5%</strong>
+  <span>全複勝率</span><strong data-rate="14">14%</strong>
+  <span>コース勝率</span><strong data-rate="6">6%</strong>
+  <span>コース複勝率</span><strong data-rate="15">15%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -466,15 +508,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝4／芦</strong></span>
      <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">佐々木大</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">西園翔太</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">佐々木大</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">西園翔太</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">リアルインパクト</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">クロフネ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">リアルインパクト</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">マイティースルー</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffff00;color:#17251e">クロフネ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -506,7 +545,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-2-1-9)</strong><span>全ダート</span><strong class="record">(2-2-1-7)</strong><span>ダート良</span><strong class="record">(1-0-1-4)</strong></div></div>
@@ -522,11 +561,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-1)</strong><span>外枠</span><strong class="record">(0-2-0-4)</strong><span>3枠</span><strong class="record">(0-0-0-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>佐々木大</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>西園翔太</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>リアルインパクト</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：佐々木大</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="26">26%</strong>
+  <span>コース勝率</span><strong data-rate="8">8%</strong>
+  <span>コース複勝率</span><strong data-rate="19">19%</strong>
+  </div></div><div class="panel-card"><h4>調教師：西園翔太</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="26">26%</strong>
+  <span>コース勝率</span><strong data-rate="12">12%</strong>
+  <span>コース複勝率</span><strong data-rate="24">24%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：リアルインパクト</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="7">7%</strong>
+  <span>全複勝率</span><strong data-rate="19">19%</strong>
+  <span>コース勝率</span><strong data-rate="4">4%</strong>
+  <span>コース複勝率</span><strong data-rate="18">18%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -542,15 +592,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝5／栗</strong></span>
      <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">古川吉洋</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">橋田宜長</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">古川吉洋</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">橋田宜長</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ドレフォン</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">オルフェーヴル</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffff00;color:#17251e">ドレフォン</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">レーヴドリーブ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffc0ff;color:#17251e">オルフェーヴル</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -582,7 +629,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-4-0-19)</strong><span>全ダート</span><strong class="record">(2-4-0-19)</strong><span>ダート良</span><strong class="record">(2-3-0-10)</strong></div></div>
@@ -598,11 +645,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-6)</strong><span>外枠</span><strong class="record">(2-2-0-3)</strong><span>4枠</span><strong class="record">(0-0-0-2)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>古川吉洋</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>橋田宜長</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ドレフォン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：古川吉洋</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="4">4%</strong>
+  <span>全複勝率</span><strong data-rate="15">15%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="0">0%</strong>
+  </div></div><div class="panel-card"><h4>調教師：橋田宜長</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="7">7%</strong>
+  <span>全複勝率</span><strong data-rate="25">25%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="0">0%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ドレフォン</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="8">8%</strong>
+  <span>全複勝率</span><strong data-rate="26">26%</strong>
+  <span>コース勝率</span><strong data-rate="13">13%</strong>
+  <span>コース複勝率</span><strong data-rate="33">33%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -618,15 +676,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝4／青鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>51kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">江田照男</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">村田一誠</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">江田照男</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">村田一誠</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">シャンハイボビー</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">バチアー</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffff00;color:#17251e">シャンハイボビー</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">スズノメヒョー</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffff00;color:#17251e">バチアー</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -658,7 +713,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-11)</strong><span>全ダート</span><strong class="record">(2-1-1-9)</strong><span>ダート良</span><strong class="record">(2-1-1-6)</strong></div></div>
@@ -674,11 +729,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(0-0-0-5)</strong><span>4枠</span><strong class="record">(0-0-0-1)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>江田照男</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>村田一誠</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>シャンハイボビー</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：江田照男</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="2">2%</strong>
+  <span>全複勝率</span><strong data-rate="10">10%</strong>
+  <span>コース勝率</span><strong data-rate="4">4%</strong>
+  <span>コース複勝率</span><strong data-rate="9">9%</strong>
+  </div></div><div class="panel-card"><h4>調教師：村田一誠</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="7">7%</strong>
+  <span>全複勝率</span><strong data-rate="22">22%</strong>
+  <span>コース勝率</span><strong data-rate="9">9%</strong>
+  <span>コース複勝率</span><strong data-rate="31">31%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：シャンハイボビー</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="4">4%</strong>
+  <span>全複勝率</span><strong data-rate="16">16%</strong>
+  <span>コース勝率</span><strong data-rate="5">5%</strong>
+  <span>コース複勝率</span><strong data-rate="16">16%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -694,15 +760,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡5／黒鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">松岡正海</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">蛯名利弘</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">松岡正海</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">蛯名利弘</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">バトルプラン</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">ステイゴールド</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#00ffff;color:#17251e">バトルプラン</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">エアリーチューン</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffc0ff;color:#17251e">ステイゴールド</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#00ffff;color:#17251e">ネイティヴダンサー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -734,7 +797,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-24)</strong><span>全ダート</span><strong class="record">(1-0-0-8)</strong><span>ダート良</span><strong class="record">(1-0-0-5)</strong></div></div>
@@ -750,11 +813,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-7)</strong><span>外枠</span><strong class="record">(0-1-0-9)</strong><span>5枠</span><strong class="record">(0-0-0-5)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>松岡正海</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>蛯名利弘</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>バトルプラン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：松岡正海</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="3">3%</strong>
+  <span>全複勝率</span><strong data-rate="15">15%</strong>
+  <span>コース勝率</span><strong data-rate="2">2%</strong>
+  <span>コース複勝率</span><strong data-rate="8">8%</strong>
+  </div></div><div class="panel-card"><h4>調教師：蛯名利弘</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="2">2%</strong>
+  <span>全複勝率</span><strong data-rate="8">8%</strong>
+  <span>コース勝率</span><strong data-rate="4">4%</strong>
+  <span>コース複勝率</span><strong data-rate="4">4%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：バトルプラン</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="3">3%</strong>
+  <span>全複勝率</span><strong data-rate="9">9%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="0">0%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -770,15 +844,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡5／青鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>57kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">ルメール</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">池江泰寿</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">ルメール</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">池江泰寿</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">キズナ</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">キングヘイロー</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">キズナ</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">レジェトウショウ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffff00;color:#17251e">キングヘイロー</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -810,7 +881,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-3-2-6)</strong><span>全ダート</span><strong class="record">(0-3-2-2)</strong><span>ダート良</span><strong class="record">(0-2-2-2)</strong></div></div>
@@ -826,11 +897,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-1-1)</strong><span>外枠</span><strong class="record">(0-1-0-1)</strong><span>5枠</span><strong class="record">(0-1-1-1)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>ルメール</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>池江泰寿</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>キズナ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：ルメール</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="28">28%</strong>
+  <span>全複勝率</span><strong data-rate="60">60%</strong>
+  <span>コース勝率</span><strong data-rate="30">30%</strong>
+  <span>コース複勝率</span><strong data-rate="65">65%</strong>
+  </div></div><div class="panel-card"><h4>調教師：池江泰寿</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="11">11%</strong>
+  <span>全複勝率</span><strong data-rate="31">31%</strong>
+  <span>コース勝率</span><strong data-rate="13">13%</strong>
+  <span>コース複勝率</span><strong data-rate="38">38%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：キズナ</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="12">12%</strong>
+  <span>全複勝率</span><strong data-rate="30">30%</strong>
+  <span>コース勝率</span><strong data-rate="5">5%</strong>
+  <span>コース複勝率</span><strong data-rate="28">28%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -846,15 +928,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡5／鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">松若風馬</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">牧田和弥</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">松若風馬</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">牧田和弥</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">モーニン</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">ワイルドラッシュ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffff00;color:#17251e">モーニン</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">トウカイベルタ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffff00;color:#17251e">ワイルドラッシュ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -886,7 +965,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-2-13)</strong><span>全ダート</span><strong class="record">(2-1-2-13)</strong><span>ダート良</span><strong class="record">(2-1-2-8)</strong></div></div>
@@ -902,11 +981,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(1-1-1-5)</strong><span>6枠</span><strong class="record">(0-0-0-2)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>松若風馬</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>牧田和弥</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>モーニン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：松若風馬</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="6">6%</strong>
+  <span>全複勝率</span><strong data-rate="20">20%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="20">20%</strong>
+  </div></div><div class="panel-card"><h4>調教師：牧田和弥</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="6">6%</strong>
+  <span>全複勝率</span><strong data-rate="19">19%</strong>
+  <span>コース勝率</span><strong data-rate="7">7%</strong>
+  <span>コース複勝率</span><strong data-rate="43">43%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：モーニン</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="8">8%</strong>
+  <span>全複勝率</span><strong data-rate="20">20%</strong>
+  <span>コース勝率</span><strong data-rate="5">5%</strong>
+  <span>コース複勝率</span><strong data-rate="15">15%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -922,15 +1012,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡3／鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">菅原明良</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">小島茂之</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">菅原明良</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">小島茂之</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">サンダースノー</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">ディープスカイ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffff00;color:#17251e">サンダースノー</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">セイントヘレナ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffc0ff;color:#17251e">ディープスカイ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -962,7 +1049,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-0-3)</strong><span>全ダート</span><strong class="record">(2-0-0-3)</strong><span>ダート良</span><strong class="record">(1-0-0-0)</strong></div></div>
@@ -978,11 +1065,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-0)</strong><span>外枠</span><strong class="record">(2-0-0-3)</strong><span>6枠</span><strong class="record">(0-0-0-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>菅原明良</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>小島茂之</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>サンダースノー</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：菅原明良</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="8">8%</strong>
+  <span>全複勝率</span><strong data-rate="26">26%</strong>
+  <span>コース勝率</span><strong data-rate="6">6%</strong>
+  <span>コース複勝率</span><strong data-rate="26">26%</strong>
+  </div></div><div class="panel-card"><h4>調教師：小島茂之</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="5">5%</strong>
+  <span>全複勝率</span><strong data-rate="16">16%</strong>
+  <span>コース勝率</span><strong data-rate="8">8%</strong>
+  <span>コース複勝率</span><strong data-rate="14">14%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：サンダースノー</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="21">21%</strong>
+  <span>コース勝率</span><strong data-rate="6">6%</strong>
+  <span>コース複勝率</span><strong data-rate="25">25%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -998,15 +1096,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">原田和真</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">萱野浩二</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">原田和真</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">萱野浩二</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">マイネルラヴ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">ロマネクイーン</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#00ffff;color:#17251e">マイネルラヴ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#00ffff;color:#17251e">ネイティヴダンサー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1038,7 +1133,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-4-12)</strong><span>全ダート</span><strong class="record">(2-0-4-12)</strong><span>ダート良</span><strong class="record">(0-0-1-8)</strong></div></div>
@@ -1054,11 +1149,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-2-2)</strong><span>外枠</span><strong class="record">(0-0-1-3)</strong><span>7枠</span><strong class="record">(0-0-0-2)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>原田和真</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>萱野浩二</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：原田和真</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="2">2%</strong>
+  <span>全複勝率</span><strong data-rate="8">8%</strong>
+  <span>コース勝率</span><strong data-rate="2">2%</strong>
+  <span>コース複勝率</span><strong data-rate="7">7%</strong>
+  </div></div><div class="panel-card"><h4>調教師：萱野浩二</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="4">4%</strong>
+  <span>全複勝率</span><strong data-rate="13">13%</strong>
+  <span>コース勝率</span><strong data-rate="0">0%</strong>
+  <span>コース複勝率</span><strong data-rate="10">10%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ルヴァンスレーヴ</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="10">10%</strong>
+  <span>全複勝率</span><strong data-rate="29">29%</strong>
+  <span>コース勝率</span><strong data-rate="12">12%</strong>
+  <span>コース複勝率</span><strong data-rate="30">30%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -1074,15 +1180,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝4／栗</strong></span>
      <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">石川裕紀</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">小崎憲</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">石川裕紀</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">小崎憲</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">キングカメハメハ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">カヒリ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#00ffff;color:#17251e">キングカメハメハ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#00ffff;color:#17251e">ネイティヴダンサー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1114,7 +1217,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-0-11)</strong><span>全ダート</span><strong class="record">(2-0-0-11)</strong><span>ダート良</span><strong class="record">(2-0-0-8)</strong></div></div>
@@ -1130,11 +1233,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-1)</strong><span>外枠</span><strong class="record">(2-0-0-1)</strong><span>7枠</span><strong class="record">(0-0-0-1)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>石川裕紀</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>小崎憲</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：石川裕紀</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="6">6%</strong>
+  <span>全複勝率</span><strong data-rate="21">21%</strong>
+  <span>コース勝率</span><strong data-rate="5">5%</strong>
+  <span>コース複勝率</span><strong data-rate="20">20%</strong>
+  </div></div><div class="panel-card"><h4>調教師：小崎憲</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="5">5%</strong>
+  <span>全複勝率</span><strong data-rate="18">18%</strong>
+  <span>コース勝率</span><strong data-rate="7">7%</strong>
+  <span>コース複勝率</span><strong data-rate="13">13%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ルヴァンスレーヴ</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="10">10%</strong>
+  <span>全複勝率</span><strong data-rate="29">29%</strong>
+  <span>コース勝率</span><strong data-rate="12">12%</strong>
+  <span>コース複勝率</span><strong data-rate="30">30%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -1150,15 +1264,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牡3／栗</strong></span>
      <span class="basic"><label>斤量</label><strong>55kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">川田将雅</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">森秀行</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">川田将雅</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">森秀行</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">Good Magic</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">Kitten's Joy</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#00ffff;color:#17251e">Good Magic</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">Nefferkitty</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffff00;color:#17251e">Kitten's Joy</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#00ffff;color:#17251e">ネイティヴダンサー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffff00;color:#17251e">ニアークティック系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1190,7 +1301,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(1-2-2-3)</strong><span>全ダート</span><strong class="record">(1-2-2-3)</strong><span>ダート良</span><strong class="record">(1-1-2-1)</strong></div></div>
@@ -1206,11 +1317,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-1)</strong><span>外枠</span><strong class="record">(0-0-2-2)</strong><span>8枠</span><strong class="record">(0-0-1-1)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>川田将雅</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>森秀行</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>Good Magic</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：川田将雅</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="24">24%</strong>
+  <span>全複勝率</span><strong data-rate="56">56%</strong>
+  <span>コース勝率</span><strong data-rate="42">42%</strong>
+  <span>コース複勝率</span><strong data-rate="79">79%</strong>
+  </div></div><div class="panel-card"><h4>調教師：森秀行</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="10">10%</strong>
+  <span>全複勝率</span><strong data-rate="25">25%</strong>
+  <span>コース勝率</span><strong data-rate="10">10%</strong>
+  <span>コース複勝率</span><strong data-rate="21">21%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：Good Magic</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="19">19%</strong>
+  <span>全複勝率</span><strong data-rate="38">38%</strong>
+  <span>コース勝率</span><strong data-rate="33">33%</strong>
+  <span>コース複勝率</span><strong data-rate="33">33%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
@@ -1226,15 +1348,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts">
      <span class="basic"><label>性齢</label><strong>牝4／鹿</strong></span>
      <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">丹内祐次</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">伊藤圭三</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text">丹内祐次</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text">伊藤圭三</strong></span>
     </div>
    </div>
   </div></div>
-  <div class="pedigree">
-   <div class="pedigree-row"><small>父</small><strong class="sire">ナダル</strong></div>
-   <div class="pedigree-row"><small>母父</small><strong class="bms">ハーツクライ</strong></div>
-  </div>
+  <div class="pedigree"><div class="pedigree-row"><small>父</small><strong class="sire" style="background-color:#ffc0ff;color:#17251e">ナダル</strong></div><div class="pedigree-row"><small>母</small><strong class="dam">タマモボレロ</strong></div><div class="pedigree-row"><small>母父</small><strong class="bms" style="background-color:#ffc0ff;color:#17251e">ハーツクライ</strong></div><div class="pedigree-row"><small>父系</small><strong class="sire-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div><div class="pedigree-row"><small>母父系</small><strong class="bms-family" style="background-color:#ffc0ff;color:#17251e">ロイヤルチャージャー系</strong></div></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1266,7 +1385,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">関係者成績</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-3-1-10)</strong><span>全ダート</span><strong class="record">(2-3-1-10)</strong><span>ダート良</span><strong class="record">(1-2-1-3)</strong></div></div>
@@ -1282,11 +1401,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(2-2-1-2)</strong><span>8枠</span><strong class="record">(1-0-1-0)</strong></div></div>
   </div></section>
   
- <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
-  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>丹内祐次</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>伊藤圭三</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
-  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ナダル</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
- </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid"><div class="panel-card"><h4>騎手：丹内祐次</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="9">9%</strong>
+  <span>全複勝率</span><strong data-rate="28">28%</strong>
+  <span>コース勝率</span><strong data-rate="5">5%</strong>
+  <span>コース複勝率</span><strong data-rate="9">9%</strong>
+  </div></div><div class="panel-card"><h4>調教師：伊藤圭三</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="8">8%</strong>
+  <span>全複勝率</span><strong data-rate="24">24%</strong>
+  <span>コース勝率</span><strong data-rate="11">11%</strong>
+  <span>コース複勝率</span><strong data-rate="25">25%</strong>
+  </div></div><div class="panel-card"><h4>種牡馬：ナダル</h4><div class="stats">
+  <span>全勝率</span><strong data-rate="15">15%</strong>
+  <span>全複勝率</span><strong data-rate="34">34%</strong>
+  <span>コース勝率</span><strong data-rate="14">14%</strong>
+  <span>コース複勝率</span><strong data-rate="38">38%</strong>
+  </div></div></div></section>
  </section></div>
  </section>
  <section class="horse-section comments-block">
