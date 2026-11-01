@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#123b2b">
 <title>木戸表 電子版｜清里特別</title>
 <style>
@@ -101,10 +102,84 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .comments{margin:0 6px 8px;border-radius:8px}.comments-head{padding:6px 8px;font-size:10px}.comment-current{padding:7px 8px;font-size:9px}.previous-result{padding:5px 8px 2px;font-size:8px}.comment-previous{padding:2px 8px 7px;font-size:8.5px}
 }
 @media(min-width:621px) and (max-width:900px){.profile{grid-template-columns:1fr 1fr}.data-existing{grid-template-columns:repeat(4,minmax(0,1fr))}.runs{gap:5px}.metric b{font-size:9px}}
+
+/* Race list and in-page navigation */
+[hidden]{display:none!important}
+.race-list-view{padding:10px 0 28px}
+.list-brand{padding:15px 17px;border-radius:14px;background:linear-gradient(115deg,#103b29,#1c5c3d 58%,#2b7952);color:#fff;box-shadow:0 5px 16px #173d2918}
+.list-brand strong{display:block;font-size:20px;font-weight:950;letter-spacing:.04em}
+.list-brand span{display:block;margin-top:4px;font-size:11px;color:#d5ebdc}
+.list-section{margin-top:13px;background:#fff;border:1px solid #d5e2d8;border-radius:12px;overflow:hidden}
+.list-section-head{padding:9px 12px;background:#eaf4ec;color:#214d34;font-size:11px;font-weight:900;border-bottom:1px solid #d5e2d8}
+.race-list-item{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:0;border-bottom:1px solid #e5ece6;background:#fff;text-align:left;color:#17251e;font:inherit;cursor:pointer}
+.race-list-item:last-child{border-bottom:0}
+.race-list-item:active{background:#f0f7f1}
+.race-list-main{min-width:0}
+.race-list-date{font-size:9px;font-weight:750;color:#68786d}
+.race-list-title{display:block;margin-top:3px;font-size:15px;font-weight:950;color:#17432f}
+.race-list-sub{display:block;margin-top:3px;font-size:10px;color:#5d6d62}
+.race-list-arrow{flex:0 0 auto;color:#2c7650;font-size:22px;font-weight:700}
+.race-nav{display:flex;align-items:center;gap:10px;margin:6px 0 8px}
+.race-nav button{border:1px solid #bdd0c1;border-radius:999px;background:#fff;color:#24583a;padding:7px 11px;font:800 10px system-ui;cursor:pointer}
+.race-nav span{font-size:10px;color:#5c6d61;font-weight:800}
+@media(max-width:620px){
+ .race-list-view{padding:7px 0 20px}
+ .list-brand{padding:12px 13px;border-radius:11px}
+ .list-brand strong{font-size:18px}
+ .list-section{margin-top:9px;border-radius:9px}
+ .race-list-item{padding:10px}
+ .race-list-title{font-size:14px}
+ .race-nav{margin:4px 0 7px}
+}
+
+
+/* Always-visible compact horse identity */
+.identity{grid-template-columns:39px minmax(0,1fr);gap:8px}
+.identity-main{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0}
+.horse-name{flex:0 0 auto}
+.horse-facts{display:flex;align-items:center;gap:4px 9px;flex-wrap:wrap;margin-left:auto;min-width:0}
+.horse-facts .basic{display:flex;align-items:baseline;gap:3px;white-space:nowrap}
+.horse-facts .basic label{font-size:9px;color:#68786d;font-weight:750}
+.horse-facts .basic strong{font-size:10px;font-weight:850}
+.primary-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:8px 10px;background:#f4f8f4;border-bottom:1px solid #d7e4d9}
+.primary-tab{appearance:none;border:1px solid #c5d7c9;border-radius:8px;background:#fff;color:#315541;padding:9px 5px;font:900 10px system-ui,-apple-system,sans-serif;letter-spacing:.025em;cursor:pointer;min-width:0}
+.primary-tab[aria-selected="true"]{background:#174b32;color:#fff;border-color:#174b32;box-shadow:0 2px 7px #174b3220}
+.primary-panel[hidden]{display:none!important}
+.runs-heading{display:flex;align-items:center;justify-content:space-between}
+.runs-subheading{font-size:9px;color:#65766b;font-weight:750}
+.connections-section{margin:0 10px 9px;border:1px solid #d5e2d8;border-radius:11px;overflow:hidden;background:#fbfdfb}
+.connections-heading{padding:8px 10px;background:linear-gradient(90deg,#d9eee0,#eef7f0);border-bottom:1px solid #d5e2d8;color:#17432f;font-size:10px;font-weight:950}
+.connections-section .panel-grid{padding:7px}
+@media(max-width:620px){
+ .identity{grid-template-columns:30px minmax(0,1fr);gap:6px}
+ .identity-main{gap:3px 6px}
+ .horse-facts{gap:3px 6px;margin-left:0}
+ .horse-facts .basic{gap:2px}
+ .horse-facts .basic label{font-size:7px}
+ .horse-facts .basic strong{font-size:8px}
+ .primary-tabs{gap:3px;padding:6px 6px}
+ .primary-tab{font-size:8px;padding:8px 2px;border-radius:7px}
+ .connections-section{margin:0 6px 7px;border-radius:8px}
+ .connections-heading{padding:6px 8px;font-size:9px}
+ .connections-section .panel-grid{padding:5px}
+}
+
 </style>
 </head>
 <body>
 <main class="page">
+<section id="race-list-view" class="race-list-view">
+ <header class="list-brand"><strong>木戸表 電子版</strong><span>登録レース一覧　｜　見たいレースを選択</span></header>
+ <section class="list-section">
+  <div class="list-section-head">2026年11月1日（日）｜東京</div>
+  <button type="button" class="race-list-item" id="open-kiyosato">
+   <span class="race-list-main"><span class="race-list-date">TOKYO 12R ・ ダート1600m</span><strong class="race-list-title">清里特別</strong><span class="race-list-sub">3歳以上・2勝クラス　｜　14頭</span></span>
+   <span class="race-list-arrow" aria-hidden="true">›</span>
+  </button>
+ </section>
+</section>
+<section id="race-detail-view" hidden>
+ <nav class="race-nav"><button type="button" id="back-to-race-list">← レース一覧</button><span>木戸表 電子版</span></nav>
 <header class="racehead">
  <div class="head-inner">
   <div class="date-line"><span>2026年11月1日（日）</span><i class="dot"></i><span>4回東京11日目</span><i class="dot"></i><span>14頭</span><i class="dot"></i><span>16:25発走</span></div>
@@ -118,15 +193,28 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main">
    <div class="identity">
     <div class="number-wrap"><div class="frame-no frame-1" data-horse="1" aria-label="1番">1</div></div>
-    <div><div class="horse-name">フェスタリア</div><div class="horse-meta"><span>性齢 <b>—</b></span><i class="sep">·</i><span>斤量 <b>54kg</b></span></div></div>
+    <div class="identity-main">
+     <div class="horse-name">フェスタリア</div>
+     <div class="horse-facts">
+      <span class="basic"><label>性齢</label><strong>—</strong></span>
+      <span class="basic"><label>斤量</label><strong>54kg</strong></span>
+      <span class="basic"><label>騎手</label><strong class="source-text affiliation miho" aria-label="原優介・美浦所属">原優介</strong></span>
+      <span class="basic"><label>調教師</label><strong class="source-text affiliation miho" aria-label="矢野英一・美浦所属">矢野英一</strong></span>
+     </div>
+    </div>
    </div>
-   <div class="basics"><div class="basic"><label>騎</label><strong class="source-text affiliation miho" aria-label="原優介・美浦所属">原優介</strong></div><div class="basic"><label>厩</label><strong class="source-text affiliation miho" aria-label="矢野英一・美浦所属">矢野英一</strong></div></div>
   </div>
   <div class="pedigree">
    <div class="pedigree-row"><small>父</small><strong class="sire">ゴールドドリーム</strong></div>
    <div class="pedigree-row"><small>母父</small><strong class="bms">Cherokee Run（ナスルーラ系）</strong></div>
   </div>
  </div>
+ <nav class="primary-tabs" role="tablist" aria-label="Horse information sections">
+  <button type="button" class="primary-tab" role="tab" aria-selected="true" data-primary-panel="recent">RECENT FORM</button>
+  <button type="button" class="primary-tab" role="tab" aria-selected="false" data-primary-panel="data">DATA</button>
+  <button type="button" class="primary-tab" role="tab" aria-selected="false" data-primary-panel="connections">CONNECTIONS</button>
+ </nav>
+ <section class="primary-panel" data-primary-content="recent" role="tabpanel">
  <section class="runs-section">
   <div class="runs-heading"><strong>近3走</strong></div>
   <div class="runs">
@@ -159,8 +247,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    </article>
   </div>
  </section>
+ </section>
+ <section class="primary-panel" data-primary-content="data" role="tabpanel" hidden>
  <section class="data-section">
-  <div class="data-head"><strong>DATA</strong></div>
   <div class="data-existing">
    <div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div>
    <div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div>
@@ -183,41 +272,72 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">騎手・厩舎・種牡馬</button>
   </div>
-  <section class="data-panel active" id="basic" role="tabpanel"><div class="panel-grid">
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>通算</h4><div class="stats"><span>全着</span><strong class="record">(2-1-1-10)</strong><span>全芝</span><strong class="record">(0-0-0-0)</strong><span>全ダ</span><strong class="record">(2-1-1-10)</strong></div></div>
   </div></section>
-  <section class="data-panel" id="distance" role="tabpanel"><div class="panel-grid">
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダ1600</span><strong class="record">(0-0-0-0)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
    <div class="panel-card"><h4>距離帯別</h4><div class="stats"><span>1000～1300</span><strong class="record">(1-1-0-5)</strong><span>1400～1600</span><strong class="record">(0-0-0-2)</strong><span>1700～2000</span><strong class="record">(1-0-1-3)</strong><span>2100～2400</span><strong class="record">(0-0-0-0)</strong></div></div>
   </div></section>
-  <section class="data-panel" id="style" role="tabpanel"><div class="panel-grid">
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>脚質｜通算</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>1</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>1</b></div></div></div>
    <div class="panel-card"><h4>脚質｜最近5走</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>2</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>2</b></div></div></div>
   </div></section>
-  <section class="data-panel" id="frame" role="tabpanel"><div class="panel-grid">
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
    <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-3)</strong><span>中枠</span><strong class="record">(0-0-1-4)</strong><span>外枠</span><strong class="record">(1-1-0-3)</strong><span>今回1枠</span><strong class="record">(1-0-0-0)</strong></div></div>
   </div></section>
-  <section class="data-panel" id="connections" role="tabpanel"><div class="panel-grid">
-   <div class="panel-card"><h4>騎手</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="4">4%</span>／<span data-rate="14">14%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="21">21%</span></strong></div></div>
+
+ </section>
+ </section>
+ <section class="primary-panel" data-primary-content="connections" role="tabpanel" hidden>
+  <section class="connections-section">
+   <div class="connections-heading">騎手・調教師・種牡馬 成績</div>
+   <div class="panel-grid">
+<div class="panel-card"><h4>騎手</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="4">4%</span>／<span data-rate="14">14%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="21">21%</span></strong></div></div>
    <div class="panel-card"><h4>調教師</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="6">6%</span>／<span data-rate="19">19%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="2">2%</span>／<span data-rate="13">13%</span></strong></div></div>
    <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="23">23%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="0">0%</span>／<span data-rate="18">18%</span></strong></div></div>
-  </div></section>
- </section>
+   </div>
+  </section>
  <section class="comments">
   <div class="comments-head">陣営コメント</div>
   <div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div>
   <div class="previous-result">前走時の結果　2026年07月25日 札幌12R 桑園特別　10着（9人気）</div>
   <div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ</div>
  </section>
+ </section>
+</section>
 </section>
 </main>
 <script>
-document.querySelectorAll('.data-tab').forEach(button=>button.addEventListener('click',()=>{
- document.querySelectorAll('.data-tab').forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
- document.querySelectorAll('.data-panel').forEach(panel=>panel.classList.toggle('active',panel.id===button.dataset.panel));
-}));
+const raceListView=document.getElementById('race-list-view');
+const raceDetailView=document.getElementById('race-detail-view');
+document.getElementById('open-kiyosato').addEventListener('click',()=>{
+ raceListView.hidden=true;
+ raceDetailView.hidden=false;
+ window.scrollTo({top:0,behavior:'auto'});
+});
+document.getElementById('back-to-race-list').addEventListener('click',()=>{
+ raceDetailView.hidden=true;
+ raceListView.hidden=false;
+ window.scrollTo({top:0,behavior:'auto'});
+});
+// Each horse owns its own tabs, so adding more horse cards does not cross-switch panels.
+document.querySelectorAll('.horse-card').forEach(card=>{
+ const primaryTabs=card.querySelectorAll('.primary-tab');
+ const primaryPanels=card.querySelectorAll('.primary-panel');
+ primaryTabs.forEach(button=>button.addEventListener('click',()=>{
+  const target=button.dataset.primaryPanel;
+  primaryTabs.forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
+  primaryPanels.forEach(panel=>panel.hidden=panel.dataset.primaryContent!==target);
+ }));
+ const dataTabs=card.querySelectorAll('.data-tab');
+ const dataPanels=card.querySelectorAll('.data-panel');
+ dataTabs.forEach(button=>button.addEventListener('click',()=>{
+  dataTabs.forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
+  dataPanels.forEach(panel=>panel.classList.toggle('active',panel.dataset.dataContent===button.dataset.panel));
+ }));
+});
 // Condition-performance highlight: denominator >= 4 and place rate >= 50%.
 document.querySelectorAll('.record').forEach(node=>{
  const m=node.textContent.match(/\(?\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*\)?/);
