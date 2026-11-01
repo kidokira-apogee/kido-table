@@ -191,6 +191,21 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .section-toggle .section-collapse-mark{flex-basis:17px;width:17px;height:17px;font-size:13px}
 }
 
+
+/* Fourteen-horse vertical layout */
+.horse-card{scroll-margin-top:8px}
+.horse-section-head{min-height:35px}
+.data-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.data-tab{font-size:9px}
+.data-panel .foot{margin-top:5px;font-size:8px}
+@media(max-width:620px){
+ .data-tabs{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+ .data-tab{font-size:7px;padding:4px 1px;white-space:normal}
+ .horse-facts{gap:3px 6px}
+ .horse-facts .basic strong{font-size:8px}
+ .run-summary span{font-size:8px}
+}
+
 </style>
 </head>
 <body>
@@ -217,149 +232,1067 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 </header>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
  <div class="profile">
-  <div class="profile-main">
-   <div class="identity">
-    <div class="number-wrap"><div class="frame-no frame-1" data-horse="1" aria-label="1番">1</div></div>
-    <div class="identity-main">
-     <div class="horse-name">フェスタリア</div>
-     <div class="horse-facts">
-      <span class="basic"><label>性齢</label><strong>—</strong></span>
-      <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-      <span class="basic"><label>騎手</label><strong class="source-text affiliation miho" aria-label="原優介・美浦所属">原優介</strong></span>
-      <span class="basic"><label>調教師</label><strong class="source-text affiliation miho" aria-label="矢野英一・美浦所属">矢野英一</strong></span>
-     </div>
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="1" aria-label="1番">1</div></div>
+   <div class="identity-main"><div class="horse-name">フェスタリア</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">原優介</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">矢野英一</strong></span>
     </div>
    </div>
-  </div>
+  </div></div>
   <div class="pedigree">
    <div class="pedigree-row"><small>父</small><strong class="sire">ゴールドドリーム</strong></div>
    <div class="pedigree-row"><small>母父</small><strong class="bms">Cherokee Run（ナスルーラ系）</strong></div>
   </div>
  </div>
- 
-
  <section class="horse-section recent-block">
-<button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-<div class="horse-section-content">
-
-  
- <section class="runs-section">
-  <div class="runs-heading"><strong>近3走</strong></div>
-  <div class="runs">
-   <article class="run">
-    <div class="run-head"><span>前走</span><span class="run-date">2026.07.25</span></div>
-    <div class="run-summary"><strong>桑園特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>3歳以上 2勝　和田　58kg　448kg　良</span></div>
-    <div class="run-details">
-     <div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric silver"><label>着</label><b>10</b></div>
-     <div class="metric"><label>着差</label><b>1.8</b></div><div class="metric gray"><label>指数</label><b>73</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>9</b></div>
-     <div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>後</b></div>
-    </div><div class="run-passage"><label>通過順</label><strong>10 - 11 - 11 - 9</strong></div>
-   </article>
-   <article class="run">
-    <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
-    <div class="run-summary"><strong>津軽海Ｈ</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>3歳以上 2勝　今村　55kg　454kg　良</span></div>
-    <div class="run-details">
-     <div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric silver"><label>着</label><b>9</b></div>
-     <div class="metric"><label>着差</label><b>1.3</b></div><div class="metric gray"><label>指数</label><b>83</b></div><div class="metric yellow"><label>上3F</label><b>37.2</b></div><div class="metric yellow"><label>順</label><b>1</b></div>
-     <div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>後</b></div>
-    </div><div class="run-passage"><label>通過順</label><strong>12 - 12 - 12 - 11</strong></div>
-   </article>
-   <article class="run">
-    <div class="run-head"><span>3走前</span><span class="run-date">2026.04.19</span></div>
-    <div class="run-summary"><strong>利根川特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>4歳以上 2勝　原優　58kg　446kg　良</span></div>
-    <div class="run-details">
-     <div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric silver"><label>着</label><b>9</b></div>
-     <div class="metric"><label>着差</label><b>1.1</b></div><div class="metric gray"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>38.8</b></div><div class="metric"><label>順</label><b>9</b></div>
-     <div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>マ</b></div>
-    </div><div class="run-passage"><label>通過順</label><strong>11 - 10 - 3 - 4</strong></div>
-   </article>
-  </div>
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.07.25</span></div>
+ <div class="run-summary"><strong>桑園特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　和田　58kg　448kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>73</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>10 - 11 - 11 - 9</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
+ <div class="run-summary"><strong>津軽海Ｈ</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>３上・2勝　今村　55kg　454kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>1.3</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>37.2</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>12 - 12 - 12 - 11</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.04.19</span></div>
+ <div class="run-summary"><strong>利根川特</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>４上・2勝　原優　58kg　446kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>38.8</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 10 - 3 - 4</strong></div>
+ </article></div>
+  </section></div>
  </section>
- 
- 
-</div>
-</section>
  <section class="horse-section data-block">
-<button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-<div class="horse-section-content">
-
-  
- <section class="data-section">
-  <div class="data-existing">
-   <div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div>
-   <div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div>
-   <div class="data-chip"><small>左回</small><b class="record">(0-1-0-3)</b></div>
-   <div class="data-chip"><small>右回</small><b class="record">(2-0-1-7)</b></div>
-   <div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-1-7)</b></div>
-   <div class="data-chip"><small>平坦ダ</small><b class="record">(0-1-0-3)</b></div>
-   <div class="data-chip"><small>内枠</small><b class="record">(1-0-0-3)</b></div>
-   <div class="data-chip"><small>中枠</small><b class="record">(0-0-1-4)</b></div>
-   <div class="data-chip"><small>外枠</small><b class="record">(1-1-0-3)</b></div>
-   <div class="data-chip"><small>今回1枠</small><b class="record">(1-0-0-0)</b></div>
-   <div class="data-chip"><small>重不ダ</small><b class="record">(0-0-1-0)</b></div>
-   <div class="data-chip"><small>中10～14週</small><b class="record good">(0-1-1-2)</b></div>
-   <div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-1)</b></div>
-   <div class="data-chip"><small>連対体重</small><b>450～454</b></div>
-   <div class="data-chip"><small>出遅れ率</small><b>36%</b></div>
-  </div>
-  <div class="data-tabs" role="tablist" aria-label="追加データ">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-1-1-10)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-1-1-10)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-1-0-8)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(0-1-0-3)</b></div><div class="data-chip"><small>右回</small><b class="record">(2-0-1-7)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-1-7)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-1-0-3)</b></div><div class="data-chip"><small>内枠</small><b class="record">(1-0-0-3)</b></div><div class="data-chip"><small>外枠</small><b class="record">(1-1-0-3)</b></div><div class="data-chip"><small>1枠</small><b class="record">(1-0-0-0)</b></div><div class="data-chip"><small>中10～14週</small><b class="record">(0-1-1-2)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-1-0)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>連対体重</small><b>450～454</b></div><div class="data-chip"><small>出遅れ率</small><b>36%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
    <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
-   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
    <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
   </div>
   <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
-   <div class="panel-card"><h4>通算</h4><div class="stats"><span>全着</span><strong class="record">(2-1-1-10)</strong><span>全芝</span><strong class="record">(0-0-0-0)</strong><span>全ダ</span><strong class="record">(2-1-1-10)</strong></div></div>
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-10)</strong><span>全ダート</span><strong class="record">(2-1-1-10)</strong><span>ダート良</span><strong class="record">(1-1-0-8)</strong></div></div>
   </div></section>
   <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
-   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダ1600</span><strong class="record">(0-0-0-0)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
-   <div class="panel-card"><h4>距離帯別</h4><div class="stats"><span>1000～1300</span><strong class="record">(1-1-0-5)</strong><span>1400～1600</span><strong class="record">(0-0-0-2)</strong><span>1700～2000</span><strong class="record">(1-0-1-3)</strong><span>2100～2400</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-0-0-1)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(0-1-0-3)</strong><span>右回</span><strong class="record">(2-0-1-7)</strong><span>坂有ダ</span><strong class="record">(2-0-1-7)</strong><span>平坦ダ</span><strong class="record">(0-1-0-3)</strong></div></div>
   </div></section>
   <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
-   <div class="panel-card"><h4>脚質｜通算</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>1</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>1</b></div></div></div>
-   <div class="panel-card"><h4>脚質｜最近5走</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>2</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>2</b></div></div></div>
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>後</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>マ</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
   </div></section>
   <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
-   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-3)</strong><span>中枠</span><strong class="record">(0-0-1-4)</strong><span>外枠</span><strong class="record">(1-1-0-3)</strong><span>今回1枠</span><strong class="record">(1-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-3)</strong><span>外枠</span><strong class="record">(1-1-0-3)</strong><span>1枠</span><strong class="record">(1-0-0-0)</strong></div></div>
   </div></section>
-
- </section>
- 
- 
-</div>
-</section>
- <section class="horse-section connections-block">
-<button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>CONNECTIONS</span><small>騎手・調教師・種牡馬</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-<div class="horse-section-content">
-
   
-  <section class="connections-section">
-   <div class="connections-heading">騎手・調教師・種牡馬 成績</div>
-   <div class="panel-grid">
-<div class="panel-card"><h4>騎手</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="4">4%</span>／<span data-rate="14">14%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="21">21%</span></strong></div></div>
-   <div class="panel-card"><h4>調教師</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="6">6%</span>／<span data-rate="19">19%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="2">2%</span>／<span data-rate="13">13%</span></strong></div></div>
-   <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="23">23%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="0">0%</span>／<span data-rate="18">18%</span></strong></div></div>
-   </div>
-  </section>
- 
- 
- 
-</div>
-</section>
- <section class="horse-section comments-block">
-<button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント・前走時コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-<div class="horse-section-content">
-
-  <section class="comments">
-  <div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div>
-  <div class="previous-result">前走時の結果　2026年07月25日 札幌12R 桑園特別　10着（9人気）</div>
-  <div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ</div>
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>原優介</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>矢野英一</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ゴールドドリーム</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
  </section>
- 
-</div>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div><div class="previous-result">前走時の結果　2026.07.25 札幌・D1700 桑園特別　10着（9人気）</div></section></div>
+ </section>
 </section>
-
-
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="2" aria-label="2番">2</div></div>
+   <div class="identity-main"><div class="horse-name">ファンシーズ</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝3／栗</strong></span>
+     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">石田拓郎</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">尾形和幸</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">ルーラーシップ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.06.21</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　石田　50▲kg　438kg　重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.4</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>5 - 4</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.06.06</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　石田　50▲kg　446kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>3</b></div><div class="metric"><label>着差</label><b>—</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>9 - 9</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.17</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ・牝*</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・1勝　大野　55kg　438kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>8</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>4</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>4</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>5 - 5</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-0-1-3)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-0-1-2)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(0-0-1-2)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(1-0-1-1)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(1-0-1-1)</b></div><div class="data-chip"><small>左回</small><b class="record">(1-0-1-2)</b></div><div class="data-chip"><small>右回</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-1-2)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>内枠</small><b class="record">(1-0-1-1)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>2枠</small><b class="record">(0-0-1-0)</b></div><div class="data-chip"><small>中15週以上</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(2-0-0-0)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>連対体重</small><b>438～442</b></div><div class="data-chip"><small>出遅れ率</small><b>50%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-1-3)</strong><span>全ダート</span><strong class="record">(2-0-1-2)</strong><span>ダート良</span><strong class="record">(0-0-1-2)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(1-0-1-1)</strong><span>全場ダ1600</span><strong class="record">(1-0-1-1)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(1-0-1-2)</strong><span>右回</span><strong class="record">(1-0-0-1)</strong><span>坂有ダ</span><strong class="record">(2-0-1-2)</strong><span>平坦ダ</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>先</strong><span>2走前</span><strong>中</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-1-1)</strong><span>外枠</span><strong class="record">(0-0-0-0)</strong><span>2枠</span><strong class="record">(0-0-1-0)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>石田拓郎</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>尾形和幸</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【尾形調教師】</b>続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料</div><div class="previous-result">前走時の結果　2026.06.21 東京・D1600 １勝ｸﾗｽ・牝　1着（2人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="3" aria-label="3番">3</div></div>
+   <div class="identity-main"><div class="horse-name">ドントゥザムーン</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡4／青鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>56kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">三浦皇成</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">高木登</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">カレンブラックヒル</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">フリオーソ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1300">東京・D1300</span><span>３上・2勝　三浦　58kg　474kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>0.4</b></div><div class="metric"><label>指数</label><b>90</b></div><div class="metric"><label>上3F</label><b>36.6</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>3 - 3</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.09.06</span></div>
+ <div class="run-summary"><strong>浦安特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1200">中山・D1200</span><span>３上・2勝　三浦　58kg　470kg　不良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>16</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>16</b></div><div class="metric"><label>間隔</label><b>11週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>4 - 4</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.06.21</span></div>
+ <div class="run-summary"><strong>甲州街道</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>３上・2勝　木幡　58kg　470kg　重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>1</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>14</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>2 - 3</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-1-1-10)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-1-1-10)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(2-1-0-8)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(2-1-1-6)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(2-1-1-6)</b></div><div class="data-chip"><small>右回</small><b class="record">(0-0-0-4)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-1-1-10)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-6)</b></div><div class="data-chip"><small>外枠</small><b class="record">(1-0-1-4)</b></div><div class="data-chip"><small>3枠</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>中2週</small><b class="record">(1-1-0-4)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-1-2)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(2-1-0-4)</b></div><div class="data-chip"><small>連対体重</small><b>452～470</b></div><div class="data-chip"><small>出遅れ率</small><b>14%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-10)</strong><span>全ダート</span><strong class="record">(2-1-1-10)</strong><span>ダート良</span><strong class="record">(2-1-0-8)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(2-1-1-6)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(2-1-1-6)</strong><span>右回</span><strong class="record">(0-0-0-4)</strong><span>坂有ダ</span><strong class="record">(2-1-1-10)</strong><span>平坦ダ</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>先</strong><span>2走前</span><strong>先</strong><span>3走前</span><strong>先</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-6)</strong><span>外枠</span><strong class="record">(1-0-1-4)</strong><span>3枠</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>三浦皇成</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>高木登</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>カレンブラックヒル</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【高木調教師】</b>前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1300 ２勝ｸﾗｽ　5着（2人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="4" aria-label="4番">4</div></div>
+   <div class="identity-main"><div class="horse-name">スルーザナイト</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝4／芦</strong></span>
+     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">佐々木大</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">西園翔太</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">リアルインパクト</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">クロフネ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.07.26</span></div>
+ <div class="run-summary"><strong>麒麟山特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>３上・2勝　石川　56kg　494kg　不良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>14</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>67</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>14</b></div><div class="metric"><label>間隔</label><b>15週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>5 - 6 - 6 - 6</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.04.12</span></div>
+ <div class="run-summary"><strong>川西特別</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1800">阪神・D1800</span><span>４上・2勝　北村　56kg　494kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>1.0</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.4</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>2 - 2 - 2 - 2</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.03.22</span></div>
+ <div class="run-summary"><strong>弥富特別</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1900">中京・D1900</span><span>４上・2勝　亀田　56kg　496kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.7</b></div><div class="metric"><label>指数</label><b>75</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>12</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>7 - 7 - 6 - 6</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-2-1-9)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-2-1-7)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-0-1-4)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(1-2-1-4)</b></div><div class="data-chip"><small>右回</small><b class="record">(1-0-0-5)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(1-1-1-4)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(1-1-0-3)</b></div><div class="data-chip"><small>内枠</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-2-0-4)</b></div><div class="data-chip"><small>3枠</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>中10～14週</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>連対体重</small><b>478～490</b></div><div class="data-chip"><small>出遅れ率</small><b>7%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-2-1-9)</strong><span>全ダート</span><strong class="record">(2-2-1-7)</strong><span>ダート良</span><strong class="record">(1-0-1-4)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-0-0-0)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(1-2-1-4)</strong><span>右回</span><strong class="record">(1-0-0-5)</strong><span>坂有ダ</span><strong class="record">(1-1-1-4)</strong><span>平坦ダ</span><strong class="record">(1-1-0-3)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>中</strong><span>2走前</span><strong>先</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-1)</strong><span>外枠</span><strong class="record">(0-2-0-4)</strong><span>3枠</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>佐々木大</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>西園翔太</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>リアルインパクト</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【西園翔調教師】</b>この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を</div><div class="previous-result">前走時の結果　2026.07.26 新潟・D1800 麒麟山特　14着（10人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="5" aria-label="5番">5</div></div>
+   <div class="identity-main"><div class="horse-name">レーヴドレフォン</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝5／栗</strong></span>
+     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">古川吉洋</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">橋田宜長</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ドレフォン</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">オルフェーヴル</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.09.22</span></div>
+ <div class="run-summary"><strong>鋸山特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>３上・2勝　丸田　56kg　476kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>40.5</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>14 - 14 - 12 - 12</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.07.26</span></div>
+ <div class="run-summary"><strong>麒麟山特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>３上・2勝　今村　56kg　476kg　不良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>37.3</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>13 - 12 - 11 - 11</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.23</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>４上・2勝　吉田　56kg　480kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>1</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>4</b></div><div class="metric"><label>間隔</label><b>14週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>14 - 16</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-4-0-19)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-4-0-19)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(2-3-0-10)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>左回</small><b class="record">(1-1-0-5)</b></div><div class="data-chip"><small>右回</small><b class="record">(1-3-0-14)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(1-0-0-9)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(1-4-0-10)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-6)</b></div><div class="data-chip"><small>外枠</small><b class="record">(2-2-0-3)</b></div><div class="data-chip"><small>4枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>中4～6週</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-4)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-2-0-9)</b></div><div class="data-chip"><small>連対体重</small><b>456～486</b></div><div class="data-chip"><small>出遅れ率</small><b>28%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-4-0-19)</strong><span>全ダート</span><strong class="record">(2-4-0-19)</strong><span>ダート良</span><strong class="record">(2-3-0-10)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-0-0-2)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-2)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(1-1-0-5)</strong><span>右回</span><strong class="record">(1-3-0-14)</strong><span>坂有ダ</span><strong class="record">(1-0-0-9)</strong><span>平坦ダ</span><strong class="record">(1-4-0-10)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>後</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>後</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-6)</strong><span>外枠</span><strong class="record">(2-2-0-3)</strong><span>4枠</span><strong class="record">(0-0-0-2)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>古川吉洋</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>橋田宜長</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ドレフォン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【木下助手】</b>2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな</div><div class="previous-result">前走時の結果　2026.09.22 中山・D1800 鋸山特別　11着（11人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="6" aria-label="6番">6</div></div>
+   <div class="identity-main"><div class="horse-name">シャンハイナイト</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝4／青鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>51kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">江田照男</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">村田一誠</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">シャンハイボビー</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">バチアー</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.08.29</span></div>
+ <div class="run-summary"><strong>千歳特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　河原　56kg　478kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>70</b></div><div class="metric"><label>上3F</label><b>39.3</b></div><div class="metric"><label>順</label><b>12</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>逃</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>1 - 1 - 1 - 2</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.08.09</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1200">新潟・D1200</span><span>３上・2勝　大野　56kg　482kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>7</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>12週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>12 - 14</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.16</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1200">新潟・D1200</span><span>４上・1勝　河原　52★kg　474kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>35.9</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 10</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-1-1-11)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-1-1-9)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(2-1-1-6)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-1-0-1)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-1-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(1-1-0-4)</b></div><div class="data-chip"><small>右回</small><b class="record">(1-0-1-7)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(1-1-1-5)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(1-0-0-4)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-0-0-5)</b></div><div class="data-chip"><small>4枠</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>中7～9週</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-4)</b></div><div class="data-chip"><small>連対体重</small><b>460～474</b></div><div class="data-chip"><small>出遅れ率</small><b>27%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-11)</strong><span>全ダート</span><strong class="record">(2-1-1-9)</strong><span>ダート良</span><strong class="record">(2-1-1-6)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-1-0-1)</strong><span>全場ダ1600</span><strong class="record">(0-1-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(1-1-0-4)</strong><span>右回</span><strong class="record">(1-0-1-7)</strong><span>坂有ダ</span><strong class="record">(1-1-1-5)</strong><span>平坦ダ</span><strong class="record">(1-0-0-4)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>逃</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>後</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(0-0-0-5)</strong><span>4枠</span><strong class="record">(0-0-0-1)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>江田照男</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>村田一誠</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>シャンハイボビー</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【村田調教師】</b>乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか</div><div class="previous-result">前走時の結果　2026.08.29 札幌・D1700 千歳特別　11着（8人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="7" aria-label="7番">7</div></div>
+   <div class="identity-main"><div class="horse-name">アイファーバトル</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡5／黒鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">松岡正海</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">蛯名利弘</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">バトルプラン</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">ステイゴールド</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.02.22</span></div>
+ <div class="run-summary"><strong>天神橋Ｈ</strong><span class="run-course" data-venue="阪神" data-surface="T" data-distance="1600">阪神・T1600</span><span>４上・2勝　秋山　53kg　480kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>0.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>33.7</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>10 - 10</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.02.12</span></div>
+ <div class="run-summary"><strong>ハート</strong><span class="run-course" data-venue="船橋" data-surface="D" data-distance="1600">船橋・D1600</span><span>不明・(不明)　長浜　57kg　489kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>—</b></div><div class="metric"><label>上3F</label><b>----</b></div><div class="metric"><label>順</label><b>—</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>10 - 10 - 10 - 13</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2025.12.20</span></div>
+ <div class="run-summary"><strong>ヤングジ</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1400">中京・D1400</span><span>３上・2勝　古川　58kg　480kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>14 - 14</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-1-1-24)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(1-0-0-8)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-0-0-5)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(1-0-0-4)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-4)</b></div><div class="data-chip"><small>左回</small><b class="record">(2-1-0-20)</b></div><div class="data-chip"><small>右回</small><b class="record">(0-0-1-5)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(1-0-0-8)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>内枠</small><b class="record">(1-0-0-7)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-1-0-9)</b></div><div class="data-chip"><small>5枠</small><b class="record">(0-0-0-5)</b></div><div class="data-chip"><small>中15週以上</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(1-1-0-6)</b></div><div class="data-chip"><small>連対体重</small><b>442～460</b></div><div class="data-chip"><small>出遅れ率</small><b>52%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-1-24)</strong><span>全ダート</span><strong class="record">(1-0-0-8)</strong><span>ダート良</span><strong class="record">(1-0-0-5)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(1-0-0-4)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-4)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(2-1-0-20)</strong><span>右回</span><strong class="record">(0-0-1-5)</strong><span>坂有ダ</span><strong class="record">(1-0-0-8)</strong><span>平坦ダ</span><strong class="record">(0-0-0-1)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>後</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>後</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-7)</strong><span>外枠</span><strong class="record">(0-1-0-9)</strong><span>5枠</span><strong class="record">(0-0-0-5)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>松岡正海</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>蛯名利弘</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>バトルプラン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ</div><div class="previous-result">前走時の結果　2026.02.22 阪神・T1600 天神橋Ｈ　10着（10人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="8" aria-label="8番">8</div></div>
+   <div class="identity-main"><div class="horse-name">スマートスピア</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡5／青鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>57kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">ルメール</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">池江泰寿</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">キズナ</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">キングヘイロー</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.08.22</span></div>
+ <div class="run-summary"><strong>大府特別</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1800">中京・D1800</span><span>３上・2勝　吉村　58kg　508kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>39.2</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>10週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>5 - 5 - 6 - 6</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・2勝　津村　58kg　498kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>2</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>96</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 8</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.16</span></div>
+ <div class="run-summary"><strong>中ノ岳特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>４上・2勝　ルメ　58kg　508kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>9</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.6</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>6 - 5 - 4 - 4</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-3-2-6)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(0-3-2-2)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(0-2-2-2)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-1-2-0)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-1-2-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(0-2-2-5)</b></div><div class="data-chip"><small>右回</small><b class="record">(2-1-0-1)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(0-2-2-1)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-1-0-1)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-1-1)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-1-0-1)</b></div><div class="data-chip"><small>5枠</small><b class="record">(0-1-1-1)</b></div><div class="data-chip"><small>中7～9週</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-2-2)</b></div><div class="data-chip"><small>連対体重</small><b>498～514</b></div><div class="data-chip"><small>出遅れ率</small><b>23%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-3-2-6)</strong><span>全ダート</span><strong class="record">(0-3-2-2)</strong><span>ダート良</span><strong class="record">(0-2-2-2)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-1-2-0)</strong><span>全場ダ1600</span><strong class="record">(0-1-2-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(0-2-2-5)</strong><span>右回</span><strong class="record">(2-1-0-1)</strong><span>坂有ダ</span><strong class="record">(0-2-2-1)</strong><span>平坦ダ</span><strong class="record">(0-1-0-1)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>中</strong><span>2走前</span><strong>中</strong><span>3走前</span><strong>先</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-1-1)</strong><span>外枠</span><strong class="record">(0-1-0-1)</strong><span>5枠</span><strong class="record">(0-1-1-1)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>ルメール</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>池江泰寿</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>キズナ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【兼武助手】</b>前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら</div><div class="previous-result">前走時の結果　2026.08.22 中京・D1800 大府特別　5着（4人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="9" aria-label="9番">9</div></div>
+   <div class="identity-main"><div class="horse-name">キングツェッペリン</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡5／鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">松若風馬</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">牧田和弥</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">モーニン</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">ワイルドラッシュ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.07.04</span></div>
+ <div class="run-summary"><strong>横手特別</strong><span class="run-course" data-venue="福島" data-surface="D" data-distance="1700">福島・D1700</span><span>３上・2勝　石橋　58kg　470kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>7</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>38.0</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>6 - 7 - 5 - 3</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.06.07</span></div>
+ <div class="run-summary"><strong>洲本特別</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1400">阪神・D1400</span><span>３上・2勝　松若　58kg　472kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>1.2</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>36.2</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 12</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.17</span></div>
+ <div class="run-summary"><strong>青梅特Ｈ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>４上・2勝　松若　54kg　472kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>3</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>95</b></div><div class="metric"><label>上3F</label><b>35.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>12 - 9</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-1-2-13)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-1-2-13)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(2-1-2-8)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-0-1-2)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-1-2)</b></div><div class="data-chip"><small>左回</small><b class="record">(0-0-1-4)</b></div><div class="data-chip"><small>右回</small><b class="record">(2-1-1-9)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(0-0-1-8)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(2-1-1-5)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>外枠</small><b class="record">(1-1-1-5)</b></div><div class="data-chip"><small>6枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>中15週以上</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-1-4)</b></div><div class="data-chip"><small>連対体重</small><b>452～466</b></div><div class="data-chip"><small>出遅れ率</small><b>22%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-1-2-13)</strong><span>全ダート</span><strong class="record">(2-1-2-13)</strong><span>ダート良</span><strong class="record">(2-1-2-8)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-0-1-2)</strong><span>全場ダ1600</span><strong class="record">(0-0-1-2)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(0-0-1-4)</strong><span>右回</span><strong class="record">(2-1-1-9)</strong><span>坂有ダ</span><strong class="record">(0-0-1-8)</strong><span>平坦ダ</span><strong class="record">(2-1-1-5)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>マ</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(1-1-1-5)</strong><span>6枠</span><strong class="record">(0-0-0-2)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>松若風馬</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>牧田和弥</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>モーニン</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【牧田調教師】</b>リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待</div><div class="previous-result">前走時の結果　2026.07.04 福島・D1700 横手特別　7着（6人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="10" aria-label="10番">10</div></div>
+   <div class="identity-main"><div class="horse-name">セイントエルモズ</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡3／鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">菅原明良</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">小島茂之</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">サンダースノー</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">ディープスカイ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.06.13</span></div>
+ <div class="run-summary"><strong>日野特別</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="2100">東京・D2100</span><span>３上・2勝　菊沢　55kg　542kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>3.0</b></div><div class="metric"><label>指数</label><b>60</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>12 - 12 - 8 - 7</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.05.02</span></div>
+ <div class="run-summary"><strong>ユニコーG3</strong><span class="run-course" data-venue="京都" data-surface="D" data-distance="1900">京都・D1900</span><span>３歳・Ｇ３　吉村　57kg　538kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>38.4</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>8 - 8 - 7 - 7</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.03.22</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ*</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1800">阪神・D1800</span><span>３歳・1勝　斎藤　57kg　546kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.3</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.8</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>20週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>10 - 10 - 2 - 2</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-0-0-3)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-0-0-3)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-0-0-0)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(1-0-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>右回</small><b class="record">(1-0-0-2)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-0-1)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>外枠</small><b class="record">(2-0-0-3)</b></div><div class="data-chip"><small>6枠</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>中15週以上</small><b class="record">(1-0-0-0)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>連対体重</small><b>546～546</b></div><div class="data-chip"><small>出遅れ率</small><b>40%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-0-3)</strong><span>全ダート</span><strong class="record">(2-0-0-3)</strong><span>ダート良</span><strong class="record">(1-0-0-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(1-0-0-1)</strong><span>全場ダ1600</span><strong class="record">(1-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(1-0-0-1)</strong><span>右回</span><strong class="record">(1-0-0-2)</strong><span>坂有ダ</span><strong class="record">(2-0-0-1)</strong><span>平坦ダ</span><strong class="record">(0-0-0-2)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>中</strong><span>2走前</span><strong>中</strong><span>3走前</span><strong>マ</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-0)</strong><span>外枠</span><strong class="record">(2-0-0-3)</strong><span>6枠</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>菅原明良</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>小島茂之</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>サンダースノー</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【小島調教師】</b>放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で</div><div class="previous-result">前走時の結果　2026.06.13 東京・D2100 日野特別　11着（6人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="11" aria-label="11番">11</div></div>
+   <div class="identity-main"><div class="horse-name">キョウエイスレーヴ</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">原田和真</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">萱野浩二</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">マイネルラヴ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1300">東京・D1300</span><span>３上・2勝　長浜　57☆kg　444kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>13</b></div><div class="metric"><label>間隔</label><b>19週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>8 - 8</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.05.30</span></div>
+ <div class="run-summary"><strong>富嶽賞</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・2勝　長浜　58kg　452kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>15</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>74</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>15</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 11</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.02</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・1勝　長浜　56△kg　454kg　重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.2</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>7 - 5</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-0-4-12)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-0-4-12)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(0-0-1-8)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(2-0-3-9)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>左回</small><b class="record">(2-0-3-10)</b></div><div class="data-chip"><small>右回</small><b class="record">(0-0-1-2)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-4-11)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-2-2)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-0-1-3)</b></div><div class="data-chip"><small>7枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>中2週</small><b class="record">(1-0-2-3)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(2-0-2-1)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-1-7)</b></div><div class="data-chip"><small>連対体重</small><b>444～454</b></div><div class="data-chip"><small>出遅れ率</small><b>11%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-4-12)</strong><span>全ダート</span><strong class="record">(2-0-4-12)</strong><span>ダート良</span><strong class="record">(0-0-1-8)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(2-0-3-9)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-3)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(2-0-3-10)</strong><span>右回</span><strong class="record">(0-0-1-2)</strong><span>坂有ダ</span><strong class="record">(2-0-4-11)</strong><span>平坦ダ</span><strong class="record">(0-0-0-1)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>中</strong><span>2走前</span><strong>後</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-2-2)</strong><span>外枠</span><strong class="record">(0-0-1-3)</strong><span>7枠</span><strong class="record">(0-0-0-2)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>原田和真</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>萱野浩二</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【萱野調教師】</b>クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1300 ２勝ｸﾗｽ　13着（14人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="12" aria-label="12番">12</div></div>
+   <div class="identity-main"><div class="horse-name">レディゴディヴァ</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝4／栗</strong></span>
+     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">石川裕紀</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">小崎憲</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ルヴァンスレーヴ</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">キングカメハメハ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.08.29</span></div>
+ <div class="run-summary"><strong>千歳特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　石川　56kg　432kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>10 - 9 - 7 - 7</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.08.09</span></div>
+ <div class="run-summary"><strong>富良野Ｈ</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　川又　52kg　432kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>64</b></div><div class="metric"><label>上3F</label><b>39.4</b></div><div class="metric"><label>順</label><b>11</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>6 - 5 - 5 - 7</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.05.09</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・2勝　石橋　56kg　432kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>6 - 7</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-0-0-11)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-0-0-11)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(2-0-0-8)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>左回</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>右回</small><b class="record">(2-0-0-10)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(2-0-0-9)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>外枠</small><b class="record">(2-0-0-1)</b></div><div class="data-chip"><small>7枠</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>中7～9週</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>連対体重</small><b>424～438</b></div><div class="data-chip"><small>出遅れ率</small><b>0%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-0-0-11)</strong><span>全ダート</span><strong class="record">(2-0-0-11)</strong><span>ダート良</span><strong class="record">(2-0-0-8)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-0-0-1)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(0-0-0-1)</strong><span>右回</span><strong class="record">(2-0-0-10)</strong><span>坂有ダ</span><strong class="record">(0-0-0-2)</strong><span>平坦ダ</span><strong class="record">(2-0-0-9)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>中</strong><span>2走前</span><strong>中</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-1)</strong><span>外枠</span><strong class="record">(2-0-0-1)</strong><span>7枠</span><strong class="record">(0-0-0-1)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>石川裕紀</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>小崎憲</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ルヴァンスレーヴ</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば</div><div class="previous-result">前走時の結果　2026.08.29 札幌・D1700 千歳特別　6着（12人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="13" aria-label="13番">13</div></div>
+   <div class="identity-main"><div class="horse-name">サマーマッドネス</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牡3／栗</strong></span>
+     <span class="basic"><label>斤量</label><strong>55kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation ritto">川田将雅</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation ritto">森秀行</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">Good Magic</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">Kitten's Joy</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　川田　56kg　542kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>3</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.1</b></div><div class="metric"><label>指数</label><b>88</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>3</b></div><div class="metric"><label>間隔</label><b>24週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>4 - 3</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.04.25</span></div>
+ <div class="run-summary"><strong>１勝ｸﾗｽ*</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・1勝　武豊　57kg　526kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>4</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>2 - 2</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.02.22</span></div>
+ <div class="run-summary"><strong>ヒヤシン(L)</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・OP(L)　坂井　57kg　530kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>2.7</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>8 - 7</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(1-2-2-3)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(1-2-2-3)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-1-2-1)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(1-0-0-2)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(2-0-0-2)</b></div><div class="data-chip"><small>左回</small><b class="record">(2-0-2-2)</b></div><div class="data-chip"><small>右回</small><b class="record">(0-2-0-1)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(1-0-1-3)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(1-2-1-0)</b></div><div class="data-chip"><small>内枠</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>外枠</small><b class="record">(0-0-2-2)</b></div><div class="data-chip"><small>8枠</small><b class="record">(0-0-1-1)</b></div><div class="data-chip"><small>中2週</small><b class="record">(0-0-0-1)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(0-0-0-0)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(1-2-0-1)</b></div><div class="data-chip"><small>連対体重</small><b>518～542</b></div><div class="data-chip"><small>出遅れ率</small><b>11%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(1-2-2-3)</strong><span>全ダート</span><strong class="record">(1-2-2-3)</strong><span>ダート良</span><strong class="record">(1-1-2-1)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(1-0-0-2)</strong><span>全場ダ1600</span><strong class="record">(2-0-0-2)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(2-0-2-2)</strong><span>右回</span><strong class="record">(0-2-0-1)</strong><span>坂有ダ</span><strong class="record">(1-0-1-3)</strong><span>平坦ダ</span><strong class="record">(1-2-1-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>先</strong><span>2走前</span><strong>先</strong><span>3走前</span><strong>後</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-1)</strong><span>外枠</span><strong class="record">(0-0-2-2)</strong><span>8枠</span><strong class="record">(0-0-1-1)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>川田将雅</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>森秀行</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>Good Magic</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【清水助手】</b>体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1600 １勝ｸﾗｽ　1着（3人気）</div></section></div>
+ </section>
+</section>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main"><div class="identity">
+   <div class="number-wrap"><div class="frame-no" data-horse="14" aria-label="14番">14</div></div>
+   <div class="identity-main"><div class="horse-name">タマモカンパネラ</div>
+    <div class="horse-facts">
+     <span class="basic"><label>性齢</label><strong>牝4／鹿</strong></span>
+     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
+     <span class="basic"><label>騎手</label><strong class="source-text affiliation miho">丹内祐次</strong></span>
+     <span class="basic"><label>調教師</label><strong class="source-text affiliation miho">伊藤圭三</strong></span>
+    </div>
+   </div>
+  </div></div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ナダル</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">ハーツクライ</strong></div>
+  </div>
+ </div>
+ <section class="horse-section recent-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="runs-section">
+   <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
+ <div class="run-head"><span>前走</span><span class="run-date">2026.10.04</span></div>
+ <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・2勝　佐藤　53▲kg　512kg　良</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>0.5</b></div><div class="metric"><label>指数</label><b>94</b></div><div class="metric"><label>上3F</label><b>35.4</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>13 - 13</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>2走前</span><span class="run-date">2026.08.01</span></div>
+ <div class="run-summary"><strong>大倉山特</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　黛弘　56kg　506kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>8</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>68</b></div><div class="metric"><label>上3F</label><b>39.8</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>8 - 8 - 2 - 3</strong></div>
+ </article><article class="run">
+ <div class="run-head"><span>3走前</span><span class="run-date">2026.06.28</span></div>
+ <div class="run-summary"><strong>渡島特別</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>３上・2勝　原優　56kg　504kg　稍重</span></div>
+ <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>38.2</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-passage"><label>通過順</label><strong>11 - 11 - 9 - 8</strong></div>
+ </article></div>
+  </section></div>
+ </section>
+ <section class="horse-section data-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>DATA</span><small>競走成績・条件別実績・関係者</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="data-section">
+  <div class="data-existing"><div class="data-chip"><small>全成績</small><b class="record">(2-3-1-10)</b></div><div class="data-chip"><small>全ダ</small><b class="record">(2-3-1-10)</b></div><div class="data-chip"><small>ダ良</small><b class="record">(1-2-1-3)</b></div><div class="data-chip"><small>東京ダ</small><b class="record">(0-3-0-5)</b></div><div class="data-chip"><small>全場D1600</small><b class="record">(0-3-0-5)</b></div><div class="data-chip"><small>左回</small><b class="record">(0-3-0-5)</b></div><div class="data-chip"><small>右回</small><b class="record">(2-0-1-5)</b></div><div class="data-chip"><small>坂有ダ</small><b class="record">(2-3-1-7)</b></div><div class="data-chip"><small>平坦ダ</small><b class="record">(0-0-0-3)</b></div><div class="data-chip"><small>内枠</small><b class="record">(0-0-0-2)</b></div><div class="data-chip"><small>外枠</small><b class="record">(2-2-1-2)</b></div><div class="data-chip"><small>8枠</small><b class="record">(1-0-1-0)</b></div><div class="data-chip"><small>中3週</small><b class="record">(0-0-0-4)</b></div><div class="data-chip"><small>重不ダ</small><b class="record">(1-0-0-1)</b></div><div class="data-chip"><small>9～11月</small><b class="record">(0-1-0-3)</b></div><div class="data-chip"><small>連対体重</small><b>502～516</b></div><div class="data-chip"><small>出遅れ率</small><b>38%</b></div></div>
+  <div class="data-tabs" role="tablist" aria-label="DATA項目">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離・コース</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">CONNECTIONS</button>
+  </div>
+  <section class="data-panel active" data-data-content="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算・ダート</h4><div class="stats"><span>全成績</span><strong class="record">(2-3-1-10)</strong><span>全ダート</span><strong class="record">(2-3-1-10)</strong><span>ダート良</span><strong class="record">(1-2-1-3)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダート</span><strong class="record">(0-3-0-5)</strong><span>全場ダ1600</span><strong class="record">(0-3-0-5)</strong></div></div>
+   <div class="panel-card"><h4>回り・コース形態</h4><div class="stats"><span>左回</span><strong class="record">(0-3-0-5)</strong><span>右回</span><strong class="record">(2-0-1-5)</strong><span>坂有ダ</span><strong class="record">(2-3-1-7)</strong><span>平坦ダ</span><strong class="record">(0-0-0-3)</strong></div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>近3走の脚質</h4><div class="stats"><span>前走</span><strong>後</strong><span>2走前</span><strong>マ</strong><span>3走前</span><strong>中</strong></div><div class="foot">前走→2走前→3走前。元データの分類表記を維持。</div></div>
+  </div></section>
+  <section class="data-panel" data-data-content="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(0-0-0-2)</strong><span>外枠</span><strong class="record">(2-2-1-2)</strong><span>8枠</span><strong class="record">(1-0-1-0)</strong></div></div>
+  </div></section>
+  
+ <section class="data-panel" data-data-content="connections" role="tabpanel"><div class="panel-grid">
+  <div class="panel-card"><h4>騎手</h4><div class="stats"><span>氏名</span><strong>丹内祐次</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>調教師</h4><div class="stats"><span>氏名</span><strong>伊藤圭三</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+  <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>氏名</span><strong>ナダル</strong><span>勝率／複勝率</span><strong>—／—</strong><span>数値データ</span><strong>未提供</strong></div></div>
+ </div><div class="foot">成績率は今回の貼り付けデータに含まれていないため、数値を補っていません。</div></section>
+ </section></div>
+ </section>
+ <section class="horse-section comments-block">
+  <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
+  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【伊藤圭調教師】</b>前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある</div><div class="previous-result">前走時の結果　2026.10.04 東京・D1600 ２勝ｸﾗｽ　6着（14人気）</div></section></div>
+ </section>
 </section>
 </main>
 <script>
