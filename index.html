@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123b2b">
+<title>木戸表 電子版｜清里特別</title>
+<style>
+:root{
+ --forest:#123b2b;--forest2:#1b5940;--leaf:#32845b;--mint:#dff1e4;--paper:#f2f6f0;--card:#fff;--ink:#17251e;--muted:#66766d;--line:#d7e2d9;
+ --race1:#ff8080;--race2:#80ffff;--race3:#80ff80;--red:#c51f35;--redbg:#ffe5e9;
+ --pink:#ffc0ff;--green:#00ff00;--cyan:#00ffff;--yellow:#ffff00;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 100%);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.35}
+.page{max-width:1120px;margin:0 auto;padding:0 12px 30px}
+.racehead{margin:10px 0 10px;border-radius:16px;overflow:hidden;background:linear-gradient(115deg,#103b29 0%,#1c5c3d 54%,#2b7952 100%);color:#fff;box-shadow:0 6px 18px #113a2824;position:relative}
+.racehead:after{content:"";position:absolute;right:-72px;top:-112px;width:235px;height:235px;border:1px solid #ffffff26;border-radius:50%;box-shadow:0 0 0 20px #ffffff0b,0 0 0 42px #ffffff09}
+.head-inner{position:relative;z-index:1;padding:13px 17px 14px}
+.date-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px;color:#d5ebdc;font-size:10px;font-weight:700;letter-spacing:.025em}
+.dot{width:3px;height:3px;border-radius:50%;background:#a8d9b8;display:inline-block}
+.title-line{display:flex;align-items:baseline;gap:9px;margin:6px 0 3px;flex-wrap:wrap}
+.race-no{font-size:12px;font-weight:900;color:#bee4ca;letter-spacing:.08em}
+.race-title{font-size:clamp(22px,4vw,31px);line-height:1.08;font-weight:950;letter-spacing:.045em}
+.race-subtitle{font-size:11px;font-weight:650;color:#e2f1e6;letter-spacing:.025em}
+.race-pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.pill{padding:3px 8px;border-radius:999px;border:1px solid #ffffff36;background:#ffffff13;color:#f6fff8;font-size:9px;font-weight:750}
+.horse-card{background:#fff;border:1px solid #cfddd2;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px #173d2910;margin-bottom:11px}
+.profile{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,1.2fr);border-bottom:1px solid var(--line)}
+.profile-main{padding:11px 13px 9px;background:linear-gradient(120deg,#f5faf5,#fff)}
+.identity{display:grid;grid-template-columns:39px minmax(0,1fr);gap:9px;align-items:center}
+.number-wrap{display:flex;align-items:center;justify-content:center}
+.frame-no{width:31px;height:32px;border-radius:5px;border:1px solid #87958c;display:grid;place-items:center;font-size:15px;font-weight:950;line-height:1;font-variant-numeric:tabular-nums;box-shadow:inset 0 0 0 1px #ffffff80}
+
+.frame-1{background:#fff;color:#222;border-color:#aab4ad}.frame-2{background:#171717;color:#fff;border-color:#171717}.frame-3{background:#e51f2a;color:#fff;border-color:#e51f2a}.frame-4{background:#1769c2;color:#fff;border-color:#1769c2}.frame-5{background:#ffdf25;color:#151515;border-color:#d2b516}.frame-6{background:#168447;color:#fff;border-color:#168447}.frame-7{background:#ed7d21;color:#111;border-color:#d56d1a}.frame-8{background:#f39ac7;color:#171717;border-color:#e58bb9}
+.horse-name{font-size:20px;font-weight:950;line-height:1.08;letter-spacing:.015em;color:maroon}
+.horse-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:4px;font-size:9px;color:#5b6b61;font-weight:700}
+.horse-meta b{color:#25382d;font-weight:850}
+.horse-meta .sep{color:#9aa69e}
+.basics{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 0 48px;font-size:10px;line-height:1.3}
+.basic{display:flex;gap:4px;white-space:nowrap;min-width:0}.basic label{font-size:9px;color:#68786d;font-weight:700}.basic strong{font-size:10px;font-weight:850}.source-text{color:#000}.affiliation.miho{color:#c51f35!important}.affiliation.ritto{color:#2463b8!important}
+.pedigree{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:9px 12px;background:#fbfdfb}
+.pedigree-row{display:flex;align-items:center;gap:6px;min-width:0}
+.pedigree-row small{width:31px;flex:0 0 31px;font-size:9px;color:#27372e;font-weight:900}
+.pedigree-row strong{display:block;min-width:0;overflow-wrap:anywhere;border-radius:5px;padding:4px 7px;font-size:10px;line-height:1.25;font-weight:850;color:#171717}
+.pedigree-row .sire{background:var(--pink)}.pedigree-row .bms{background:var(--green)}
+.runs-section{padding:0 10px 9px}
+.runs-heading{display:flex;align-items:center;justify-content:space-between;padding:8px 2px 6px}
+.runs-heading strong{font-size:11px;font-weight:950;color:#17432f;letter-spacing:.045em}
+.runs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.run{border:1px solid #d7e2d9;border-radius:9px;overflow:hidden;min-width:0;background:#fff}
+.run-head{display:flex;justify-content:space-between;align-items:center;padding:5px 7px;font-size:10px;font-weight:950;color:#18251e}
+.run:nth-child(1) .run-head{background:var(--race1)}.run:nth-child(2) .run-head{background:var(--race2)}.run:nth-child(3) .run-head{background:var(--race3)}
+.run-date{font-size:9px;font-weight:750;opacity:.85}.run-course{display:inline-block;font-weight:850;color:#53645a;border-radius:4px;padding:0 2px}.run-course.same-course{background:#ffe39a;color:#7a2d13;box-shadow:inset 0 -2px 0 #d68a18;padding:1px 4px}
+.run-summary{padding:6px 8px 5px;background:#f7faf7;border-bottom:1px solid #e3eae4;min-height:48px}
+.run-summary strong{display:block;font-size:11px;font-weight:900;line-height:1.2}.run-summary .run-course{display:inline-block;margin-top:2px;font-size:9px;line-height:1.2}.run-summary span:not(.run-course){display:block;margin-top:3px;font-size:8.5px;color:#54645a;font-weight:650;line-height:1.35}
+.run-summary span{display:block;margin-top:3px;font-size:8.5px;color:#54645a;font-weight:650;line-height:1.35}
+.run-details{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.metric{padding:4px 2px 3px;text-align:center;border-right:1px solid #e7ece8;border-bottom:1px solid #e7ece8;min-width:0}
+.metric:nth-child(4n){border-right:0}
+.metric label{display:block;color:#69776e;font-size:7.5px;font-weight:750;white-space:nowrap;line-height:1.1}
+.metric b{display:block;margin-top:2px;font-size:10px;font-weight:950;font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1.1}
+.metric.gray,.metric.silver{background:transparent}.metric.yellow{background:#ffff00}.metric.aqua{background:#00ffff}.metric.lime{background:#00ff00}
+.run-passage{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:5px 8px;background:#f1f7f2;border-top:1px solid #e1ebe2;font-size:9px}
+.run-passage label{font-size:8px;color:#64736a;font-weight:750}.run-passage strong{font-weight:950;font-variant-numeric:tabular-nums}
+.data-section{margin:0 10px 9px;border:1px solid #d5e2d8;border-radius:11px;overflow:hidden;background:#fbfdfb}
+.data-head{padding:7px 10px;background:linear-gradient(90deg,#d9eee0,#eef7f0);border-bottom:1px solid #d5e2d8;color:#17432f}
+.data-head strong{font-size:12px;letter-spacing:.1em;font-weight:950}
+.data-existing{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:7px}
+.data-chip{background:#fff;border:1px solid #e0e9e2;border-radius:6px;padding:5px 3px;min-width:0;text-align:center}
+.data-chip small{display:block;font-size:8px;line-height:1.15;color:#65746a;font-weight:750;white-space:normal}
+.data-chip b{display:block;margin-top:2px;font-size:9px;font-weight:950;white-space:nowrap;font-variant-numeric:tabular-nums}
+.data-chip .positive{color:var(--red);background:var(--redbg);border-radius:4px;padding:1px 3px;display:inline-block}
+.data-tabs{display:flex;gap:4px;flex-wrap:wrap;padding:0 7px 7px}
+.data-tab{appearance:none;flex:0 0 auto;border:1px solid #cbdacf;background:#fff;border-radius:999px;padding:5px 8px;color:#405549;font:800 9px system-ui;cursor:pointer;white-space:nowrap}
+.data-tab[aria-selected="true"]{background:#1d593c;color:#fff;border-color:#1d593c}
+.data-panel{display:none;padding:0 7px 8px}.data-panel.active{display:block}
+.panel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.panel-card{border:1px solid #dce7de;border-radius:8px;background:#fff;padding:7px 8px;min-width:0}
+.panel-card h4{margin:0 0 5px;padding-bottom:4px;border-bottom:1px solid #e5ece6;color:#355746;font-size:9px;font-weight:950}
+.stats{display:grid;grid-template-columns:1fr auto;gap:3px 6px;font-size:9px;align-items:center}
+.stats span{color:#53645a}.stats strong{font-size:9px;font-weight:950;font-variant-numeric:tabular-nums;white-space:nowrap}.stats strong.rate{display:inline-flex;gap:3px;align-items:center}.rate-hit{color:#c51f35!important;font-weight:950!important}
+.record.good{color:var(--red);background:var(--redbg);padding:1px 4px;border-radius:4px}
+.four-counts{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:5px}
+.four-counts div{background:#f1f7f2;border-radius:5px;text-align:center;padding:4px 1px}
+.four-counts small{display:block;font-size:8px;color:#64746a}.four-counts b{font-size:10px;color:#234d35}
+.comments{margin:0 10px 10px;border:1px solid #d7e4d9;border-radius:10px;overflow:hidden;background:#fff}
+.comments-head{padding:7px 10px;background:#173f2e;color:#fff;font-weight:950;font-size:11px;letter-spacing:.035em}
+.comment-current{padding:8px 10px;background:#fff;border-bottom:1px solid #e3ebe4;font-size:10px;line-height:1.55}
+.comment-current b,.comment-previous b{color:#245b3d}
+.previous-result{padding:6px 10px 2px;background:#f5faf5;color:#53665a;font-size:9px;font-weight:800}
+.comment-previous{padding:3px 10px 8px;background:#f5faf5;font-size:9.5px;line-height:1.55;color:#30483a}
+@media(max-width:620px){
+ .page{padding:0 7px 20px}.racehead{margin:6px 0 7px;border-radius:12px}.head-inner{padding:10px 12px 11px}
+ .date-line{font-size:9px;gap:5px}.title-line{margin:4px 0 2px;gap:7px}.race-no{font-size:10px}.race-title{font-size:23px}.race-subtitle{font-size:9px}.race-pills{margin-top:6px;gap:4px}.pill{font-size:8px;padding:3px 6px}
+ .horse-card{border-radius:11px;margin-bottom:8px}.profile{grid-template-columns:1fr}.profile-main{padding:8px 9px 7px}.identity{grid-template-columns:30px minmax(0,1fr);gap:6px}.frame-no{width:25px;height:26px;font-size:12px}.horse-name{font-size:17px;white-space:nowrap}.horse-meta{font-size:8px;gap:3px;margin-top:3px}.basics{gap:7px;margin:6px 0 0 38px;font-size:8px}.basic label{font-size:8px}.basic strong{font-size:8.5px}
+ .pedigree{display:grid;grid-template-columns:1fr 1fr;padding:5px 8px;gap:5px;border-top:1px solid var(--line)}.pedigree-row{gap:4px}.pedigree-row small{width:25px;flex-basis:25px;font-size:8px}.pedigree-row strong{font-size:8px;padding:4px 5px}
+ .runs-section{padding:0 6px 7px}.runs-heading{padding:6px 1px 5px}.runs-heading strong{font-size:10px}.runs{grid-template-columns:1fr;gap:5px}.run{border-radius:7px}.run-head{padding:4px 7px;font-size:9px}.run-date{font-size:8px}.run-summary{padding:4px 7px 4px;min-height:0;display:flex;align-items:baseline;justify-content:space-between;gap:5px;flex-wrap:wrap}.run-summary strong{font-size:9.5px}.run-summary .run-course{font-size:8px;margin-top:0}.run-summary span:not(.run-course){font-size:8px;margin-top:0}.run-details{grid-template-columns:repeat(4,minmax(0,1fr))}.metric{padding:3px 1px 2px}.metric label{font-size:7px}.metric b{font-size:9px;margin-top:1px}.run-passage{padding:4px 7px;font-size:8px}.run-passage label{font-size:7px}
+ .data-section{margin:0 6px 7px;border-radius:8px}.data-head{padding:5px 8px}.data-head strong{font-size:10px}.data-existing{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:5px}.data-chip{padding:4px 1px;border-radius:5px}.data-chip small{font-size:7px;line-height:1.1}.data-chip b{font-size:8px;margin-top:2px}.data-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:0 5px 5px}.data-tab{width:100%;text-align:center;white-space:normal;line-height:1.15}.data-tab{font-size:8px;padding:4px 6px}.data-panel{padding:0 5px 6px}.panel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.panel-card{padding:6px}.panel-card h4{font-size:8px;margin-bottom:4px}.stats{font-size:8px;gap:3px 4px}.stats strong{font-size:8px}.four-counts{gap:2px}.four-counts div{padding:3px 0}.four-counts small{font-size:7px}.four-counts b{font-size:9px}
+ .comments{margin:0 6px 8px;border-radius:8px}.comments-head{padding:6px 8px;font-size:10px}.comment-current{padding:7px 8px;font-size:9px}.previous-result{padding:5px 8px 2px;font-size:8px}.comment-previous{padding:2px 8px 7px;font-size:8.5px}
+}
+@media(min-width:621px) and (max-width:900px){.profile{grid-template-columns:1fr 1fr}.data-existing{grid-template-columns:repeat(4,minmax(0,1fr))}.runs{gap:5px}.metric b{font-size:9px}}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="racehead">
+ <div class="head-inner">
+  <div class="date-line"><span>2026年11月1日（日）</span><i class="dot"></i><span>4回東京11日目</span><i class="dot"></i><span>14頭</span><i class="dot"></i><span>16:25発走</span></div>
+  <div class="title-line"><span class="race-no">TOKYO 12R</span><span class="race-title">清里特別</span></div>
+  <div class="race-subtitle">3歳以上・2勝クラス　ハンデ　（混）［指定］</div>
+  <div class="race-pills"><span class="pill">東京</span><span class="pill">ダート 1,600m</span></div>
+ </div>
+</header>
+<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+ <div class="profile">
+  <div class="profile-main">
+   <div class="identity">
+    <div class="number-wrap"><div class="frame-no frame-1" data-horse="1" aria-label="1番">1</div></div>
+    <div><div class="horse-name">フェスタリア</div><div class="horse-meta"><span>性齢 <b>—</b></span><i class="sep">·</i><span>斤量 <b>54kg</b></span></div></div>
+   </div>
+   <div class="basics"><div class="basic"><label>騎</label><strong class="source-text affiliation miho" aria-label="原優介・美浦所属">原優介</strong></div><div class="basic"><label>厩</label><strong class="source-text affiliation miho" aria-label="矢野英一・美浦所属">矢野英一</strong></div></div>
+  </div>
+  <div class="pedigree">
+   <div class="pedigree-row"><small>父</small><strong class="sire">ゴールドドリーム</strong></div>
+   <div class="pedigree-row"><small>母父</small><strong class="bms">Cherokee Run（ナスルーラ系）</strong></div>
+  </div>
+ </div>
+ <section class="runs-section">
+  <div class="runs-heading"><strong>近3走</strong></div>
+  <div class="runs">
+   <article class="run">
+    <div class="run-head"><span>前走</span><span class="run-date">2026.07.25</span></div>
+    <div class="run-summary"><strong>桑園特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>3歳以上 2勝　和田　58kg　448kg　良</span></div>
+    <div class="run-details">
+     <div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric silver"><label>着</label><b>10</b></div>
+     <div class="metric"><label>着差</label><b>1.8</b></div><div class="metric gray"><label>指数</label><b>73</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>9</b></div>
+     <div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>後</b></div>
+    </div><div class="run-passage"><label>通過順</label><strong>10 - 11 - 11 - 9</strong></div>
+   </article>
+   <article class="run">
+    <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
+    <div class="run-summary"><strong>津軽海Ｈ</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>3歳以上 2勝　今村　55kg　454kg　良</span></div>
+    <div class="run-details">
+     <div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric silver"><label>着</label><b>9</b></div>
+     <div class="metric"><label>着差</label><b>1.3</b></div><div class="metric gray"><label>指数</label><b>83</b></div><div class="metric yellow"><label>上3F</label><b>37.2</b></div><div class="metric yellow"><label>順</label><b>1</b></div>
+     <div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>後</b></div>
+    </div><div class="run-passage"><label>通過順</label><strong>12 - 12 - 12 - 11</strong></div>
+   </article>
+   <article class="run">
+    <div class="run-head"><span>3走前</span><span class="run-date">2026.04.19</span></div>
+    <div class="run-summary"><strong>利根川特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>4歳以上 2勝　原優　58kg　446kg　良</span></div>
+    <div class="run-details">
+     <div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric silver"><label>着</label><b>9</b></div>
+     <div class="metric"><label>着差</label><b>1.1</b></div><div class="metric gray"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>38.8</b></div><div class="metric"><label>順</label><b>9</b></div>
+     <div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric" style="grid-column:span 2"><label>脚</label><b>マ</b></div>
+    </div><div class="run-passage"><label>通過順</label><strong>11 - 10 - 3 - 4</strong></div>
+   </article>
+  </div>
+ </section>
+ <section class="data-section">
+  <div class="data-head"><strong>DATA</strong></div>
+  <div class="data-existing">
+   <div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div>
+   <div class="data-chip"><small>全場D1600</small><b class="record">(0-0-0-0)</b></div>
+   <div class="data-chip"><small>左回</small><b class="record">(0-1-0-3)</b></div>
+   <div class="data-chip"><small>右回</small><b class="record">(2-0-1-7)</b></div>
+   <div class="data-chip"><small>坂有ダ</small><b class="record">(2-0-1-7)</b></div>
+   <div class="data-chip"><small>平坦ダ</small><b class="record">(0-1-0-3)</b></div>
+   <div class="data-chip"><small>内枠</small><b class="record">(1-0-0-3)</b></div>
+   <div class="data-chip"><small>中枠</small><b class="record">(0-0-1-4)</b></div>
+   <div class="data-chip"><small>外枠</small><b class="record">(1-1-0-3)</b></div>
+   <div class="data-chip"><small>今回1枠</small><b class="record">(1-0-0-0)</b></div>
+   <div class="data-chip"><small>重不ダ</small><b class="record">(0-0-1-0)</b></div>
+   <div class="data-chip"><small>中10～14週</small><b class="record good">(0-1-1-2)</b></div>
+   <div class="data-chip"><small>9～11月</small><b class="record">(0-0-0-1)</b></div>
+   <div class="data-chip"><small>連対体重</small><b>450～454</b></div>
+   <div class="data-chip"><small>出遅れ率</small><b>36%</b></div>
+  </div>
+  <div class="data-tabs" role="tablist" aria-label="追加データ">
+   <button class="data-tab" role="tab" aria-selected="true" data-panel="basic">全成績</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="distance">距離</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="style">脚質</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="frame">枠順</button>
+   <button class="data-tab" role="tab" aria-selected="false" data-panel="connections">騎手・厩舎・種牡馬</button>
+  </div>
+  <section class="data-panel active" id="basic" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>通算</h4><div class="stats"><span>全着</span><strong class="record">(2-1-1-10)</strong><span>全芝</span><strong class="record">(0-0-0-0)</strong><span>全ダ</span><strong class="record">(2-1-1-10)</strong></div></div>
+  </div></section>
+  <section class="data-panel" id="distance" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>同コース・同距離</h4><div class="stats"><span>東京ダ1600</span><strong class="record">(0-0-0-0)</strong><span>全場ダ1600</span><strong class="record">(0-0-0-0)</strong></div></div>
+   <div class="panel-card"><h4>距離帯別</h4><div class="stats"><span>1000～1300</span><strong class="record">(1-1-0-5)</strong><span>1400～1600</span><strong class="record">(0-0-0-2)</strong><span>1700～2000</span><strong class="record">(1-0-1-3)</strong><span>2100～2400</span><strong class="record">(0-0-0-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" id="style" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>脚質｜通算</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>1</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>1</b></div></div></div>
+   <div class="panel-card"><h4>脚質｜最近5走</h4><div class="four-counts"><div><small>逃</small><b>0</b></div><div><small>先</small><b>2</b></div><div><small>差</small><b>1</b></div><div><small>追</small><b>2</b></div></div></div>
+  </div></section>
+  <section class="data-panel" id="frame" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>枠順別</h4><div class="stats"><span>内枠</span><strong class="record">(1-0-0-3)</strong><span>中枠</span><strong class="record">(0-0-1-4)</strong><span>外枠</span><strong class="record">(1-1-0-3)</strong><span>今回1枠</span><strong class="record">(1-0-0-0)</strong></div></div>
+  </div></section>
+  <section class="data-panel" id="connections" role="tabpanel"><div class="panel-grid">
+   <div class="panel-card"><h4>騎手</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="4">4%</span>／<span data-rate="14">14%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="21">21%</span></strong></div></div>
+   <div class="panel-card"><h4>調教師</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="6">6%</span>／<span data-rate="19">19%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="2">2%</span>／<span data-rate="13">13%</span></strong></div></div>
+   <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="23">23%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="0">0%</span>／<span data-rate="18">18%</span></strong></div></div>
+  </div></section>
+ </section>
+ <section class="comments">
+  <div class="comments-head">陣営コメント</div>
+  <div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div>
+  <div class="previous-result">前走時の結果　2026年07月25日 札幌12R 桑園特別　10着（9人気）</div>
+  <div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ</div>
+ </section>
+</section>
+</main>
+<script>
+document.querySelectorAll('.data-tab').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('.data-tab').forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
+ document.querySelectorAll('.data-panel').forEach(panel=>panel.classList.toggle('active',panel.id===button.dataset.panel));
+}));
+// Condition-performance highlight: denominator >= 4 and place rate >= 50%.
+document.querySelectorAll('.record').forEach(node=>{
+ const m=node.textContent.match(/\(?\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*\)?/);
+ if(!m) return;
+ const [w,s,t,o]=m.slice(1).map(Number), total=w+s+t+o;
+ if(total>=4 && (w+s+t)/total>=0.5) node.classList.add('good');
+});
+// Jockey / trainer / sire: independently emphasize each supplied rate at 25% or higher.
+document.querySelectorAll('[data-rate]').forEach(node=>{
+ const rate=Number(node.dataset.rate);
+ if(Number.isFinite(rate) && rate>=25) node.classList.add('rate-hit');
+});
+// Apply only explicit source HTML font colors; no inferred color is added.
+document.querySelectorAll('[data-source-color]').forEach(node=>{
+ const color=node.dataset.sourceColor?.trim();
+ if(color) node.style.color=color;
+});
+// Highlight a previous-run course only when venue, surface, and distance all exactly match.
+document.querySelectorAll('.horse-card').forEach(card=>{
+ const target={venue:card.dataset.currentVenue,surface:card.dataset.currentSurface,distance:card.dataset.currentDistance};
+ card.querySelectorAll('.run-course').forEach(node=>{
+  const exact=node.dataset.venue===target.venue && node.dataset.surface===target.surface && node.dataset.distance===target.distance;
+  if(exact) node.classList.add('same-course');
+ });
+});
+// JRA frame colors: derive the frame from the number of runners and horse number.
+document.querySelectorAll('.horse-card').forEach(card=>{
+ const size=Number(card.dataset.fieldSize);
+ card.querySelectorAll('.frame-no[data-horse]').forEach(node=>{
+  const horseNo=Number(node.dataset.horse);
+  let frame=horseNo;
+  if(size>8 && size<=16){
+   // JRA 9～16頭：内側の(16-頭数)枠は1頭、残りは2頭ずつ。
+   const singles=16-size;
+   frame=horseNo<=singles ? horseNo : singles+Math.ceil((horseNo-singles)/2);
+  }else if(size>16){
+   // JRA 17～18頭：内側は2頭ずつ、余剰分を外側の枠に3頭ずつ。
+   const doubles=24-size;
+   frame=horseNo<=doubles*2 ? Math.ceil(horseNo/2) : doubles+Math.ceil((horseNo-doubles*2)/3);
+  }
+  frame=Math.max(1,Math.min(8,frame));
+  node.className='frame-no frame-'+frame;
+  node.setAttribute('aria-label',horseNo+'番・'+frame+'枠');
+ });
+});
+</script>
+</body>
+</html>
