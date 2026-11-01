@@ -164,6 +164,26 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .connections-section .panel-grid{padding:5px}
 }
 
+
+/* Vertically stacked horse sections; each horse can be collapsed independently */
+.horse-collapse-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;border:0;border-top:1px solid #d7e4d9;border-bottom:1px solid #d7e4d9;background:#f2f7f3;color:#24563a;font:850 10px system-ui,-apple-system,sans-serif;cursor:pointer;text-align:left}
+.horse-collapse-toggle .collapse-mark{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#dceee1;color:#24563a;font-size:14px;line-height:1;font-weight:950}
+.horse-details{display:block}
+.horse-section{border-top:1px solid #dce7de;padding:0 0 7px;background:#fff}
+.horse-section-head{display:flex;align-items:center;justify-content:space-between;padding:7px 11px;background:linear-gradient(90deg,#e8f3ea,#f5f9f5);color:#17432f;border-bottom:1px solid #dce7de;font-size:10px;font-weight:950;letter-spacing:.055em}
+.horse-section-head small{font-size:9px;letter-spacing:0;color:#607267;font-weight:800}
+.horse-section .runs-section{padding-top:0}
+.horse-section .data-section{margin-top:0}
+.horse-section .connections-section,.horse-section .comments{margin-top:0}
+.comments .comments-head{display:none}
+@media(max-width:620px){
+ .horse-collapse-toggle{padding:6px 9px;font-size:9px}
+ .horse-section-head{padding:6px 8px;font-size:9px}
+ .horse-section-head small{font-size:8px}
+ .horse-section .runs-section{padding-left:6px;padding-right:6px}
+ .horse-section .data-section,.horse-section .connections-section,.horse-section .comments{margin-left:6px;margin-right:6px}
+}
+
 </style>
 </head>
 <body>
@@ -209,12 +229,14 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="pedigree-row"><small>母父</small><strong class="bms">Cherokee Run（ナスルーラ系）</strong></div>
   </div>
  </div>
- <nav class="primary-tabs" role="tablist" aria-label="Horse information sections">
-  <button type="button" class="primary-tab" role="tab" aria-selected="true" data-primary-panel="recent">RECENT FORM</button>
-  <button type="button" class="primary-tab" role="tab" aria-selected="false" data-primary-panel="data">DATA</button>
-  <button type="button" class="primary-tab" role="tab" aria-selected="false" data-primary-panel="connections">CONNECTIONS</button>
- </nav>
- <section class="primary-panel" data-primary-content="recent" role="tabpanel">
+ 
+<button type="button" class="horse-collapse-toggle" aria-expanded="true">
+ <span>この馬の詳細を閉じる</span><span class="collapse-mark" aria-hidden="true">−</span>
+</button>
+<div class="horse-details">
+ <section class="horse-section recent-block">
+  <div class="horse-section-head"><span>RECENT FORM</span><small>近3走</small></div>
+  
  <section class="runs-section">
   <div class="runs-heading"><strong>近3走</strong></div>
   <div class="runs">
@@ -247,8 +269,11 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    </article>
   </div>
  </section>
+ 
  </section>
- <section class="primary-panel" data-primary-content="data" role="tabpanel" hidden>
+ <section class="horse-section data-block">
+  <div class="horse-section-head"><span>DATA</span><small>競走成績・条件別実績</small></div>
+  
  <section class="data-section">
   <div class="data-existing">
    <div class="data-chip"><small>東京ダ</small><b class="record">(0-0-0-1)</b></div>
@@ -289,8 +314,11 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   </div></section>
 
  </section>
+ 
  </section>
- <section class="primary-panel" data-primary-content="connections" role="tabpanel" hidden>
+ <section class="horse-section connections-block">
+  <div class="horse-section-head"><span>CONNECTIONS</span><small>騎手・調教師・種牡馬</small></div>
+  
   <section class="connections-section">
    <div class="connections-heading">騎手・調教師・種牡馬 成績</div>
    <div class="panel-grid">
@@ -299,14 +327,19 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="panel-card"><h4>種牡馬</h4><div class="stats"><span>全勝率／全複率</span><strong class="rate"><span data-rate="7">7%</span>／<span data-rate="23">23%</span></strong><span>当勝率／当複率</span><strong class="rate"><span data-rate="0">0%</span>／<span data-rate="18">18%</span></strong></div></div>
    </div>
   </section>
- <section class="comments">
-  <div class="comments-head">陣営コメント</div>
+ 
+ 
+ </section>
+ <section class="horse-section comments-block">
+  <div class="horse-section-head"><span>COMMENTS</span><small>陣営コメント・前走時コメント</small></div>
+  <section class="comments">
   <div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div>
   <div class="previous-result">前走時の結果　2026年07月25日 札幌12R 桑園特別　10着（9人気）</div>
   <div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ</div>
  </section>
  </section>
-</section>
+</div>
+
 </section>
 </main>
 <script>
@@ -322,15 +355,19 @@ document.getElementById('back-to-race-list').addEventListener('click',()=>{
  raceListView.hidden=false;
  window.scrollTo({top:0,behavior:'auto'});
 });
-// Each horse owns its own tabs, so adding more horse cards does not cross-switch panels.
+// Each horse has its own collapsible detail area; the profile stays visible.
 document.querySelectorAll('.horse-card').forEach(card=>{
- const primaryTabs=card.querySelectorAll('.primary-tab');
- const primaryPanels=card.querySelectorAll('.primary-panel');
- primaryTabs.forEach(button=>button.addEventListener('click',()=>{
-  const target=button.dataset.primaryPanel;
-  primaryTabs.forEach(tab=>tab.setAttribute('aria-selected',String(tab===button)));
-  primaryPanels.forEach(panel=>panel.hidden=panel.dataset.primaryContent!==target);
- }));
+ const toggle=card.querySelector('.horse-collapse-toggle');
+ const details=card.querySelector('.horse-details');
+ if(toggle && details){
+  toggle.addEventListener('click',()=>{
+   const expanded=toggle.getAttribute('aria-expanded')==='true';
+   toggle.setAttribute('aria-expanded',String(!expanded));
+   details.hidden=expanded;
+   toggle.querySelector('span:first-child').textContent=expanded?'この馬の詳細を表示':'この馬の詳細を閉じる';
+   toggle.querySelector('.collapse-mark').textContent=expanded?'+':'−';
+  });
+ }
  const dataTabs=card.querySelectorAll('.data-tab');
  const dataPanels=card.querySelectorAll('.data-panel');
  dataTabs.forEach(button=>button.addEventListener('click',()=>{
