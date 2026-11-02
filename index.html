@@ -288,6 +288,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .run-details .metric.yellow{background:#ffff00}
 .run-details .metric.aqua{background:#00ffff}
 .run-details .metric.lime{background:#00ff00}
+.comment-current.is-ichioshi{background:#fff8d9!important;border:1px solid #efd98a;border-left:4px solid #e2b83f;border-radius:6px;padding:9px 10px}
+.ichioshi-badge{display:inline-flex;align-items:center;margin-left:5px;padding:2px 6px;border:1px solid #e4c15c;border-radius:999px;background:#fff1b8;color:#75500a;font-size:8px;font-weight:950;line-height:1.25;white-space:nowrap;vertical-align:middle}
 
 </style>
 </head>
@@ -1103,6 +1105,20 @@ document.querySelectorAll('[data-rate]').forEach(node=>{
 document.querySelectorAll('[data-source-color]').forEach(node=>{
  const color=node.dataset.sourceColor?.trim();
  if(color) node.style.color=color;
+});
+// Mark horses whose current stable comment explicitly contains the source tag "イチオシ".
+document.querySelectorAll('.horse-card').forEach(card=>{
+ const comment=card.querySelector('.comment-current');
+ if(!comment || !comment.textContent.includes('イチオシ')) return;
+ comment.classList.add('is-ichioshi');
+ const stableChip=[...card.querySelectorAll('.pedigree-inline .affiliation-chip')]
+  .find(chip=>chip.querySelector('small')?.textContent.trim()==='厩舎');
+ if(stableChip && !stableChip.querySelector('.ichioshi-badge')){
+  const badge=document.createElement('span');
+  badge.className='ichioshi-badge';
+  badge.textContent='イチオシ';
+  stableChip.appendChild(badge);
+ }
 });
 // Highlight a previous-run course only when venue, surface, and distance all exactly match.
 document.querySelectorAll('.horse-card').forEach(card=>{
