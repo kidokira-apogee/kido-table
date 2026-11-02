@@ -234,6 +234,46 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .comments{overflow:visible!important;max-height:none!important}
 @media(max-width:620px){.pedigree-inline{gap:4px;padding:5px 7px 7px}.pedigree-inline strong{font-size:8px;padding:4px 5px}.comment-current{font-size:10px!important;line-height:1.7!important}}
 
+
+/* Profile refinement: keep the four identity tags in one horizontal row */
+.profile{display:flex!important;flex-direction:column!important;align-items:stretch!important}
+.profile-main{width:100%;min-width:0}
+.identity-main{align-items:center;gap:7px 9px}
+.horse-facts{margin-left:0!important;gap:5px 8px}
+.horse-facts .basic{align-items:center;gap:4px}
+.sex-age-pill{border:1px solid #d7e0d8;border-radius:6px;padding:4px 7px;background:#f2f6f2}
+.sex-age-pill label,.weight-pill label{font-size:9px!important}
+.sex-age-pill strong{font-size:14px!important;font-weight:950!important;letter-spacing:.01em}
+.sex-age-pill.female{background:#ffe0e9;border:1px solid #f1afc2;border-radius:6px}
+.sex-age-pill.female strong{color:#6f263e}
+.weight-pill strong{font-size:12px!important}
+.pedigree-inline{display:grid!important;grid-template-columns:1.25fr 2fr 1fr 1.25fr;gap:5px!important;padding:7px 10px 8px!important;border-top:1px solid var(--line);align-items:stretch}
+.pedigree-inline>strong{display:flex;align-items:center;justify-content:center;min-width:0;max-width:none!important;min-height:34px;padding:5px 6px!important;text-align:center;overflow-wrap:anywhere;word-break:normal}
+.pedigree-inline .pedigree-father,.pedigree-inline .pedigree-mother{font-size:10px!important}
+.pedigree-inline .affiliation-chip{flex-direction:column;gap:2px;border-radius:5px;border:1px solid transparent;color:#17251e!important;font-size:10px!important}
+.pedigree-inline .affiliation-chip small{font-size:7px;font-weight:850;line-height:1;color:#25352b;opacity:.75}
+.pedigree-inline .affiliation-chip span{font-size:10px;line-height:1.2;font-weight:950;overflow-wrap:anywhere}
+.pedigree-inline .base-miho{background:#f8dce1!important;border-color:#eab2bc!important}
+.pedigree-inline .base-ritto{background:#dce9fb!important;border-color:#b3c9ea!important}
+.push-badge{display:inline-flex;align-items:center;padding:3px 6px;border-radius:5px;background:#fff0c2;border:1px solid #eacb70;color:#79500d;font-size:9px;font-weight:950;white-space:nowrap}
+.comment-stable{padding:7px 10px 3px;background:#fff;color:#52645a;font-size:9px;font-weight:900}
+.comment-reporter{display:inline-block;margin-left:5px;color:#77847c;font-size:.9em;font-weight:750;white-space:nowrap}
+@media(max-width:620px){
+ .horse-name{font-size:17px!important}
+ .identity-main{gap:5px 7px}
+ .horse-facts{gap:4px 6px}
+ .sex-age-pill{padding:3px 6px}
+ .sex-age-pill strong{font-size:13px!important}
+ .weight-pill strong{font-size:11px!important}
+ .pedigree-inline{grid-template-columns:1.25fr 2fr 1fr 1.25fr!important;gap:4px!important;padding:5px 7px 7px!important}
+ .pedigree-inline>strong{min-height:36px;padding:4px 4px!important}
+ .pedigree-inline .pedigree-father,.pedigree-inline .pedigree-mother{font-size:8px!important}
+ .pedigree-inline .affiliation-chip span{font-size:8px!important}
+ .pedigree-inline .affiliation-chip small{font-size:6.5px!important}
+ .comment-stable{font-size:9px}
+ .comment-reporter{font-size:8.5px}
+}
+
 </style>
 </head>
 <body>
@@ -263,15 +303,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="1" aria-label="1番">1</div></div>
    <div class="identity-main"><div class="horse-name">フェスタリア</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">原優介</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">矢野英一</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ゴールドドリーム</strong><strong class="pedigree-mother" style="background-color:#00ff00;color:#17251e">マダムチェロキー（Cherokee Run）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ゴールドドリーム</strong><strong class="pedigree-mother" style="background-color:#00ff00;color:#17251e">マダムチェロキー（Cherokee Run）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原優介</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>矢野英一</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -313,7 +348,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div><div class="previous-result">前走時の結果　2026.07.25 札幌・D1700 桑園特別　10着（9人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【矢野英一厩舎】</div><div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば<span class="comment-reporter">（藤井記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月25日札幌12R 桑園特別 10着(9人気)</div><div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ<span class="comment-reporter">（月花記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -321,15 +356,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="2" aria-label="2番">2</div></div>
    <div class="identity-main"><div class="horse-name">ファンシーズ</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝3／栗</strong></span>
-     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">石田拓郎</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">尾形和幸</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝3／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">タイセイブランシュ（ルーラーシップ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">タイセイブランシュ（ルーラーシップ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石田拓郎</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>尾形和幸</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -371,7 +401,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【尾形調教師】</b>続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料</div><div class="previous-result">前走時の結果　2026.06.21 東京・D1600 １勝ｸﾗｽ・牝　1着（2人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【尾形和幸厩舎】</div><div class="comment-current"><b>【尾形調教師】</b>続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料<span class="comment-reporter">（立川記者）</span></div><div class="previous-result"><b>前走</b>　2026年06月21日東京7R ３歳上１勝クラス 1着(2人気)</div><div class="comment-previous"><b>【尾形調教師】</b>前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です<span class="comment-reporter">（立川記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -379,15 +409,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="3" aria-label="3番">3</div></div>
    <div class="identity-main"><div class="horse-name">ドントゥザムーン</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡4／青鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>56kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">三浦皇成</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">高木登</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>56kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">カレンブラックヒル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">ドナプリモ（フリオーソ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">カレンブラックヒル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">ドナプリモ（フリオーソ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>三浦皇成</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>高木登</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -429,7 +454,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【高木調教師】</b>前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1300 ２勝ｸﾗｽ　5着（2人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【高木登厩舎】</div><div class="comment-current"><b>【高木調教師】</b>前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 5着(2人気)</div><div class="comment-previous"><b>【高木調教師】</b>距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい<span class="comment-reporter">（山下記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -437,15 +462,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="4" aria-label="4番">4</div></div>
    <div class="identity-main"><div class="horse-name">スルーザナイト</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝4／芦</strong></span>
-     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">佐々木大</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">西園翔太</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／芦</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">リアルインパクト</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">マイティースルー（クロフネ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">リアルインパクト</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">マイティースルー（クロフネ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>佐々木大</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>西園翔太</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -487,7 +507,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【西園翔調教師】</b>この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を</div><div class="previous-result">前走時の結果　2026.07.26 新潟・D1800 麒麟山特　14着（10人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【西園翔太厩舎】</div><div class="comment-current"><b>【西園翔調教師】</b>この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月26日新潟8R 麒麟山特別 14着(10人気)</div><div class="comment-previous"><b>【西園翔調教師】</b>左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で<span class="comment-reporter">（西谷記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -495,15 +515,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="5" aria-label="5番">5</div></div>
    <div class="identity-main"><div class="horse-name">レーヴドレフォン</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝5／栗</strong></span>
-     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">古川吉洋</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">橋田宜長</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝5／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">ドレフォン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">レーヴドリーブ（オルフェーヴル）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">ドレフォン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">レーヴドリーブ（オルフェーヴル）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>古川吉洋</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>橋田宜長</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -545,7 +560,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【木下助手】</b>2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな</div><div class="previous-result">前走時の結果　2026.09.22 中山・D1800 鋸山特別　11着（11人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【橋田宜長厩舎】</div><div class="comment-current"><b>【木下助手】</b>2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな<span class="comment-reporter">（難波田記者）</span></div><div class="previous-result"><b>前走</b>　2026年09月22日中山9R 鋸山特別 11着(11人気)</div><div class="comment-previous"><b>【木下助手】</b>状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら<span class="comment-reporter">（難波田記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -553,15 +568,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="6" aria-label="6番">6</div></div>
    <div class="identity-main"><div class="horse-name">シャンハイナイト</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝4／青鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>51kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">江田照男</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">村田一誠</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>51kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">シャンハイボビー</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">スズノメヒョー（バチアー）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">シャンハイボビー</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">スズノメヒョー（バチアー）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>江田照男</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>村田一誠</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -603,7 +613,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【村田調教師】</b>乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか</div><div class="previous-result">前走時の結果　2026.08.29 札幌・D1700 千歳特別　11着（8人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【村田一誠厩舎】</div><div class="comment-current"><b>【村田調教師】</b>乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 11着(8人気)</div><div class="comment-previous"><b>【村田調教師】</b>クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する<span class="comment-reporter">（山下記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -611,15 +621,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="7" aria-label="7番">7</div></div>
    <div class="identity-main"><div class="horse-name">アイファーバトル</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡5／黒鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">松岡正海</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">蛯名利弘</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／黒鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">バトルプラン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">エアリーチューン（ステイゴールド）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">バトルプラン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">エアリーチューン（ステイゴールド）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>松岡正海</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>蛯名利弘</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -661,23 +666,18 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ</div><div class="previous-result">前走時の結果　2026.02.22 阪神・T1600 天神橋Ｈ　10着（10人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【蛯名利弘厩舎】</div><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年02月22日阪神9R 天神橋特別 10着(10人気)</div><div class="comment-previous"><b>【小山助手】</b>少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう<span class="comment-reporter">（三嶋記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
  <div class="profile">
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="8" aria-label="8番">8</div></div>
-   <div class="identity-main"><div class="horse-name">スマートスピア</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡5／青鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>57kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">ルメール</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">池江泰寿</strong></span>
-    </div>
+   <div class="identity-main"><div class="horse-name">スマートスピア</div><span class="push-badge">イチ押し</span>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>57kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">キズナ</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">レジェトウショウ（キングヘイロー）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">キズナ</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">レジェトウショウ（キングヘイロー）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>ルメール</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>池江泰寿</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -719,7 +719,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【兼武助手】</b>前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら</div><div class="previous-result">前走時の結果　2026.08.22 中京・D1800 大府特別　5着（4人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【池江泰寿厩舎】</div><div class="comment-current"><b>【兼武助手】</b>前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月22日中京6R 大府特別 5着(4人気)</div><div class="comment-previous"><b>【兼武助手】</b>放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを<span class="comment-reporter">（西谷記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -727,15 +727,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="9" aria-label="9番">9</div></div>
    <div class="identity-main"><div class="horse-name">キングツェッペリン</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡5／鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">松若風馬</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">牧田和弥</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">モーニン</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">トウカイベルタ（ワイルドラッシュ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">モーニン</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">トウカイベルタ（ワイルドラッシュ）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>松若風馬</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>牧田和弥</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -777,7 +772,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【牧田調教師】</b>リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待</div><div class="previous-result">前走時の結果　2026.07.04 福島・D1700 横手特別　7着（6人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【牧田和弥厩舎】</div><div class="comment-current"><b>【牧田調教師】</b>リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月04日福島10R 横手特別 7着(6人気)</div><div class="comment-previous"><b>【牧田調教師】</b>1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば<span class="comment-reporter">（西谷記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -785,15 +780,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="10" aria-label="10番">10</div></div>
    <div class="identity-main"><div class="horse-name">セイントエルモズ</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡3／鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>54kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">菅原明良</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">小島茂之</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡3／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">サンダースノー</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">セイントヘレナ（ディープスカイ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">サンダースノー</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">セイントヘレナ（ディープスカイ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>菅原明良</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>小島茂之</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -835,7 +825,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【小島調教師】</b>放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で</div><div class="previous-result">前走時の結果　2026.06.13 東京・D2100 日野特別　11着（6人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小島茂之厩舎】</div><div class="comment-current"><b>【小島調教師】</b>放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で<span class="comment-reporter">（垰野記者）</span></div><div class="previous-result"><b>前走</b>　2026年06月13日東京9R 日野特別 11着(6人気)</div><div class="comment-previous"><b>【小島調教師】</b>上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある<span class="comment-reporter">（垰野記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -843,15 +833,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="11" aria-label="11番">11</div></div>
    <div class="identity-main"><div class="horse-name">キョウエイスレーヴ</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡4／鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">原田和真</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">萱野浩二</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">ロマネクイーン（マイネルラヴ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">ロマネクイーン（マイネルラヴ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原田和真</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>萱野浩二</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -893,7 +878,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【萱野調教師】</b>クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1300 ２勝ｸﾗｽ　13着（14人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【萱野浩二厩舎】</div><div class="comment-current"><b>【萱野調教師】</b>クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで<span class="comment-reporter">（大坂記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 13着(14人気)</div><div class="comment-previous"><b>【田口助手】</b>連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも<span class="comment-reporter">（大坂記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -901,15 +886,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="12" aria-label="12番">12</div></div>
    <div class="identity-main"><div class="horse-name">レディゴディヴァ</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝4／栗</strong></span>
-     <span class="basic"><label>斤量</label><strong>52kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">石川裕紀</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">小崎憲</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">カヒリ（キングカメハメハ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">カヒリ（キングカメハメハ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石川裕紀</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>小崎憲</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -951,23 +931,18 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば</div><div class="previous-result">前走時の結果　2026.08.29 札幌・D1700 千歳特別　6着（12人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小崎憲厩舎】</div><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば<span class="comment-reporter">（赤城記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 6着(12人気)</div><div class="comment-previous"><b>【上垣内助手】</b>使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら<span class="comment-reporter">（赤城記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
  <div class="profile">
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="13" aria-label="13番">13</div></div>
-   <div class="identity-main"><div class="horse-name">サマーマッドネス</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牡3／栗</strong></span>
-     <span class="basic"><label>斤量</label><strong>55kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text" style="color:#0000ff">川田将雅</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text" style="color:#0000ff">森秀行</strong></span>
-    </div>
+   <div class="identity-main"><div class="horse-name">サマーマッドネス</div><span class="push-badge">イチ押し</span>
+    <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡3／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>55kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">Good Magic</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">Nefferkitty（Kitten's Joy）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">Good Magic</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">Nefferkitty（Kitten's Joy）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>川田将雅</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>森秀行</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1009,7 +984,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【清水助手】</b>体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう</div><div class="previous-result">前走時の結果　2026.10.11 東京・D1600 １勝ｸﾗｽ　1着（3人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【森秀行厩舎】</div><div class="comment-current"><b>【清水助手】</b>体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう<span class="comment-reporter">（芝井記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京7R ３歳上１勝クラス 1着(3人気)</div><div class="comment-previous"><b>【清水助手】</b>体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか<span class="comment-reporter">（芝井記者）</span></div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -1017,15 +992,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="14" aria-label="14番">14</div></div>
    <div class="identity-main"><div class="horse-name">タマモカンパネラ</div>
-    <div class="horse-facts">
-     <span class="basic"><label>性齢</label><strong>牝4／鹿</strong></span>
-     <span class="basic"><label>斤量</label><strong>53kg</strong></span>
-     <span class="basic"><label>騎手</label><strong class="source-text">丹内祐次</strong></span>
-     <span class="basic"><label>調教師</label><strong class="source-text">伊藤圭三</strong></span>
-    </div>
+    <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ナダル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">タマモボレロ（ハーツクライ）</strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ナダル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">タマモボレロ（ハーツクライ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>丹内祐次</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>伊藤圭三</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1067,7 +1037,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-current"><b>【伊藤圭調教師】</b>前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある</div><div class="previous-result">前走時の結果　2026.10.04 東京・D1600 ２勝ｸﾗｽ　6着（14人気）</div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【伊藤圭三厩舎】</div><div class="comment-current"><b>【伊藤圭調教師】</b>前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある<span class="comment-reporter">（大坂記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月04日東京12R ３歳上２勝クラス 6着(14人気)</div><div class="comment-previous"><b>【伊藤圭調教師】</b>中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら<span class="comment-reporter">（大坂記者）</span></div></section></div>
  </section>
 </section>
 </main>
