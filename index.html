@@ -316,7 +316,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   const gray=new Set(['silver','gray','grey','#c0c0c0','#808080','#a9a9a9','#d3d3d3','#e8e8e8','rgb(192, 192, 192)','rgb(128, 128, 128)','rgb(169, 169, 169)','rgb(211, 211, 211)','rgb(232, 232, 232)']);
   root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
    const values=[node.style.backgroundColor,node.style.background,node.getAttribute('bgcolor')||''];
-   const isGray=values.some(value=>gray.has(String(value).trim().toLowerCase().replace(/\\s+/g,' ')));
+   const isGray=values.some(value=>gray.has(String(value).trim().toLowerCase().replace(/\s+/g,' ')));
    if(isGray){
     node.style.removeProperty('background-color');
     node.style.removeProperty('background');
