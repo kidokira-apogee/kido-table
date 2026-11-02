@@ -257,7 +257,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .pedigree-inline .base-ritto{background:#dce9fb!important;border-color:#b3c9ea!important}
 .push-badge{display:inline-flex;align-items:center;padding:3px 6px;border-radius:5px;background:#fff0c2;border:1px solid #eacb70;color:#79500d;font-size:9px;font-weight:950;white-space:nowrap}
 .comment-stable{padding:7px 10px 3px;background:#fff;color:#52645a;font-size:9px;font-weight:900}
-.comment-reporter{display:inline-block;margin-left:5px;color:#77847c;font-size:.9em;font-weight:750;white-space:nowrap}
+
 @media(max-width:620px){
  .horse-name{font-size:17px!important}
  .identity-main{gap:5px 7px}
@@ -271,8 +271,23 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .pedigree-inline .affiliation-chip span{font-size:8px!important}
  .pedigree-inline .affiliation-chip small{font-size:6.5px!important}
  .comment-stable{font-size:9px}
- .comment-reporter{font-size:8.5px}
+ 
 }
+
+
+/* Requested refinements: dam line break and compact two-row recent form. */
+.pedigree-inline .pedigree-mother{flex-direction:column;gap:1px;line-height:1.12}
+.pedigree-mother .dam-name{display:block}
+.pedigree-mother .dam-line{display:block;font-size:.82em;line-height:1.1;font-weight:800}
+.run-details{grid-template-columns:repeat(6,minmax(0,1fr));gap:0}
+.run-details .metric{padding:2px 1px 2px;border-right:1px solid #e7ece8}
+.run-details .metric:nth-child(6n){border-right:0}
+.run-details .metric label{font-size:7px}
+.run-details .metric b{font-size:9px;margin-top:1px}
+.run-details .metric.gray,.run-details .metric.silver{background:transparent!important}
+.run-details .metric.yellow{background:#ffff00}
+.run-details .metric.aqua{background:#00ffff}
+.run-details .metric.lime{background:#00ff00}
 
 </style>
 </head>
@@ -306,7 +321,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ゴールドドリーム</strong><strong class="pedigree-mother" style="background-color:#00ff00;color:#17251e">マダムチェロキー（Cherokee Run）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原優介</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>矢野英一</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ゴールドドリーム</strong><strong class="pedigree-mother" style="background-color:#00ff00;color:#17251e"><span class="dam-name">マダムチェロキー</span><span class="dam-line">（Cherokee Run）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原優介</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>矢野英一</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -314,17 +329,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.07.25</span></div>
  <div class="run-summary"><strong>桑園特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　和田　58kg　448kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>73</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>11</b></div><div class="metric"><label>馬番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着数</label><b>10</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>73</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>⑨</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>10 - 11 - 11 - 9</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
  <div class="run-summary"><strong>津軽海Ｈ</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>３上・2勝　今村　55kg　454kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>1.3</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>37.2</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>2</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着数</label><b>9</b></div><div class="metric"><label>着差</label><b>1.3</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>37.2</b></div><div class="metric"><label>順</label><b>①</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>12 - 12 - 12 - 11</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.04.19</span></div>
  <div class="run-summary"><strong>利根川特</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>４上・2勝　原優　58kg　446kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>38.8</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>5</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着数</label><b>9</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>38.8</b></div><div class="metric"><label>順</label><b>⑨</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>マクリ</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 10 - 3 - 4</strong></div>
  </article></div>
   </section></div>
@@ -348,7 +363,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【矢野英一厩舎】</div><div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば<span class="comment-reporter">（藤井記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月25日札幌12R 桑園特別 10着(9人気)</div><div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ<span class="comment-reporter">（月花記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【矢野英一厩舎】</div><div class="comment-current"><b>【矢野調教師】</b>最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば</div><div class="previous-result"><b>前走</b>　2026年07月25日札幌12R 桑園特別 10着(9人気)</div><div class="comment-previous"><b>【矢野調教師】</b>前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -359,7 +374,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝3／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">タイセイブランシュ（ルーラーシップ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石田拓郎</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>尾形和幸</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e"><span class="dam-name">タイセイブランシュ</span><span class="dam-line">（ルーラーシップ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石田拓郎</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>尾形和幸</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -367,17 +382,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.06.21</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　石田　50▲kg　438kg　重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.4</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>10</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着数</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.4</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>5 - 4</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.06.06</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　石田　50▲kg　446kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>3</b></div><div class="metric"><label>着差</label><b>—</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>4</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着数</label><b>3</b></div><div class="metric"><label>着差</label><b>—</b></div><div class="metric"><label>指数</label><b>83</b></div><div class="metric"><label>上3F</label><b>36.7</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>9 - 9</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.17</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ・牝*</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・1勝　大野　55kg　438kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>8</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>4</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>4</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>8</b></div><div class="metric"><label>馬番</label><b>3</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着数</label><b>4</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>④</b></div><div class="metric"><label>間隔</label><b>2週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>5 - 5</strong></div>
  </article></div>
   </section></div>
@@ -401,7 +416,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【尾形和幸厩舎】</div><div class="comment-current"><b>【尾形調教師】</b>続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料<span class="comment-reporter">（立川記者）</span></div><div class="previous-result"><b>前走</b>　2026年06月21日東京7R ３歳上１勝クラス 1着(2人気)</div><div class="comment-previous"><b>【尾形調教師】</b>前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です<span class="comment-reporter">（立川記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【尾形和幸厩舎】</div><div class="comment-current"><b>【尾形調教師】</b>続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料</div><div class="previous-result"><b>前走</b>　2026年06月21日東京7R ３歳上１勝クラス 1着(2人気)</div><div class="comment-previous"><b>【尾形調教師】</b>前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -412,7 +427,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>56kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">カレンブラックヒル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">ドナプリモ（フリオーソ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>三浦皇成</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>高木登</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">カレンブラックヒル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e"><span class="dam-name">ドナプリモ</span><span class="dam-line">（フリオーソ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>三浦皇成</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>高木登</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -420,17 +435,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1300">東京・D1300</span><span>３上・2勝　三浦　58kg　474kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>0.4</b></div><div class="metric"><label>指数</label><b>90</b></div><div class="metric"><label>上3F</label><b>36.6</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>13</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着数</label><b>5</b></div><div class="metric"><label>着差</label><b>0.4</b></div><div class="metric"><label>指数</label><b>90</b></div><div class="metric"><label>上3F</label><b>36.6</b></div><div class="metric"><label>順</label><b>⑨</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>3 - 3</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.09.06</span></div>
  <div class="run-summary"><strong>浦安特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1200">中山・D1200</span><span>３上・2勝　三浦　58kg　470kg　不良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>16</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>16</b></div><div class="metric"><label>間隔</label><b>11週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>16</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着数</label><b>13</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>⑯</b></div><div class="metric"><label>間隔</label><b>11週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>4 - 4</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.06.21</span></div>
  <div class="run-summary"><strong>甲州街道</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>３上・2勝　木幡　58kg　470kg　重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>1</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>14</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>1</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着数</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>79</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>⑭</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>2 - 3</strong></div>
  </article></div>
   </section></div>
@@ -454,7 +469,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【高木登厩舎】</div><div class="comment-current"><b>【高木調教師】</b>前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 5着(2人気)</div><div class="comment-previous"><b>【高木調教師】</b>距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい<span class="comment-reporter">（山下記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【高木登厩舎】</div><div class="comment-current"><b>【高木調教師】</b>前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する</div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 5着(2人気)</div><div class="comment-previous"><b>【高木調教師】</b>距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -465,7 +480,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／芦</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">リアルインパクト</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">マイティースルー（クロフネ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>佐々木大</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>西園翔太</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">リアルインパクト</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e"><span class="dam-name">マイティースルー</span><span class="dam-line">（クロフネ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>佐々木大</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>西園翔太</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -473,17 +488,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.07.26</span></div>
  <div class="run-summary"><strong>麒麟山特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>３上・2勝　石川　56kg　494kg　不良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>14</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>67</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>14</b></div><div class="metric"><label>間隔</label><b>15週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>15</b></div><div class="metric"><label>馬番</label><b>13</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着数</label><b>14</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>67</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>⑭</b></div><div class="metric"><label>間隔</label><b>15週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>5 - 6 - 6 - 6</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.04.12</span></div>
  <div class="run-summary"><strong>川西特別</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1800">阪神・D1800</span><span>４上・2勝　北村　56kg　494kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>1.0</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.4</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>11</b></div><div class="metric"><label>馬番</label><b>6</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着数</label><b>5</b></div><div class="metric"><label>着差</label><b>1.0</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.4</b></div><div class="metric"><label>順</label><b>⑧</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>2 - 2 - 2 - 2</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.03.22</span></div>
  <div class="run-summary"><strong>弥富特別</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1900">中京・D1900</span><span>４上・2勝　亀田　56kg　496kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.7</b></div><div class="metric"><label>指数</label><b>75</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>12</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>14</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着数</label><b>13</b></div><div class="metric"><label>着差</label><b>1.7</b></div><div class="metric"><label>指数</label><b>75</b></div><div class="metric"><label>上3F</label><b>38.9</b></div><div class="metric"><label>順</label><b>⑫</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>7 - 7 - 6 - 6</strong></div>
  </article></div>
   </section></div>
@@ -507,7 +522,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【西園翔太厩舎】</div><div class="comment-current"><b>【西園翔調教師】</b>この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月26日新潟8R 麒麟山特別 14着(10人気)</div><div class="comment-previous"><b>【西園翔調教師】</b>左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で<span class="comment-reporter">（西谷記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【西園翔太厩舎】</div><div class="comment-current"><b>【西園翔調教師】</b>この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を</div><div class="previous-result"><b>前走</b>　2026年07月26日新潟8R 麒麟山特別 14着(10人気)</div><div class="comment-previous"><b>【西園翔調教師】</b>左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -518,7 +533,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝5／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">ドレフォン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">レーヴドリーブ（オルフェーヴル）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>古川吉洋</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>橋田宜長</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">ドレフォン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e"><span class="dam-name">レーヴドリーブ</span><span class="dam-line">（オルフェーヴル）</span></strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>古川吉洋</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>橋田宜長</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -526,17 +541,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.09.22</span></div>
  <div class="run-summary"><strong>鋸山特別</strong><span class="run-course" data-venue="中山" data-surface="D" data-distance="1800">中山・D1800</span><span>３上・2勝　丸田　56kg　476kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>40.5</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>12</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>40.5</b></div><div class="metric"><label>順</label><b>⑩</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>14 - 14 - 12 - 12</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.07.26</span></div>
  <div class="run-summary"><strong>麒麟山特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>３上・2勝　今村　56kg　476kg　不良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>37.3</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>15</b></div><div class="metric"><label>馬番</label><b>9</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>37.3</b></div><div class="metric"><label>順</label><b>⑨</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>13 - 12 - 11 - 11</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.23</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>４上・2勝　吉田　56kg　480kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>1</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>4</b></div><div class="metric"><label>間隔</label><b>14週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>1</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>1.6</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>④</b></div><div class="metric"><label>間隔</label><b>14週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>14 - 16</strong></div>
  </article></div>
   </section></div>
@@ -560,7 +575,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【橋田宜長厩舎】</div><div class="comment-current"><b>【木下助手】</b>2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな<span class="comment-reporter">（難波田記者）</span></div><div class="previous-result"><b>前走</b>　2026年09月22日中山9R 鋸山特別 11着(11人気)</div><div class="comment-previous"><b>【木下助手】</b>状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら<span class="comment-reporter">（難波田記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【橋田宜長厩舎】</div><div class="comment-current"><b>【木下助手】</b>2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな</div><div class="previous-result"><b>前走</b>　2026年09月22日中山9R 鋸山特別 11着(11人気)</div><div class="comment-previous"><b>【木下助手】</b>状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -571,7 +586,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>51kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">シャンハイボビー</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">スズノメヒョー（バチアー）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>江田照男</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>村田一誠</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">シャンハイボビー</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e"><span class="dam-name">スズノメヒョー</span><span class="dam-line">（バチアー）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>江田照男</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>村田一誠</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -579,17 +594,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.08.29</span></div>
  <div class="run-summary"><strong>千歳特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　河原　56kg　478kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>70</b></div><div class="metric"><label>上3F</label><b>39.3</b></div><div class="metric"><label>順</label><b>12</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>逃</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>12</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>2.6</b></div><div class="metric"><label>指数</label><b>70</b></div><div class="metric"><label>上3F</label><b>39.3</b></div><div class="metric"><label>順</label><b>⑫</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>逃げ</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>1 - 1 - 1 - 2</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.08.09</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1200">新潟・D1200</span><span>３上・2勝　大野　56kg　482kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>7</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>12週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>15</b></div><div class="metric"><label>馬番</label><b>7</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着数</label><b>13</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>⑦</b></div><div class="metric"><label>間隔</label><b>12週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>12 - 14</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.16</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1200">新潟・D1200</span><span>４上・1勝　河原　52★kg　474kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>35.9</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>13</b></div><div class="metric"><label>馬番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着数</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>35.9</b></div><div class="metric"><label>順</label><b>①</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 10</strong></div>
  </article></div>
   </section></div>
@@ -613,7 +628,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【村田一誠厩舎】</div><div class="comment-current"><b>【村田調教師】</b>乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 11着(8人気)</div><div class="comment-previous"><b>【村田調教師】</b>クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する<span class="comment-reporter">（山下記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【村田一誠厩舎】</div><div class="comment-current"><b>【村田調教師】</b>乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか</div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 11着(8人気)</div><div class="comment-previous"><b>【村田調教師】</b>クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -624,7 +639,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／黒鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">バトルプラン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">エアリーチューン（ステイゴールド）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>松岡正海</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>蛯名利弘</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">バトルプラン</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e"><span class="dam-name">エアリーチューン</span><span class="dam-line">（ステイゴールド）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>松岡正海</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>蛯名利弘</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -632,17 +647,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.02.22</span></div>
  <div class="run-summary"><strong>天神橋Ｈ</strong><span class="run-course" data-venue="阪神" data-surface="T" data-distance="1600">阪神・T1600</span><span>４上・2勝　秋山　53kg　480kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>0.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>33.7</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>10</b></div><div class="metric"><label>馬番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着数</label><b>10</b></div><div class="metric"><label>着差</label><b>0.9</b></div><div class="metric"><label>指数</label><b>82</b></div><div class="metric"><label>上3F</label><b>33.7</b></div><div class="metric"><label>順</label><b>⑦</b></div><div class="metric"><label>間隔</label><b>連</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>10 - 10</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.02.12</span></div>
  <div class="run-summary"><strong>ハート</strong><span class="run-course" data-venue="船橋" data-surface="D" data-distance="1600">船橋・D1600</span><span>不明・(不明)　長浜　57kg　489kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>—</b></div><div class="metric"><label>上3F</label><b>----</b></div><div class="metric"><label>順</label><b>—</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>13</b></div><div class="metric"><label>馬番</label><b>13</b></div><div class="metric"><label>人気</label><b>7</b></div><div class="metric"><label>着数</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>—</b></div><div class="metric"><label>上3F</label><b>----</b></div><div class="metric"><label>順</label><b>—</b></div><div class="metric"><label>間隔</label><b>8週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>10 - 10 - 10 - 13</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2025.12.20</span></div>
  <div class="run-summary"><strong>ヤングジ</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1400">中京・D1400</span><span>３上・2勝　古川　58kg　480kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>14</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着数</label><b>8</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>36.9</b></div><div class="metric"><label>順</label><b>①</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>14 - 14</strong></div>
  </article></div>
   </section></div>
@@ -666,7 +681,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【蛯名利弘厩舎】</div><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ<span class="comment-reporter">（山下記者）</span></div><div class="previous-result"><b>前走</b>　2026年02月22日阪神9R 天神橋特別 10着(10人気)</div><div class="comment-previous"><b>【小山助手】</b>少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう<span class="comment-reporter">（三嶋記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【蛯名利弘厩舎】</div><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ</div><div class="previous-result"><b>前走</b>　2026年02月22日阪神9R 天神橋特別 10着(10人気)</div><div class="comment-previous"><b>【小山助手】</b>少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -677,7 +692,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>57kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">キズナ</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">レジェトウショウ（キングヘイロー）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>ルメール</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>池江泰寿</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">キズナ</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e"><span class="dam-name">レジェトウショウ</span><span class="dam-line">（キングヘイロー）</span></strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>ルメール</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>池江泰寿</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -685,17 +700,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.08.22</span></div>
  <div class="run-summary"><strong>大府特別</strong><span class="run-course" data-venue="中京" data-surface="D" data-distance="1800">中京・D1800</span><span>３上・2勝　吉村　58kg　508kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着</label><b>5</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>39.2</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>10週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>14</b></div><div class="metric"><label>馬番</label><b>5</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着数</label><b>5</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>91</b></div><div class="metric"><label>上3F</label><b>39.2</b></div><div class="metric"><label>順</label><b>⑥</b></div><div class="metric"><label>間隔</label><b>10週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>5 - 5 - 6 - 6</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.06.14</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・2勝　津村　58kg　498kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>5</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着</label><b>2</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>96</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>5</b></div><div class="metric"><label>人気</label><b>2</b></div><div class="metric"><label>着数</label><b>2</b></div><div class="metric"><label>着差</label><b>0.6</b></div><div class="metric"><label>指数</label><b>96</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 8</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.16</span></div>
  <div class="run-summary"><strong>中ノ岳特</strong><span class="run-course" data-venue="新潟" data-surface="D" data-distance="1800">新潟・D1800</span><span>４上・2勝　ルメ　58kg　508kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>9</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.6</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>9</b></div><div class="metric"><label>馬番</label><b>4</b></div><div class="metric"><label>人気</label><b>1</b></div><div class="metric"><label>着数</label><b>8</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.6</b></div><div class="metric"><label>順</label><b>⑤</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>6 - 5 - 4 - 4</strong></div>
  </article></div>
   </section></div>
@@ -719,7 +734,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【池江泰寿厩舎】</div><div class="comment-current"><b>【兼武助手】</b>前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月22日中京6R 大府特別 5着(4人気)</div><div class="comment-previous"><b>【兼武助手】</b>放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを<span class="comment-reporter">（西谷記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【池江泰寿厩舎】</div><div class="comment-current"><b>【兼武助手】</b>前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら</div><div class="previous-result"><b>前走</b>　2026年08月22日中京6R 大府特別 5着(4人気)</div><div class="comment-previous"><b>【兼武助手】</b>放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -730,7 +745,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">モーニン</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">トウカイベルタ（ワイルドラッシュ）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>松若風馬</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>牧田和弥</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">モーニン</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e"><span class="dam-name">トウカイベルタ</span><span class="dam-line">（ワイルドラッシュ）</span></strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>松若風馬</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>牧田和弥</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -738,17 +753,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.07.04</span></div>
  <div class="run-summary"><strong>横手特別</strong><span class="run-course" data-venue="福島" data-surface="D" data-distance="1700">福島・D1700</span><span>３上・2勝　石橋　58kg　470kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>7</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>38.0</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>10</b></div><div class="metric"><label>馬番</label><b>9</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着数</label><b>7</b></div><div class="metric"><label>着差</label><b>1.9</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>38.0</b></div><div class="metric"><label>順</label><b>⑥</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>マクリ</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>6 - 7 - 5 - 3</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.06.07</span></div>
  <div class="run-summary"><strong>洲本特別</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1400">阪神・D1400</span><span>３上・2勝　松若　58kg　472kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>1.2</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>36.2</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>3</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着数</label><b>10</b></div><div class="metric"><label>着差</label><b>1.2</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>36.2</b></div><div class="metric"><label>順</label><b>⑤</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 12</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.17</span></div>
  <div class="run-summary"><strong>青梅特Ｈ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>４上・2勝　松若　54kg　472kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>15</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着</label><b>3</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>95</b></div><div class="metric"><label>上3F</label><b>35.7</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>15</b></div><div class="metric"><label>馬番</label><b>8</b></div><div class="metric"><label>人気</label><b>10</b></div><div class="metric"><label>着数</label><b>3</b></div><div class="metric"><label>着差</label><b>0.3</b></div><div class="metric"><label>指数</label><b>95</b></div><div class="metric"><label>上3F</label><b>35.7</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>12 - 9</strong></div>
  </article></div>
   </section></div>
@@ -772,7 +787,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【牧田和弥厩舎】</div><div class="comment-current"><b>【牧田調教師】</b>リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待<span class="comment-reporter">（西谷記者）</span></div><div class="previous-result"><b>前走</b>　2026年07月04日福島10R 横手特別 7着(6人気)</div><div class="comment-previous"><b>【牧田調教師】</b>1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば<span class="comment-reporter">（西谷記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【牧田和弥厩舎】</div><div class="comment-current"><b>【牧田調教師】</b>リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待</div><div class="previous-result"><b>前走</b>　2026年07月04日福島10R 横手特別 7着(6人気)</div><div class="comment-previous"><b>【牧田調教師】</b>1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -783,7 +798,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡3／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>54kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">サンダースノー</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">セイントヘレナ（ディープスカイ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>菅原明良</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>小島茂之</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffff00;color:#17251e">サンダースノー</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e"><span class="dam-name">セイントヘレナ</span><span class="dam-line">（ディープスカイ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>菅原明良</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>小島茂之</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -791,17 +806,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.06.13</span></div>
  <div class="run-summary"><strong>日野特別</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="2100">東京・D2100</span><span>３上・2勝　菊沢　55kg　542kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>13</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>3.0</b></div><div class="metric"><label>指数</label><b>60</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>14</b></div><div class="metric"><label>馬番</label><b>13</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>3.0</b></div><div class="metric"><label>指数</label><b>60</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>⑩</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>12 - 12 - 8 - 7</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.05.02</span></div>
  <div class="run-summary"><strong>ユニコーG3</strong><span class="run-course" data-venue="京都" data-surface="D" data-distance="1900">京都・D1900</span><span>３歳・Ｇ３　吉村　57kg　538kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>38.4</b></div><div class="metric"><label>順</label><b>10</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>10</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着数</label><b>10</b></div><div class="metric"><label>着差</label><b>2.2</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>38.4</b></div><div class="metric"><label>順</label><b>⑩</b></div><div class="metric"><label>間隔</label><b>6週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>8 - 8 - 7 - 7</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.03.22</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ*</strong><span class="run-course" data-venue="阪神" data-surface="D" data-distance="1800">阪神・D1800</span><span>３歳・1勝　斎藤　57kg　546kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>13</b></div><div class="metric"><label>番</label><b>10</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.3</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.8</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>20週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>13</b></div><div class="metric"><label>馬番</label><b>10</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着数</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.3</b></div><div class="metric"><label>指数</label><b>87</b></div><div class="metric"><label>上3F</label><b>37.8</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>20週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>マクリ</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>10 - 10 - 2 - 2</strong></div>
  </article></div>
   </section></div>
@@ -825,7 +840,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小島茂之厩舎】</div><div class="comment-current"><b>【小島調教師】</b>放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で<span class="comment-reporter">（垰野記者）</span></div><div class="previous-result"><b>前走</b>　2026年06月13日東京9R 日野特別 11着(6人気)</div><div class="comment-previous"><b>【小島調教師】</b>上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある<span class="comment-reporter">（垰野記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小島茂之厩舎】</div><div class="comment-current"><b>【小島調教師】</b>放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で</div><div class="previous-result"><b>前走</b>　2026年06月13日東京9R 日野特別 11着(6人気)</div><div class="comment-previous"><b>【小島調教師】</b>上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -836,7 +851,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">ロマネクイーン（マイネルラヴ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原田和真</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>萱野浩二</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e"><span class="dam-name">ロマネクイーン</span><span class="dam-line">（マイネルラヴ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>原田和真</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>萱野浩二</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -844,17 +859,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1300">東京・D1300</span><span>３上・2勝　長浜　57☆kg　444kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>3</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>13</b></div><div class="metric"><label>間隔</label><b>19週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>3</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着数</label><b>13</b></div><div class="metric"><label>着差</label><b>1.4</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>⑬</b></div><div class="metric"><label>間隔</label><b>19週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>8 - 8</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.05.30</span></div>
  <div class="run-summary"><strong>富嶽賞</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・2勝　長浜　58kg　452kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>8</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着</label><b>15</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>74</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>15</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>8</b></div><div class="metric"><label>人気</label><b>11</b></div><div class="metric"><label>着数</label><b>15</b></div><div class="metric"><label>着差</label><b>1.8</b></div><div class="metric"><label>指数</label><b>74</b></div><div class="metric"><label>上3F</label><b>37.0</b></div><div class="metric"><label>順</label><b>⑮</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 11</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.02</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・1勝　長浜　56△kg　454kg　重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>12</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.2</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>2</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>12</b></div><div class="metric"><label>人気</label><b>4</b></div><div class="metric"><label>着数</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.2</b></div><div class="metric"><label>指数</label><b>78</b></div><div class="metric"><label>上3F</label><b>35.6</b></div><div class="metric"><label>順</label><b>②</b></div><div class="metric"><label>間隔</label><b>4週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>7 - 5</strong></div>
  </article></div>
   </section></div>
@@ -878,7 +893,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【萱野浩二厩舎】</div><div class="comment-current"><b>【萱野調教師】</b>クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで<span class="comment-reporter">（大坂記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 13着(14人気)</div><div class="comment-previous"><b>【田口助手】</b>連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも<span class="comment-reporter">（大坂記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【萱野浩二厩舎】</div><div class="comment-current"><b>【萱野調教師】</b>クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで</div><div class="previous-result"><b>前走</b>　2026年10月11日東京12R ３歳上２勝クラス 13着(14人気)</div><div class="comment-previous"><b>【田口助手】</b>連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -889,7 +904,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>52kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e">カヒリ（キングカメハメハ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石川裕紀</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>小崎憲</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ルヴァンスレーヴ</strong><strong class="pedigree-mother" style="background-color:#00ffff;color:#17251e"><span class="dam-name">カヒリ</span><span class="dam-line">（キングカメハメハ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>石川裕紀</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>小崎憲</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -897,17 +912,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.08.29</span></div>
  <div class="run-summary"><strong>千歳特別</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　石川　56kg　432kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>12</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>6</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>12</b></div><div class="metric"><label>馬番</label><b>6</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着数</label><b>6</b></div><div class="metric"><label>着差</label><b>1.1</b></div><div class="metric"><label>指数</label><b>85</b></div><div class="metric"><label>上3F</label><b>37.1</b></div><div class="metric"><label>順</label><b>⑥</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>10 - 9 - 7 - 7</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.08.09</span></div>
  <div class="run-summary"><strong>富良野Ｈ</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　川又　52kg　432kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>14</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>64</b></div><div class="metric"><label>上3F</label><b>39.4</b></div><div class="metric"><label>順</label><b>11</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>14</b></div><div class="metric"><label>馬番</label><b>9</b></div><div class="metric"><label>人気</label><b>12</b></div><div class="metric"><label>着数</label><b>8</b></div><div class="metric"><label>着差</label><b>2.3</b></div><div class="metric"><label>指数</label><b>64</b></div><div class="metric"><label>上3F</label><b>39.4</b></div><div class="metric"><label>順</label><b>⑪</b></div><div class="metric"><label>間隔</label><b>13週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>6 - 5 - 5 - 7</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.05.09</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ・牝</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1400">東京・D1400</span><span>４上・2勝　石橋　56kg　432kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着</label><b>11</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>9</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>4</b></div><div class="metric"><label>人気</label><b>15</b></div><div class="metric"><label>着数</label><b>11</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>80</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>⑨</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>6 - 7</strong></div>
  </article></div>
   </section></div>
@@ -931,7 +946,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小崎憲厩舎】</div><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば<span class="comment-reporter">（赤城記者）</span></div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 6着(12人気)</div><div class="comment-previous"><b>【上垣内助手】</b>使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら<span class="comment-reporter">（赤城記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小崎憲厩舎】</div><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば</div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 6着(12人気)</div><div class="comment-previous"><b>【上垣内助手】</b>使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -942,7 +957,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡3／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>55kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">Good Magic</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e">Nefferkitty（Kitten's Joy）</strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>川田将雅</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>森秀行</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#00ffff;color:#17251e">Good Magic</strong><strong class="pedigree-mother" style="background-color:#ffff00;color:#17251e"><span class="dam-name">Nefferkitty</span><span class="dam-line">（Kitten's Joy）</span></strong><strong class="affiliation-chip base-ritto"><small>騎手</small><span>川田将雅</span></strong><strong class="affiliation-chip base-ritto"><small>厩舎</small><span>森秀行</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -950,17 +965,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.10.11</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・1勝　川田　56kg　542kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>3</b></div><div class="metric"><label>着</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.1</b></div><div class="metric"><label>指数</label><b>88</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>3</b></div><div class="metric"><label>間隔</label><b>24週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>2</b></div><div class="metric"><label>人気</label><b>3</b></div><div class="metric"><label>着数</label><b>1</b></div><div class="metric"><label>着差</label><b>-0.1</b></div><div class="metric"><label>指数</label><b>88</b></div><div class="metric"><label>上3F</label><b>36.5</b></div><div class="metric"><label>順</label><b>③</b></div><div class="metric"><label>間隔</label><b>24週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>4 - 3</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.04.25</span></div>
  <div class="run-summary"><strong>１勝ｸﾗｽ*</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・1勝　武豊　57kg　526kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>14</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着</label><b>4</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>先</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>14</b></div><div class="metric"><label>人気</label><b>8</b></div><div class="metric"><label>着数</label><b>4</b></div><div class="metric"><label>着差</label><b>0.8</b></div><div class="metric"><label>指数</label><b>89</b></div><div class="metric"><label>上3F</label><b>37.9</b></div><div class="metric"><label>順</label><b>⑧</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>先行</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>2 - 2</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.02.22</span></div>
  <div class="run-summary"><strong>ヒヤシン(L)</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３歳・OP(L)　坂井　57kg　530kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>10</b></div><div class="metric"><label>番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着</label><b>9</b></div><div class="metric"><label>着差</label><b>2.7</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>7</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>10</b></div><div class="metric"><label>馬番</label><b>2</b></div><div class="metric"><label>人気</label><b>9</b></div><div class="metric"><label>着数</label><b>9</b></div><div class="metric"><label>着差</label><b>2.7</b></div><div class="metric"><label>指数</label><b>76</b></div><div class="metric"><label>上3F</label><b>39.0</b></div><div class="metric"><label>順</label><b>⑦</b></div><div class="metric"><label>間隔</label><b>3週</b></div><div class="metric"><label>B</label><b>—</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>8 - 7</strong></div>
  </article></div>
   </section></div>
@@ -984,7 +999,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【森秀行厩舎】</div><div class="comment-current"><b>【清水助手】</b>体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう<span class="comment-reporter">（芝井記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月11日東京7R ３歳上１勝クラス 1着(3人気)</div><div class="comment-previous"><b>【清水助手】</b>体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか<span class="comment-reporter">（芝井記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【森秀行厩舎】</div><div class="comment-current"><b>【清水助手】</b>体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう</div><div class="previous-result"><b>前走</b>　2026年10月11日東京7R ３歳上１勝クラス 1着(3人気)</div><div class="comment-previous"><b>【清水助手】</b>体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか</div></section></div>
  </section>
 </section>
 <section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
@@ -995,7 +1010,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     <div class="horse-facts"><span class="basic sex-age-pill female"><label>性齢</label><strong>牝4／鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>53kg</strong></span></div>
    </div>
   </div></div>
-  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ナダル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e">タマモボレロ（ハーツクライ）</strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>丹内祐次</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>伊藤圭三</span></strong></div>
+  <div class="pedigree-inline"><strong class="pedigree-father" style="background-color:#ffc0ff;color:#17251e">ナダル</strong><strong class="pedigree-mother" style="background-color:#ffc0ff;color:#17251e"><span class="dam-name">タマモボレロ</span><span class="dam-line">（ハーツクライ）</span></strong><strong class="affiliation-chip base-miho"><small>騎手</small><span>丹内祐次</span></strong><strong class="affiliation-chip base-miho"><small>厩舎</small><span>伊藤圭三</span></strong></div>
  </div>
  <section class="horse-section recent-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>RECENT FORM</span><small>近3走</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
@@ -1003,17 +1018,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    <div class="runs-heading"><strong>近3走</strong></div><div class="runs"><article class="run">
  <div class="run-head"><span>前走</span><span class="run-date">2026.10.04</span></div>
  <div class="run-summary"><strong>２勝ｸﾗｽ</strong><span class="run-course" data-venue="東京" data-surface="D" data-distance="1600">東京・D1600</span><span>３上・2勝　佐藤　53▲kg　512kg　良</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>16</b></div><div class="metric"><label>番</label><b>6</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>0.5</b></div><div class="metric"><label>指数</label><b>94</b></div><div class="metric"><label>上3F</label><b>35.4</b></div><div class="metric"><label>順</label><b>1</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>後</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>16</b></div><div class="metric"><label>馬番</label><b>6</b></div><div class="metric"><label>人気</label><b>14</b></div><div class="metric"><label>着数</label><b>6</b></div><div class="metric"><label>着差</label><b>0.5</b></div><div class="metric"><label>指数</label><b>94</b></div><div class="metric"><label>上3F</label><b>35.4</b></div><div class="metric"><label>順</label><b>①</b></div><div class="metric"><label>間隔</label><b>9週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>後方</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>13 - 13</strong></div>
  </article><article class="run">
  <div class="run-head"><span>2走前</span><span class="run-date">2026.08.01</span></div>
  <div class="run-summary"><strong>大倉山特</strong><span class="run-course" data-venue="札幌" data-surface="D" data-distance="1700">札幌・D1700</span><span>３上・2勝　黛弘　56kg　506kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>8</b></div><div class="metric"><label>番</label><b>4</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着</label><b>6</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>68</b></div><div class="metric"><label>上3F</label><b>39.8</b></div><div class="metric"><label>順</label><b>8</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>マ</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>8</b></div><div class="metric"><label>馬番</label><b>4</b></div><div class="metric"><label>人気</label><b>6</b></div><div class="metric"><label>着数</label><b>6</b></div><div class="metric"><label>着差</label><b>0.7</b></div><div class="metric"><label>指数</label><b>68</b></div><div class="metric"><label>上3F</label><b>39.8</b></div><div class="metric"><label>順</label><b>⑧</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>マクリ</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>8 - 8 - 2 - 3</strong></div>
  </article><article class="run">
  <div class="run-head"><span>3走前</span><span class="run-date">2026.06.28</span></div>
  <div class="run-summary"><strong>渡島特別</strong><span class="run-course" data-venue="函館" data-surface="D" data-distance="1700">函館・D1700</span><span>３上・2勝　原優　56kg　504kg　稍重</span></div>
- <div class="run-details"><div class="metric"><label>頭</label><b>11</b></div><div class="metric"><label>番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着</label><b>8</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>38.2</b></div><div class="metric"><label>順</label><b>5</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚</label><b>中</b></div></div>
+ <div class="run-details"><div class="metric"><label>頭数</label><b>11</b></div><div class="metric"><label>馬番</label><b>9</b></div><div class="metric"><label>人気</label><b>5</b></div><div class="metric"><label>着数</label><b>8</b></div><div class="metric"><label>着差</label><b>1.5</b></div><div class="metric"><label>指数</label><b>77</b></div><div class="metric"><label>上3F</label><b>38.2</b></div><div class="metric"><label>順</label><b>⑤</b></div><div class="metric"><label>間隔</label><b>5週</b></div><div class="metric"><label>B</label><b>B</b></div><div class="metric"><label>脚質</label><b>中団</b></div></div>
  <div class="run-passage"><label>通過順</label><strong>11 - 11 - 9 - 8</strong></div>
  </article></div>
   </section></div>
@@ -1037,7 +1052,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  </section>
  <section class="horse-section comments-block">
   <button type="button" class="horse-section-head section-toggle" aria-expanded="true"><span>COMMENTS</span><small>陣営コメント</small><b class="section-collapse-mark" aria-hidden="true">−</b></button>
-  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【伊藤圭三厩舎】</div><div class="comment-current"><b>【伊藤圭調教師】</b>前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある<span class="comment-reporter">（大坂記者）</span></div><div class="previous-result"><b>前走</b>　2026年10月04日東京12R ３歳上２勝クラス 6着(14人気)</div><div class="comment-previous"><b>【伊藤圭調教師】</b>中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら<span class="comment-reporter">（大坂記者）</span></div></section></div>
+  <div class="horse-section-content"><section class="comments"><div class="comment-stable">【伊藤圭三厩舎】</div><div class="comment-current"><b>【伊藤圭調教師】</b>前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある</div><div class="previous-result"><b>前走</b>　2026年10月04日東京12R ３歳上２勝クラス 6着(14人気)</div><div class="comment-previous"><b>【伊藤圭調教師】</b>中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら</div></section></div>
  </section>
 </section>
 </main>
