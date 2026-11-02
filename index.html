@@ -290,6 +290,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .run-details .metric.lime{background:#00ff00}
 .comment-current.is-ichioshi{background:#fff8d9!important;border:1px solid #efd98a;border-left:4px solid #e2b83f;border-radius:6px;padding:9px 10px}
 .ichioshi-badge{display:inline-flex;align-items:center;margin-left:5px;padding:2px 6px;border:1px solid #e4c15c;border-radius:999px;background:#fff1b8;color:#75500a;font-size:8px;font-weight:950;line-height:1.25;white-space:nowrap;vertical-align:middle}
+.pedigree-inline .affiliation-chip.ichioshi-chip{flex-direction:row;align-items:center;gap:4px;flex-wrap:wrap}
+.pedigree-inline .affiliation-chip .ichioshi-badge{font-size:8px;line-height:1.25;padding:2px 5px;margin-left:0}
 
 </style>
 </head>
@@ -686,11 +688,11 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="horse-section-content"><section class="comments"><div class="comment-stable">【蛯名利弘厩舎】</div><div class="comment-current"><b>【蛯名利調教師】</b>使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ</div><div class="previous-result"><b>前走</b>　2026年02月22日阪神9R 天神橋特別 10着(10人気)</div><div class="comment-previous"><b>【小山助手】</b>少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう</div></section></div>
  </section>
 </section>
-<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+<section class="horse-card" data-ichioshi="true" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
  <div class="profile">
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="8" aria-label="8番">8</div></div>
-   <div class="identity-main"><div class="horse-name">スマートスピア</div><span class="push-badge">イチ押し</span>
+   <div class="identity-main"><div class="horse-name">スマートスピア</div>
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡5／青鹿</strong></span><span class="basic weight-pill"><label>斤量</label><strong>57kg</strong></span></div>
    </div>
   </div></div>
@@ -951,11 +953,11 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="horse-section-content"><section class="comments"><div class="comment-stable">【小崎憲厩舎】</div><div class="comment-current"><b>【小谷助手】</b>昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば</div><div class="previous-result"><b>前走</b>　2026年08月29日札幌12R 千歳特別 6着(12人気)</div><div class="comment-previous"><b>【上垣内助手】</b>使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら</div></section></div>
  </section>
 </section>
-<section class="horse-card" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
+<section class="horse-card" data-ichioshi="true" data-current-venue="東京" data-current-surface="D" data-current-distance="1600" data-field-size="14">
  <div class="profile">
   <div class="profile-main"><div class="identity">
    <div class="number-wrap"><div class="frame-no" data-horse="13" aria-label="13番">13</div></div>
-   <div class="identity-main"><div class="horse-name">サマーマッドネス</div><span class="push-badge">イチ押し</span>
+   <div class="identity-main"><div class="horse-name">サマーマッドネス</div>
     <div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>牡3／栗</strong></span><span class="basic weight-pill"><label>斤量</label><strong>55kg</strong></span></div>
    </div>
   </div></div>
@@ -1106,17 +1108,18 @@ document.querySelectorAll('[data-source-color]').forEach(node=>{
  const color=node.dataset.sourceColor?.trim();
  if(color) node.style.color=color;
 });
-// Mark horses whose current stable comment explicitly contains the source tag "イチオシ".
-document.querySelectorAll('.horse-card').forEach(card=>{
+// Preserve the source's separate "【イチ押し】" evaluation marker by horse number.
+// The marker is stored on the horse card, not inferred from the comment body.
+document.querySelectorAll('.horse-card[data-ichioshi="true"]').forEach(card=>{
  const comment=card.querySelector('.comment-current');
- if(!comment || !comment.textContent.includes('イチオシ')) return;
- comment.classList.add('is-ichioshi');
+ if(comment) comment.classList.add('is-ichioshi');
  const stableChip=[...card.querySelectorAll('.pedigree-inline .affiliation-chip')]
   .find(chip=>chip.querySelector('small')?.textContent.trim()==='厩舎');
  if(stableChip && !stableChip.querySelector('.ichioshi-badge')){
+  stableChip.classList.add('ichioshi-chip');
   const badge=document.createElement('span');
   badge.className='ichioshi-badge';
-  badge.textContent='イチオシ';
+  badge.textContent='イチ押し';
   stableChip.appendChild(badge);
  }
 });
