@@ -504,7 +504,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const distance=r.distance?' ・ '+escapeHtml(r.distance):'';
    const raceTitle=r.title?escapeHtml(r.title):(escapeHtml(r.venue)+raceNo+'R');
    const meta=[r.classLabel,r.horseCount?String(r.horseCount)+'頭':''].filter(Boolean).map(escapeHtml).join('　｜　');
-   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">IN PROGRESS</span>');
+   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">作成中</span>');
    if(complete)button.addEventListener('click',()=>openRace(r));
    listItems.appendChild(button);
   });
