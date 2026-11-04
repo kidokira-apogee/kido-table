@@ -2,6 +2,30 @@
   "schemaVersion": 1,
   "races": [
     {
+      "id": "2026-11-01-kyoto-11",
+      "file": "2026-11-01-kyoto-11.json",
+      "date": "2026-11-01",
+      "dateLabel": "2026年11月1日（日）",
+      "venue": "京都",
+      "raceNo": 11,
+      "title": "まほろばステークスリステッド",
+      "distance": "芝外B1600m",
+      "classLabel": "3歳上オープン（国際）（特指）",
+      "status": "in-progress"
+    },
+    {
+      "id": "2026-11-01-kyoto-12",
+      "file": "2026-11-01-kyoto-12.json",
+      "date": "2026-11-01",
+      "dateLabel": "2026年11月1日（日）",
+      "venue": "京都",
+      "raceNo": 12,
+      "title": "３歳上２勝クラス一般",
+      "distance": "芝外B1400m",
+      "classLabel": "3歳上2勝クラス（混合）（特指）",
+      "status": "in-progress"
+    },
+    {
       "id": "2026-11-01-tokyo-9",
       "file": "2026-11-01-tokyo-9.json",
       "date": "2026-11-01",
