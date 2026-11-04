@@ -522,7 +522,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   renderDates();
  }
  function renderArchive(){
-  const months=[...new Set(archive.races.map(r=>String(r.date||'').slice(0,7)).filter(v=>/^\\d{4}-\\d{2}$/.test(v)))].sort().reverse();
+  const months=[...new Set(archive.races.map(r=>String(r.date||'').slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
   monthSelect.innerHTML='';
   months.forEach(m=>{
    const [y,mo]=m.split('-');const option=document.createElement('option');option.value=m;
