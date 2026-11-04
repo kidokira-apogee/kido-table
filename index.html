@@ -378,12 +378,43 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 }
 </style>
 <style>.comment-week{padding:7px 10px;background:#f8fbf8;border-bottom:1px solid #e3ebe4;font-size:10px;line-height:1.55;color:#30483a}.comment-week b{color:#245b3d}@media(max-width:600px){.comment-week{padding:6px 8px;font-size:9px}}.stable-arrow{width:16px;height:16px;vertical-align:-3px;margin-right:5px}.ichioshi-mark{font-weight:950;color:#8a5a00;margin-right:4px}.comment-current .stable-arrow{display:inline-block}@media(max-width:600px){.stable-arrow{width:14px;height:14px}}\n</style>
+
+<style>
+.archive-controls{margin-top:12px;padding:12px;background:#fff;border:1px solid #d5e2d8;border-radius:12px;display:grid;gap:12px}
+.archive-control-row{display:flex;align-items:center;gap:12px}
+.archive-control-row label,.archive-label{flex:0 0 54px;color:#607267;font-size:9px;font-weight:950;letter-spacing:.09em}
+#archive-month{min-width:0;max-width:220px;padding:8px 32px 8px 10px;border:1px solid #cbdacf;border-radius:8px;background:#fff;color:#214d34;font:850 12px system-ui}
+.archive-filter-group{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.archive-choice-row{display:flex;flex:1;flex-wrap:wrap;gap:5px;min-width:0}
+.archive-choice{appearance:none;border:1px solid #cbdacf;border-radius:999px;padding:7px 10px;background:#fff;color:#405549;font:800 10px system-ui;cursor:pointer}
+.archive-choice[aria-pressed="true"]{background:#1d593c;color:#fff;border-color:#1d593c}
+.list-section-head#race-list-heading{font-size:11px}
+.race-list-item.in-progress{background:#f5f7f5;cursor:not-allowed}
+.race-list-item.in-progress .race-list-title{color:#69776e}
+.race-list-item.in-progress .race-list-arrow{display:none}
+.race-list-state{flex:0 0 auto;color:#737d76;font-size:8px;font-weight:950;letter-spacing:.08em;white-space:nowrap}
+.race-list-item:disabled{opacity:1}
+@media(max-width:620px){
+ .archive-controls{gap:10px;margin-top:9px;padding:9px;border-radius:9px}
+ .archive-control-row,.archive-filter-group{gap:8px}
+ .archive-control-row label,.archive-label{flex-basis:48px;font-size:8px}
+ #archive-month{font-size:11px;padding:7px 27px 7px 8px}
+ .archive-choice-row{gap:4px}
+ .archive-choice{padding:6px 8px;font-size:9px}
+ .race-list-state{font-size:7px}
+}
 </head>
 <body>
 <main class="page">
 <section class="race-list-view" id="race-list-view">
-<header class="list-brand"><strong>木戸表 電子版</strong><span>登録レース一覧　｜　見たいレースを選択</span></header>
-<section class="list-section"><div class="list-section-head">登録レース</div><div id="race-list-items"></div></section>
+<header class="list-brand"><strong>木戸表 電子版</strong><span>開催月・週・日付・競馬場からレースを選択</span></header>
+<section class="archive-controls" aria-label="バックナンバー選択">
+  <div class="archive-control-row"><label for="archive-month">MONTH</label><select id="archive-month" aria-label="開催月"></select></div>
+  <div class="archive-filter-group"><span class="archive-label">WEEK</span><div class="archive-choice-row" id="archive-week-tabs"></div></div>
+  <div class="archive-filter-group"><span class="archive-label">DATE</span><div class="archive-choice-row" id="archive-date-tabs"></div></div>
+  <div class="archive-filter-group"><span class="archive-label">VENUE</span><div class="archive-choice-row" id="archive-venue-tabs"></div></div>
+</section>
+<section class="list-section"><div class="list-section-head" id="race-list-heading">登録レース</div><div id="race-list-items"></div></section>
 </section>
 <section hidden id="race-detail-container"></section></main>
 <script>
@@ -416,28 +447,93 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    }
   });
  }
- function renderList(data){
-  listItems.innerHTML='';
-  const groups=new Map();
-  data.races.forEach(r=>{
-   const key=r.date+'|'+r.venue;
-   if(!groups.has(key))groups.set(key,[]);
-   groups.get(key).push(r);
-  });
-  groups.forEach((races,key)=>{
-   const heading=document.createElement('div');
-   heading.className='list-section-head';
-   heading.textContent=races[0].dateLabel+'｜'+races[0].venue;
-   listItems.appendChild(heading);
-   races.forEach(r=>{
-    const button=document.createElement('button');
-    button.type='button';button.className='race-list-item';button.dataset.raceId=r.id;
-    button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue.toUpperCase())+' '+r.raceNo+'R ・ '+escapeHtml(r.distance)+'</span><strong class="race-list-title">'+escapeHtml(r.title)+'</strong><span class="race-list-sub">'+escapeHtml(r.classLabel)+'　｜　'+r.horseCount+'頭</span></span><span aria-hidden="true" class="race-list-arrow">›</span>';
-    button.addEventListener('click',()=>openRace(r));
-    listItems.appendChild(button);
-   });
+ function mondayKey(iso){
+  const d=new Date(iso+'T00:00:00');
+  const offset=(d.getDay()+6)%7;
+  d.setDate(d.getDate()-offset);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+ }
+ function addDays(iso,n){
+  const d=new Date(iso+'T00:00:00');d.setDate(d.getDate()+n);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+ }
+ function shortDate(iso){
+  const d=new Date(iso+'T00:00:00');
+  return (d.getMonth()+1)+'/'+d.getDate();
+ }
+ function weekday(iso){return ['日','月','火','水','木','金','土'][new Date(iso+'T00:00:00').getDay()];}
+ const monthSelect=document.getElementById('archive-month');
+ const weekTabs=document.getElementById('archive-week-tabs');
+ const dateTabs=document.getElementById('archive-date-tabs');
+ const venueTabs=document.getElementById('archive-venue-tabs');
+ const listHeading=document.getElementById('race-list-heading');
+ let archive={races:[]},selectedMonth='',selectedWeek='',selectedDate='',selectedVenue='';
+ function racesInMonth(){return archive.races.filter(r=>String(r.date||'').slice(0,7)===selectedMonth);}
+ function setChoices(container,items,current,onSelect,labelFn){
+  container.innerHTML='';
+  items.forEach(item=>{
+   const b=document.createElement('button');b.type='button';b.className='archive-choice';
+   b.textContent=labelFn(item);b.setAttribute('aria-pressed',String(item===current));
+   b.addEventListener('click',()=>onSelect(item));container.appendChild(b);
   });
  }
+ function renderVenueAndRaces(){
+  const dayRaces=archive.races.filter(r=>r.date===selectedDate);
+  const order=['東京','京都','福島','中山','阪神','中京','新潟','小倉','札幌','函館'];
+  const venues=[...new Set(dayRaces.map(r=>r.venue).filter(Boolean))].sort((a,b)=>{
+   const ai=order.indexOf(a),bi=order.indexOf(b);
+   if(ai<0&&bi<0)return a.localeCompare(b,'ja');
+   if(ai<0)return 1;if(bi<0)return -1;return ai-bi;
+  });
+  if(!venues.includes(selectedVenue))selectedVenue=venues[0]||'';
+  setChoices(venueTabs,venues,selectedVenue,v=>{selectedVenue=v;renderVenueAndRaces();},v=>v);
+  listItems.innerHTML='';
+  if(!selectedVenue){
+   listHeading.textContent='登録レース';
+   listItems.innerHTML='<div class="list-section-head">この日の登録レースはありません。</div>';return;
+  }
+  listHeading.textContent=selectedVenue+'競馬場｜登録レース';
+  const races=dayRaces.filter(r=>r.venue===selectedVenue).sort((a,b)=>Number(a.raceNo)-Number(b.raceNo));
+  races.forEach(r=>{
+   const complete=r.status==='complete';
+   const button=document.createElement('button');
+   button.type='button';button.className='race-list-item'+(complete?'':' in-progress');
+   button.dataset.raceId=r.id;
+   if(!complete){button.disabled=true;button.setAttribute('aria-disabled','true');}
+   const raceNo=escapeHtml(r.raceNo??'');
+   const distance=r.distance?' ・ '+escapeHtml(r.distance):'';
+   const raceTitle=r.title?escapeHtml(r.title):(escapeHtml(r.venue)+raceNo+'R');
+   const meta=[r.classLabel,r.horseCount?String(r.horseCount)+'頭':''].filter(Boolean).map(escapeHtml).join('　｜　');
+   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">IN PROGRESS</span>');
+   if(complete)button.addEventListener('click',()=>openRace(r));
+   listItems.appendChild(button);
+  });
+ }
+ function renderDates(){
+  const dates=[...new Set(racesInMonth().filter(r=>mondayKey(r.date)===selectedWeek).map(r=>r.date))].sort().reverse();
+  if(!dates.includes(selectedDate))selectedDate=dates[0]||'';
+  setChoices(dateTabs,dates,selectedDate,v=>{selectedDate=v;renderDates();renderVenueAndRaces();},v=>shortDate(v)+'（'+weekday(v)+'）');
+  renderVenueAndRaces();
+ }
+ function renderWeeks(){
+  const weeks=[...new Set(racesInMonth().map(r=>mondayKey(r.date)))].sort().reverse();
+  if(!weeks.includes(selectedWeek))selectedWeek=weeks[0]||'';
+  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'–'+shortDate(addDays(v,6)));
+  renderDates();
+ }
+ function renderArchive(){
+  const months=[...new Set(archive.races.map(r=>String(r.date||'').slice(0,7)).filter(v=>/^\\d{4}-\\d{2}$/.test(v)))].sort().reverse();
+  monthSelect.innerHTML='';
+  months.forEach(m=>{
+   const [y,mo]=m.split('-');const option=document.createElement('option');option.value=m;
+   option.textContent=y+'年'+Number(mo)+'月';monthSelect.appendChild(option);
+  });
+  if(!months.length){weekTabs.innerHTML='';dateTabs.innerHTML='';venueTabs.innerHTML='';listItems.innerHTML='<div class="list-section-head">登録レースはありません。</div>';return;}
+  if(!months.includes(selectedMonth))selectedMonth=months[0];
+  monthSelect.value=selectedMonth;
+  renderWeeks();
+ }
+ monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedWeek='';selectedDate='';selectedVenue='';renderWeeks();});
  async function openRace(r){
   try{
    const response=await fetch('data/races/'+encodeURIComponent(r.file||r.id+'.json'),{cache:'no-store'});
@@ -513,7 +609,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  try{
   const response=await fetch(manifestUrl,{cache:'no-store'});
   if(!response.ok)throw new Error('HTTP '+response.status);
-  renderList(await response.json());
+  archive=await response.json();
+  archive.races=Array.isArray(archive.races)?archive.races:[];
+  renderArchive();
  }catch(e){
   listItems.innerHTML='<div class="list-section-head">レース一覧を読み込めませんでした：'+escapeHtml(e.message)+'</div>';
  }
