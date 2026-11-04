@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "race": {
+    "id": "2026-11-01-kyoto-12",
+    "date": "2026-11-01",
+    "venue": "京都",
+    "raceNo": 12,
+    "title": "３歳上２勝クラス一般"
+  },
+  "status": {
+    "target": false,
+    "netkeiba": false,
+    "tospo": true,
+    "complete": false
+  },
+  "render": {
+    "html": "<nav class=\"race-nav\"><button type=\"button\">← レース一覧</button><span>木戸表 電子版</span></nav>\n<header class=\"racehead\"><div class=\"head-inner\">\n<div class=\"date-line\"><span>2026年11月1日（日）</span><span>京都</span><span>16:05発走</span></div>\n<div class=\"title-line\"><span class=\"race-no\">KYOTO 12R</span><span class=\"race-title\">３歳上２勝クラス一般</span></div>\n<div class=\"race-subtitle\">3歳上２勝クラス（混合）（特指）　定量</div>\n<div class=\"race-pills\"><span class=\"pill\">京都</span><span class=\"pill\">芝外B 1,400m</span></div>\n</div></header>\n<section style=\"margin:12px 10px;padding:22px 16px;border:1px solid #d7e2d9;border-radius:12px;background:#fff;text-align:center;box-shadow:0 4px 14px #173d2910\">\n<div style=\"display:inline-block;padding:5px 14px;border-radius:999px;background:#fff1d6;color:#8a5700;font-size:13px;font-weight:900;letter-spacing:.08em\">作成中</div>\n<p style=\"margin:13px 0 4px;font-size:15px;font-weight:900;color:#17432f\">このレースは現在作成中です。</p>\n<p style=\"margin:0;color:#66766d;font-size:11px;line-height:1.7\">データを受領次第、順次反映します。</p>\n</section>"
+  }
+}
