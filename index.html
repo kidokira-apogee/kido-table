@@ -541,7 +541,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const data=await response.json();
    detail.innerHTML=data.render.html;
    normalizeRunningStyle(detail);
-   normalizeSourceGray(detail);
+   if(!data.render.preserveSourceColors)normalizeSourceGray(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
   }catch(e){
