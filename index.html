@@ -393,6 +393,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  const detail=document.getElementById('race-detail-container');
  const manifestUrl='data/races/index.json';
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+ function normalizeRunningStyle(root){
+  const styleNames={'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'};
+  root.querySelectorAll('.run-passage').forEach(passage=>{
+   const styleCell=passage.querySelector('span:first-child');
+   if(!styleCell||!styleCell.textContent.includes('脚質'))return;
+   const valueNode=styleCell.querySelector('b,strong');
+   if(!valueNode)return;
+   const shortName=valueNode.textContent.trim();
+   if(styleNames[shortName])valueNode.textContent=styleNames[shortName];
+  });
+ }
  function normalizeSourceGray(root){
   const gray=new Set(['silver','gray','grey','#c0c0c0','#808080','#a9a9a9','#d3d3d3','#e8e8e8','rgb(192, 192, 192)','rgb(128, 128, 128)','rgb(169, 169, 169)','rgb(211, 211, 211)','rgb(232, 232, 232)']);
   root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
@@ -433,6 +444,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    if(!response.ok)throw new Error('HTTP '+response.status);
    const data=await response.json();
    detail.innerHTML=data.render.html;
+   normalizeRunningStyle(detail);
    normalizeSourceGray(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
