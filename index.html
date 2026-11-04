@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="telephone=no" name="format-detection"/>
 <meta content="#123b2b" name="theme-color"/>
-<title>木戸表 電子版｜紅葉ステークス・秋嶺ステークス・天皇賞（秋）・清里特別</title>
+<title>木戸表 電子版</title>
 <style>
 :root{
  --forest:#123b2b;--forest2:#1b5940;--leaf:#32845b;--mint:#dff1e4;--paper:#f2f6f0;--card:#fff;--ink:#17251e;--muted:#66766d;--line:#d7e2d9;
@@ -448,9 +448,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    }
   });
  }
- function mondayKey(iso){
+ function saturdayKey(iso){
   const d=new Date(iso+'T00:00:00');
-  const offset=(d.getDay()+6)%7;
+  const offset=(d.getDay()+1)%7;
   d.setDate(d.getDate()-offset);
   return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
  }
@@ -469,7 +469,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  const venueTabs=document.getElementById('archive-venue-tabs');
  const listHeading=document.getElementById('race-list-heading');
  let archive={races:[]},selectedMonth='',selectedWeek='',selectedDate='',selectedVenue='';
- function racesInMonth(){return archive.races.filter(r=>String(r.date||'').slice(0,7)===selectedMonth);}
+ function racesInMonth(){return archive.races.filter(r=>/^\\d{4}-\\d{2}-\\d{2}$/.test(String(r.date||''))&&saturdayKey(r.date).slice(0,7)===selectedMonth);}
  function setChoices(container,items,current,onSelect,labelFn){
   container.innerHTML='';
   items.forEach(item=>{
@@ -510,19 +510,19 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   });
  }
  function renderDates(){
-  const dates=[...new Set(racesInMonth().filter(r=>mondayKey(r.date)===selectedWeek).map(r=>r.date))].sort().reverse();
+  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek).map(r=>r.date))].sort().reverse();
   if(!dates.includes(selectedDate))selectedDate=dates[0]||'';
   setChoices(dateTabs,dates,selectedDate,v=>{selectedDate=v;renderDates();renderVenueAndRaces();},v=>shortDate(v)+'（'+weekday(v)+'）');
   renderVenueAndRaces();
  }
  function renderWeeks(){
-  const weeks=[...new Set(racesInMonth().map(r=>mondayKey(r.date)))].sort().reverse();
+  const weeks=[...new Set(racesInMonth().map(r=>saturdayKey(r.date)))].sort().reverse();
   if(!weeks.includes(selectedWeek))selectedWeek=weeks[0]||'';
-  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'–'+shortDate(addDays(v,6)));
+  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'–'+shortDate(addDays(v,4)));
   renderDates();
  }
  function renderArchive(){
-  const months=[...new Set(archive.races.map(r=>String(r.date||'').slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
+  const months=[...new Set(archive.races.map(r=>saturdayKey(r.date).slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
   monthSelect.innerHTML='';
   months.forEach(m=>{
    const [y,mo]=m.split('-');const option=document.createElement('option');option.value=m;
