@@ -90,6 +90,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .comments{margin:0 10px 10px;border:1px solid #d7e4d9;border-radius:10px;overflow:hidden;background:#fff}
 .comments-head{padding:7px 10px;background:#173f2e;color:#fff;font-weight:950;font-size:11px;letter-spacing:.035em}
 .comment-current{padding:8px 10px;background:#fff;border-bottom:1px solid #e3ebe4;font-size:10px;line-height:1.55}
+.comment-current::before,.stable-comment-body::before{content:"今回コメント";display:block;margin:0 0 4px;color:#526b5b;font-size:9px;font-weight:900}
+.comment-previous::before,.stable-comment-previous::before{content:"前走コメント";display:block;margin:0 0 4px;color:#526b5b;font-size:9px;font-weight:900}
 .comment-current b,.comment-previous b{color:#245b3d}
 .previous-result{padding:6px 10px 2px;background:#f5faf5;color:#53665a;font-size:9px;font-weight:800}
 .comment-previous{padding:3px 10px 8px;background:#f5faf5;font-size:9.5px;line-height:1.55;color:#30483a}
@@ -436,16 +438,27 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    if(styleNames[shortName])valueNode.textContent=styleNames[shortName];
   });
  }
- function normalizeSourceGray(root){
-  const gray=new Set(['silver','gray','grey','#c0c0c0','#808080','#a9a9a9','#d3d3d3','#e8e8e8','rgb(192, 192, 192)','rgb(128, 128, 128)','rgb(169, 169, 169)','rgb(211, 211, 211)','rgb(232, 232, 232)']);
-  root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
-   const values=[node.style.backgroundColor,node.style.background,node.getAttribute('bgcolor')||''];
-   const isGray=values.some(value=>gray.has(String(value).trim().toLowerCase().replace(/\s+/g,' ')));
-   if(isGray){
-    node.style.removeProperty('background-color');
-    node.style.removeProperty('background');
-    node.removeAttribute('bgcolor');
+ function normalizeLegacyComments(root){
+  root.querySelectorAll('.stable-comment-body').forEach(body=>{
+   if(body.dataset.commentNormalized==='true')return;
+   const html=body.innerHTML;
+   const match=html.match(/<br\\s*\\/?>(?:\\s|&nbsp;)*前走\\s*([^<]*)<br\\s*\\/?>([\\s\\S]*)/i);
+   if(match){
+    const marker=match[1].trim();
+    const previous=match[2].trim();
+    body.innerHTML=html.slice(0,match.index).trim();
+    if(previous){
+     const result=document.createElement('div');
+     result.className='previous-result';
+     result.textContent='前走 '+marker;
+     const old=document.createElement('div');
+     old.className='stable-comment-previous';
+     old.innerHTML=previous;
+     body.insertAdjacentElement('afterend',old);
+     body.insertAdjacentElement('afterend',result);
+    }
    }
+   body.dataset.commentNormalized='true';
   });
  }
  function saturdayKey(iso){
@@ -510,7 +523,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   });
  }
  function renderDates(){
-  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek).map(r=>r.date))].sort().reverse();
+  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek&&r.date<=addDays(selectedWeek,4)).map(r=>r.date))].sort().reverse();
   if(!dates.includes(selectedDate))selectedDate=dates[0]||'';
   setChoices(dateTabs,dates,selectedDate,v=>{selectedDate=v;renderDates();renderVenueAndRaces();},v=>shortDate(v)+'（'+weekday(v)+'）');
   renderVenueAndRaces();
@@ -541,7 +554,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const data=await response.json();
    detail.innerHTML=data.render.html;
    normalizeRunningStyle(detail);
-   if(!data.render.preserveSourceColors)normalizeSourceGray(detail);
+   normalizeLegacyComments(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
   }catch(e){
