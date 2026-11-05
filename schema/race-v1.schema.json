@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kidokira-apogee.github.io/kido-table/schema/race-v1.schema.json",
+  "title": "Kido Table structured race data v1",
+  "description": "Structural contract for the current structured race format. Field-level turf/dirt variants remain extensible until verified against multiple source races.",
+  "type": "object",
+  "required": ["schemaVersion", "race", "sourceAudit", "horses"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "race": {
+      "type": "object",
+      "required": ["id", "date", "venue", "raceNumber", "name", "surface", "distanceM", "direction", "fieldSize", "metadataSource"],
+      "properties": {
+        "id": {"type": "string"},
+        "date": {"type": "string", "format": "date"},
+        "venue": {"type": "string"},
+        "raceNumber": {"type": "integer", "minimum": 1, "maximum": 12},
+        "name": {"type": "string"},
+        "surface": {"enum": ["芝", "ダート"]},
+        "distanceM": {"type": "integer", "minimum": 1000},
+        "direction": {"enum": ["左", "右", "直線", "不明"]},
+        "fieldSize": {"type": "integer", "minimum": 6, "maximum": 18},
+        "metadataSource": {"const": "① TARGET"}
+      },
+      "additionalProperties": true
+    },
+    "sourceAudit": {"type": "object"},
+    "horses": {
+      "type": "array", "minItems": 6, "maxItems": 18,
+      "items": {
+        "type": "object",
+        "required": ["horseNumber", "frameNumber", "horseName", "profile", "pedigree", "recentRuns", "topSummary", "dataTabs", "comments"],
+        "properties": {
+          "horseNumber": {"type": "integer", "minimum": 1, "maximum": 18},
+          "frameNumber": {"type": ["integer", "null"], "minimum": 1, "maximum": 8},
+          "horseName": {"type": "string", "minLength": 1},
+          "profile": {"type": "object"},
+          "pedigree": {"type": "object"},
+          "recentRuns": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+          "topSummary": {"type": "object"},
+          "dataTabs": {
+            "type": "object", "required": ["detail", "distanceCourse", "conditions", "frameAndTop2"],
+            "properties": {
+              "detail": {"type": "object"}, "distanceCourse": {"type": "object"},
+              "conditions": {"type": "object"}, "frameAndTop2": {"type": "object"}
+            }
+          },
+          "comments": {
+            "type": "object", "required": ["current", "previousRun"],
+            "properties": {"current": {"type": "object"}, "previousRun": {"type": "object"}}
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
