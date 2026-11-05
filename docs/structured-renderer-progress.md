@@ -34,3 +34,12 @@ Updated: 2026-11-06
 - This branch is a test implementation only.
 - The production `main` branch and live site have not been changed.
 - Do not merge or publish until the visual and data-integrity checks above pass.
+
+
+## TARGET pedigree source-color preservation (2026-11-06)
+
+- Confirmed from the supplied ① TARGET HTML: pedigree cells expose source colors through `BGCOLOR` and `FONT COLOR` attributes.
+- The sample race contains three sire-background values (`#00FFFF`, `#FFC0FF`, `#FFFF00`), four damsire-background/line-background values (`#00FF00`, `#00FFFF`, `#FFC0FF`, `#FFFF00`), and dam text color `MAROON`.
+- Structured pedigree shape now supports `sireLine`, `damsireLine`, and a `colors` object with source attributes for sire, dam, damsire, sire line, and damsire line.
+- Renderer reads literal source color values and applies them directly after a conservative CSS-color syntax check. It does not map colors to semantic categories; new valid source colors are accepted without a hard-coded palette.
+- Sample extraction was parsed against all 14 horse rows and matched the horse-number sequence. This confirms extraction structure for this sample; pixel-level visual comparison against the TARGET application is still pending.
