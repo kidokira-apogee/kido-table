@@ -35,7 +35,19 @@
           "frameNumber": {"type": ["integer", "null"], "minimum": 1, "maximum": 8},
           "horseName": {"type": "string", "minLength": 1},
           "profile": {"type": "object"},
-          "pedigree": {"type": "object"},
+          "pedigree": {
+            "type": "object",
+            "properties": {
+              "sire": {"type": ["string", "null"]}, "dam": {"type": ["string", "null"]},
+              "damsire": {"type": ["string", "null"]}, "sireLine": {"type": ["string", "null"]},
+              "damsireLine": {"type": ["string", "null"]},
+              "colors": {"type": "object", "properties": {
+                "sireBackground": {"type": ["string", "null"]}, "damText": {"type": ["string", "null"]},
+                "damsireBackground": {"type": ["string", "null"]}, "sireLineBackground": {"type": ["string", "null"]},
+                "damsireLineBackground": {"type": ["string", "null"]}
+              }, "additionalProperties": false}
+            }, "additionalProperties": false
+          },
           "recentRuns": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
           "topSummary": {"type": "object"},
           "dataTabs": {
