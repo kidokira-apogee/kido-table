@@ -442,7 +442,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   root.querySelectorAll('.stable-comment-body').forEach(body=>{
    if(body.dataset.commentNormalized==='true')return;
    const html=body.innerHTML;
-   const match=html.match(/<br\\s*\\/?>(?:\\s|&nbsp;)*前走\\s*([^<]*)<br\\s*\\/?>([\\s\\S]*)/i);
+   const match=html.match(/<br\s*\/?>(?:\s|&nbsp;)*前走\s*([^<]*)<br\s*\/?>\s*([\s\S]*)/i);
    if(match){
     const marker=match[1].trim();
     const previous=match[2].trim();
