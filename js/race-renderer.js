@@ -45,7 +45,8 @@ function horseCard(h,race){
  const p=h.profile||{},ped=h.pedigree||{},c=h.comments||{};
  const summary=h.topSummary||{};
  const summaries=[summary.allRecord,summary.surfaceRecord,summary.courseRecord,summary.turnRecord,summary.lateStartRate];
- const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';\n const pedigree='<div class="pedigree-inline">'+
+ const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
+ const pedigree='<div class="pedigree-inline">'+
  '<strong class="pedigree-father">'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name">'+txt(ped.dam)+'</span><span class="dam-line">（'+txt(ped.damsire)+'）</span></strong>'+
  '<strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
  const tabsHtml=tabs.map((t,i)=>'<button type="button" class="data-tab" data-panel="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>').join('');
