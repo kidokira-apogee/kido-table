@@ -440,6 +440,28 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    if(styleNames[shortName])valueNode.textContent=styleNames[shortName];
   });
  }
+ function normalizeSourceGray(root){
+  // TARGET由来の灰色背景だけを表示時に除去する。文字色・灰色以外の背景色・データ値は変更しない。
+  const isGray=value=>{
+   const v=String(value||'').trim().toLowerCase().replace(/\s+/g,' ');
+   if(['silver','gray','grey','#c0c0c0','#808080','#a9a9a9','#d3d3d3','#e8e8e8','#bfbfbf','#d9d9d9','#f0f0f0'].includes(v))return true;
+   const m=v.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+   let rgb=null;
+   if(m){const h=m[1].length===3?m[1].split('').map(x=>x+x).join(''):m[1];rgb=[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+   else{const c=v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(c)rgb=[Number(c[1]),Number(c[2]),Number(c[3])];}
+   if(!rgb)return false;const [r,g,b]=rgb;
+   return Math.max(r,g,b)-Math.min(r,g,b)<=8&&r>=110&&r<=245;
+  };
+  root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
+   const inline=node.getAttribute('style')||'';
+   const bg=node.style.backgroundColor||node.style.background||'';
+   const attr=node.getAttribute('bgcolor')||'';
+   if(isGray(bg)||isGray(attr)){node.style.removeProperty('background-color');node.style.removeProperty('background');node.removeAttribute('bgcolor');}
+   const declarations=inline.split(';').map(x=>x.trim()).filter(Boolean);
+   const kept=declarations.filter(decl=>{const i=decl.indexOf(':');if(i<0)return true;const prop=decl.slice(0,i).trim().toLowerCase();const value=decl.slice(i+1).trim();return !((prop==='background'||prop==='background-color')&&isGray(value));});
+   if(kept.length!==declarations.length)node.setAttribute('style',kept.join('; '));
+  });
+ }
  function normalizeLegacyComments(root){
   root.querySelectorAll('.stable-comment-body').forEach(body=>{
    if(body.dataset.commentNormalized==='true')return;
@@ -556,6 +578,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const data=await response.json();
    detail.innerHTML=data.render.html;
    normalizeRunningStyle(detail);
+   normalizeSourceGray(detail);
    normalizeLegacyComments(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
