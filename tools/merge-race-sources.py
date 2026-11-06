@@ -18,7 +18,7 @@ def read_json(path: Path) -> dict:
 
 
 def name_key(value: str) -> str:
-    return re.sub(r"\\s+", "", str(value or "")).strip()
+    return re.sub(r"\s+", "", str(value or "")).strip()
 
 
 def index_horses(doc: dict, source: str) -> dict:
