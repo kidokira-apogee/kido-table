@@ -168,3 +168,16 @@ Updated: 2026-11-06
 - GitHub Actions run `42159915509` completed successfully on `58f2d7e2855eda0b4bbd9ab313fc83a9d3da5724`.
 - Local cross-check of the mapper against the approved 清里特別 v1.1 prototype: 14/14 horses, zero differences in `topSummary` and `dataTabs`. The previous prototype comments were used only as a synthetic Tospo-shaped test input; this is not evidence that a new raw Tospo export has been parsed.
 - Remaining before a genuine end-to-end run: implement/confirm the TARGET normalized-race extraction input, parse a real Tospo export into the documented comment JSON, and rerun the full pipeline from the three raw source files. No real Tospo raw file is present in the current working materials.
+
+
+## TARGET raw race extractor and merge output hardening (2026-11-06)
+
+- Added tools/extract-target-race.py as a raw TARGET HTML parser. It extracts race-level fields only from TARGET and maps all 90 horse-row cells into profile (7), three recent runs (26 each), and pedigree (5).
+- It preserves cell-level background/text-color attributes, supports UTF-8 and CP932/Shift-JIS, and rejects invalid row widths, duplicate horse numbers, unsupported headcounts, non-consecutive horse numbers, and disagreement between TARGET's stated field size and parsed rows.
+- Race direction is explicitly 不明 when the supplied TARGET export does not state it; going and weather remain null. Those unknowns are listed in sourceAudit.unknownRaceMetadata. No direction, going, or weather inference is performed.
+- frameNumber is left null in the raw TARGET extraction because the inspected 90-cell row does not contain a frame-number field. DATE2's individual frame row is therefore not mapped until an authoritative frame value is available.
+- Added synthetic contract tests for metadata extraction, 90-cell row mapping, source styles, and headcount mismatch. CI passed on the test branch after correcting fixture and test import issues.
+- The supplied real TARGET HTML was independently confirmed to contain 14 horse rows × 90 cells by the existing source-style extraction pass. The newly committed complete raw extractor has not yet been executed against that real HTML in the CI environment; its current CI evidence is synthetic.
+- The three-source merger now emits the locked render metadata required by the schema and records source-color preservation as enabled. This does not imply deployment.
+- Still blocked from a genuine three-source end-to-end run: no raw Tospo comment export is present in the working materials. A normalized Tospo-shaped synthetic fixture is not a substitute for parsing the actual source.
+- Main/live remain unchanged; no merge or deployment.
