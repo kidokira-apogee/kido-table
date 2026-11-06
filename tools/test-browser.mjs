@@ -74,19 +74,21 @@ try {
     assert.equal(await page.locator('#race-list-view').isVisible(), true);
     await page.close();
   }
-  const actualRace = JSON.parse(readFileSync(new URL('../data/races/2026-11-01-tokyo-12.json', import.meta.url), 'utf8'));
+  const manifest = JSON.parse(readFileSync(new URL('../data/races/index.json', import.meta.url), 'utf8'));
+  const kiyosatoEntry = manifest.races.find(race => race.id === '2026-11-01-tokyo-12');
+  assert.ok(kiyosatoEntry, 'Kiyosato must remain registered in the archive');
+  kiyosatoEntry.status = 'complete'; // Test-only override; repository status remains in_progress until sign-off.
   for (const width of [390, 1280]) {
     const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: 1 });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
+    await page.route('**/data/races/index.json*', route => route.fulfill({
+      status: 200, contentType: 'application/json', body: JSON.stringify(manifest)
+    }));
     const response = await page.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' });
     assert.equal(response.status(), 200);
-    await page.evaluate(data => {
-      document.getElementById('race-list-view').hidden = true;
-      const detail = document.getElementById('race-detail-container');
-      detail.hidden = false;
-      detail.innerHTML = window.KidoRaceRenderer.renderRace(data);
-    }, actualRace);
+    await page.waitForSelector('[data-race-id="2026-11-01-tokyo-12"]');
+    await page.locator('[data-race-id="2026-11-01-tokyo-12"]').click();
     await page.waitForSelector('.horse-card');
     assert.equal(await page.locator('.horse-card').count(), 14, width + 'px Kiyosato horse cards');
     assert.equal(await page.locator('.data-tab').count(), 56, width + 'px Kiyosato tabs');
