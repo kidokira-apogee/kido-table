@@ -57,15 +57,18 @@ function horseCard(h,race){
  const summary=h.topSummary||{};
  const summaries=[summary.allRecord,summary.surfaceRecord,summary.courseRecord,summary.turnRecord,summary.lateStartRate];
  const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
- const pc=ped.colors||{};
- const colorStyle=(kind,value)=>{
-  if(value===null||value===undefined||value==='')return '';
-  const v=String(value).trim();
-  const valid=/^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(v);
-  return valid?' style="'+kind+':'+esc(v)+'"':'';
+ const pc=ped.colors||{},ps=ped.sourceStyles||{};
+ const validColor=value=>{if(value===null||value===undefined||value==='')return false;return /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());};
+ const sourceStyle=(cell,bgFallback,textFallback)=>{
+  const bg=cell&&cell.backgroundColor!==null&&cell.backgroundColor!==undefined?cell.backgroundColor:bgFallback;
+  const fg=cell&&cell.textColor!==null&&cell.textColor!==undefined?cell.textColor:textFallback;
+  const rules=[];
+  if(validColor(bg))rules.push('background-color:'+esc(String(bg).trim()));
+  if(validColor(fg))rules.push('color:'+esc(String(fg).trim()));
+  return rules.length?' style="'+rules.join(';')+'"':'';
  };
  const pedigree='<div class="pedigree-inline">'+
- '<strong class="pedigree-father"'+colorStyle('background-color',pc.sireBackground)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name"'+colorStyle('color',pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+colorStyle('background-color',pc.damsireBackground)+'>（'+txt(ped.damsire)+'）</span></strong>'+
+ '<strong class="pedigree-father"'+sourceStyle(ps.sire,pc.sireBackground,null)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name"'+sourceStyle(ps.dam,null,pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+sourceStyle(ps.damsire,pc.damsireBackground,null)+'>（'+txt(ped.damsire)+'）</span></strong>'+
  '<strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
  const tabsHtml=tabs.map((t,i)=>'<button type="button" class="data-tab" data-panel="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>').join('');
  const panels=tabs.map((t,i)=>'<div class="data-panel '+(i===0?'active':'')+'" data-data-content="'+t[0]+'">'+tabPanel(h,t[0])+'</div>').join('');
