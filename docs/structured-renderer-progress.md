@@ -55,3 +55,15 @@ Updated: 2026-11-06
 - The shared gray-background normalizer now skips all nodes within `.pedigree-inline`, so even a future gray-like TARGET pedigree color cannot be stripped.
 - Local checks: 14/14 name+pedigree text and source-color comparison PASS; merged JSON schema validation PASS; validator PASS at 6, 8, 9, 14, 16, 17, 18 horses; duplicate-number rejection PASS; new CSS color and unknown color-key acceptance PASS; invalid CSS injection rejection PASS.
 - Still pending: visual browser comparison against the locked Tokyo 9R baseline, full browser archive-to-detail integration with the 14-horse sample, and validation of the extraction mapping against separate turf and dirt TARGET exports. Main/live remain untouched.
+
+
+## Source-style fidelity and browser smoke checks (2026-11-06)
+
+- Expanded extraction from a single assumed color per pedigree field to `pedigree.sourceStyles`: for each of the five TARGET pedigree cells (sire, dam, damsire, sire-line, damsire-line), preserve both `BGCOLOR` as `backgroundColor` and `FONT COLOR` as `textColor`, including null when the source has no attribute.
+- The compact `pedigree.colors` compatibility fields remain available; the renderer prefers the complete `sourceStyles` values for the three visible ancestry items.
+- The renderer applies both source background and text colors to the visible source fields, accepts new standard CSS color values, and safely ignores invalid CSS strings. Family-line names/colors remain stored but are not rendered as extra chips, consistent with the locked three-item pedigree layout.
+- The TARGET extraction tool supports UTF-8 and Shift-JIS/CP932, checks consecutive horse numbers, checks exact horse names during merge, and writes source provenance into `sourceAudit`.
+- Full-source comparison: 14 horses × five pedigree cells × two style attributes = 140 attribute comparisons; zero mismatches. UTF-8 and Shift-JIS extraction outputs were identical.
+- Synthetic forward-compatibility test: previously unseen color values (`rebeccapurple`, `navy`, `#123456`) and extra foreground/background attributes were extracted, schema-validated, and rendered without palette substitution.
+- Browser smoke harness (isolated renderer + current archive tab/collapse/back handlers): 14 cards, 56 tabs, 70 summary chips; tabs switch; recent-form block collapses/expands; back-to-list works; pedigree gray-like source color survives normalization while an ordinary gray target is stripped; no page errors or horizontal overflow at 390px and 1280px.
+- This browser run is an isolated harness, not a pixel-perfect comparison or full GitHub Pages archive-to-JSON integration test. That comparison remains outstanding.
