@@ -117,10 +117,8 @@
 
   function summaryChip(item, label, kind) {
     const value = kind === 'record' ? recordText(item) : display(item?.value);
-    const numerator = Number(item?.highlight?.numerator);
-    const denominator = Number(item?.highlight?.denominator);
-    const hasFraction = Number.isFinite(numerator) && Number.isFinite(denominator) && denominator > 0;
-    const lateClass = kind === 'lateRate' && item?.highlight?.apply === true && hasFraction && (numerator / denominator) * 100 >= 25 ? ' late' : '';
+    const latePercent = Number.parseFloat(String(item?.value ?? '').replace('%', '').trim());
+    const lateClass = kind === 'lateRate' && Number.isFinite(latePercent) && latePercent >= 25 ? ' late' : '';
     const hitClass = kind === 'record' && isPlaceRateHit(item) ? ' hit' : '';
     return '<div class="data-chip' + lateClass + hitClass + '"><small>' + esc(label) + '</small><b>' + value + '</b></div>';
   }
