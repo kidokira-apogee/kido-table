@@ -47,7 +47,12 @@ function horseCard(h,race){
  const summaries=[summary.allRecord,summary.surfaceRecord,summary.courseRecord,summary.turnRecord,summary.lateStartRate];
  const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
  const pc=ped.colors||{};
- const colorStyle=(kind,value)=>{if(!value)return '';const v=String(value).trim();if(!/^(#[0-9a-f]{3,8}|[a-z]{3,20})$/i.test(v))return '';return ' style="'+kind+':'+esc(v)+'"';};
+ const colorStyle=(kind,value)=>{
+  if(value===null||value===undefined||value==='')return '';
+  const v=String(value).trim();
+  const valid=/^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(v);
+  return valid?' style="'+kind+':'+esc(v)+'"':'';
+ };
  const pedigree='<div class="pedigree-inline">'+
  '<strong class="pedigree-father"'+colorStyle('background-color',pc.sireBackground)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name"'+colorStyle('color',pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+colorStyle('background-color',pc.damsireBackground)+'>（'+txt(ped.damsire)+'）</span></strong>'+
  '<strong class="pedigree-line sire-line"'+colorStyle('background-color',pc.sireLineBackground)+'>'+txt(ped.sireLine||'')+'</strong><strong class="pedigree-line damsire-line"'+colorStyle('background-color',pc.damsireLineBackground)+'>'+txt(ped.damsireLine||'')+'</strong><strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
