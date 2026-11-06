@@ -75,9 +75,9 @@ function horseCard(h,race){
  const summary=h.topSummary||{};
  const summaries=[
   [summary.allRecord,'全成績'],
-  [summary.surfaceRecord,race.surface==='芝'?'芝成績':'ダート成績'],
-  [summary.courseRecord,summary.courseRecord?.label||'今回コース条件'],
-  [summary.turnRecord,summary.turnRecord?.label||'今回周り条件'],
+  [summary.surfaceRecord,'今回馬場の成績'],
+  [summary.courseRecord,'今回コース条件'],
+  [summary.turnRecord,'今回周り条件'],
   [summary.lateStartRate,'出遅れ率']
  ];
  const affiliationClass=p.affiliation==='美浦'?'miho':p.affiliation==='栗東'?'ritto':'';
