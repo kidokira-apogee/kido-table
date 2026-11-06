@@ -140,9 +140,14 @@
     const previous = horse.comments?.previousRun || {};
     const runs = (horse.recentRuns || []).slice(0, 3);
     const runStyles = horseStyles.recentRuns || [];
-    const tabs = [ ['detail','詳細成績'], ['distanceCourse','距離・コース'], ['conditions','条件別'], ['frameAndTop2','枠順・連対実績'] ];
-    const tabButtons = tabs.map((tab, i) => '<button aria-selected="' + (i === 0 ? 'true' : 'false') + '" class="data-tab" data-panel="' + tab[0] + '-' + horse.horseNumber + '" role="tab" type="button">' + tab[1] + '</button>').join('');
-    const panels = tabs.map((tab, i) => '<section class="data-panel' + (i === 0 ? ' active' : '') + '" id="' + tab[0] + '-' + horse.horseNumber + '" data-data-content="' + tab[0] + '-' + horse.horseNumber + '">' + dataPanel(horse, tab[0], race) + '</section>').join('');
+    const tabs = [
+      ['detail','詳細成績','detail'],
+      ['distanceCourse','距離・コース','distance'],
+      ['conditions','条件別','conditions'],
+      ['frameAndTop2','枠順・連対実績','frame']
+    ];
+    const tabButtons = tabs.map((tab, i) => '<button aria-selected="' + (i === 0 ? 'true' : 'false') + '" class="data-tab" data-panel="' + tab[2] + '-' + horse.horseNumber + '" role="tab" type="button">' + tab[1] + '</button>').join('');
+    const panels = tabs.map((tab, i) => '<section class="data-panel' + (i === 0 ? ' active' : '') + '" id="' + tab[2] + '-' + horse.horseNumber + '" data-data-content="' + tab[2] + '-' + horse.horseNumber + '">' + dataPanel(horse, tab[0], race) + '</section>').join('');
     const surfaceLabel = race.surface === '芝' ? '芝成績' : 'ダート成績';
     const summaryHtml = '<div class="data-existing">' +
       summaryChip(summary.allRecord, '全成績', 'record') +
