@@ -104,6 +104,7 @@ def tospo_data():
 
 class BuildRacePipelineTests(unittest.TestCase):
     def run_surface(self, surface: str):
+        code = "ダ" if surface == "ダート" else "芝"
         with tempfile.TemporaryDirectory() as directory:
             temp = Path(directory)
             target = temp / "target.html"
