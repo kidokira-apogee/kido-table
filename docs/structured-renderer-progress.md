@@ -218,3 +218,13 @@ Updated: 2026-11-06
 - Added renderer contract coverage for current-only, previous-only, and no-comment cases, including the rule that ichioshi appears only with a current comment.
 - Added merge contract coverage for both comments absent and invalid comment types. Missing comment values remain empty objects in the structured contract; no visible placeholder is rendered.
 - Latest GitHub Actions validation for commit `53e88294939a09af5233a182b5a840c68fbd4447`: SUCCESS (both workflow runs). Main/live remain untouched.
+
+## Browser responsive smoke check (2026-11-06)
+
+- Added a Playwright/Chromium browser check against the branch's archive page and existing complete race entry.
+- Verified archive → race detail → tab switch → return to archive at 390px and 1280px viewport widths.
+- Verified the selected Tokyo 9R archive entry renders 14 horse cards, 56 data tabs, and 42 recent-run blocks at both widths, with no horizontal overflow or uncaught page errors.
+- Browser screenshots are uploaded as a GitHub Actions artifact for inspection.
+- Latest push-triggered browser workflow for commit `9c36798c04bbaff6817849eb9365164622de0826`: SUCCESS. Pull-request-triggered duplicate run is still completing.
+- This smoke check exercises the current archived HTML layout and navigation. It is not a pixel-perfect comparison of the new structured renderer against the locked Tokyo 9R baseline; that comparison remains separate.
+- Main/live remain untouched.
