@@ -44,18 +44,29 @@ function tabPanel(h,key){
  }
  return '<div class="panel-grid">'+card('枠順別実績',d.frameRecords)+card('連対実績',d.top2Records)+'</div>';
 }
+function formatCourse(raw){
+ const value=String(raw||'').trim();
+ const match=value.match(/^([^･・]+)[･・]([TD])(\\d{2,4})$/);
+ if(!match)return {label:value,attrs:''};
+ const code=match[1],surface=match[2],digits=match[3];
+ const distance=digits.length<=2?Number(digits)*100:Number(digits);
+ const venues={'札':'札幌','函':'函館','福':'福島','新':'新潟','東':'東京','中':'中山','名':'中京','京':'京都','阪':'阪神','船':'船橋'};
+ const venue=venues[code];
+ const attrs=venue?' data-venue="'+esc(venue)+'" data-surface="'+surface+'" data-distance="'+distance+'"':'';
+ return {label:code+'・'+surface+distance,attrs};
+}
 function recentRun(run,i){
  const vals=[
  ['頭数',run.fieldSize],['馬番',run.horseNumber],['人気',run.popularity],['着数',run.finish],
  ['着差',run.margin],['指数',run.index],['上3F',run.last3F],['順',run.last3FRank],['間隔',run.interval],['B',run.blinkers]
  ];
  const style=({'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'})[run.runningStyleRaw]||run.runningStyleRaw||'－';
- const course=run.courseRaw||'';
+ const course=formatCourse(run.courseRaw);
  const bodyWeight=run.bodyWeight?txt(run.bodyWeight)+'kg'+(run.bodyWeightChange?' ('+txt(run.bodyWeightChange)+')':''):'－';
  const carriedWeight=run.weight?txt(run.weight)+'kg':'－';
  const metricClass=(label,value)=>{if(label!=='指数')return '';const n=Number(value);return !Number.isFinite(n)?'':n>=95?' index-95':n>=90?' index-90':n>=80?' index-80':'';};
  return '<article class="run"><div class="run-head"><strong>'+txt(run.label||(['前走','2走前','3走前'][i]))+'</strong><span class="run-date">'+txt(run.dateRaw)+'</span></div>'+
- '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course">'+txt(course)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+carriedWeight+'　'+bodyWeight+'　'+txt(run.going)+'</span></div></div>'+
+ '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course"'+course.attrs+'>'+txt(course.label)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+carriedWeight+'　'+bodyWeight+'　'+txt(run.going)+'</span></div></div>'+
  '<div class="metrics-row"><div class="run-details">'+vals.map(v=>'<div class="metric'+metricClass(v[0],v[1])+'"><label>'+v[0]+'</label><b>'+txt(v[1])+'</b></div>').join('')+'</div></div>'+
  '<div class="run-passage"><span><label>脚質</label><b>'+txt(style)+'</b></span><span><label>通過順</label><strong>'+txt((run.passingOrder||[]).join(' - '))+'</strong></span></div></div></article>';
 }
@@ -69,7 +80,8 @@ function horseCard(h,race){
   [summary.turnRecord,'今回周り条件'],
   [summary.lateStartRate,'出遅れ率']
  ];
- const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
+ const affiliationClass=p.affiliation==='美浦'?'miho':p.affiliation==='栗東'?'ritto':'';
+ const affiliationLabel=p.affiliation?p.affiliation+'所属':'';
  const frameClass=Number.isInteger(h.frameNumber)?' frame-'+h.frameNumber:'';
  const pc=ped.colors||{},ps=ped.sourceStyles||{};
  const validColor=value=>{if(value===null||value===undefined||value==='')return false;return /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());};
@@ -81,9 +93,9 @@ function horseCard(h,race){
   if(validColor(fg))rules.push('color:'+esc(String(fg).trim()));
   return rules.length?' style="'+rules.join(';')+'"':'';
  };
+ const damStyle=sourceStyle(ps.dam,null,null);
  const pedigree='<div class="pedigree-inline">'+
- '<strong class="pedigree-father"'+sourceStyle(ps.sire,pc.sireBackground,null)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name"'+sourceStyle(ps.dam,null,pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+sourceStyle(ps.damsire,pc.damsireBackground,null)+'>（'+txt(ped.damsire)+'）</span></strong>'+
- '<strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
+ '<strong class="pedigree-father"'+sourceStyle(ps.sire,pc.sireBackground,null)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"'+damStyle+'><span class="dam-name"'+sourceStyle({backgroundColor:null,textColor:ps.dam?.textColor},null,pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+sourceStyle(ps.damsire,pc.damsireBackground,null)+'>（'+txt(ped.damsire)+'）</span></strong></div>';
  const tabsHtml=tabs.map((t,i)=>'<button type="button" class="data-tab" data-panel="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>').join('');
  const panels=tabs.map((t,i)=>'<div class="data-panel '+(i===0?'active':'')+'" data-data-content="'+t[0]+'">'+tabPanel(h,t[0])+'</div>').join('');
  const current=c.current||{},previous=c.previousRun||{};
@@ -91,7 +103,7 @@ function horseCard(h,race){
  (current.text?'<div class="comment-current '+(current.isIchioshi?'is-ichioshi':'')+'">'+esc(current.text)+'</div>':'')+
  (previous.text?'<div class="comment-previous">'+esc(previous.text)+'</div>':'')+'</section>';
  return '<article class="horse-card" data-current-distance="'+esc(race.distanceM)+'" data-current-surface="'+(race.surface==='芝'?'T':'D')+'" data-current-venue="'+esc(race.venue)+'" data-field-size="'+esc(race.fieldSize)+'" data-ichioshi="'+String(!!current.isIchioshi)+'">'+
- '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><div class="frame-no'+frameClass+'" data-horse="'+esc(h.horseNumber)+'" data-frame-number="'+esc(h.frameNumber??'')+'">'+esc(h.horseNumber)+'</div></div><div class="identity-main"><div class="horse-name">'+esc(h.horseName)+'</div><div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>'+txt(p.sexAge)+'</strong></span><span class="basic weight-pill"><label>斤量</label><strong>'+(p.handicapWeight!==null&&p.handicapWeight!==undefined&&p.handicapWeight!==''?txt(p.handicapWeight)+'kg':'－')+'</strong></span></div></div></div></div>'+pedigree+'</div>'+
+ '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><div class="frame-no'+frameClass+'" data-horse="'+esc(h.horseNumber)+'" data-frame-number="'+esc(h.frameNumber??'')+'">'+esc(h.horseNumber)+'</div></div><div class="identity-main"><strong class="horse-name">'+esc(h.horseName)+'</strong><div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><b>'+txt(p.sexAge)+'</b></span><span class="basic weight-pill"><label>斤量</label><b>'+(p.handicapWeight!==null&&p.handicapWeight!==undefined&&p.handicapWeight!==''?txt(p.handicapWeight)+'kg':'－')+'</b></span><span class="basic"><label>騎手</label><b class="affiliation '+affiliationClass+'"'+(affiliationLabel?' aria-label="'+esc(p.jockeyRaw||'')+'・'+esc(affiliationLabel)+'"':'')+'>'+txt(p.jockeyRaw)+'</b></span><span class="basic"><label>調教師</label><b class="affiliation '+affiliationClass+'"'+(affiliationLabel?' aria-label="'+esc(p.trainer||'')+'・'+esc(affiliationLabel)+'"':'')+'>'+txt(p.trainer)+'</b></span></div></div></div></div>'+pedigree+'</div>'+
  '<section class="horse-section recent-block"><button type="button" aria-expanded="true" class="horse-section-head section-toggle"><span>RECENT FORM</span><b aria-hidden="true" class="section-collapse-mark">−</b></button><div class="horse-section-content"><section class="runs-section"><div class="runs">'+(h.recentRuns||[]).slice(0,3).map(recentRun).join('')+'</div></section></div></section>'+
  '<section class="data-section"><div class="data-head"><strong>DATA</strong></div><div class="data-existing">'+summaries.map(([item,label])=>summaryChip(item,label)).join('')+'</div><div class="data-tabs">'+tabsHtml+'</div>'+panels+'</section>'+comments+'</article>';
 }
