@@ -37,9 +37,10 @@ def target_html(surface: str) -> str:
 
 
 def date2_text(surface: str) -> str:
-    course = f"東京{surface}1600m"
-    all_course = f"全場{surface}1600m"
-    slope = f"坂有{surface}"
+    code = "ダ" if surface == "ダート" else "芝"
+    course = f"東京{code}1600m"
+    all_course = f"全場{code}1600m"
+    slope = f"坂有{code}"
     blocks = []
     for number in range(1, 7):
         frame = (number + 1) // 2
@@ -66,8 +67,8 @@ def date2_text(surface: str) -> str:
             "9月～11月",
             "1\t0\t0\t0",
             f"{slope}\t1\t0\t0\t0",
-            "平坦" + surface + "\t0\t0\t0\t0",
-            "重不" + surface + "\t0\t0\t0\t0",
+            "平坦" + code + "\t0\t0\t0\t0",
+            "重不" + code + "\t0\t0\t0\t0",
             "Sペ\t0\t0\t0\t0",
             "Hペ\t1\t0\t0\t0",
             "左回\t1\t0\t0\t0",
@@ -127,7 +128,7 @@ class BuildRacePipelineTests(unittest.TestCase):
             self.assertEqual(len(result["horses"]), 6)
             self.assertEqual([horse["frameNumber"] for horse in result["horses"]], [1, 1, 2, 2, 3, 3])
             self.assertEqual(result["horses"][0]["dataTabs"]["detail"]["overall"][-1]["label"], "東京")
-            self.assertEqual(result["horses"][0]["dataTabs"]["distanceCourse"]["courseRecords"][0]["label"], f"東京{surface}1600m")
+            self.assertEqual(result["horses"][0]["dataTabs"]["distanceCourse"]["courseRecords"][0]["label"], f"東京{code}1600m")
             self.assertEqual(result["horses"][1]["comments"]["current"]["isIchioshi"], True)
             self.assertNotIn("isIchioshi", result["horses"][1]["comments"]["previousRun"])
             self.assertNotIn("html", result["render"])
