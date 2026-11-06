@@ -1,0 +1,73 @@
+{
+  "raceId": "2026-11-01-tokyo-12",
+  "sourceAuthority": {
+    "raceMetadata": "① TARGET only",
+    "horseProfileRecentRunsPedigree": "① TARGET only",
+    "horseStatisticsAndFourTabs": "② DATE 2 approved fields only",
+    "currentAndPreviousCommentsAndIchioshi": "③ 東スポ approved fields only"
+  },
+  "targetVerification": {
+    "sourceFile": "TARGET出馬表HTML",
+    "date": "2026-11-01",
+    "venue": "東京",
+    "meeting": "4回東京11日目",
+    "raceNumber": 12,
+    "raceName": "清里特別",
+    "postTime": "16:25",
+    "fieldSize": 14,
+    "class": "3歳以上・2勝クラス(ハンデ)(混)[指定]",
+    "surface": "ダート",
+    "distanceM": 1600,
+    "horseRows": 14,
+    "cellsPerHorse": 90,
+    "horseNumbers": [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+    "horseNames": [
+      "フェスタリア",
+      "ファンシーズ",
+      "ドントゥザムーン",
+      "スルーザナイト",
+      "レーヴドレフォン",
+      "シャンハイナイト",
+      "アイファーバトル",
+      "スマートスピア",
+      "キングツェッペリン",
+      "セイントエルモズ",
+      "キョウエイスレーヴ",
+      "レディゴディヴァ",
+      "サマーマッドネス",
+      "タマモカンパネラ"
+    ],
+    "notConfirmedFromTarget": ["天候", "馬場状態", "コース左右"]
+  },
+  "date2Rules": {
+    "allowedRole": "馬単位の統計データのみ",
+    "tabNamesInOrder": ["詳細成績", "距離・コース", "条件別", "枠順・連対実績"],
+    "notAllowed": [
+      "レース基本情報への参照・補完・上書き",
+      "確定4タブ掲載項目にない項目の表示",
+      "同コース最高タイム",
+      "近距離最高タイム",
+      "ベストタイム・コース別ベストタイム",
+      "近5平",
+      "連対脚質・通算脚質",
+      "最近5走・近5走の脚質集計",
+      "出遅れ率の重複表示"
+    ]
+  },
+  "tospoRules": {
+    "allowedRole": "馬単位の今回コメント・前走コメント・今回コメントのイチ押し情報のみ",
+    "ichioshiHorseNumbers": [8,13],
+    "notAllowed": ["レース基本情報への参照・補完・上書き", "前走コメントへのイチ押し付与"]
+  },
+  "integrationStatus": {
+    "targetHorseRowsVerified": true,
+    "targetHorseNumberSequenceVerified": true,
+    "targetHorseCellStructureVerified": true,
+    "date2FourTabRebuild": "未反映",
+    "tospoOriginalTextReconciliation": "未完了",
+    "htmlRenderVerification": "未完了",
+    "productionDeployment": "未実施",
+    "complete": false
+  },
+  "criticalRule": "既存HTML・既存JSONの表示値を元データとして再利用しない。①を正本として再抽出し、②③は承認済み項目だけを馬番で対応付ける。未確認値は補完しない。"
+}
