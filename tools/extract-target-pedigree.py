@@ -50,8 +50,12 @@ class TargetTableParser(HTMLParser):
             self.cell["text"].append(data)
 
 def extract(path: Path):
+    try:
+        raw = path.read_text(encoding="utf-8-sig")
+    except UnicodeDecodeError:
+        raw = path.read_text(encoding="cp932")
     parser = TargetTableParser()
-    parser.feed(path.read_text(encoding="utf-8-sig"))
+    parser.feed(raw)
     found, seen = [], set()
     for row in parser.rows:
         if not row or not row[0]["text"].isdigit():
