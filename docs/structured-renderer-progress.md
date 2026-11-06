@@ -195,3 +195,13 @@ Updated: 2026-11-06
 - Absence of an out-of-scope item is not a defect to explain or a reason to ask the user. Do not create a display placeholder or extra audit note for it.
 - Source originals are handled according to the master; this rule limits extracted/display output, not the preservation of received source material during processing.
 - Implementation adjustment: removed the `unknownRaceMetadata` supplemental list from TARGET extraction output, and the renderer now omits the going-condition pill when no value is supplied instead of rendering an empty pill. Existing approved display fields and layout remain unchanged.
+
+
+## Actual TARGET raw HTML comparison (2026-11-06)
+
+- Re-read the supplied Kiyosato Tokubetsu TARGET HTML and confirmed 14 horse rows, each with exactly 90 direct TD cells.
+- Compared all 14 horse names and the extracted horse-level values against the existing structured Kiyosato v1.1 sample: profile fields (sex/age, handicap weight, jockey, affiliation, trainer), all 3 × 26 recent-run fields including four passing-order positions and running-style value, and the three displayed pedigree names. Result: 0 mismatches across all compared values.
+- The 90-cell offsets used by the committed extractor align with the real source: profile 7, recent runs 26 × 3, pedigree 5. The real first-row example's pedigree prefix normalization (父 / B) also matches the structured sample.
+- TARGET race header in this source independently reads 2026-11-01, Tokyo 12R, 清里特別, 16:25, 3歳以上・2勝クラス(ハンデ)(混)[指定], dirt 1600m, 14 runners. This matches the existing structured sample's race-level values.
+- This was a local comparison of the supplied raw HTML and existing sample, not a committed raw fixture and not yet an execution of the committed extractor file in CI. Cell-level style comparison remains covered by the previous dedicated 90-cell source-style extraction pass; the current structured v1.1 sample itself does not contain root-level profile/recent-run sourceStyles for a direct comparison.
+- Main/live remain unchanged.
