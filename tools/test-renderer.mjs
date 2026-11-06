@@ -49,7 +49,7 @@ styleProbe.horses[0].pedigree.sourceStyles.dam = { backgroundColor: 'gold', text
 styleProbe.horses[0].pedigree.sourceStyles.damsire = { backgroundColor: 'cyan', textColor: 'brown' };
 let probeHtml = renderRace(styleProbe);
 assert.ok(probeHtml.includes('style="background-color:#123456;color:navy"'));
-assert.ok(probeHtml.includes('style="background-color:gold"'));
+assert.ok(probeHtml.includes('style="background-color:gold;color:rebeccapurple"'));
 assert.ok(probeHtml.includes('style="color:rebeccapurple"'));
 assert.ok(probeHtml.includes('style="background-color:cyan;color:brown"'));
 
@@ -86,7 +86,10 @@ assert.equal(count(turfHtml, /class="panel-card"/g), count(dirtHtml, /class="pan
 
 for (const n of [6, 8, 9, 16, 17, 18]) {
   const variant = structuredClone(raceData);
-  variant.horses = variant.horses.slice(0, n).map((h, i) => ({ ...h, horseNumber: i + 1 }));
+  variant.horses = Array.from({ length: n }, (_, i) => {
+    const h = variant.horses[i % raceData.horses.length];
+    return { ...structuredClone(h), horseNumber: i + 1, horseName: 'TEST-' + (i + 1) };
+  });
   variant.race.fieldSize = n;
   const variantHtml = renderRace(variant);
   assert.equal(count(variantHtml, /<article class="horse-card"/g), n, n + ' horse cards');
