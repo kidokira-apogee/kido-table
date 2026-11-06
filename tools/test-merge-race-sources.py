@@ -90,5 +90,23 @@ class MergeContractTests(unittest.TestCase):
         self.assertFalse(comments["current"].get("isIchioshi", False))
 
 
+    def test_allows_both_comments_missing(self):
+        target, date2, tospo = fixtures()
+        tospo["horses"][0]["currentComment"] = None
+        tospo["horses"][0]["previousRunComment"] = None
+        tospo["horses"][0]["isIchioshi"] = True
+        result = MERGER.merge(target, date2, tospo)
+        comments = result["horses"][0]["comments"]
+        self.assertEqual(comments, {"current": {}, "previousRun": {}})
+        self.assertFalse(comments["current"].get("isIchioshi", False))
+        self.assertEqual(result["sourceAudit"]["ichioshiHorseNumbers"], [2])
+
+    def test_rejects_invalid_comment_type(self):
+        target, date2, tospo = fixtures()
+        tospo["horses"][0]["currentComment"] = 123
+        with self.assertRaisesRegex(ValueError, "今回コメントの形式が不正"):
+            MERGER.merge(target, date2, tospo)
+
+
 if __name__ == "__main__":
     unittest.main()
