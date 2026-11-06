@@ -84,3 +84,13 @@ Updated: 2026-11-06
 - Additional verification: latest renderer syntax and dynamic render tests PASS for 6/8/9/14/16/17/18 horses; latest validator module syntax PASS; schema JSON parse PASS. The gray-color fallback precedence change was included in those renderer tests.
 
 - Validator execution check: a six-horse synthetic fixture with the complete 90-cell style structure passed the current validator logic (5 summary slots, 4 tabs, 3 recent runs, pedigree and root source styles). This confirms validator behavior on the new shape, but the exact 14-horse merged sample has not yet been passed through the repository validator binary.
+
+
+## Surface key and dynamic labels (2026-11-06)
+
+- Confirmed the structured schema restricts `race.surface` to `芝` or `ダート`, and `race.metadataSource` to `① TARGET`.
+- The shared renderer uses this single race-level field as the surface key: `ダート` adds the `racehead-dirt` class (brown band); `芝` uses the existing default turf-green band.
+- Updated the fixed-position summary chip label to `芝成績` or `ダート成績` from `race.surface`.
+- Updated the fixed-position detailed-results card heading to `芝条件` or `ダート条件`; the card position and row rendering remain unchanged. The actual row labels/values continue to come from the corresponding surface-specific DATE2 fields, not from relabeling or substituting values.
+- Turf/dirt are not separate layouts. Common cards and positions remain shared.
+- This update is on the test branch only; main/live remain untouched.
