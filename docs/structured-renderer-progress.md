@@ -106,3 +106,12 @@ Updated: 2026-11-06
 - The source has a Tokyo-dirt course-condition row (東京ダ) as well as slope/flat/going rows. The current structured sample excludes 東京ダ from the detailed surface-condition card, consistent with the unresolved/removed venue-specific item policy; do not re-add it without a confirmed spec change.
 - Limitation: this is a dirt-only DATE2 source. No turf DATE2 export has been supplied in the current working files, so turf label mapping and turf-vs-dirt parity remain unverified. The common layout and renderer behavior are verified separately; no claim is made that the turf source mapping is complete.
 - This is a local comparison report only; raw DATE2 source is not committed. Main/live remain untouched.
+
+
+## Legacy DATE2 importer compatibility review (2026-11-06)
+
+- Reviewed the prior Library prototype `kido_import.py` as a reference only; it is not present in the current renderer test branch and is not the production importer for the structured v1 format.
+- Found a concrete omission in its DATE2 parser allowlist: the standalone venue row (e.g. `東京`) is not included, even though the supplied DATE2 export contains it and the structured Kiyosato sample retains it under overall results. Reusing this parser unchanged would silently drop that venue record.
+- The legacy parser's explicit distance-band allowlist contains only four bands (1000–1300, 1400–1600, 1700–2000, 2100–2400). The supplied dirt export uses those four, but the work table records a possible additional 2500–3600 band in other display examples; the legacy allowlist would not capture an additional band unless extended. This is a coverage risk, not a claim that the current supplied race contains that band.
+- The legacy parser does include both turf/dirt slope/flat/going labels, surface-specific full-course distance labels, and `近５平` variants, but the new locked display spec excludes `近５平` unless later confirmed. Do not treat extraction support as display approval.
+- Action: do not copy the old DATE2 parser wholesale into the new structured pipeline. Build the new mapper against observed source labels, preserve unknown rows for audit, and map only explicitly approved fields into the four fixed card positions. Require per-horse name/number alignment and a zero-mismatch source comparison before accepting a race.
