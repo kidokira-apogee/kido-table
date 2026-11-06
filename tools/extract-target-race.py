@@ -76,10 +76,10 @@ def parse_race_metadata(raw: str, text: str):
     lines = [clean(x) for x in text.splitlines() if clean(x)]
     normalized_text = unicodedata.normalize("NFKC", text)
     normalized_lines = [clean(x) for x in normalized_text.splitlines() if clean(x)]
-    date_line = next((x for x in lines if re.search(r"\d{4}年.*\d{1,2}月.*\d{1,2}日", x)), "")
-    race_line = next((x for x in lines if "Ｒ】" in x or "R】" in x), "")
-    condition_line = next((x for x in lines if re.search(r"(歳以上|歳以下|歳・)", x) and ("クラス" in x or "未勝利" in x or "オープン" in x)), "")
-    surface_line = next((x for x in lines if re.search(r"(芝|ダート)\s*\d{4}m", x)), "")
+    date_line = next((x for x in normalized_lines if re.search(r"\d{4}年.*\d{1,2}月.*\d{1,2}日", x)), "")
+    race_line = next((x for x in normalized_lines if "R】" in x), "")
+    condition_line = next((x for x in normalized_lines if re.search(r"(歳以上|歳以下|歳・)", x) and ("クラス" in x or "未勝利" in x or "オープン" in x)), "")
+    surface_line = next((x for x in normalized_lines if re.search(r"(芝|ダート)\s*\d{4}m", x)), "")
     venue_match = re.search(r"出馬表・([^0-9]+?)(\d{1,2})R", title_text)
     if not venue_match:
         venue_match = re.search(r"\d{4}年.*?日.*?\d+回(東京|京都|中山|阪神|中京|新潟|福島|小倉|札幌|函館)\d+日目", date_line)
@@ -92,7 +92,7 @@ def parse_race_metadata(raw: str, text: str):
     time_match = re.search(r"\[(\d{1,2}:\d{2})発走\]", date_line)
     name = None
     if race_line:
-        name_match = re.search(r"【\s*\d{1,2}\s*Ｒ】\s*([^】]+)", race_line)
+        name_match = re.search(r"【\s*\d{1,2}\s*R】\s*([^】]+)", race_line)
         if name_match:
             name = clean(name_match.group(1)).strip("　 ")
     if not name and title_text and race_number_match:
