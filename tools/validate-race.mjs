@@ -1,170 +1,274 @@
 #!/usr/bin/env node
-/** Structural, provenance, and source-color checks for Kido Table race JSON. */
+/** Structural, provenance, color, and display-contract checks for Kido Table race JSON v1. */
 import fs from 'node:fs';
-const file = process.argv[2];
-if (!file) { console.error('Usage: node tools/validate-race.mjs <race.json>'); process.exit(2); }
-const errors = [];
-const fail = (m) => errors.push(m);
-const isObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
-const required = (obj, keys, path) => { for (const k of keys) if (!(k in obj)) fail(path + '.' + k + ': missing'); };
-const cssColor = (v) => typeof v === 'string' && /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(v.trim());
-const colorKeys = ['sireBackground','damText','damsireBackground','sireLineBackground','damsireLineBackground'];
-let data;
-try { data = JSON.parse(fs.readFileSync(file, 'utf8')); }
-catch (e) { console.error('JSON parse failed: ' + e.message); process.exit(1); }
 
-if (!isObject(data)) fail('$: root must be an object');
-else {
-  required(data, ['schemaVersion','race','sourceAudit','horses'], '
-  if (!isObject(data.race)) fail('race must be an object');
-  else {
-    required(data.race, ['id','date','venue','raceNumber','name','surface','distanceM','direction','fieldSize','metadataSource'], 'race');
-    if (data.race.metadataSource !== '① TARGET') fail('race.metadataSource must be ① TARGET');
-    const raceDate = String(data.race.date ?? '');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(raceDate)) fail('race.date must be YYYY-MM-DD');
-    else {
-      const parsedDate = new Date(raceDate + 'T00:00:00Z');
-      if (Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0,10) !== raceDate) fail('race.date is not a calendar date');
-    }
-    if (!['芝','ダート'].includes(data.race.surface)) fail('race.surface must be 芝 or ダート');
-    if (!Number.isInteger(data.race.fieldSize) || data.race.fieldSize < 6 || data.race.fieldSize > 18) fail('race.fieldSize must be 6–18');
-    if (!Number.isInteger(data.race.distanceM) || data.race.distanceM < 1000) fail('race.distanceM must be an integer >= 1000');
-  }
-  if (!Array.isArray(data.horses)) fail('horses must be an array');
-  else {
-    if (data.horses.length < 6 || data.horses.length > 18) fail('horses count must be 6–18');
-    const nums = data.horses.map(h => h?.horseNumber);
-    if (new Set(nums).size !== nums.length) fail('horseNumber contains duplicates');
-    for (const [i,h] of data.horses.entries()) {
-      const p = 'horses[' + i + ']';
-      if (!isObject(h)) { fail(p + ' must be an object'); continue; }
-      required(h, ['horseNumber','frameNumber','horseName','profile','pedigree','recentRuns','topSummary','dataTabs','comments'], p);
-      if (!Number.isInteger(h.horseNumber) || h.horseNumber < 1 || h.horseNumber > 18) fail(p + '.horseNumber invalid');
-      if (!(h.frameNumber === null || (Number.isInteger(h.frameNumber) && h.frameNumber >= 1 && h.frameNumber <= 8))) fail(p + '.frameNumber must be 1–8 or null');
-      if (typeof h.horseName !== 'string' || !h.horseName.trim()) fail(p + '.horseName empty');
-      if (!isObject(h.profile)) fail(p + '.profile must be an object');
-      if (!isObject(h.topSummary)) fail(p + '.topSummary must be an object');
-      if (!isObject(h.pedigree)) fail(p + '.pedigree must be an object');
-      else {
-        required(h.pedigree, ['sire','dam','damsire','sireLine','damsireLine','colors','sourceStyles'], p + '.pedigree');
-        if (!isObject(h.pedigree.colors)) fail(p + '.pedigree.colors must be an object');
-        else {
-          required(h.pedigree.colors, colorKeys, p + '.pedigree.colors');
-          for (const [key,value] of Object.entries(h.pedigree.colors)) {
-            if (value !== null && !cssColor(value)) fail(p + '.pedigree.colors.' + key + ' must be a valid source CSS color or null');
-          }
-        }
-        const styleKeys = ['sire','dam','damsire','sireLine','damsireLine'];
-        if (!isObject(h.pedigree.sourceStyles)) fail(p + '.pedigree.sourceStyles must be an object');
-        else {
-          required(h.pedigree.sourceStyles, styleKeys, p + '.pedigree.sourceStyles');
-          for (const [cell,style] of Object.entries(h.pedigree.sourceStyles)) {
-            if (!isObject(style)) { fail(p + '.pedigree.sourceStyles.' + cell + ' must be an object'); continue; }
-            required(style, ['backgroundColor','textColor'], p + '.pedigree.sourceStyles.' + cell);
-            for (const key of ['backgroundColor','textColor']) {
-              const value=style[key];
-              if (value !== null && value !== undefined && !cssColor(value)) fail(p + '.pedigree.sourceStyles.' + cell + '.' + key + ' must be a valid source CSS color or null');
-            }
-          }
-        }
-      }
-      if (!Array.isArray(h.recentRuns) || h.recentRuns.length !== 3) fail(p + '.recentRuns must contain exactly 3 runs');
-      else h.recentRuns.forEach((run,j) => { if (!isObject(run)) fail(p + '.recentRuns[' + j + '] must be an object'); });
-      if (!isObject(h.dataTabs)) fail(p + '.dataTabs must be an object');
-      else {
-        required(h.dataTabs, ['detail','distanceCourse','conditions','frameAndTop2'], p + '.dataTabs');
-        for (const tab of ['detail','distanceCourse','conditions','frameAndTop2']) if (tab in h.dataTabs && !isObject(h.dataTabs[tab])) fail(p + '.dataTabs.' + tab + ' must be an object');
-      }
-      if (!isObject(h.comments)) fail(p + '.comments must be an object');
-      else {
-        required(h.comments, ['current','previousRun'], p + '.comments');
-        if ('current' in h.comments && !isObject(h.comments.current)) fail(p + '.comments.current must be an object');
-        if ('previousRun' in h.comments && !isObject(h.comments.previousRun)) fail(p + '.comments.previousRun must be an object');
-        if (isObject(h.comments.previousRun) && 'isIchioshi' in h.comments.previousRun) fail(p + '.comments.previousRun must not contain isIchioshi');
-      }
-    }
-    if (isObject(data.race) && data.horses.length !== data.race.fieldSize) fail('horse count (' + data.horses.length + ') does not match race.fieldSize (' + data.race.fieldSize + ')');
-    const sorted = [...nums].sort((a,b) => a-b);
-    if (nums.some((n,i) => n !== sorted[i])) fail('horses must be ordered by horseNumber ascending');
-    if (sorted.some((n,i) => n !== i + 1)) fail('horseNumber sequence must cover every number from 1 through fieldSize');
-  }
+const file = process.argv[2];
+if (!file) {
+  console.error('Usage: node tools/validate-race.mjs <race.json>');
+  process.exit(2);
 }
-if (errors.length) {
-  console.error('FAIL: ' + errors.length + ' validation error(s)');
-  errors.forEach(e => console.error('- ' + e));
+
+const errors = [];
+const fail = (message) => errors.push(message);
+const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
+const required = (object, keys, path) => {
+  for (const key of keys) {
+    if (!(key in object)) fail(path + '.' + key + ': missing');
+  }
+};
+const cssColor = (value) => typeof value === 'string' &&
+  /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(value.trim());
+const colorKeys = ['sireBackground', 'damText', 'damsireBackground', 'sireLineBackground', 'damsireLineBackground'];
+const styleCellKeys = ['sire', 'dam', 'damsire', 'sireLine', 'damsireLine'];
+
+function validateRows(rows, path, options = {}) {
+  if (!Array.isArray(rows)) {
+    fail(path + ' must be an array');
+    return;
+  }
+  rows.forEach((row, index) => {
+    const rowPath = path + '[' + index + ']';
+    if (!isObject(row)) {
+      fail(rowPath + ' must be an object');
+      return;
+    }
+    if (typeof row.label !== 'string' || !row.label.trim()) fail(rowPath + '.label must be a non-empty string');
+    const hasRecord = Array.isArray(row.record) && row.record.length === 4;
+    const hasValue = Object.prototype.hasOwnProperty.call(row, 'value');
+    if (options.recordOnly && !hasRecord) fail(rowPath + '.record must contain four values');
+    if (options.valueOnly && !hasValue) fail(rowPath + '.value is required');
+    if (!options.recordOnly && !options.valueOnly && !hasRecord && !hasValue) {
+      fail(rowPath + ' must contain record[4] or value');
+    }
+  });
+}
+
+let data;
+try {
+  data = JSON.parse(fs.readFileSync(file, 'utf8'));
+} catch (error) {
+  console.error('JSON parse failed: ' + error.message);
   process.exit(1);
 }
-console.log('PASS: ' + data.race.id + ' / ' + data.horses.length + ' horses / pedigree source colors / 3 recent runs each / 4 tabs');
-);
-  if (!isObject(data.sourceAudit)) fail('sourceAudit must be an object');
+
+if (!isObject(data)) {
+  fail('$ must be an object');
+} else {
+  required(data, ['schemaVersion', 'race', 'sourceAudit', 'render', 'horses'], '$');
   if (data.schemaVersion !== '1.0.0') fail('schemaVersion must be 1.0.0');
-  if (!isObject(data.race)) fail('race must be an object');
-  else {
-    required(data.race, ['id','date','venue','raceNumber','name','surface','distanceM','direction','fieldSize','metadataSource'], 'race');
+
+  if (!isObject(data.race)) {
+    fail('race must be an object');
+  } else {
+    required(data.race, [
+      'id', 'date', 'venue', 'raceNumber', 'name', 'surface', 'distanceM',
+      'direction', 'fieldSize', 'metadataSource'
+    ], 'race');
+
     if (data.race.metadataSource !== '① TARGET') fail('race.metadataSource must be ① TARGET');
+
     const raceDate = String(data.race.date ?? '');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(raceDate)) fail('race.date must be YYYY-MM-DD');
-    else {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(raceDate)) {
+      fail('race.date must be YYYY-MM-DD');
+    } else {
       const parsedDate = new Date(raceDate + 'T00:00:00Z');
-      if (Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0,10) !== raceDate) fail('race.date is not a calendar date');
+      if (Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== raceDate) {
+        fail('race.date is not a calendar date');
+      }
     }
-    if (!['芝','ダート'].includes(data.race.surface)) fail('race.surface must be 芝 or ダート');
-    if (!Number.isInteger(data.race.fieldSize) || data.race.fieldSize < 6 || data.race.fieldSize > 18) fail('race.fieldSize must be 6–18');
+    if (typeof data.race.venue !== 'string' || !data.race.venue.trim()) fail('race.venue must be non-empty');
+    if (!Number.isInteger(data.race.raceNumber) || data.race.raceNumber < 1 || data.race.raceNumber > 12) fail('race.raceNumber must be 1–12');
+    if (typeof data.race.name !== 'string' || !data.race.name.trim()) fail('race.name must be non-empty');
+    if (!['芝', 'ダート'].includes(data.race.surface)) fail('race.surface must be 芝 or ダート');
     if (!Number.isInteger(data.race.distanceM) || data.race.distanceM < 1000) fail('race.distanceM must be an integer >= 1000');
+    if (!['左', '右', '直線', '不明'].includes(data.race.direction)) fail('race.direction must be 左／右／直線／不明');
+    if (!Number.isInteger(data.race.fieldSize) || data.race.fieldSize < 6 || data.race.fieldSize > 18) fail('race.fieldSize must be 6–18');
   }
-  if (!Array.isArray(data.horses)) fail('horses must be an array');
-  else {
+
+  if (!isObject(data.sourceAudit)) {
+    fail('sourceAudit must be an object');
+  }
+
+  if (!isObject(data.render)) {
+    fail('render must be an object');
+  } else {
+    required(data.render, ['layoutId', 'preserveSourceColors'], 'render');
+    if (data.render.layoutId !== 'tokyo9-production-locked') fail('render.layoutId must be tokyo9-production-locked');
+    if (typeof data.render.preserveSourceColors !== 'boolean') fail('render.preserveSourceColors must be boolean');
+    if ('html' in data.render) fail('render.html is prohibited in structured JSON; do not store raw HTML');
+  }
+
+  if (!Array.isArray(data.horses)) {
+    fail('horses must be an array');
+  } else {
     if (data.horses.length < 6 || data.horses.length > 18) fail('horses count must be 6–18');
-    const nums = data.horses.map(h => h?.horseNumber);
-    if (new Set(nums).size !== nums.length) fail('horseNumber contains duplicates');
-    for (const [i,h] of data.horses.entries()) {
-      const p = 'horses[' + i + ']';
-      if (!isObject(h)) { fail(p + ' must be an object'); continue; }
-      required(h, ['horseNumber','frameNumber','horseName','profile','pedigree','recentRuns','topSummary','dataTabs','comments'], p);
-      if (!Number.isInteger(h.horseNumber) || h.horseNumber < 1 || h.horseNumber > 18) fail(p + '.horseNumber invalid');
-      if (typeof h.horseName !== 'string' || !h.horseName.trim()) fail(p + '.horseName empty');
-      if (!isObject(h.pedigree)) fail(p + '.pedigree must be an object');
-      else {
-        required(h.pedigree, ['sire','dam','damsire','sireLine','damsireLine','colors','sourceStyles'], p + '.pedigree');
-        if (!isObject(h.pedigree.colors)) fail(p + '.pedigree.colors must be an object');
-        else {
-          required(h.pedigree.colors, colorKeys, p + '.pedigree.colors');
-          for (const [key,value] of Object.entries(h.pedigree.colors)) {
-            if (value !== null && !cssColor(value)) fail(p + '.pedigree.colors.' + key + ' must be a valid source CSS color or null');
+    const numbers = data.horses.map((horse) => horse?.horseNumber);
+    if (new Set(numbers).size !== numbers.length) fail('horseNumber contains duplicates');
+
+    for (const [index, horse] of data.horses.entries()) {
+      const path = 'horses[' + index + ']';
+      if (!isObject(horse)) {
+        fail(path + ' must be an object');
+        continue;
+      }
+
+      required(horse, [
+        'horseNumber', 'frameNumber', 'horseName', 'profile', 'pedigree',
+        'recentRuns', 'topSummary', 'dataTabs', 'comments'
+      ], path);
+
+      if (!Number.isInteger(horse.horseNumber) || horse.horseNumber < 1 || horse.horseNumber > 18) fail(path + '.horseNumber invalid');
+      if (!(horse.frameNumber === null || (Number.isInteger(horse.frameNumber) && horse.frameNumber >= 1 && horse.frameNumber <= 8))) {
+        fail(path + '.frameNumber must be 1–8 or null');
+      }
+      if (typeof horse.horseName !== 'string' || !horse.horseName.trim()) fail(path + '.horseName must be non-empty');
+      if (!isObject(horse.profile)) fail(path + '.profile must be an object');
+      else required(horse.profile, ['sexAge', 'handicapWeight', 'jockeyRaw', 'affiliation', 'trainer'], path + '.profile');
+
+      if (!isObject(horse.pedigree)) {
+        fail(path + '.pedigree must be an object');
+      } else {
+        required(horse.pedigree, [
+          'sire', 'dam', 'damsire', 'sireLine', 'damsireLine', 'colors', 'sourceStyles'
+        ], path + '.pedigree');
+
+        if (!isObject(horse.pedigree.colors)) {
+          fail(path + '.pedigree.colors must be an object');
+        } else {
+          required(horse.pedigree.colors, colorKeys, path + '.pedigree.colors');
+          for (const [key, value] of Object.entries(horse.pedigree.colors)) {
+            if (value !== null && !cssColor(value)) fail(path + '.pedigree.colors.' + key + ' must be a valid source CSS color or null');
           }
         }
-        const styleKeys = ['sire','dam','damsire','sireLine','damsireLine'];
-        if (!isObject(h.pedigree.sourceStyles)) fail(p + '.pedigree.sourceStyles must be an object');
-        else {
-          required(h.pedigree.sourceStyles, styleKeys, p + '.pedigree.sourceStyles');
-          for (const [cell,style] of Object.entries(h.pedigree.sourceStyles)) {
-            if (!isObject(style)) { fail(p + '.pedigree.sourceStyles.' + cell + ' must be an object'); continue; }
-            required(style, ['backgroundColor','textColor'], p + '.pedigree.sourceStyles.' + cell);
-            for (const key of ['backgroundColor','textColor']) {
-              const value=style[key];
-              if (value !== null && value !== undefined && !cssColor(value)) fail(p + '.pedigree.sourceStyles.' + cell + '.' + key + ' must be a valid source CSS color or null');
+
+        if (!isObject(horse.pedigree.sourceStyles)) {
+          fail(path + '.pedigree.sourceStyles must be an object');
+        } else {
+          required(horse.pedigree.sourceStyles, styleCellKeys, path + '.pedigree.sourceStyles');
+          for (const [cell, style] of Object.entries(horse.pedigree.sourceStyles)) {
+            if (!isObject(style)) {
+              fail(path + '.pedigree.sourceStyles.' + cell + ' must be an object');
+              continue;
+            }
+            required(style, ['backgroundColor', 'textColor'], path + '.pedigree.sourceStyles.' + cell);
+            for (const key of ['backgroundColor', 'textColor']) {
+              const value = style[key];
+              if (value !== null && value !== undefined && !cssColor(value)) {
+                fail(path + '.pedigree.sourceStyles.' + cell + '.' + key + ' must be a valid source CSS color or null');
+              }
             }
           }
         }
       }
-      if (!Array.isArray(h.recentRuns) || h.recentRuns.length !== 3) fail(p + '.recentRuns must contain exactly 3 runs');
-      else h.recentRuns.forEach((run,j) => { if (!isObject(run)) fail(p + '.recentRuns[' + j + '] must be an object'); });
-      if (!isObject(h.dataTabs)) fail(p + '.dataTabs must be an object');
-      else required(h.dataTabs, ['detail','distanceCourse','conditions','frameAndTop2'], p + '.dataTabs');
-      if (!isObject(h.comments)) fail(p + '.comments must be an object');
-      else {
-        required(h.comments, ['current','previousRun'], p + '.comments');
-        if (isObject(h.comments.previousRun) && 'isIchioshi' in h.comments.previousRun) fail(p + '.comments.previousRun must not contain isIchioshi');
+
+      if (!Array.isArray(horse.recentRuns) || horse.recentRuns.length !== 3) {
+        fail(path + '.recentRuns must contain exactly 3 runs');
+      } else {
+        horse.recentRuns.forEach((run, runIndex) => {
+          if (!isObject(run)) fail(path + '.recentRuns[' + runIndex + '] must be an object');
+          else required(run, [
+            'label', 'dateRaw', 'courseRaw', 'raceName', 'ageClass', 'class',
+            'weight', 'jockey', 'bodyWeight', 'bodyWeightChange', 'going',
+            'fieldSize', 'horseNumber', 'popularity', 'finish', 'margin',
+            'index', 'last3F', 'last3FRank', 'interval', 'blinkers',
+            'passingOrder', 'runningStyleRaw'
+          ], path + '.recentRuns[' + runIndex + ']');
+        });
+      }
+
+      if (!isObject(horse.topSummary)) {
+        fail(path + '.topSummary must be an object');
+      } else {
+        required(horse.topSummary, ['allRecord', 'surfaceRecord', 'courseRecord', 'turnRecord', 'lateStartRate'], path + '.topSummary');
+        for (const key of ['allRecord', 'surfaceRecord', 'courseRecord', 'turnRecord']) {
+          const item = horse.topSummary[key];
+          if (!isObject(item)) fail(path + '.topSummary.' + key + ' must be an object');
+          else {
+            if (typeof item.label !== 'string' || !item.label.trim()) fail(path + '.topSummary.' + key + '.label must be non-empty');
+            if (!Array.isArray(item.record) || item.record.length !== 4) fail(path + '.topSummary.' + key + '.record must contain four values');
+          }
+        }
+        const late = horse.topSummary.lateStartRate;
+        if (!isObject(late)) fail(path + '.topSummary.lateStartRate must be an object');
+        else {
+          if (typeof late.label !== 'string' || !late.label.trim()) fail(path + '.topSummary.lateStartRate.label must be non-empty');
+          if (!Object.prototype.hasOwnProperty.call(late, 'value')) fail(path + '.topSummary.lateStartRate.value is required');
+        }
+      }
+
+      if (!isObject(horse.dataTabs)) {
+        fail(path + '.dataTabs must be an object');
+      } else {
+        required(horse.dataTabs, ['detail', 'distanceCourse', 'conditions', 'frameAndTop2'], path + '.dataTabs');
+        const detail = horse.dataTabs.detail;
+        if (!isObject(detail)) fail(path + '.dataTabs.detail must be an object');
+        else {
+          required(detail, ['overall', 'surfaceConditions'], path + '.dataTabs.detail');
+          validateRows(detail.overall, path + '.dataTabs.detail.overall', { recordOnly: true });
+          validateRows(detail.surfaceConditions, path + '.dataTabs.detail.surfaceConditions', { recordOnly: true });
+        }
+        const distance = horse.dataTabs.distanceCourse;
+        if (!isObject(distance)) fail(path + '.dataTabs.distanceCourse must be an object');
+        else {
+          required(distance, ['distanceBands', 'courseRecords', 'performance'], path + '.dataTabs.distanceCourse');
+          validateRows(distance.distanceBands, path + '.dataTabs.distanceCourse.distanceBands', { recordOnly: true });
+          validateRows(distance.courseRecords, path + '.dataTabs.distanceCourse.courseRecords', { recordOnly: true });
+          validateRows(distance.performance, path + '.dataTabs.distanceCourse.performance', { valueOnly: true });
+        }
+        const conditions = horse.dataTabs.conditions;
+        if (!isObject(conditions)) fail(path + '.dataTabs.conditions must be an object');
+        else {
+          required(conditions, ['rotation', 'season', 'pace', 'turn', 'fieldSizeAndPopularity'], path + '.dataTabs.conditions');
+          for (const key of ['rotation', 'season']) {
+            if (!isObject(conditions[key])) fail(path + '.dataTabs.conditions.' + key + ' must be an object');
+            else {
+              if (typeof conditions[key].label !== 'string' || !conditions[key].label.trim()) fail(path + '.dataTabs.conditions.' + key + '.label must be non-empty');
+              if (!Array.isArray(conditions[key].record) || conditions[key].record.length !== 4) fail(path + '.dataTabs.conditions.' + key + '.record must contain four values');
+            }
+          }
+          validateRows(conditions.pace, path + '.dataTabs.conditions.pace', { recordOnly: true });
+          validateRows(conditions.turn, path + '.dataTabs.conditions.turn', { recordOnly: true });
+          validateRows(conditions.fieldSizeAndPopularity, path + '.dataTabs.conditions.fieldSizeAndPopularity', { recordOnly: true });
+        }
+        const frame = horse.dataTabs.frameAndTop2;
+        if (!isObject(frame)) fail(path + '.dataTabs.frameAndTop2 must be an object');
+        else {
+          required(frame, ['frameRecords', 'top2Records'], path + '.dataTabs.frameAndTop2');
+          validateRows(frame.frameRecords, path + '.dataTabs.frameAndTop2.frameRecords', { recordOnly: true });
+          validateRows(frame.top2Records, path + '.dataTabs.frameAndTop2.top2Records', { valueOnly: true });
+        }
+      }
+
+      if (!isObject(horse.comments)) {
+        fail(path + '.comments must be an object');
+      } else {
+        required(horse.comments, ['current', 'previousRun'], path + '.comments');
+        if (!isObject(horse.comments.current)) fail(path + '.comments.current must be an object');
+        else {
+          if (!('text' in horse.comments.current)) fail(path + '.comments.current.text missing');
+          if (!('isIchioshi' in horse.comments.current)) fail(path + '.comments.current.isIchioshi missing');
+          if (typeof horse.comments.current.isIchioshi !== 'boolean') fail(path + '.comments.current.isIchioshi must be boolean');
+        }
+        if (!isObject(horse.comments.previousRun)) fail(path + '.comments.previousRun must be an object');
+        else {
+          if (!('text' in horse.comments.previousRun)) fail(path + '.comments.previousRun.text missing');
+          if ('isIchioshi' in horse.comments.previousRun) fail(path + '.comments.previousRun must not contain isIchioshi');
+        }
       }
     }
-    if (isObject(data.race) && data.horses.length !== data.race.fieldSize) fail('horse count (' + data.horses.length + ') does not match race.fieldSize (' + data.race.fieldSize + ')');
-    const sorted = [...nums].sort((a,b) => a-b);
-    if (nums.some((n,i) => n !== sorted[i])) fail('horses must be ordered by horseNumber ascending');
+
+    if (isObject(data.race) && data.horses.length !== data.race.fieldSize) {
+      fail('horse count (' + data.horses.length + ') does not match race.fieldSize (' + data.race.fieldSize + ')');
+    }
+    const sorted = [...numbers].sort((a, b) => a - b);
+    if (numbers.some((number, index) => number !== sorted[index])) fail('horses must be ordered by horseNumber ascending');
+    if (sorted.some((number, index) => number !== index + 1)) fail('horseNumber sequence must cover every number from 1 through fieldSize');
   }
 }
+
 if (errors.length) {
   console.error('FAIL: ' + errors.length + ' validation error(s)');
-  errors.forEach(e => console.error('- ' + e));
+  errors.forEach((error) => console.error('- ' + error));
   process.exit(1);
 }
-console.log('PASS: ' + data.race.id + ' / ' + data.horses.length + ' horses / pedigree source colors / 3 recent runs each / 4 tabs');
+console.log('PASS: ' + data.race.id + ' / ' + data.horses.length + ' horses / 5 summary slots / 4 tabs / 3 recent runs / pedigree source styles');
