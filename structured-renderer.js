@@ -75,12 +75,21 @@
       '<span>通過順 <b' + styleAttr(passingStyleCell, applyColors) + '>' + (passing || '—') + '</b></span></div></div></article>';
   }
 
+  function isPlaceRateHit(item) {
+    const record = item?.record;
+    if (!Array.isArray(record) || record.length !== 4) return false;
+    const values = record.map(value => /^\\d+$/.test(String(value ?? '').trim()) ? Number(value) : NaN);
+    if (values.some(value => !Number.isFinite(value) || value < 0)) return false;
+    const total = values.reduce((sum, value) => sum + value, 0);
+    return total >= 3 && (values[0] + values[1] + values[2]) / total >= 0.5;
+  }
+
   function statsCard(title, items) {
     if (!Array.isArray(items)) items = items ? [items] : [];
     const rows = items.map(item => {
       const value = recordText(item);
-      // DATE 2の4列値は列意味・分母を確定できていないため、赤系強調を付けない。
-      return '<div class="stat-row"><span>' + display(item?.label) + '</span><strong class="record">' + value + '</strong></div>';
+      const good = isPlaceRateHit(item) ? ' good' : '';
+      return '<div class="stat-row"><span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong></div>';
     }).join('');
     return '<section class="panel-card"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
   }
@@ -106,7 +115,8 @@
     const denominator = Number(item?.highlight?.denominator);
     const hasFraction = Number.isFinite(numerator) && Number.isFinite(denominator) && denominator > 0;
     const lateClass = kind === 'lateRate' && item?.highlight?.apply === true && hasFraction && (numerator / denominator) * 100 >= 25 ? ' late' : '';
-    return '<div class="data-chip' + lateClass + '"><small>' + esc(label) + '</small><b>' + value + '</b></div>';
+    const hitClass = kind === 'record' && isPlaceRateHit(item) ? ' hit' : '';
+    return '<div class="data-chip' + lateClass + hitClass + '"><small>' + esc(label) + '</small><b>' + value + '</b></div>';
   }
 
   function horseHtml(horse, race, applyColors) {
@@ -149,7 +159,7 @@
       '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors) + '>' + display(p.trainer) + '</b></span>' +
       '</div></div></div></div>' +
       '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, applyColors) + '>父　' + display(pedigree.sire) + '</strong>' +
-      '<strong class="pedigree-mother"><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line"' + styleAttr(pedigreeStyles.damsire, applyColors) + '>（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
+      '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, applyColors) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
       '<section class="runs-section"><div class="runs">' + runs.map((run, i) => runHtml(run, i, runStyles[i] || {}, applyColors)).join('') + '</div></section>' +
       '<section class="data-section">' + summaryHtml + '<div aria-label="DATA項目" class="data-tabs" role="tablist">' + tabButtons + '</div>' + panels + '</section>' + comments + '</section>';
   }
