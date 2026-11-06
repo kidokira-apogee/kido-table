@@ -133,3 +133,13 @@ Updated: 2026-11-06
 - CI checks schema JSON syntax, JavaScript syntax for renderer/validator/tests, Python extractor syntax, and presence of required project files.
 - This is a validation foundation only. It does not deploy or alter the live GitHub Pages site. Production deployment remains gated until DATE2 structured extraction, real turf/dirt integration, real 18-horse end-to-end validation, and browser visual QA are complete.
 - Main/live remain unchanged.
+
+
+## DATE2 first-stage extractor (2026-11-06)
+
+- Added `tools/extract-date2-rows.py` as a lossless first-stage parser for the current tab-delimited DATE2 export shape.
+- It identifies each horse by source frame/horse number and reads the horse name from the fixed header position; duplicate horse numbers and missing headers/names fail closed.
+- It preserves each non-empty source row in order, including unknown labels and repeated labels, with raw text and source-line offset. It does not infer race metadata, map unapproved fields, or fill missing values.
+- DATE2 rotation/season rows use a label-only line followed by a four-number continuation line. The parser joins only that exact shape; this was discovered and corrected during fixture comparison.
+- Local fixture test against `清里特別_統合データ試作_v1.1.json`: 14 horses extracted; approved displayed DATE2 rows compared by horse number and label; 0 value mismatches across the checked fields, including rotation and season.
+- This is a first-stage row extractor, not yet the final approved-field mapper or TARGET/DATE2 merger. Turf DATE2 remains unverified. No main/live change.
