@@ -282,14 +282,21 @@ if (!isObject(data)) {
         required(horse.comments, ['current', 'previousRun'], path + '.comments');
         if (!isObject(horse.comments.current)) fail(path + '.comments.current must be an object');
         else {
-          if (!('text' in horse.comments.current)) fail(path + '.comments.current.text missing');
-          if (!('isIchioshi' in horse.comments.current)) fail(path + '.comments.current.isIchioshi missing');
-          if (typeof horse.comments.current.isIchioshi !== 'boolean') fail(path + '.comments.current.isIchioshi must be boolean');
+          const current = horse.comments.current;
+          if ('text' in current && typeof current.text !== 'string') fail(path + '.comments.current.text must be a string');
+          if ('isIchioshi' in current && typeof current.isIchioshi !== 'boolean') fail(path + '.comments.current.isIchioshi must be boolean');
+          if (typeof current.text === 'string' && current.text.length > 0 && typeof current.isIchioshi !== 'boolean') {
+            fail(path + '.comments.current.isIchioshi is required when current comment exists');
+          }
+          if ((!current.text || typeof current.text !== 'string') && current.isIchioshi === true) {
+            fail(path + '.comments.current cannot be ichioshi without current comment');
+          }
         }
         if (!isObject(horse.comments.previousRun)) fail(path + '.comments.previousRun must be an object');
         else {
-          if (!('text' in horse.comments.previousRun)) fail(path + '.comments.previousRun.text missing');
-          if ('isIchioshi' in horse.comments.previousRun) fail(path + '.comments.previousRun must not contain isIchioshi');
+          const previous = horse.comments.previousRun;
+          if ('text' in previous && typeof previous.text !== 'string') fail(path + '.comments.previousRun.text must be a string');
+          if ('isIchioshi' in previous) fail(path + '.comments.previousRun must not contain isIchioshi');
         }
       }
     }
