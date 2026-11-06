@@ -45,4 +45,4 @@ jobs:
           test -s tools/merge-race-sources.py
           test -s tools/test-merge-race-sources.py
       - name: Test three-source merge contracts
-        run: python -m unittest tools/test-merge-race-sources.py
+        run: python tools/test-merge-race-sources.py
