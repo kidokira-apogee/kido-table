@@ -50,7 +50,7 @@
       ['間隔', run.interval, 'interval'], ['B', run.blinkers, 'blinkers']
     ];
     const indexNum = Number(run.index);
-    const indexClass = Number.isFinite(indexNum) && run.index !== ''
+    const indexClass = Number.isFinite(indexNum) && String(run.index ?? '').trim() !== ''
       ? (indexNum >= 95 ? ' index-95' : indexNum >= 90 ? ' index-90' : indexNum >= 80 ? ' index-80' : '') : '';
     const course = formatCourse(run.courseRaw);
     const runningStyle = run.runningStyleRaw || '—';
@@ -84,8 +84,10 @@
     if (!Array.isArray(record) || record.length !== 4) return false;
     const values = record.map(value => /^\d+$/.test(String(value ?? '').trim()) ? Number(value) : NaN);
     if (values.some(value => !Number.isFinite(value) || value < 0)) return false;
-    const total = values.reduce((sum, value) => sum + value, 0);
-    return total >= 3 && (values[0] + values[1] + values[2]) / total >= 0.5;
+    // 表記は「1着-2着-3着-着外」。分母は4区分の合計、複勝数は上位3区分の合計。
+    const denominator = values[0] + values[1] + values[2] + values[3];
+    const placeCount = values[0] + values[1] + values[2];
+    return denominator >= 3 && placeCount / denominator >= 0.5;
   }
 
   function statsCard(title, items) {
@@ -162,8 +164,8 @@
       '<span class="basic"><label>騎手</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors) + '>' + display(p.jockeyRaw) + '</b></span>' +
       '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors) + '>' + display(p.trainer) + '</b></span>' +
       '</div></div></div></div>' +
-      '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, applyColors) + '>父　' + display(pedigree.sire) + '</strong>' +
-      '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, applyColors) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
+      '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, true) + '>父　' + display(pedigree.sire) + '</strong>' +
+      '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, true) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, true) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
       '<section class="runs-section"><div class="runs">' + runs.map((run, i) => runHtml(run, i, runStyles[i] || {}, applyColors)).join('') + '</div></section>' +
       '<section class="data-section">' + summaryHtml + '<div aria-label="DATA項目" class="data-tabs" role="tablist">' + tabButtons + '</div>' + panels + '</section>' + comments + '</section>';
   }
@@ -177,10 +179,11 @@
     const dateItems = [dateLabel, race.meetingLabel, race.fieldSize + '頭', race.startTime ? race.startTime + '発走' : null].filter(Boolean);
     const surfaceText = race.surface + ' ' + Number(race.distanceM).toLocaleString('ja-JP') + 'm';
     const subtitle = [race.classLabel, race.weightType].filter(Boolean).join('　');
+    const isDirt = race.surface === 'ダート' || race.surface === 'D';
     const header = '<nav class="race-nav"><button id="back-to-race-list-' + esc(race.id) + '" type="button">← レース一覧</button><span>木戸表 電子版</span></nav>' +
-      '<header class="racehead"><div class="head-inner"><div class="date-line">' + dateItems.map(v => '<span>' + display(v) + '</span>').join('') + '</div>' +
+      '<header class="racehead"' + (isDirt ? ' style="background:#70452F;color:#fff"' : '') + '><div class="head-inner"><div class="date-line">' + dateItems.map(v => '<span>' + display(v) + '</span>').join('') + '</div>' +
       '<div class="title-line"><span class="race-no">' + esc(String(race.venue).toUpperCase()) + ' ' + esc(race.raceNumber) + 'R</span><span class="race-title">' + display(race.name) + '</span></div>' +
-      '<div class="race-subtitle">' + display(subtitle) + '</div><div class="race-pills"><span class="pill">' + display(race.venue) + '</span><span class="pill">' + display(surfaceText) + '</span><span class="pill">' + display(race.direction === '右' ? '右回り' : race.direction === '左' ? '左回り' : race.direction) + '</span><span class="pill">' + display(race.currentGoing) + '</span></div></div></header>';
+      '<div class="race-subtitle">' + display(subtitle) + '</div><div class="race-pills"><span class="pill">' + display(race.venue) + '</span><span class="pill">' + display(surfaceText) + '</span></div></div></header>';
     const cards = data.horses.slice().sort((a, b) => a.horseNumber - b.horseNumber).map(h => horseHtml(h, race, applyColors)).join('');
     return '<div data-kido-structured-renderer="true">' + header + cards + '</div>';
   }
