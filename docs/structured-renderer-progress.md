@@ -205,3 +205,11 @@ Updated: 2026-11-06
 - TARGET race header in this source independently reads 2026-11-01, Tokyo 12R, 清里特別, 16:25, 3歳以上・2勝クラス(ハンデ)(混)[指定], dirt 1600m, 14 runners. This matches the existing structured sample's race-level values.
 - This was a local comparison of the supplied raw HTML and existing sample, not a committed raw fixture and not yet an execution of the committed extractor file in CI. Cell-level style comparison remains covered by the previous dedicated 90-cell source-style extraction pass; the current structured v1.1 sample itself does not contain root-level profile/recent-run sourceStyles for a direct comparison.
 - Main/live remain unchanged.
+
+
+## One-sided comment handling (2026-11-06)
+
+- Aligned source merge and rendering with the master rule: if only the current comment exists, show only it; if only the previous-run comment exists, show only it; if neither exists, render no comment section.
+- The merge no longer rejects a horse solely because one of the two comment fields is absent. It does not create a placeholder for the missing side.
+- Ichioshi is forcibly disabled when the current comment is absent; the previous-run comment never receives an ichioshi flag.
+- Added synthetic merge contract tests for current-only and previous-only comment cases. No display placeholders are generated.
