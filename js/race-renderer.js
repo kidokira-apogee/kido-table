@@ -129,8 +129,9 @@ function renderRace(data){
  const dateItems=[dateLabel,r.meetingLabel,r.venue,r.fieldSize!==undefined?String(r.fieldSize)+'頭':null,r.startTime?String(r.startTime)+'発走':null].filter(Boolean);
  const coursePill=r.courseLabel?'<span class="pill">'+esc(r.courseLabel)+'</span>':'';
  const directionPill=r.direction&&r.direction!=='不明'?'<span class="pill">'+esc(r.direction==='左'?'左回り':r.direction==='右'?'右回り':r.direction)+'</span>':'';
+ const goingPill=r.going?'<span class="pill">'+txt(r.going)+'</span>':'';
  const header='<nav class="race-nav"><button id="back-to-race-list" type="button">← レース一覧</button><span>木戸表 電子版</span></nav>'+
- '<header class="racehead '+(dirt?'racehead-dirt':'')+'"><div class="head-inner"><div class="date-line">'+dateItems.map((v,i)=>(i?'<i class="dot"></i>':'')+'<span>'+esc(v)+'</span>').join('')+'</div><div class="title-line"><span class="race-no">'+esc(String(r.venue).toUpperCase())+' '+esc(r.raceNumber)+'R</span><span class="race-title">'+esc(r.name)+'</span></div><div class="race-subtitle">'+txt(r.class)+'　'+txt(r.weightType)+'</div><div class="race-pills"><span class="pill">'+esc(r.venue)+'</span><span class="pill">'+esc(r.surface)+' '+esc(r.distanceM)+'m</span>'+coursePill+directionPill+'<span class="pill">'+txt(r.going)+'</span></div></div></header>';
+ '<header class="racehead '+(dirt?'racehead-dirt':'')+'"><div class="head-inner"><div class="date-line">'+dateItems.map((v,i)=>(i?'<i class="dot"></i>':'')+'<span>'+esc(v)+'</span>').join('')+'</div><div class="title-line"><span class="race-no">'+esc(String(r.venue).toUpperCase())+' '+esc(r.raceNumber)+'R</span><span class="race-title">'+esc(r.name)+'</span></div><div class="race-subtitle">'+txt(r.class)+'　'+txt(r.weightType)+'</div><div class="race-pills"><span class="pill">'+esc(r.venue)+'</span><span class="pill">'+esc(r.surface)+' '+esc(r.distanceM)+'m</span>'+coursePill+directionPill+goingPill+'</div></div></header>';
  return header+data.horses.slice().sort((a,b)=>a.horseNumber-b.horseNumber).map(h=>horseCard(h,r)).join('');
 }
 global.KidoRaceRenderer={renderRace};
