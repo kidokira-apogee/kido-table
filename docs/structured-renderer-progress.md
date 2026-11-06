@@ -94,3 +94,15 @@ Updated: 2026-11-06
 - Updated the fixed-position detailed-results card heading to `芝条件` or `ダート条件`; the card position and row rendering remain unchanged. The actual row labels/values continue to come from the corresponding surface-specific DATE2 fields, not from relabeling or substituting values.
 - Turf/dirt are not separate layouts. Common cards and positions remain shared.
 - This update is on the test branch only; main/live remain untouched.
+
+
+## DATE2 dirt-field mapping check (2026-11-06)
+
+- Re-read the supplied DATE2 text export for Kiyosato Tokubetsu (dirt 1600m, 14 runners). It contains 14 horse blocks and a consistent set/order of displayed data fields.
+- Compared the source rows against the structured Kiyosato JSON v1.1 for all 14 horses. Verified exact equality for: overall records (全着/全芝/全ダ/venue), dirt surface-condition rows (坂有ダ/平坦ダ/重不ダ), distance bands, course records, pace, turn, field-size/popularity, inner/middle/outer frame rows, each horse's own frame row, rotation, season, summary records, performance values (当距離/芝最高/ダ最高), and top-two values (連対体重/連対距離/連対平均).
+- Result: 14/14 horse names matched and zero value/label mismatches across the checked fields.
+- Confirmed the individual frame row is variable by horse frame (１枠 through ８枠); it must be selected from the source by that horse's actual frame number, not hard-coded to １枠.
+- The source includes additional rows/fields that are intentionally not displayed in the current locked layout, including 同コース最高タイム, 近距離最高タイム, 近５平, 全連対, ダ連対, コース, 重賞, 出遅れ率 inside the data section, 連対脚質, 最近5走, and related people stats. These remain excluded per current spec or placed in the top summary where applicable; they are not silently added to cards.
+- The source has a Tokyo-dirt course-condition row (東京ダ) as well as slope/flat/going rows. The current structured sample excludes 東京ダ from the detailed surface-condition card, consistent with the unresolved/removed venue-specific item policy; do not re-add it without a confirmed spec change.
+- Limitation: this is a dirt-only DATE2 source. No turf DATE2 export has been supplied in the current working files, so turf label mapping and turf-vs-dirt parity remain unverified. The common layout and renderer behavior are verified separately; no claim is made that the turf source mapping is complete.
+- This is a local comparison report only; raw DATE2 source is not committed. Main/live remain untouched.
