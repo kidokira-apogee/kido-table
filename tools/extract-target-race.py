@@ -168,6 +168,7 @@ def extract(path: Path):
             recent_styles.append(item)
         records.append({
             "horseNumber": number,
+            "frameNumber": None,
             "horseName": profile["horseName"],
             "profile": profile,
             "recentRuns": recent,
