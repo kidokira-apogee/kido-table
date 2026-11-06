@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "tospo-comments-v1",
+  "raceId": "2026-11-01-tokyo-12",
+  "sourceAuthority": "Tospo comments only; race metadata is not sourced from this file",
+  "receivedFrom": "user message in current conversation",
+  "horseCount": 14,
+  "entries": [
+    {
+      "horseNumber": 1,
+      "horseName": "フェスタリア",
+      "current": {
+        "text": "【矢野調教師】最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば",
+        "rawText": "【矢野調教師】最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば（藤井記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【矢野調教師】前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ",
+        "rawText": "【矢野調教師】前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ（月花記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年07月25日札幌12R 桑園特別10着(9人気)"
+      },
+      "rawCombined": "【矢野調教師】最近はハミを取らない感じなのでブリンカーを着ける。状態は良さそうなので、最後までファイトできれば（藤井記者）\n前走\n2026年07月25日札幌12R 桑園特別10着(9人気)\n【矢野調教師】前回はポジションが後ろになってしまった。そこまで切れるタイプではないので、勝負どころでうまく押し上げていければ（月花記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 2,
+      "horseName": "ファンシーズ",
+      "current": {
+        "text": "【尾形調教師】続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料",
+        "rawText": "【尾形調教師】続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料（立川記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【尾形調教師】前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です",
+        "rawText": "【尾形調教師】前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です（立川記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年06月21日東京7R ３歳上１勝クラス1着(2人気)"
+      },
+      "rawCombined": "【尾形調教師】続戦したので夏場は北海道でしっかり充電。気で走るタイプで久々は苦にしないし予定を早めて使えるくらい。馬体重は大きく増えているけどむしろ好材料（立川記者）\n前走\n2026年06月21日東京7R ３歳上１勝クラス1着(2人気)\n【尾形調教師】前走もスムーズに外に出せずもったいない競馬になってしまいましたね。それでも追い込んできたように力はあるし、50キロで走れるのは好材料。使ってきているけど順調です（立川記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 3,
+      "horseName": "ドントゥザムーン",
+      "current": {
+        "text": "【高木調教師】前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する",
+        "rawText": "【高木調教師】前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する（山下記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【高木調教師】距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい",
+        "rawText": "【高木調教師】距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい（山下記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年10月11日東京12R ３歳上２勝クラス5着(2人気)"
+      },
+      "rawCombined": "【高木調教師】前走はトモがハマる前に動かざるを得ない感じだったが、勝ち馬には大きく離されなかったし、内容もまずまずだった。ここは改めて期待する（山下記者）\n前走\n2026年10月11日東京12R ３歳上２勝クラス5着(2人気)\n【高木調教師】距離は1200mのほうが合っている。叩かれたことで状態は良くなっているので、いいところを見せてほしい（山下記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 4,
+      "horseName": "スルーザナイト",
+      "current": {
+        "text": "【西園翔調教師】この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を",
+        "rawText": "【西園翔調教師】この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を（西谷記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【西園翔調教師】左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で",
+        "rawText": "【西園翔調教師】左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で（西谷記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年07月26日新潟8R 麒麟山特別14着(10人気)"
+      },
+      "rawCombined": "【西園翔調教師】この中間、馬が大きくなってスケールアップしたのを感じます。52キロで前進を（西谷記者）\n前走\n2026年07月26日新潟8R 麒麟山特別14着(10人気)\n【西園翔調教師】左回りの平坦が合っているので、ここまで待ちました。久々でも動けるタイプ。牝馬限定戦で（西谷記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 5,
+      "horseName": "レーヴドレフォン",
+      "current": {
+        "text": "【木下助手】2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな",
+        "rawText": "【木下助手】2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな（難波田記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【木下助手】状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら",
+        "rawText": "【木下助手】状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら（難波田記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年09月22日中山9R 鋸山特別11着(11人気)"
+      },
+      "rawCombined": "【木下助手】2ケタ着順続き。前走にしても後方のままで昇級してからいいところがない。今回はブリンカーを外して臨むけど、気持ちの面が大きいのかな（難波田記者）\n前走\n2026年09月22日中山9R 鋸山特別11着(11人気)\n【木下助手】状態はいいのに昇級してからの競馬はひと息。今回はブリンカーを着用するので変化があるようなら（難波田記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 6,
+      "horseName": "シャンハイナイト",
+      "current": {
+        "text": "【村田調教師】乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか",
+        "rawText": "【村田調教師】乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか（山下記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【村田調教師】クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する",
+        "rawText": "【村田調教師】クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する（山下記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年08月29日札幌12R 千歳特別11着(8人気)"
+      },
+      "rawCombined": "【村田調教師】乗り難しさがあるタイプなので、前半で余裕を持って追走できるかがカギになる。ここを目標に順調だし、しまいの脚を生かす競馬でどこまでやれるか（山下記者）\n前走\n2026年08月29日札幌12R 千歳特別11着(8人気)\n【村田調教師】クラスが上がったことで1200mは忙しく、自分の競馬をできないとモロいので、今回は極端な競馬になると思う。叩かれて絶好調なので変わり身に期待する（山下記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 7,
+      "horseName": "アイファーバトル",
+      "current": {
+        "text": "【蛯名利調教師】使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ",
+        "rawText": "【蛯名利調教師】使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ（山下記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【小山助手】少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう",
+        "rawText": "【小山助手】少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう（三嶋記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年02月22日阪神9R 天神橋特別10着(10人気)"
+      },
+      "rawCombined": "【蛯名利調教師】使い詰めだったので、リフレッシュ放牧を挟んで調整を進めた。調教の雰囲気はいい感じだし、しっかりと仕上がっている。休み明けでも期待はあるよ（山下記者）\n前走\n2026年02月22日阪神9R 天神橋特別10着(10人気)\n【小山助手】少頭数でハンデ53キロは魅力ですが、開幕週の芝で時計が速くなると厳しいかもしれません。距離もやや長い印象があるので、ロスなく立ち回ってどこまでやれるかでしょう（三嶋記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 8,
+      "horseName": "スマートスピア",
+      "current": {
+        "text": "【兼武助手】前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら",
+        "rawText": "【兼武助手】前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら（西谷記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": true
+      },
+      "previousRun": {
+        "text": "【兼武助手】放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを",
+        "rawText": "【兼武助手】放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを（西谷記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年08月22日中京6R 大府特別5着(4人気)"
+      },
+      "rawCombined": "【兼武助手】前走は爪をぶつけたのか、伸びを欠く内容となってしまった。中間の調整は問題なく、2週続けてしっかりやって仕上がりも悪くない。うまくスタートを出て立ち回れたら（西谷記者）\n前走\n2026年08月22日中京6R 大府特別5着(4人気)\n【兼武助手】放牧明け。近走もいい競馬ができているし、馬体も充実している。引き続き左回りで走れるのもいいと思う。何とかもうひと押しを（西谷記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 9,
+      "horseName": "キングツェッペリン",
+      "current": {
+        "text": "【牧田調教師】リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待",
+        "rawText": "【牧田調教師】リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待（西谷記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【牧田調教師】1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば",
+        "rawText": "【牧田調教師】1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば（西谷記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年07月04日福島10R 横手特別7着(6人気)"
+      },
+      "rawCombined": "【牧田調教師】リフレッシュ放牧明け。3走前に3着と好走した舞台で、斤量も同じ。ジョッキーもこの馬のことを分かってくれている。変わり身を期待（西谷記者）\n前走\n2026年07月04日福島10R 横手特別7着(6人気)\n【牧田調教師】1700mは現級でも好走していますし、競馬はしやすくなると思います。メンバーや展開など、うまくかみ合えば（西谷記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 10,
+      "horseName": "セイントエルモズ",
+      "current": {
+        "text": "【小島調教師】放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で",
+        "rawText": "【小島調教師】放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で（垰野記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【小島調教師】上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある",
+        "rawText": "【小島調教師】上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある（垰野記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年06月13日東京9R 日野特別11着(6人気)"
+      },
+      "rawCombined": "【小島調教師】放牧明け。緩くてピリッとしていないが、悪くない。一瞬の速い脚はないので、早めに仕掛けたほうが良いかも。メンバー次第で（垰野記者）\n前走\n2026年06月13日東京9R 日野特別11着(6人気)\n【小島調教師】上り坂があるほうがいい。条件は合うが、いい頃と比べるともう少し上昇の余地がある（垰野記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 11,
+      "horseName": "キョウエイスレーヴ",
+      "current": {
+        "text": "【萱野調教師】クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで",
+        "rawText": "【萱野調教師】クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで（大坂記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【田口助手】連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも",
+        "rawText": "【田口助手】連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも（大坂記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年10月11日東京12R ３歳上２勝クラス13着(14人気)"
+      },
+      "rawCombined": "【萱野調教師】クラスの壁に当たっている感じだし、追走にも忙しいから距離を延ばしてみる。ハンデが軽い分でどこまで（大坂記者）\n前走\n2026年10月11日東京12R ３歳上２勝クラス13着(14人気)\n【田口助手】連戦で疲れがあったので立て直し。気持ちで走る馬なので、久々でも力を出せるでしょう。ただ、もう少しクラス慣れは必要かも（大坂記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 12,
+      "horseName": "レディゴディヴァ",
+      "current": {
+        "text": "【小谷助手】昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば",
+        "rawText": "【小谷助手】昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば（赤城記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【上垣内助手】使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら",
+        "rawText": "【上垣内助手】使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら（赤城記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年08月29日札幌12R 千歳特別6着(12人気)"
+      },
+      "rawCombined": "【小谷助手】昇級後もそこそこは伸びてきて、大崩れはしていませんからね。札幌以来ですが、久々を苦にしませんし、芝スタートに替わってうまく出脚がつき、52キロのハンデを生かせれば（赤城記者）\n前走\n2026年08月29日札幌12R 千歳特別6着(12人気)\n【上垣内助手】使って気配は良くなっている。今回は折り合い重視で乗ってもらう。時計のかかる決着なら（赤城記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 13,
+      "horseName": "サマーマッドネス",
+      "current": {
+        "text": "【清水助手】体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう",
+        "rawText": "【清水助手】体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう（芝井記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": true
+      },
+      "previousRun": {
+        "text": "【清水助手】体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか",
+        "rawText": "【清水助手】体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか（芝井記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年10月11日東京7R ３歳上１勝クラス1着(3人気)"
+      },
+      "rawCombined": "【清水助手】体が増えて、良化途上の段階でも勝ちきってくれた。東京のこの条件は合っているし、使って体も絞れてきそうで上積みはありそう（芝井記者）\n前走\n2026年10月11日東京7R ３歳上１勝クラス1着(3人気)\n【清水助手】体が絞れなかったので予定を延ばし乗り込んできた。だいぶピリッとしてきたし、この条件も合っている。自分の競馬をしてどこまでやれるか（芝井記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    },
+    {
+      "horseNumber": 14,
+      "horseName": "タマモカンパネラ",
+      "current": {
+        "text": "【伊藤圭調教師】前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある",
+        "rawText": "【伊藤圭調教師】前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある（大坂記者）",
+        "source": "user-provided Tospo race comments",
+        "isIchioshi": false
+      },
+      "previousRun": {
+        "text": "【伊藤圭調教師】中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら",
+        "rawText": "【伊藤圭調教師】中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら（大坂記者）",
+        "source": "user-provided Tospo previous-run comparison",
+        "race": "2026年10月04日東京12R ３歳上２勝クラス6着(14人気)"
+      },
+      "rawCombined": "【伊藤圭調教師】前走はラストにいい脚を使えていたし、今回は53キロのハンデが魅力。使って体調もいいから楽しみはある（大坂記者）\n前走\n2026年10月04日東京12R ３歳上２勝クラス6着(14人気)\n【伊藤圭調教師】中山千八は少し長いし、機動力に欠ける分、小回りもイマイチ。やはり東京マイルが一番いい条件だね。減量が利く平場のここを待っていた。スムーズなら（大坂記者）",
+      "splitStatus": "split by explicit '前走' label and visible horse sections",
+      "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it.",
+      "reporterRemoval": "display text removes only parenthetical reporter attribution; rawText retains source as supplied"
+    }
+  ],
+  "sourceHeaderExcluded": {
+    "reason": "Tospo source is authorized only for horse-level comments and ichioshi marker; race metadata is TARGET-only"
+  },
+  "notes": [
+    "The user-provided header contains race information that is not used to overwrite TARGET race metadata.",
+    "The horse names and numbers were cross-checked against the TARGET/DATE 2 roster already extracted.",
+    "Only horses 8 and 13 are marked ichioshi, and only on current comments."
+  ]
+}
