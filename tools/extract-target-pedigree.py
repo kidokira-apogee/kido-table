@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Extract TARGET's five pedigree cells and exact source colors from an HTML export."""
+"""Extract exact TARGET pedigree text/colors, optionally merging them into structured race JSON.
+
+Example:
+  python tools/extract-target-pedigree.py target.html --merge race.json --out race.with-pedigree.json
+
+Source colors are copied verbatim from BGCOLOR/FONT COLOR. No palette mapping or inference.
+"""
 from __future__ import annotations
 import argparse
 import json
@@ -65,7 +71,7 @@ def extract(path: Path):
             cells[0]["background"], cells[1]["textColor"], cells[2]["background"],
             cells[3]["background"], cells[4]["background"]
         ]))
-        found.append({"horseNumber": number, "pedigree": ped})
+        found.append({"horseNumber": number, "horseName": row[1]["text"], "pedigree": ped})
     found.sort(key=lambda x: x["horseNumber"])
     nums = [x["horseNumber"] for x in found]
     if not nums:
@@ -77,13 +83,33 @@ def extract(path: Path):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("target_html", type=Path)
+    ap.add_argument("--merge", type=Path, help="existing structured race JSON; matched by horse number and exact horse name")
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     records = extract(args.target_html)
-    payload = json.dumps(records, ensure_ascii=False, indent=2) + "\n"
+    if args.merge:
+        race_data = json.loads(args.merge.read_text(encoding="utf-8"))
+        horses = race_data.get("horses")
+        if not isinstance(horses, list) or len(horses) != len(records):
+            raise ValueError("race JSON horse count does not match TARGET rows")
+        by_number = {h.get("horseNumber"): h for h in horses}
+        for rec in records:
+            horse = by_number.get(rec["horseNumber"])
+            if horse is None:
+                raise ValueError(f"horse number {rec['horseNumber']} missing from race JSON")
+            if clean_text(horse.get("horseName", "")) != rec["horseName"]:
+                raise ValueError(f"horse name mismatch at number {rec['horseNumber']}: JSON={horse.get('horseName')!r}, TARGET={rec['horseName']!r}")
+            horse["pedigree"] = rec["pedigree"]
+        audit = race_data.setdefault("sourceAudit", {})
+        audit["pedigreeSource"] = "① TARGET pedigree cells"
+        audit["pedigreeColorAttributes"] = "BGCOLOR / FONT COLOR copied verbatim"
+        audit["pedigreeHorseNumberNameMatch"] = str(len(records)) + "/" + str(len(records))
+        payload = json.dumps(race_data, ensure_ascii=False, indent=2) + "\n"
+    else:
+        payload = json.dumps(records, ensure_ascii=False, indent=2) + "\n"
     if args.out:
         args.out.write_text(payload, encoding="utf-8")
-        print(f"PASS: {len(records)} horses -> {args.out}")
+        print(f"PASS: {len(records)} horses" + (f" merged -> {args.out}" if args.merge else f" extracted -> {args.out}"))
     else:
         print(payload, end="")
 
