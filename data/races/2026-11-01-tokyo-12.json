@@ -12265,6 +12265,10 @@
     "html": "4タブ×14頭を維持。全14頭の詳細成績から当会場行を削除。タブ表記は「枠順・脚質」。HTML静的検証済み。実ブラウザでの描画・タブ操作確認は未完了。",
     "production": "not deployed",
     "extractionPolicy": "掲載項目ホワイトリスト方式。元データは保持し、HTML用JSON・HTMLにはマスター第15-5項で掲載指定された項目だけを格納・表示する。",
-    "lastAudit": "2026-11-06：14番DATE 2照合完了、当会場行14頭分を削除、4タブ構造・禁止項目を静的検証。"
+    "lastAudit": "2026-11-06：14番DATE 2照合完了、当会場行14頭分を削除、4タブ構造・禁止項目を静的検証。",
+    "htmlRenderVerification": "2026-11-06 GitHub Actions run 42192570290: actual 2026-11-01 Tokyo 12R structured JSON rendered through archive navigation at 390px and 1280px. Verified 14 horse cards, 56 tabs, 42 recent-run cards, 70 summary chips, 14 comment cards, correct tab label, tab interaction, no horizontal overflow, and no page errors.",
+    "actualRaceDataValidation": "PASS: node tools/validate-race.mjs data/races/2026-11-01-tokyo-12.json",
+    "browserWorkflowRun": "42192570290",
+    "complete": false
   }
 }
