@@ -143,3 +143,16 @@ Updated: 2026-11-06
 - DATE2 rotation/season rows use a label-only line followed by a four-number continuation line. The parser joins only that exact shape; this was discovered and corrected during fixture comparison.
 - Local fixture test against `清里特別_統合データ試作_v1.1.json`: 14 horses extracted; approved displayed DATE2 rows compared by horse number and label; 0 value mismatches across the checked fields, including rotation and season.
 - This is a first-stage row extractor, not yet the final approved-field mapper or TARGET/DATE2 merger. Turf DATE2 remains unverified. No main/live change.
+
+
+## 2026-11-06: DATE2 approved-field mapper
+
+- Added `tools/map-date2-approved.py` as the second DATE2 processing stage.
+- The mapper accepts surface, exact course label, and direction as explicit TARGET-derived arguments; it does not read DATE2 race metadata.
+- Maps the approved summary and four-tab fields, including source-driven distance bands, surface-specific condition rows, rotation/season, pace/turn, field-size/popularity, frame groups, top-two records, and performance values.
+- Repeated course labels are disambiguated by row shape and first-occurrence order: four numeric values are course records; one text value is performance information.
+- Frame-specific rows are selected using each horse's actual frame number.
+- Unknown, excluded, and repeated source rows remain in `date2Audit.sourceRows`; the mapper does not fill absent values.
+- Local fixture comparison against the approved 清里特別 v1.1 prototype: 14/14 horses, zero differences in `topSummary` and all four `dataTabs` structures.
+- The real fixture is a dirt race. Turf mapping has not yet been verified against an actual turf DATE2 export.
+- CI now syntax-checks and requires the DATE2 mapper. Latest prior CI run for the extractor passed; the mapper-inclusive run is pending.
