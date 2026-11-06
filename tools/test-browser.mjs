@@ -74,6 +74,16 @@ try {
     assert.equal(await page.locator('#race-list-view').isVisible(), true);
     await page.close();
   }
+  const kiyosatoData = JSON.parse(readFileSync(new URL('../data/races/2026-11-01-tokyo-12.json', import.meta.url), 'utf8'));
+  assert.equal(kiyosatoData.horses.length, 14);
+  assert.ok(kiyosatoData.horses.every(horse =>
+    horse.comments?.rawCombined &&
+    horse.comments?.splitStatus?.includes("explicit '前走' label") &&
+    horse.comments?.current?.text &&
+    horse.comments?.previousRun?.text &&
+    !/[（(][^）)]*記者[）)]/.test(horse.comments.current.text) &&
+    !/[（(][^）)]*記者[）)]/.test(horse.comments.previousRun.text)
+  ), 'all horses retain explicitly split comments without reporter names in display text');
   const manifest = JSON.parse(readFileSync(new URL('../data/races/index.json', import.meta.url), 'utf8'));
   const kiyosatoEntry = manifest.races.find(race => race.id === '2026-11-01-tokyo-12');
   assert.ok(kiyosatoEntry, 'Kiyosato must remain registered in the archive');
