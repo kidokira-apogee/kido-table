@@ -46,6 +46,7 @@ class MergeContractTests(unittest.TestCase):
         target, date2, tospo = fixtures()
         result = MERGER.merge(target, date2, tospo)
         self.assertEqual(result["race"], target["race"])
+        self.assertEqual(result["render"], {"layoutId": "tokyo9-production-locked", "preserveSourceColors": True})
         self.assertEqual(len(result["horses"]), 6)
         self.assertEqual(result["sourceAudit"]["ichioshiHorseNumbers"], [2])
         self.assertEqual(result["horses"][1]["comments"]["current"]["isIchioshi"], True)
