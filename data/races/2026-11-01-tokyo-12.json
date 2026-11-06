@@ -58,13 +58,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#00FF00"
+            "backgroundColor": "#00FF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -365,21 +368,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "中山 36.0 ①"
-              ]
+              "value": "中山 36.0 ①"
             }
           ]
         },
@@ -543,7 +540,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -585,14 +583,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -619,14 +619,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -641,20 +643,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -684,13 +691,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -717,40 +727,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -780,7 +799,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -815,14 +835,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -837,24 +859,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -903,13 +931,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#00FFFF"
+            "backgroundColor": "#00FFFF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -1210,21 +1241,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 36.7 ②"
-              ]
+              "value": "東京 36.7 ②"
             },
             {
               "label": "芝最高",
-              "record": [
-                "東京 33.4 ⑦"
-              ]
+              "value": "東京 33.4 ⑦"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 36.7 ②"
-              ]
+              "value": "東京 36.7 ②"
             }
           ]
         },
@@ -1388,10 +1413,12 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
@@ -1417,7 +1444,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -1428,7 +1456,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -1447,7 +1476,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -1458,42 +1488,58 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "margin": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -1506,7 +1552,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -1517,7 +1564,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -1552,36 +1600,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "lime"
+              "backgroundColor": "lime",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -1599,7 +1660,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -1610,7 +1672,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -1645,14 +1708,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -1667,16 +1732,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -1730,13 +1804,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -2037,21 +2114,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 35.5 ⑧"
-              ]
+              "value": "東京 35.5 ⑧"
             }
           ]
         },
@@ -2215,7 +2286,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -2257,7 +2329,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -2288,17 +2361,20 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -2313,20 +2389,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -2351,7 +2437,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -2370,7 +2457,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -2381,17 +2469,20 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -2402,23 +2493,34 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -2443,7 +2545,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -2462,7 +2565,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -2477,14 +2581,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -2499,20 +2605,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -2561,13 +2677,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -2868,21 +2987,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "京都 35.8 ⑧"
-              ]
+              "value": "京都 35.8 ⑧"
             },
             {
               "label": "芝最高",
-              "record": [
-                "京都 35.8 ⑧"
-              ]
+              "value": "京都 35.8 ⑧"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "京都 36.6 ⑥"
-              ]
+              "value": "京都 36.6 ⑥"
             }
           ]
         },
@@ -3046,10 +3159,12 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
@@ -3060,10 +3175,12 @@
             "textColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -3085,7 +3202,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -3104,7 +3222,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -3119,14 +3238,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -3137,23 +3258,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -3183,14 +3310,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -3217,14 +3346,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -3239,24 +3370,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -3281,14 +3418,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -3315,14 +3454,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -3333,23 +3474,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -3403,13 +3550,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -3710,21 +3860,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 35.6 ④"
-              ]
+              "value": "東京 35.6 ④"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 35.6 ④"
-              ]
+              "value": "東京 35.6 ④"
             }
           ]
         },
@@ -3888,23 +4032,28 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
             "textColor": null
           },
           "jockeyRaw": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -3926,7 +4075,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -3961,14 +4111,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -3983,20 +4135,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -4026,14 +4183,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -4044,7 +4203,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -4059,14 +4219,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -4081,20 +4243,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -4112,7 +4279,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -4123,7 +4291,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -4158,14 +4327,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -4176,19 +4347,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -4242,13 +4423,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -4549,21 +4733,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "中山 35.7 ⑦"
-              ]
+              "value": "中山 35.7 ⑦"
             },
             {
               "label": "芝最高",
-              "record": [
-                "中山 34.5 ⑤"
-              ]
+              "value": "中山 34.5 ⑤"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "新潟 35.9 ①"
-              ]
+              "value": "新潟 35.9 ①"
             }
           ]
         },
@@ -4727,10 +4905,12 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
@@ -4768,14 +4948,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -4802,14 +4984,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -4824,118 +5008,29 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "red"
+                "textColor": "red",
+                "backgroundColor": null
               },
               {
-                "textColor": "red"
+                "textColor": "red",
+                "backgroundColor": null
               },
               {
-                "textColor": "red"
+                "textColor": "red",
+                "backgroundColor": null
               },
               {
-                "textColor": "red"
+                "textColor": "red",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "backgroundColor": "#00FFFF"
-            },
-            "mark": {
-              "backgroundColor": null,
-              "textColor": null
-            }
-          },
-          {
-            "dateRaw": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "courseRaw": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "ageClass": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "class": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "raceName": {
-              "textColor": "black"
-            },
-            "weight": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "jockey": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "bodyWeight": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "bodyWeightChange": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "going": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "fieldSize": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "horseNumber": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "popularity": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "finish": {
-              "backgroundColor": "silver"
-            },
-            "margin": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "index": {
-              "backgroundColor": "#C0C0C0"
-            },
-            "last3F": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "last3FRank": {
-              "backgroundColor": null,
-              "textColor": null
-            },
-            "interval": {
-              "backgroundColor": "#00FF00"
-            },
-            "blinkers": {
-              "textColor": "blue"
-            },
-            "passingOrder": [
-              null,
-              null,
-              {
-                "textColor": "maroon"
-              },
-              {
-                "textColor": "maroon"
-              }
-            ],
-            "runningStyleRaw": {
-              "backgroundColor": null,
+              "backgroundColor": "#00FFFF",
               "textColor": null
             },
             "mark": {
@@ -4961,14 +5056,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "backgroundColor": null,
+              "textColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -4995,34 +5092,157 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
-              "backgroundColor": "yellow"
+              "backgroundColor": null,
+              "textColor": null
             },
             "index": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": null,
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "yellow"
+              "backgroundColor": null,
+              "textColor": null
             },
             "interval": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              }
+            ],
+            "runningStyleRaw": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "mark": {
+              "backgroundColor": null,
+              "textColor": null
+            }
+          },
+          {
+            "dateRaw": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "courseRaw": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "ageClass": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "class": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "raceName": {
+              "textColor": "black",
+              "backgroundColor": null
+            },
+            "weight": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "jockey": {
+              "textColor": "#0000FF",
+              "backgroundColor": null
+            },
+            "bodyWeight": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "bodyWeightChange": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "going": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "fieldSize": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "horseNumber": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "popularity": {
+              "backgroundColor": null,
+              "textColor": null
+            },
+            "finish": {
+              "backgroundColor": "yellow",
+              "textColor": null
+            },
+            "margin": {
+              "backgroundColor": "yellow",
+              "textColor": null
+            },
+            "index": {
+              "backgroundColor": "#00FFFF",
+              "textColor": null
+            },
+            "last3F": {
+              "backgroundColor": "#FFFF00",
+              "textColor": null
+            },
+            "last3FRank": {
+              "backgroundColor": "yellow",
+              "textColor": null
+            },
+            "interval": {
+              "backgroundColor": "#FFFF00",
+              "textColor": null
+            },
+            "blinkers": {
+              "textColor": "blue",
+              "backgroundColor": null
+            },
+            "passingOrder": [
+              {
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -5076,13 +5296,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#00FFFF"
+            "backgroundColor": "#00FFFF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -5383,21 +5606,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "阪神 33.7 ⑦"
-              ]
+              "value": "阪神 33.7 ⑦"
             },
             {
               "label": "芝最高",
-              "record": [
-                "東京 33.2 ①"
-              ]
+              "value": "東京 33.2 ①"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 35.3 ⑤"
-              ]
+              "value": "東京 35.3 ⑤"
             }
           ]
         },
@@ -5561,7 +5778,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -5591,7 +5809,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -5602,13 +5821,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -5635,36 +5857,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "textColor": "#FF0000"
+              "textColor": "#FF0000",
+              "backgroundColor": null
             },
             "last3FRank": {
               "backgroundColor": null,
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -5686,14 +5921,16 @@
               "textColor": null
             },
             "ageClass": {
-              "textColor": "silver"
+              "textColor": "silver",
+              "backgroundColor": null
             },
             "class": {
               "backgroundColor": null,
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -5728,7 +5965,8 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
@@ -5751,20 +5989,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -5794,14 +6037,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -5828,36 +6073,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -5911,13 +6169,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -6218,21 +6479,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "中京 33.7 ④"
-              ]
+              "value": "中京 33.7 ④"
             },
             {
               "label": "芝最高",
-              "record": [
-                "中京 33.7 ④"
-              ]
+              "value": "中京 33.7 ④"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 36.2 ②"
-              ]
+              "value": "東京 36.2 ②"
             }
           ]
         },
@@ -6396,7 +6651,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -6407,13 +6663,16 @@
             "textColor": null
           },
           "jockeyRaw": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -6435,14 +6694,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -6469,14 +6730,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -6487,23 +6750,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -6521,7 +6790,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -6532,7 +6802,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -6563,39 +6834,53 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -6625,14 +6910,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -6655,17 +6942,20 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -6680,24 +6970,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -6746,13 +7042,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -7053,21 +7352,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 35.7 ②"
-              ]
+              "value": "東京 35.7 ②"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "中京 35.5 ③"
-              ]
+              "value": "中京 35.5 ③"
             }
           ]
         },
@@ -7231,7 +7524,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -7242,13 +7536,16 @@
             "textColor": null
           },
           "jockeyRaw": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -7270,7 +7567,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -7305,14 +7603,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -7327,24 +7627,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -7369,14 +7675,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -7403,14 +7711,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -7425,16 +7735,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -7452,7 +7771,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -7463,13 +7783,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -7496,36 +7819,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "lime"
+              "backgroundColor": "lime",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -7579,13 +7915,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -7886,21 +8225,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 37.0 ①"
-              ]
+              "value": "東京 37.0 ①"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 37.0 ①"
-              ]
+              "value": "東京 37.0 ①"
             }
           ]
         },
@@ -8064,7 +8397,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -8106,7 +8440,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -8141,14 +8476,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -8163,20 +8500,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -8202,17 +8544,20 @@
               "textColor": null
             },
             "class": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "raceName": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -8239,14 +8584,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -8261,20 +8608,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -8304,14 +8656,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -8338,42 +8692,54 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "margin": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -8422,13 +8788,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#00FFFF"
+            "backgroundColor": "#00FFFF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -8729,21 +9098,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 37.5 ②"
-              ]
+              "value": "東京 37.5 ②"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 35.6 ②"
-              ]
+              "value": "東京 35.6 ②"
             }
           ]
         },
@@ -8907,7 +9270,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -8949,7 +9313,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -8984,14 +9349,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -9002,19 +9369,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -9044,7 +9421,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -9079,14 +9457,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -9101,16 +9481,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -9140,7 +9529,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -9159,7 +9549,8 @@
               "textColor": null
             },
             "going": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "fieldSize": {
               "backgroundColor": null,
@@ -9174,35 +9565,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "margin": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "aqua"
+              "backgroundColor": "aqua",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -9256,13 +9661,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#00FFFF"
+            "backgroundColor": "#00FFFF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -9563,21 +9971,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 36.5 ⑨"
-              ]
+              "value": "東京 36.5 ⑨"
             }
           ]
         },
@@ -9741,10 +10143,12 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
@@ -9755,10 +10159,12 @@
             "textColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -9780,14 +10186,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#FF0033"
+              "textColor": "#FF0033",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -9814,14 +10222,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -9836,20 +10246,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -9879,13 +10294,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -9912,14 +10330,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -9930,23 +10350,29 @@
               "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -9976,7 +10402,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -10011,14 +10438,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -10033,16 +10462,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -10096,13 +10534,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#00FFFF"
+            "backgroundColor": "#00FFFF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFFF00"
+            "backgroundColor": "#FFFF00",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -10403,21 +10844,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 36.5 ③"
-              ]
+              "value": "東京 36.5 ③"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 36.5 ③"
-              ]
+              "value": "東京 36.5 ③"
             }
           ]
         },
@@ -10581,7 +11016,8 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
             "backgroundColor": null,
@@ -10592,13 +11028,16 @@
             "textColor": null
           },
           "jockeyRaw": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "affiliation": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           },
           "trainer": {
-            "textColor": "#0000FF"
+            "textColor": "#0000FF",
+            "backgroundColor": null
           }
         },
         "recentRuns": [
@@ -10608,7 +11047,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -10619,14 +11059,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -10649,41 +11091,58 @@
               "textColor": null
             },
             "popularity": {
-              "backgroundColor": "lime"
+              "backgroundColor": "lime",
+              "textColor": null
             },
             "finish": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "margin": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "lime"
+              "backgroundColor": "lime",
+              "textColor": null
             },
             "interval": {
-              "backgroundColor": "#00FF00"
+              "backgroundColor": "#00FF00",
+              "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -10696,7 +11155,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -10707,14 +11167,16 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -10741,14 +11203,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -10763,20 +11227,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "blue"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -10789,24 +11263,28 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
               "textColor": null
             },
             "class": {
-              "textColor": "maroon"
+              "textColor": "maroon",
+              "backgroundColor": null
             },
             "raceName": {
-              "textColor": "maroon"
+              "textColor": "maroon",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
               "textColor": null
             },
             "jockey": {
-              "textColor": "#0000FF"
+              "textColor": "#0000FF",
+              "backgroundColor": null
             },
             "bodyWeight": {
               "backgroundColor": null,
@@ -10833,14 +11311,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -10855,16 +11335,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -10918,13 +11407,16 @@
         },
         "sourceStyles": {
           "sire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "dam": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "damsire": {
-            "backgroundColor": "#FFC0FF"
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
           },
           "sireLine": {
             "backgroundColor": null,
@@ -11225,21 +11717,15 @@
           "performance": [
             {
               "label": "当距離",
-              "record": [
-                "東京 35.1 ②"
-              ]
+              "value": "東京 35.1 ②"
             },
             {
               "label": "芝最高",
-              "record": [
-                "－"
-              ]
+              "value": "－"
             },
             {
               "label": "ダ最高",
-              "record": [
-                "東京 35.1 ②"
-              ]
+              "value": "東京 35.1 ②"
             }
           ]
         },
@@ -11403,10 +11889,12 @@
             "textColor": null
           },
           "horseName": {
-            "textColor": "maroon"
+            "textColor": "maroon",
+            "backgroundColor": null
           },
           "sexAge": {
-            "textColor": "#FF0000"
+            "textColor": "#FF0000",
+            "backgroundColor": null
           },
           "handicapWeight": {
             "backgroundColor": null,
@@ -11432,7 +11920,8 @@
               "textColor": null
             },
             "courseRaw": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "ageClass": {
               "backgroundColor": null,
@@ -11443,7 +11932,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -11478,36 +11968,49 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#00FFFF"
+              "backgroundColor": "#00FFFF",
+              "textColor": null
             },
             "last3F": {
-              "backgroundColor": "#FFFF00"
+              "backgroundColor": "#FFFF00",
+              "textColor": null
             },
             "last3FRank": {
-              "backgroundColor": "yellow"
+              "backgroundColor": "yellow",
+              "textColor": null
             },
             "interval": {
               "backgroundColor": null,
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
-              null,
-              null,
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
               },
               {
-                "textColor": "maroon"
+                "backgroundColor": null,
+                "textColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
+              },
+              {
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
@@ -11537,7 +12040,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -11572,14 +12076,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -11594,24 +12100,30 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               },
               {
-                "textColor": "blue"
+                "textColor": "blue",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "mark": {
               "backgroundColor": null,
@@ -11636,7 +12148,8 @@
               "textColor": null
             },
             "raceName": {
-              "textColor": "black"
+              "textColor": "black",
+              "backgroundColor": null
             },
             "weight": {
               "backgroundColor": null,
@@ -11671,14 +12184,16 @@
               "textColor": null
             },
             "finish": {
-              "backgroundColor": "silver"
+              "backgroundColor": "silver",
+              "textColor": null
             },
             "margin": {
               "backgroundColor": null,
               "textColor": null
             },
             "index": {
-              "backgroundColor": "#C0C0C0"
+              "backgroundColor": "#C0C0C0",
+              "textColor": null
             },
             "last3F": {
               "backgroundColor": null,
@@ -11693,20 +12208,25 @@
               "textColor": null
             },
             "blinkers": {
-              "textColor": "blue"
+              "textColor": "blue",
+              "backgroundColor": null
             },
             "passingOrder": [
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               },
               {
-                "textColor": "maroon"
+                "textColor": "maroon",
+                "backgroundColor": null
               }
             ],
             "runningStyleRaw": {
