@@ -421,6 +421,838 @@
                 "type": "object"
               }
             }
+          },
+          "sourceStyles": {
+            "type": "object",
+            "required": [
+              "profile",
+              "recentRuns"
+            ],
+            "properties": {
+              "profile": {
+                "type": "object",
+                "required": [
+                  "horseNumber",
+                  "horseName",
+                  "sexAge",
+                  "handicapWeight",
+                  "jockeyRaw",
+                  "affiliation",
+                  "trainer"
+                ],
+                "properties": {
+                  "horseNumber": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "horseName": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "sexAge": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "handicapWeight": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "jockeyRaw": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "affiliation": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "trainer": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "backgroundColor",
+                    "textColor"
+                  ],
+                  "properties": {
+                    "backgroundColor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                    },
+                    "textColor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "recentRuns": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "dateRaw",
+                    "courseRaw",
+                    "ageClass",
+                    "class",
+                    "raceName",
+                    "weight",
+                    "jockey",
+                    "bodyWeight",
+                    "bodyWeightChange",
+                    "going",
+                    "mark",
+                    "fieldSize",
+                    "horseNumber",
+                    "popularity",
+                    "finish",
+                    "margin",
+                    "index",
+                    "last3F",
+                    "last3FRank",
+                    "interval",
+                    "blinkers",
+                    "runningStyleRaw",
+                    "passingOrder"
+                  ],
+                  "properties": {
+                    "dateRaw": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "courseRaw": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "ageClass": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "class": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "raceName": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "weight": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "jockey": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "bodyWeight": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "bodyWeightChange": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "going": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "mark": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "fieldSize": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "horseNumber": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "popularity": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "finish": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "margin": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "index": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "last3F": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "last3FRank": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "interval": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "blinkers": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "runningStyleRaw": {
+                      "type": "object",
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "passingOrder": {
+                      "type": "array",
+                      "minItems": 4,
+                      "maxItems": 4,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "backgroundColor",
+                          "textColor"
+                        ],
+                        "properties": {
+                          "backgroundColor": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                          },
+                          "textColor": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": true
