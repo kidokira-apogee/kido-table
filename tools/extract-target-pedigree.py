@@ -11,7 +11,7 @@ KEYS = ("sire", "dam", "damsire", "sireLine", "damsireLine")
 COLOR_KEYS = ("sireBackground", "damText", "damsireBackground", "sireLineBackground", "damsireLineBackground")
 
 def clean_text(value: str) -> str:
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 class TargetTableParser(HTMLParser):
     def __init__(self):
@@ -55,8 +55,8 @@ def extract(path: Path):
             raise ValueError(f"horse {number}: expected five pedigree cells; got {len(row)} total cells")
         cells = row[-5:]
         values = [c["text"] for c in cells]
-        values[0] = re.sub(r"^父\\s*", "", values[0]).strip()
-        values[2] = re.sub(r"^[ＢB]\\s*", "", values[2]).strip()
+        values[0] = re.sub(r"^父\s*", "", values[0]).strip()
+        values[2] = re.sub(r"^[ＢB]\s*", "", values[2]).strip()
         if number in seen:
             raise ValueError(f"duplicate horse number: {number}")
         seen.add(number)
@@ -80,7 +80,7 @@ def main():
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     records = extract(args.target_html)
-    payload = json.dumps(records, ensure_ascii=False, indent=2) + "\\n"
+    payload = json.dumps(records, ensure_ascii=False, indent=2) + "\n"
     if args.out:
         args.out.write_text(payload, encoding="utf-8")
         print(f"PASS: {len(records)} horses -> {args.out}")
