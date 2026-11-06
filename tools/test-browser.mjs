@@ -76,6 +76,7 @@ try {
   }
   const kiyosatoData = JSON.parse(readFileSync(new URL('../data/races/2026-11-01-tokyo-12.json', import.meta.url), 'utf8'));
   assert.equal(kiyosatoData.horses.length, 14);
+  assert.deepEqual(kiyosatoData.horses.map(horse => horse.frameNumber), [1, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]);
   assert.ok(kiyosatoData.horses.every(horse =>
     horse.comments?.rawCombined &&
     horse.comments?.splitStatus?.includes("explicit '前走' label") &&
@@ -103,6 +104,7 @@ try {
     await page.locator('[data-race-id="2026-11-01-tokyo-12"]').click();
     await page.waitForSelector('.horse-card');
     assert.equal(await page.locator('.horse-card').count(), 14, width + 'px Kiyosato horse cards');
+    assert.deepEqual(await page.locator('.horse-card .frame-no').evaluateAll(nodes => nodes.map(node => [...node.classList].find(name => /^frame-[1-8]$/.test(name)) || null)), ['frame-1','frame-2','frame-3','frame-3','frame-4','frame-4','frame-5','frame-5','frame-6','frame-6','frame-7','frame-7','frame-8','frame-8'], width + 'px DATE2 frame-color assignment');
     assert.equal(await page.locator('.data-tab').count(), 56, width + 'px Kiyosato tabs');
     assert.equal(await page.locator('.run').count(), 42, width + 'px Kiyosato recent runs');
     assert.equal(await page.locator('.data-chip').count(), 70, width + 'px Kiyosato summary chips');
