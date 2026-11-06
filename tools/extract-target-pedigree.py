@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Extract exact TARGET pedigree text/colors, optionally merging them into structured race JSON.
+"""Extract all 90 TARGET horse-row cell styles and merge them by horse number/name.
 
-Example:
-  python tools/extract-target-pedigree.py target.html --merge race.json --out race.with-pedigree.json
-
-Source colors are copied verbatim from BGCOLOR/FONT COLOR. No palette mapping or inference.
+Supports UTF-8/Shift-JIS, BGCOLOR, FONT COLOR, and inline CSS color/background.
+No source colors are semantically mapped or normalized.
 """
 from __future__ import annotations
 import argparse
@@ -13,7 +11,15 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 
-KEYS = ("sire", "dam", "damsire", "sireLine", "damsireLine")
+PROFILE_KEYS = ("horseNumber", "horseName", "sexAge", "handicapWeight", "jockeyRaw", "affiliation", "trainer")
+RUN_KEYS = (
+    "dateRaw", "courseRaw", "ageClass", "class", "raceName", "weight", "jockey",
+    "bodyWeight", "bodyWeightChange", "going", "mark", "fieldSize", "horseNumber",
+    "popularity", "finish", "margin", "index", "last3F", "last3FRank", "interval",
+    "blinkers", "passingOrder1", "passingOrder2", "passingOrder3", "passingOrder4",
+    "runningStyleRaw"
+)
+PEDIGREE_KEYS = ("sire", "dam", "damsire", "sireLine", "damsireLine")
 COLOR_KEYS = ("sireBackground", "damText", "damsireBackground", "sireLineBackground", "damsireLineBackground")
 
 def clean_text(value: str) -> str:
@@ -27,6 +33,9 @@ def style_declarations(value):
         key, val = declaration.split(":", 1)
         result[key.strip().lower()] = val.strip()
     return result
+
+def style_of(cell):
+    return {"backgroundColor": cell.get("background"), "textColor": cell.get("textColor")}
 
 class TargetTableParser(HTMLParser):
     def __init__(self):
@@ -78,25 +87,38 @@ def extract(path: Path):
         if not row or not row[0]["text"].isdigit():
             continue
         number = int(row[0]["text"])
-        if len(row) < 6:
-            raise ValueError(f"horse {number}: expected five pedigree cells; got {len(row)} total cells")
-        cells = row[-5:]
-        values = [c["text"] for c in cells]
-        values[0] = re.sub(r"^父\s*", "", values[0]).strip()
-        values[2] = re.sub(r"^[ＢB]\s*", "", values[2]).strip()
+        if len(row) != 90:
+            raise ValueError(f"horse {number}: expected exactly 90 TARGET cells; got {len(row)}")
         if number in seen:
             raise ValueError(f"duplicate horse number: {number}")
         seen.add(number)
-        ped = dict(zip(KEYS, values))
-        ped["colors"] = dict(zip(COLOR_KEYS, [
+        horse_name = row[1]["text"]
+        profile_styles = {key: style_of(cell) for key, cell in zip(PROFILE_KEYS, row[:7])}
+        recent_styles = []
+        for run_index in range(3):
+            cells = row[7 + run_index * 26: 7 + (run_index + 1) * 26]
+            run_styles = {}
+            for key, cell in zip(RUN_KEYS[:21], cells[:21]):
+                run_styles[key] = style_of(cell)
+            run_styles["passingOrder"] = [style_of(cell) for cell in cells[21:25]]
+            run_styles["runningStyleRaw"] = style_of(cells[25])
+            recent_styles.append(run_styles)
+        cells = row[85:90]
+        values = [c["text"] for c in cells]
+        values[0] = re.sub(r"^父\s*", "", values[0]).strip()
+        values[2] = re.sub(r"^[ＢB]\s*", "", values[2]).strip()
+        pedigree = dict(zip(PEDIGREE_KEYS, values))
+        pedigree["colors"] = dict(zip(COLOR_KEYS, [
             cells[0]["background"], cells[1]["textColor"], cells[2]["background"],
             cells[3]["background"], cells[4]["background"]
         ]))
-        ped["sourceStyles"] = {
-            key: {"backgroundColor": cell["background"], "textColor": cell["textColor"]}
-            for key, cell in zip(KEYS, cells)
-        }
-        found.append({"horseNumber": number, "horseName": row[1]["text"], "pedigree": ped})
+        pedigree["sourceStyles"] = {key: style_of(cell) for key, cell in zip(PEDIGREE_KEYS, cells)}
+        found.append({
+            "horseNumber": number,
+            "horseName": horse_name,
+            "pedigree": pedigree,
+            "sourceStyles": {"profile": profile_styles, "recentRuns": recent_styles}
+        })
     found.sort(key=lambda x: x["horseNumber"])
     nums = [x["horseNumber"] for x in found]
     if not nums:
@@ -108,7 +130,7 @@ def extract(path: Path):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("target_html", type=Path)
-    ap.add_argument("--merge", type=Path, help="existing structured race JSON; matched by horse number and exact horse name")
+    ap.add_argument("--merge", type=Path, help="structured JSON; merge only after exact horse-number/name check")
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     records = extract(args.target_html)
@@ -125,16 +147,21 @@ def main():
             if clean_text(horse.get("horseName", "")) != rec["horseName"]:
                 raise ValueError(f"horse name mismatch at number {rec['horseNumber']}: JSON={horse.get('horseName')!r}, TARGET={rec['horseName']!r}")
             horse["pedigree"] = rec["pedigree"]
+            horse["sourceStyles"] = rec["sourceStyles"]
         audit = race_data.setdefault("sourceAudit", {})
+        audit["targetRows"] = len(records)
+        audit["targetCellsPerHorse"] = 90
+        audit["targetSourceStyles"] = "all 90 TARGET cells mapped by profile/recent-run/pedigree field"
+        audit["horseNumberNameMatch"] = f"{len(records)}/{len(records)}"
         audit["pedigreeSource"] = "① TARGET pedigree cells"
-        audit["pedigreeColorAttributes"] = "BGCOLOR / FONT COLOR copied verbatim"
-        audit["pedigreeHorseNumberNameMatch"] = str(len(records)) + "/" + str(len(records))
+        audit["pedigreeColorAttributes"] = "BGCOLOR / FONT COLOR / inline CSS copied verbatim"
+        audit["pedigreeHorseNumberNameMatch"] = f"{len(records)}/{len(records)}"
         payload = json.dumps(race_data, ensure_ascii=False, indent=2) + "\n"
     else:
         payload = json.dumps(records, ensure_ascii=False, indent=2) + "\n"
     if args.out:
         args.out.write_text(payload, encoding="utf-8")
-        print(f"PASS: {len(records)} horses" + (f" merged -> {args.out}" if args.merge else f" extracted -> {args.out}"))
+        print(f"PASS: {len(records)} horses / 90 cells each" + (f" merged -> {args.out}" if args.merge else f" extracted -> {args.out}"))
     else:
         print(payload, end="")
 
