@@ -101,6 +101,10 @@ try {
     assert.equal(await page.locator('.data-tab').filter({ hasText: '枠順・脚質' }).count(), 14);
     assert.equal(await page.locator('.data-tab').filter({ hasText: '枠順・連対実績' }).count(), 0);
     assert.equal(await page.locator('.horse-card').first().locator('[data-data-content="detail"]').innerText().then(t => t.includes('東京')), true);
+    const venueRows = await page.locator('.horse-card [data-data-content="detail"]').evaluateAll(nodes => nodes.map(node => node.textContent.includes('東京')));
+    assert.deepEqual(venueRows, Array(14).fill(true), width + 'px independent Tokyo venue row for all horses');
+    const courseRows = await page.locator('.horse-card [data-data-content="distanceCourse"]').evaluateAll(nodes => nodes.map(node => node.textContent.includes('東京ダ1600m')));
+    assert.deepEqual(courseRows, Array(14).fill(true), width + 'px Tokyo dirt 1600 course record for all horses');
     const tab = page.locator('.horse-card').first().locator('.data-tab').nth(1);
     await tab.click();
     assert.equal(await tab.getAttribute('aria-selected'), 'true');
