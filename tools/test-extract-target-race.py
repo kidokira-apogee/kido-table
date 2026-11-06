@@ -6,7 +6,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from extract_target_race import extract
+import importlib.util
+MODULE_PATH = Path(__file__).with_name("extract-target-race.py")
+SPEC = importlib.util.spec_from_file_location("extract_target_race", MODULE_PATH)
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+extract = MODULE.extract
 
 def make_fixture(headcount=6):
     rows = []
