@@ -213,3 +213,8 @@ Updated: 2026-11-06
 - The merge no longer rejects a horse solely because one of the two comment fields is absent. It does not create a placeholder for the missing side.
 - Ichioshi is forcibly disabled when the current comment is absent; the previous-run comment never receives an ichioshi flag.
 - Added synthetic merge contract tests for current-only and previous-only comment cases. No display placeholders are generated.
+
+- Renderer now omits the entire comment section when both comment texts are absent; it renders only the populated side when exactly one exists.
+- Added renderer contract coverage for current-only, previous-only, and no-comment cases, including the rule that ichioshi appears only with a current comment.
+- Added merge contract coverage for both comments absent and invalid comment types. Missing comment values remain empty objects in the structured contract; no visible placeholder is rendered.
+- Latest GitHub Actions validation for commit `53e88294939a09af5233a182b5a840c68fbd4447`: SUCCESS (both workflow runs). Main/live remain untouched.
