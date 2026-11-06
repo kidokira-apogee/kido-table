@@ -181,3 +181,7 @@ Updated: 2026-11-06
 - The three-source merger now emits the locked render metadata required by the schema and records source-color preservation as enabled. This does not imply deployment.
 - Still blocked from a genuine three-source end-to-end run: no raw Tospo comment export is present in the working materials. A normalized Tospo-shaped synthetic fixture is not a substitute for parsing the actual source.
 - Main/live remain unchanged; no merge or deployment.
+
+- Added tools/build-race.py to orchestrate TARGET extraction → DATE2 lossless extraction → TARGET-parameterized DATE2 mapping → strict three-source merge. It writes the final race JSON only after the source join succeeds. The Tospo input is explicitly required to be normalized JSON; this runner does not parse raw Tospo HTML/text.
+- TARGET's 90-cell horse row does not contain a frame number. The pipeline therefore retains null from TARGET extraction, uses DATE2's explicit frame number to select each horse's frame-specific DATE2 record, and carries that DATE2-sourced frame number into the final horse object. This provenance is limited to the horse-level frame field; TARGET remains the sole race-metadata source.
+- The runner has not yet completed a real end-to-end run because no raw Tospo export or confirmed normalized Tospo input from that export is available. Synthetic Tospo contract tests remain tests of the merge contract only.
