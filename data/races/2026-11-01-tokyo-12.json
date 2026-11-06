@@ -12268,8 +12268,8 @@
     "lastAudit": "2026-11-06：14番DATE 2照合完了、当会場行14頭分を削除、4タブ構造・禁止項目を静的検証。",
     "htmlRenderVerification": "2026-11-06 GitHub Actions run 42192570290: actual 2026-11-01 Tokyo 12R structured JSON rendered through archive navigation at 390px and 1280px. Verified 14 horse cards, 56 tabs, 42 recent-run cards, 70 summary chips, 14 comment cards, correct tab label, tab interaction, no horizontal overflow, and no page errors. Additional assertions in run 42193016653 verified all 14 displayed late-start rates and exactly 7 blue-highlighted rates at or above 25%. Run 42193390773 also checked all 14 horses: each detail panel contains its independent 東京 venue row and each distance/course panel contains 東京ダ1600m.",
     "actualRaceDataValidation": "PASS: node tools/validate-race.mjs data/races/2026-11-01-tokyo-12.json",
-    "browserWorkflowRun": "42193390773",
+    "browserWorkflowRun": "42193560867",
     "complete": false,
-    "commentDisplayVerification": "PASS: 14 horses retain rawCombined and explicit 前走 split markers; current/previous display text contains no reporter-name parentheticals."
+    "commentDisplayVerification": "PASS: 14 horses retain rawCombined and explicit 前走 split markers; current/previous display text contains no reporter-name parentheticals. Ichioshi is limited to current comments for horses 8 and 13; no previousRun comment carries an ichioshi flag."
   }
 }
