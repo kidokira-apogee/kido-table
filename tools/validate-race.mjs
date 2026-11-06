@@ -114,7 +114,7 @@ if (!isObject(data)) {
 
       required(horse, [
         'horseNumber', 'frameNumber', 'horseName', 'profile', 'pedigree',
-        'recentRuns', 'topSummary', 'dataTabs', 'comments'
+        'recentRuns', 'topSummary', 'dataTabs', 'comments', 'sourceStyles'
       ], path);
 
       if (!Number.isInteger(horse.horseNumber) || horse.horseNumber < 1 || horse.horseNumber > 18) fail(path + '.horseNumber invalid');
@@ -124,6 +124,43 @@ if (!isObject(data)) {
       if (typeof horse.horseName !== 'string' || !horse.horseName.trim()) fail(path + '.horseName must be non-empty');
       if (!isObject(horse.profile)) fail(path + '.profile must be an object');
       else required(horse.profile, ['sexAge', 'handicapWeight', 'jockeyRaw', 'affiliation', 'trainer'], path + '.profile');
+
+      if (!isObject(horse.sourceStyles)) {
+        fail(path + '.sourceStyles must be an object');
+      } else {
+        required(horse.sourceStyles, ['profile', 'recentRuns'], path + '.sourceStyles');
+        const profileStyle = horse.sourceStyles.profile;
+        const profileKeys = ['horseNumber', 'horseName', 'sexAge', 'handicapWeight', 'jockeyRaw', 'affiliation', 'trainer'];
+        if (!isObject(profileStyle)) fail(path + '.sourceStyles.profile must be an object');
+        else {
+          required(profileStyle, profileKeys, path + '.sourceStyles.profile');
+          for (const [key, style] of Object.entries(profileStyle)) {
+            if (!isObject(style)) fail(path + '.sourceStyles.profile.' + key + ' must be an object');
+            else {
+              required(style, ['backgroundColor', 'textColor'], path + '.sourceStyles.profile.' + key);
+              for (const prop of ['backgroundColor', 'textColor']) if (style[prop] !== null && style[prop] !== undefined && !cssColor(style[prop])) fail(path + '.sourceStyles.profile.' + key + '.' + prop + ' invalid');
+            }
+          }
+        }
+        const runStyles = horse.sourceStyles.recentRuns;
+        const runKeys = ['dateRaw','courseRaw','ageClass','class','raceName','weight','jockey','bodyWeight','bodyWeightChange','going','mark','fieldSize','horseNumber','popularity','finish','margin','index','last3F','last3FRank','interval','blinkers','runningStyleRaw'];
+        if (!Array.isArray(runStyles) || runStyles.length !== 3) fail(path + '.sourceStyles.recentRuns must contain exactly 3 runs');
+        else runStyles.forEach((runStyle, runIndex) => {
+          const rp = path + '.sourceStyles.recentRuns[' + runIndex + ']';
+          if (!isObject(runStyle)) { fail(rp + ' must be an object'); return; }
+          required(runStyle, [...runKeys, 'passingOrder'], rp);
+          for (const [key, style] of Object.entries(runStyle)) {
+            const list = key === 'passingOrder';
+            const styles = list ? style : [style];
+            if (list && (!Array.isArray(style) || style.length !== 4)) { fail(rp + '.passingOrder must contain four styles'); continue; }
+            for (const [j, cellStyle] of styles.entries()) {
+              if (!isObject(cellStyle)) { fail(rp + '.' + key + (list ? '[' + j + ']' : '') + ' must be an object'); continue; }
+              required(cellStyle, ['backgroundColor', 'textColor'], rp + '.' + key);
+              for (const prop of ['backgroundColor', 'textColor']) if (cellStyle[prop] !== null && cellStyle[prop] !== undefined && !cssColor(cellStyle[prop])) fail(rp + '.' + key + '.' + prop + ' invalid');
+            }
+          }
+        });
+      }
 
       if (!isObject(horse.pedigree)) {
         fail(path + '.pedigree must be an object');
