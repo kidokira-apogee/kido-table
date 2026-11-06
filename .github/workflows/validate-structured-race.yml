@@ -1,4 +1,4 @@
-name: Validate structured race renderer and actual race data (comment-audited)
+name: Validate structured race renderer and actual race data (ichioshi-audited)
 
 on:
   pull_request:
