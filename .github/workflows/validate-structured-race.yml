@@ -55,6 +55,8 @@ jobs:
           test -s tools/test-validator.mjs
       - name: Test structured race validation contracts
         run: node tools/test-validator.mjs
+      - name: Validate Kiyosato Tokubetsu structured race data
+        run: node tools/validate-race.mjs data/races/2026-11-01-tokyo-12.json
       - name: Test TARGET raw extraction contracts
         run: python tools/test-extract-target-race.py
       - name: Test three-source merge contracts
