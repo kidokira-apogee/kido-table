@@ -25,7 +25,7 @@ def fixtures():
     for n in range(1, 7):
         name = f"テスト馬{n}"
         target["horses"].append({
-            "horseNumber": n, "frameNumber": (n + 1) // 2, "horseName": name,
+            "horseNumber": n, "frameNumber": None, "horseName": name,
             "profile": {"sexAge": "牡3"}, "pedigree": {}, "recentRuns": []
         })
         date2["horses"].append({
