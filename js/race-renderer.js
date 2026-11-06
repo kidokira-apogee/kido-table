@@ -15,7 +15,7 @@ const recordCard=(title,items)=>card(title,items);
 const tabs=[
  ['detail','詳細成績'],['distanceCourse','距離・コース'],['conditions','条件別'],['frameAndTop2','枠順・連対実績']
 ];
-function summaryChip(x){
+function summaryChip(x,label){
  const rec=x?.record;
  const val=rec?rec.join('-'):x?.value;
  let classes='';
@@ -27,7 +27,7 @@ function summaryChip(x){
   const rate=Number(String(val??'').replace('%',''));
   if(Number.isFinite(rate)&&rate>=25)classes+=' late';
  }
- return '<div class="data-chip'+classes+'"><small>'+txt(x?.label)+'</small><b>'+txt(val)+'</b></div>';
+ return '<div class="data-chip'+classes+'"><small>'+txt(label||x?.label)+'</small><b>'+txt(val)+'</b></div>';
 }
 function tabPanel(h,key){
  const d=h.dataTabs?.[key]||{};
@@ -62,7 +62,13 @@ function recentRun(run,i){
 function horseCard(h,race){
  const p=h.profile||{},ped=h.pedigree||{},c=h.comments||{};
  const summary=h.topSummary||{};
- const summaries=[summary.allRecord,summary.surfaceRecord,summary.courseRecord,summary.turnRecord,summary.lateStartRate];
+ const summaries=[
+  [summary.allRecord,'全成績'],
+  [summary.surfaceRecord,'今回馬場の成績'],
+  [summary.courseRecord,'今回コース条件'],
+  [summary.turnRecord,'今回周り条件'],
+  [summary.lateStartRate,'出遅れ率']
+ ];
  const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
  const frameClass=Number.isInteger(h.frameNumber)?' frame-'+h.frameNumber:'';
  const pc=ped.colors||{},ps=ped.sourceStyles||{};
@@ -87,7 +93,7 @@ function horseCard(h,race){
  return '<article class="horse-card" data-current-distance="'+esc(race.distanceM)+'" data-current-surface="'+(race.surface==='芝'?'T':'D')+'" data-current-venue="'+esc(race.venue)+'" data-field-size="'+esc(race.fieldSize)+'" data-ichioshi="'+String(!!current.isIchioshi)+'">'+
  '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><div class="frame-no'+frameClass+'" data-horse="'+esc(h.horseNumber)+'" data-frame-number="'+esc(h.frameNumber??'')+'">'+esc(h.horseNumber)+'</div></div><div class="identity-main"><div class="horse-name">'+esc(h.horseName)+'</div><div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>'+txt(p.sexAge)+'</strong></span><span class="basic weight-pill"><label>斤量</label><strong>'+(p.handicapWeight!==null&&p.handicapWeight!==undefined&&p.handicapWeight!==''?txt(p.handicapWeight)+'kg':'－')+'</strong></span></div></div></div></div>'+pedigree+'</div>'+
  '<section class="horse-section recent-block"><button type="button" aria-expanded="true" class="horse-section-head section-toggle"><span>RECENT FORM</span><b aria-hidden="true" class="section-collapse-mark">−</b></button><div class="horse-section-content"><section class="runs-section"><div class="runs">'+(h.recentRuns||[]).slice(0,3).map(recentRun).join('')+'</div></section></div></section>'+
- '<section class="data-section"><div class="data-head"><strong>DATA</strong></div><div class="data-existing">'+summaries.map(summaryChip).join('')+'</div><div class="data-tabs">'+tabsHtml+'</div>'+panels+'</section>'+comments+'</article>';
+ '<section class="data-section"><div class="data-head"><strong>DATA</strong></div><div class="data-existing">'+summaries.map(([item,label])=>summaryChip(item,label)).join('')+'</div><div class="data-tabs">'+tabsHtml+'</div>'+panels+'</section>'+comments+'</article>';
 }
 function renderRace(data){
  if(!data||!data.race||!Array.isArray(data.horses))throw new Error('Invalid structured race data');
@@ -95,8 +101,11 @@ function renderRace(data){
  const date=new Date(r.date+'T00:00:00');
  const dateLabel=isNaN(date)?r.date:(date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日（日月火水木金土'[date.getDay()]+'）');
  const dirt=r.surface==='ダート';
+ const dateItems=[dateLabel,r.meetingLabel,r.venue,r.fieldSize!==undefined?String(r.fieldSize)+'頭':null,r.startTime?String(r.startTime)+'発走':null].filter(Boolean);
+ const coursePill=r.courseLabel?'<span class="pill">'+esc(r.courseLabel)+'</span>':'';
+ const directionPill=r.direction&&r.direction!=='不明'?'<span class="pill">'+esc(r.direction==='左'?'左回り':r.direction==='右'?'右回り':r.direction)+'</span>':'';
  const header='<nav class="race-nav"><button id="back-to-race-list" type="button">← レース一覧</button><span>木戸表 電子版</span></nav>'+
- '<header class="racehead '+(dirt?'racehead-dirt':'')+'"><div class="head-inner"><div class="date-line"><span>'+esc(dateLabel)+'</span><i class="dot"></i><span>'+esc(r.venue)+'</span><i class="dot"></i><span>'+esc(r.fieldSize)+'頭</span><i class="dot"></i><span>'+txt(r.startTime)+'発走</span></div><div class="title-line"><span class="race-no">'+esc(String(r.venue).toUpperCase())+' '+esc(r.raceNumber)+'R</span><span class="race-title">'+esc(r.name)+'</span></div><div class="race-subtitle">'+txt(r.class)+'　'+txt(r.weightType)+'</div><div class="race-pills"><span class="pill">'+esc(r.venue)+'</span><span class="pill">'+esc(r.surface)+' '+esc(r.distanceM)+'m</span><span class="pill">'+txt(r.going)+'</span></div></div></header>';
+ '<header class="racehead '+(dirt?'racehead-dirt':'')+'"><div class="head-inner"><div class="date-line">'+dateItems.map((v,i)=>(i?'<i class="dot"></i>':'')+'<span>'+esc(v)+'</span>').join('')+'</div><div class="title-line"><span class="race-no">'+esc(String(r.venue).toUpperCase())+' '+esc(r.raceNumber)+'R</span><span class="race-title">'+esc(r.name)+'</span></div><div class="race-subtitle">'+txt(r.class)+'　'+txt(r.weightType)+'</div><div class="race-pills"><span class="pill">'+esc(r.venue)+'</span><span class="pill">'+esc(r.surface)+' '+esc(r.distanceM)+'m</span>'+coursePill+directionPill+'<span class="pill">'+txt(r.going)+'</span></div></div></header>';
  return header+data.horses.slice().sort((a,b)=>a.horseNumber-b.horseNumber).map(h=>horseCard(h,r)).join('');
 }
 global.KidoRaceRenderer={renderRace};
