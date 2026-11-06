@@ -20,7 +20,7 @@
     "tospo": "③ ユーザー提供東スポコメント",
     "horseNumberNameMatch": "14/14",
     "targetCellColors": "TARGETセルの元HTML色情報を値・項目に対応付けて保持",
-    "turnSummary": "開催会場から回り方向を判定。東京は左回り。各馬のDATE 2「左回」行を今回周り条件に使用。14番は該当行が元データにないため「—」表示。"
+    "turnSummary": "開催会場から回り方向を判定。東京は左回り。各馬のDATE 2「左回」行を今回周り条件に使用。14頭全馬で該当行を確認。"
   },
   "status": {
     "target": true,
@@ -8845,8 +8845,12 @@
         "courseRecord": {},
         "turnRecord": {
           "label": "左回",
-          "value": "—",
-          "sourceStatus": "DATE 2に左回行なし"
+          "record": [
+            "0",
+            "3",
+            "0",
+            "5"
+          ]
         },
         "lateStartRate": {}
       },
@@ -8892,7 +8896,26 @@
           "rotation": null,
           "season": null,
           "pace": [],
-          "turn": [],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "2",
+                "0",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "0",
+                "3",
+                "0",
+                "5"
+              ]
+            }
+          ],
           "fieldSizeAndPopularity": []
         },
         "frameAndTop2": {
