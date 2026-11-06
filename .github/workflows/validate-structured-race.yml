@@ -1,0 +1,42 @@
+name: Validate structured race renderer
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [feature/structured-race-renderer-v1]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate JSON schema syntax
+        run: python -m json.tool schema/race-v1.schema.json > /dev/null
+      - name: Check JavaScript syntax
+        run: |
+          node --check js/race-renderer.js
+          node --check tools/validate-race.mjs
+          node --check tools/test-renderer.mjs
+      - name: Check Python extractor syntax
+        run: python -m py_compile tools/extract-target-pedigree.py
+      - name: Check required project files
+        run: |
+          test -s index.html
+          test -s js/race-renderer.js
+          test -s schema/race-v1.schema.json
+          test -s tools/validate-race.mjs
+          test -s tools/extract-target-pedigree.py
