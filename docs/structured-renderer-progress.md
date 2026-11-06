@@ -156,3 +156,15 @@ Updated: 2026-11-06
 - Local fixture comparison against the approved 清里特別 v1.1 prototype: 14/14 horses, zero differences in `topSummary` and all four `dataTabs` structures.
 - The real fixture is a dirt race. Turf mapping has not yet been verified against an actual turf DATE2 export.
 - CI now syntax-checks and requires the DATE2 mapper. Latest prior CI run for the extractor passed; the mapper-inclusive run is pending.
+
+
+## 2026-11-06: Three-source merge foundation
+
+- Added `tools/merge-race-sources.py`.
+- Merge contract: ① TARGET supplies the entire race object and horse profile/pedigree/recent-run fields; ② DATE2 supplies only `topSummary` and `dataTabs`; ③ Tospo supplies only current/previous comments and the current-comment-only ichioshi flag.
+- Joins are keyed by horse number and require the horse-name set to match exactly after whitespace normalization. Duplicate numbers, missing/extra numbers, name mismatch, missing comments, invalid field sizes, and non-TARGET race metadata authority fail closed.
+- The merge output is sorted by horse number. Previous-run comments do not receive an ichioshi flag.
+- Added synthetic contract tests for valid merge, horse-number mismatch, horse-name mismatch, invalid metadata authority, and missing comments.
+- GitHub Actions run `42159915509` completed successfully on `58f2d7e2855eda0b4bbd9ab313fc83a9d3da5724`.
+- Local cross-check of the mapper against the approved 清里特別 v1.1 prototype: 14/14 horses, zero differences in `topSummary` and `dataTabs`. The previous prototype comments were used only as a synthetic Tospo-shaped test input; this is not evidence that a new raw Tospo export has been parsed.
+- Remaining before a genuine end-to-end run: implement/confirm the TARGET normalized-race extraction input, parse a real Tospo export into the documented comment JSON, and rerun the full pipeline from the three raw source files. No real Tospo raw file is present in the current working materials.
