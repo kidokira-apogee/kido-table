@@ -67,3 +67,16 @@ Updated: 2026-11-06
 - Synthetic forward-compatibility test: previously unseen color values (`rebeccapurple`, `navy`, `#123456`) and extra foreground/background attributes were extracted, schema-validated, and rendered without palette substitution.
 - Browser smoke harness (isolated renderer + current archive tab/collapse/back handlers): 14 cards, 56 tabs, 70 summary chips; tabs switch; recent-form block collapses/expands; back-to-list works; pedigree gray-like source color survives normalization while an ordinary gray target is stripped; no page errors or horizontal overflow at 390px and 1280px.
 - This browser run is an isolated harness, not a pixel-perfect comparison or full GitHub Pages archive-to-JSON integration test. That comparison remains outstanding.
+
+
+## 90-cell source-style integration pass (2026-11-06)
+
+- Re-checked the supplied TARGET export independently: 14 horse rows, exactly 90 cells per row (profile 7 + recent runs 3 × 26 + pedigree 5). Horse number and horse name align 14/14 with the structured sample.
+- Source style attributes found in the 1,260 cells: 195 background attributes and 347 text-color attributes. These are retained as source values; no semantic color mapping is performed.
+- Extractor mapping covers all 90 source cells: profile (7), three recent runs (26 each, including four passing-order cells), pedigree (5). The local merge fixture passed slot-count and horse-name checks for all 14 horses.
+- Schema now explicitly describes root `horse.sourceStyles.profile` and three `horse.sourceStyles.recentRuns` style maps, in addition to pedigree styles. Validator now checks those fields and color values.
+- Renderer now applies source foreground/background styles to profile fields and visible recent-run fields. For index backgrounds, non-gray source colors take priority; if the source background is gray and the locked gray-normalization rule removes it, the score band is used as the fallback. Pedigree source colors remain exempt from gray normalization.
+- Latest renderer JavaScript syntax check: PASS. Dynamic render smoke tests: 6, 8, 9, 14, 16, 17, and 18 horses; all produced the expected number of horse cards, 3 recent runs per horse, and 4 tabs per horse. XSS escaping check also passed in the earlier harness.
+- Validator module syntax check: PASS after fixing callback control flow. JSON schema parse check: PASS.
+- Important limitation: the current GitHub test branch does not yet contain a fully merged, source-styled 14-horse JSON fixture, and the committed Python extractor has not yet been run end-to-end in the target environment. The independent local parsing/merge check verifies the 90-cell mapping, but is not a substitute for running the committed extractor itself.
+- Still pending: execute the committed extractor against an actual TARGET export, run the updated validator against the merged race JSON, verify turf and dirt exports separately, and complete browser visual comparison with the locked Tokyo 9R layout. Main/live remain untouched.
