@@ -8,7 +8,8 @@
     "schemaVersion",
     "race",
     "sourceAudit",
-    "horses"
+    "horses",
+    "render"
   ],
   "properties": {
     "schemaVersion": {
@@ -424,6 +425,22 @@
         },
         "additionalProperties": true
       }
+    },
+    "render": {
+      "type": "object",
+      "required": [
+        "layoutId",
+        "preserveSourceColors"
+      ],
+      "properties": {
+        "layoutId": {
+          "const": "tokyo9-production-locked"
+        },
+        "preserveSourceColors": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true
