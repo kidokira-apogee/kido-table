@@ -157,31 +157,36 @@
                     "type": [
                       "string",
                       "null"
-                    ]
+                    ],
+                    "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
                   },
                   "damText": {
                     "type": [
                       "string",
                       "null"
-                    ]
+                    ],
+                    "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
                   },
                   "damsireBackground": {
                     "type": [
                       "string",
                       "null"
-                    ]
+                    ],
+                    "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
                   },
                   "sireLineBackground": {
                     "type": [
                       "string",
                       "null"
-                    ]
+                    ],
+                    "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
                   },
                   "damsireLineBackground": {
                     "type": [
                       "string",
                       "null"
-                    ]
+                    ],
+                    "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
                   }
                 },
                 "additionalProperties": {
