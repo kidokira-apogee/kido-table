@@ -19,7 +19,7 @@ try {
   assert.equal(await page.locator('.horse-card').first().locator('.data-panel.active').count(),1);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth),false,width+'px horizontal overflow');
   await page.screenshot({path:'/tmp/kido-'+width+'.png',fullPage:true});
-  assert.deepEqual(errors,[],width+'px page errors'); await page.locator('#back-to-race-list').click(); assert.equal(await page.locator('#race-list-view').isVisible(),true); await page.close();
+  assert.deepEqual(errors,[],width+'px page errors'); await page.locator('.race-nav button').click(); assert.equal(await page.locator('#race-list-view').isVisible(),true); await page.close();
  }
  console.log('PASS: archive/detail/tabs/back at 390px and 1280px; screenshots saved.');
 } finally {if(browser)await browser.close();server.kill('SIGTERM');}
