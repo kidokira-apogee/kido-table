@@ -1,4 +1,4 @@
-name: Validate structured race renderer and actual race data (archive-flow)
+name: Validate structured race renderer and actual race data (archive-flow-audited)
 
 on:
   pull_request:
