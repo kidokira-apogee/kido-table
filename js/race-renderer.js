@@ -2,6 +2,15 @@
 'use strict';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=v=>v===null||v===undefined||v===''?'－':esc(v);
+const validColor=value=>value!==null&&value!==undefined&&value!==''&&/^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());
+const sourceStyle=(cell,bgFallback,textFallback,bgOverride)=>{
+ const bg=bgOverride!==undefined?bgOverride:(cell&&cell.backgroundColor!==null&&cell.backgroundColor!==undefined?cell.backgroundColor:bgFallback);
+ const fg=cell&&cell.textColor!==null&&cell.textColor!==undefined?cell.textColor:textFallback;
+ const rules=[];
+ if(validColor(bg))rules.push('background-color:'+esc(String(bg).trim()));
+ if(validColor(fg))rules.push('color:'+esc(String(fg).trim()));
+ return rules.length?' style="'+rules.join(';')+'"':'';
+};
 const record=r=>Array.isArray(r)?'('+r.map(v=>v===null||v===undefined||v===''?'－':String(v)).join('-')+')':r&&Array.isArray(r.record)?'('+r.record.map(v=>v===null||v===undefined||v===''?'－':String(v)).join('-')+')':'－';
 const recordIsStrong=x=>{
  const r=Array.isArray(x)?x:x&&Array.isArray(x.record)?x.record:null;
@@ -84,15 +93,7 @@ function horseCard(h,race){
  const affiliationLabel=p.affiliation?p.affiliation+'所属':'';
  const frameClass=Number.isInteger(h.frameNumber)?' frame-'+h.frameNumber:'';
  const pc=ped.colors||{},ps=ped.sourceStyles||{};
- const validColor=value=>{if(value===null||value===undefined||value==='')return false;return /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());};
- const sourceStyle=(cell,bgFallback,textFallback)=>{
-  const bg=cell&&cell.backgroundColor!==null&&cell.backgroundColor!==undefined?cell.backgroundColor:bgFallback;
-  const fg=cell&&cell.textColor!==null&&cell.textColor!==undefined?cell.textColor:textFallback;
-  const rules=[];
-  if(validColor(bg))rules.push('background-color:'+esc(String(bg).trim()));
-  if(validColor(fg))rules.push('color:'+esc(String(fg).trim()));
-  return rules.length?' style="'+rules.join(';')+'"':'';
- };
+
  const damStyle=sourceStyle(ps.dam,null,null);
  const pedigree='<div class="pedigree-inline">'+
  '<strong class="pedigree-father"'+sourceStyle(ps.sire,pc.sireBackground,null)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"'+damStyle+'><span class="dam-name"'+sourceStyle({backgroundColor:null,textColor:ps.dam?.textColor},null,pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+sourceStyle(ps.damsire,pc.damsireBackground,null)+'>（'+txt(ped.damsire)+'）</span></strong></div>';
