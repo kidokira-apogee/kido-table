@@ -48,10 +48,10 @@ function summaryChip(x,label){
  }
  return '<div class="data-chip'+classes+'"><small>'+txt(label||x?.label)+'</small><b>'+txt(val)+'</b></div>';
 }
-function tabPanel(h,key){
+function tabPanel(h,key,race){
  const d=h.dataTabs?.[key]||{};
  if(key==='detail')return '<div class="panel-grid">'+
- card('通算成績',d.overall)+card('今回馬場の条件成績',d.surfaceConditions)+
+ card('通算成績',d.overall)+card(race.surface==='芝'?'芝条件':'ダート条件',d.surfaceConditions)+
  '</div>';
  if(key==='distanceCourse')return '<div class="panel-grid">'+
  card('距離帯別実績',d.distanceBands)+card('コース別実績',d.courseRecords)+
@@ -96,7 +96,7 @@ function horseCard(h,race){
  const summary=h.topSummary||{};
  const summaries=[
   [summary.allRecord,'全成績'],
-  [summary.surfaceRecord,'今回馬場の成績'],
+  [summary.surfaceRecord,race.surface==='芝'?'芝成績':'ダート成績'],
   [summary.courseRecord,'今回コース条件'],
   [summary.turnRecord,'今回周り条件'],
   [summary.lateStartRate,'出遅れ率']
@@ -110,7 +110,7 @@ function horseCard(h,race){
  const pedigree='<div class="pedigree-inline">'+
  '<strong class="pedigree-father"'+sourceStyle(ps.sire,pc.sireBackground,null)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"'+damStyle+'><span class="dam-name"'+sourceStyle({backgroundColor:null,textColor:ps.dam?.textColor},null,pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+sourceStyle(ps.damsire,pc.damsireBackground,null)+'>（'+txt(ped.damsire)+'）</span></strong></div>';
  const tabsHtml=tabs.map((t,i)=>'<button type="button" class="data-tab" data-panel="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>').join('');
- const panels=tabs.map((t,i)=>'<div class="data-panel '+(i===0?'active':'')+'" data-data-content="'+t[0]+'">'+tabPanel(h,t[0])+'</div>').join('');
+ const panels=tabs.map((t,i)=>'<div class="data-panel '+(i===0?'active':'')+'" data-data-content="'+t[0]+'">'+tabPanel(h,t[0],race)+'</div>').join('');
  const current=c.current||{},previous=c.previousRun||{};
  const comments='<section class="comments"><div class="comments-head">厩舎・陣営コメント</div>'+
  (current.text?'<div class="comment-current '+(current.isIchioshi?'is-ichioshi':'')+'">'+esc(current.text)+'</div>':'')+
