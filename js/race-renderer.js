@@ -46,9 +46,10 @@ function recentRun(run,i){
  const style=({'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'})[run.runningStyleRaw]||run.runningStyleRaw||'－';
  const course=run.courseRaw||'';
  const bodyWeight=run.bodyWeight?txt(run.bodyWeight)+'kg'+(run.bodyWeightChange?' ('+txt(run.bodyWeightChange)+')':''):'－';
+ const carriedWeight=run.weight?txt(run.weight)+'kg':'－';
  const metricClass=(label,value)=>{if(label!=='指数')return '';const n=Number(value);return !Number.isFinite(n)?'':n>=95?' index-95':n>=90?' index-90':n>=80?' index-80':'';};
  return '<article class="run"><div class="run-head"><strong>'+txt(run.label||(['前走','2走前','3走前'][i]))+'</strong><span class="run-date">'+txt(run.dateRaw)+'</span></div>'+
- '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course">'+txt(course)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+txt(run.weight)+'kg　'+bodyWeight+'　'+txt(run.going)+'</span></div></div>'+
+ '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course">'+txt(course)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+carriedWeight+'　'+bodyWeight+'　'+txt(run.going)+'</span></div></div>'+
  '<div class="metrics-row"><div class="run-details">'+vals.map(v=>'<div class="metric'+metricClass(v[0],v[1])+'"><label>'+v[0]+'</label><b>'+txt(v[1])+'</b></div>').join('')+'</div></div>'+
  '<div class="run-passage"><span><label>脚質</label><b>'+txt(style)+'</b></span><span><label>通過順</label><strong>'+txt((run.passingOrder||[]).join(' - '))+'</strong></span></div></div></article>';
 }
@@ -57,6 +58,7 @@ function horseCard(h,race){
  const summary=h.topSummary||{};
  const summaries=[summary.allRecord,summary.surfaceRecord,summary.courseRecord,summary.turnRecord,summary.lateStartRate];
  const affiliationClass=p.affiliation==='美浦'?'base-miho':p.affiliation==='栗東'?'base-ritto':'';
+ const frameClass=Number.isInteger(h.frameNumber)?' frame-'+h.frameNumber:'';
  const pc=ped.colors||{},ps=ped.sourceStyles||{};
  const validColor=value=>{if(value===null||value===undefined||value==='')return false;return /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());};
  const sourceStyle=(cell,bgFallback,textFallback)=>{
