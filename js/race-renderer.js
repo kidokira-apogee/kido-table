@@ -3,7 +3,13 @@
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=v=>v===null||v===undefined||v===''?'－':esc(v);
 const record=r=>Array.isArray(r)?r.join('-'):r&&Array.isArray(r.record)?r.record.join('-'):'－';
-const itemRows=items=>(items||[]).map(x=>'<div class="stats"><span>'+txt(x.label)+'</span><strong>'+txt(x.value??record(x))+'</strong></div>').join('');
+const recordIsStrong=x=>{
+ const r=Array.isArray(x)?x:x&&Array.isArray(x.record)?x.record:null;
+ if(!r||r.length<4)return false;
+ const n=r.slice(0,4).map(Number);
+ return n.every(Number.isFinite)&&n[3]>=3&&(n[0]+n[1]+n[2])/n[3]>=0.5;
+};
+const itemRows=items=>(items||[]).map(x=>'<div class="stats"><span>'+txt(x.label)+'</span><strong class="'+(recordIsStrong(x)?'record good':'record')+'">'+txt(x.value??record(x))+'</strong></div>').join('');
 const card=(title,items)=>'<section class="panel-card"><h4>'+esc(title)+'</h4>'+itemRows(items)+'</section>';
 const recordCard=(title,items)=>card(title,items);
 const tabs=[
@@ -79,7 +85,7 @@ function horseCard(h,race){
  (current.text?'<div class="comment-current '+(current.isIchioshi?'is-ichioshi':'')+'">'+esc(current.text)+'</div>':'')+
  (previous.text?'<div class="comment-previous">'+esc(previous.text)+'</div>':'')+'</section>';
  return '<article class="horse-card" data-current-distance="'+esc(race.distanceM)+'" data-current-surface="'+(race.surface==='芝'?'T':'D')+'" data-current-venue="'+esc(race.venue)+'" data-field-size="'+esc(race.fieldSize)+'" data-ichioshi="'+String(!!current.isIchioshi)+'">'+
- '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><div class="frame-no'+frameClass+'" data-horse="'+esc(h.horseNumber)+'">'+esc(h.horseNumber)+'</div></div><div class="identity-main"><div class="horse-name">'+esc(h.horseName)+'</div><div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>'+txt(p.sexAge)+'</strong></span><span class="basic weight-pill"><label>斤量</label><strong>'+txt(p.handicapWeight)+'kg</strong></span></div></div></div></div>'+pedigree+'</div>'+
+ '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><div class="frame-no'+frameClass+'" data-horse="'+esc(h.horseNumber)+'">'+esc(h.horseNumber)+'</div></div><div class="identity-main"><div class="horse-name">'+esc(h.horseName)+'</div><div class="horse-facts"><span class="basic sex-age-pill"><label>性齢</label><strong>'+txt(p.sexAge)+'</strong></span><span class="basic weight-pill"><label>斤量</label><strong>'+(p.handicapWeight!==null&&p.handicapWeight!==undefined&&p.handicapWeight!==''?txt(p.handicapWeight)+'kg':'－')+'</strong></span></div></div></div></div>'+pedigree+'</div>'+
  '<section class="horse-section recent-block"><button type="button" aria-expanded="true" class="horse-section-head section-toggle"><span>RECENT FORM</span><b aria-hidden="true" class="section-collapse-mark">−</b></button><div class="horse-section-content"><section class="runs-section"><div class="runs">'+(h.recentRuns||[]).slice(0,3).map(recentRun).join('')+'</div></section></div></section>'+
  '<section class="data-section"><div class="data-head"><strong>DATA</strong></div><div class="data-existing">'+summaries.map(summaryChip).join('')+'</div><div class="data-tabs">'+tabsHtml+'</div>'+panels+'</section>'+comments+'</article>';
 }
