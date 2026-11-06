@@ -32,7 +32,7 @@ jobs:
           node --check tools/validate-race.mjs
           node --check tools/test-renderer.mjs
       - name: Check Python extractor syntax
-        run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py
+        run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py tools/map-date2-approved.py
       - name: Check required project files
         run: |
           test -s index.html
@@ -40,3 +40,5 @@ jobs:
           test -s schema/race-v1.schema.json
           test -s tools/validate-race.mjs
           test -s tools/extract-target-pedigree.py
+          test -s tools/extract-date2-rows.py
+          test -s tools/map-date2-approved.py
