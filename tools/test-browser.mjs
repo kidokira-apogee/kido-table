@@ -84,6 +84,8 @@ try {
     !/[（(][^）)]*記者[）)]/.test(horse.comments.current.text) &&
     !/[（(][^）)]*記者[）)]/.test(horse.comments.previousRun.text)
   ), 'all horses retain explicitly split comments without reporter names in display text');
+  assert.deepEqual(kiyosatoData.horses.filter(horse => horse.comments.current.isIchioshi).map(horse => horse.horseNumber), [8, 13]);
+  assert.ok(kiyosatoData.horses.every(horse => !('isIchioshi' in horse.comments.previousRun)), 'previous-run comments must never carry ichioshi');
   const manifest = JSON.parse(readFileSync(new URL('../data/races/index.json', import.meta.url), 'utf8'));
   const kiyosatoEntry = manifest.races.find(race => race.id === '2026-11-01-tokyo-12');
   assert.ok(kiyosatoEntry, 'Kiyosato must remain registered in the archive');
