@@ -581,9 +581,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
    normalizeRunningStyle(detail);
-   // 旧HTML専用の正規化。構造化JSONはコメント分離済みであり、TARGET色を保持するため適用しない。
+   // TARGET由来の灰色背景だけは、構造化JSON・旧HTMLの両方で正本ルールに従い除去する。
+   normalizeSourceGray(detail);
+   // 旧HTML専用のコメント正規化。
    if(!rendered.structured){
-    normalizeSourceGray(detail);
     normalizeLegacyComments(detail);
    }
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
