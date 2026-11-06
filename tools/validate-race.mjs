@@ -40,12 +40,25 @@ else {
       if (typeof h.horseName !== 'string' || !h.horseName.trim()) fail(p + '.horseName empty');
       if (!isObject(h.pedigree)) fail(p + '.pedigree must be an object');
       else {
-        required(h.pedigree, ['sire','dam','damsire','sireLine','damsireLine','colors'], p + '.pedigree');
+        required(h.pedigree, ['sire','dam','damsire','sireLine','damsireLine','colors','sourceStyles'], p + '.pedigree');
         if (!isObject(h.pedigree.colors)) fail(p + '.pedigree.colors must be an object');
         else {
           required(h.pedigree.colors, colorKeys, p + '.pedigree.colors');
           for (const [key,value] of Object.entries(h.pedigree.colors)) {
             if (value !== null && !cssColor(value)) fail(p + '.pedigree.colors.' + key + ' must be a valid source CSS color or null');
+          }
+        }
+        const styleKeys = ['sire','dam','damsire','sireLine','damsireLine'];
+        if (!isObject(h.pedigree.sourceStyles)) fail(p + '.pedigree.sourceStyles must be an object');
+        else {
+          required(h.pedigree.sourceStyles, styleKeys, p + '.pedigree.sourceStyles');
+          for (const [cell,style] of Object.entries(h.pedigree.sourceStyles)) {
+            if (!isObject(style)) { fail(p + '.pedigree.sourceStyles.' + cell + ' must be an object'); continue; }
+            required(style, ['backgroundColor','textColor'], p + '.pedigree.sourceStyles.' + cell);
+            for (const key of ['backgroundColor','textColor']) {
+              const value=style[key];
+              if (value !== null && value !== undefined && !cssColor(value)) fail(p + '.pedigree.sourceStyles.' + cell + '.' + key + ' must be a valid source CSS color or null');
+            }
           }
         }
       }
