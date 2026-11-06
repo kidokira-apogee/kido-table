@@ -12,7 +12,16 @@ const tabs=[
 function summaryChip(x){
  const rec=x?.record;
  const val=rec?rec.join('-'):x?.value;
- return '<div class="data-chip"><small>'+txt(x?.label)+'</small><b>'+txt(val)+'</b></div>';
+ let classes='';
+ if(Array.isArray(rec)&&rec.length>=4){
+  const nums=rec.slice(0,3).map(Number),den=Number(rec[3]);
+  if(nums.every(Number.isFinite)&&Number.isFinite(den)&&den>=3&&nums.reduce((a,n)=>a+n,0)/den>=0.5)classes+=' hit';
+ }
+ if(String(x?.label||'').includes('出遅れ')){
+  const rate=Number(String(val??'').replace('%',''));
+  if(Number.isFinite(rate)&&rate>=25)classes+=' late';
+ }
+ return '<div class="data-chip'+classes+'"><small>'+txt(x?.label)+'</small><b>'+txt(val)+'</b></div>';
 }
 function tabPanel(h,key){
  const d=h.dataTabs?.[key]||{};
@@ -36,9 +45,11 @@ function recentRun(run,i){
  ];
  const style=({'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'})[run.runningStyleRaw]||run.runningStyleRaw||'－';
  const course=run.courseRaw||'';
+ const bodyWeight=run.bodyWeight?txt(run.bodyWeight)+'kg'+(run.bodyWeightChange?' ('+txt(run.bodyWeightChange)+')':''):'－';
+ const metricClass=(label,value)=>{if(label!=='指数')return '';const n=Number(value);return !Number.isFinite(n)?'':n>=95?' index-95':n>=90?' index-90':n>=80?' index-80':'';};
  return '<article class="run"><div class="run-head"><strong>'+txt(run.label||(['前走','2走前','3走前'][i]))+'</strong><span class="run-date">'+txt(run.dateRaw)+'</span></div>'+
- '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course">'+txt(course)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+txt(run.weight)+'kg　'+txt(run.bodyWeight)+'kg　'+txt(run.going)+'</span></div></div>'+
- '<div class="metrics-row"><div class="run-details">'+vals.map(v=>'<div class="metric"><label>'+v[0]+'</label><b>'+txt(v[1])+'</b></div>').join('')+'</div></div>'+
+ '<div class="run-three-rows"><div class="run-summary"><strong>'+txt(run.raceName)+'</strong><div class="run-subline"><span class="run-course">'+txt(course)+'</span><span>'+txt(run.ageClass)+'・'+txt(run.class)+'　'+txt(run.jockey)+'　'+txt(run.weight)+'kg　'+bodyWeight+'　'+txt(run.going)+'</span></div></div>'+
+ '<div class="metrics-row"><div class="run-details">'+vals.map(v=>'<div class="metric'+metricClass(v[0],v[1])+'"><label>'+v[0]+'</label><b>'+txt(v[1])+'</b></div>').join('')+'</div></div>'+
  '<div class="run-passage"><span><label>脚質</label><b>'+txt(style)+'</b></span><span><label>通過順</label><strong>'+txt((run.passingOrder||[]).join(' - '))+'</strong></span></div></div></article>';
 }
 function horseCard(h,race){
@@ -55,7 +66,7 @@ function horseCard(h,race){
  };
  const pedigree='<div class="pedigree-inline">'+
  '<strong class="pedigree-father"'+colorStyle('background-color',pc.sireBackground)+'>'+txt(ped.sire)+'</strong><strong class="pedigree-mother"><span class="dam-name"'+colorStyle('color',pc.damText)+'>'+txt(ped.dam)+'</span><span class="dam-line"'+colorStyle('background-color',pc.damsireBackground)+'>（'+txt(ped.damsire)+'）</span></strong>'+
- '<strong class="pedigree-line sire-line"'+colorStyle('background-color',pc.sireLineBackground)+'>'+txt(ped.sireLine||'')+'</strong><strong class="pedigree-line damsire-line"'+colorStyle('background-color',pc.damsireLineBackground)+'>'+txt(ped.damsireLine||'')+'</strong><strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
+ '<strong class="affiliation-chip '+affiliationClass+'"><small>騎手</small><span>'+txt(p.jockeyRaw)+'</span></strong><strong class="affiliation-chip '+affiliationClass+'"><small>厩舎</small><span>'+txt(p.trainer)+'</span></strong></div>';
  const tabsHtml=tabs.map((t,i)=>'<button type="button" class="data-tab" data-panel="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>').join('');
  const panels=tabs.map((t,i)=>'<div class="data-panel '+(i===0?'active':'')+'" data-data-content="'+t[0]+'">'+tabPanel(h,t[0])+'</div>').join('');
  const current=c.current||{},previous=c.previousRun||{};
