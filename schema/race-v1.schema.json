@@ -203,6 +203,162 @@
                   "sireLineBackground",
                   "damsireLineBackground"
                 ]
+              },
+              "sourceStyles": {
+                "type": "object",
+                "required": [
+                  "sire",
+                  "dam",
+                  "damsire",
+                  "sireLine",
+                  "damsireLine"
+                ],
+                "properties": {
+                  "sire": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "dam": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "damsire": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "sireLine": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "damsireLine": {
+                    "type": "object",
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "properties": {
+                      "backgroundColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "backgroundColor",
+                    "textColor"
+                  ],
+                  "properties": {
+                    "backgroundColor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                    },
+                    "textColor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^(#[0-9a-fA-F]{3,4}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8}|[a-zA-Z]{1,30}|rgba?\\([0-9.%\\s,\\/]+\\)|hsla?\\([0-9.%\\s,\\/]+\\))$"
+                    }
+                  },
+                  "additionalProperties": false
+                }
               }
             },
             "additionalProperties": true,
@@ -212,7 +368,8 @@
               "damsire",
               "sireLine",
               "damsireLine",
-              "colors"
+              "colors",
+              "sourceStyles"
             ]
           },
           "recentRuns": {
