@@ -2,7 +2,7 @@
 'use strict';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=v=>v===null||v===undefined||v===''?'－':esc(v);
-const record=r=>Array.isArray(r)?r.join('-'):r&&Array.isArray(r.record)?r.record.join('-'):'－';
+const record=r=>Array.isArray(r)?'('+r.map(v=>v===null||v===undefined||v===''?'－':String(v)).join('-')+')':r&&Array.isArray(r.record)?'('+r.record.map(v=>v===null||v===undefined||v===''?'－':String(v)).join('-')+')':'－';
 const recordIsStrong=x=>{
  const r=Array.isArray(x)?x:x&&Array.isArray(x.record)?x.record:null;
  if(!r||r.length<4)return false;
@@ -17,7 +17,7 @@ const tabs=[
 ];
 function summaryChip(x,label){
  const rec=x?.record;
- const val=rec?rec.join('-'):x?.value;
+ const val=rec?record(rec):x?.value;
  let classes='';
  if(Array.isArray(rec)&&rec.length>=4){
   const nums=rec.slice(0,3).map(Number),den=Number(rec[3]);
