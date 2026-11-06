@@ -141,7 +141,7 @@ def main() -> None:
     parser.add_argument("-o", "--output", type=Path)
     args = parser.parse_args()
     result = merge(read_json(args.target), read_json(args.date2), read_json(args.tospo))
-    payload = json.dumps(result, ensure_ascii=False, indent=2) + "\\n"
+    payload = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
         args.output.write_text(payload, encoding="utf-8")
     else:
