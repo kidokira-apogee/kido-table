@@ -98,6 +98,8 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
             key: value for key, value in base.items()
             if key not in ("topSummary", "dataTabs", "comments", "date2Audit")
         }
+        # DATE2 is the available horse-level frame source; TARGET row has no frame cell.
+        horse["frameNumber"] = stats.get("frameNumber")
         horse["topSummary"] = stats["topSummary"]
         horse["dataTabs"] = stats["dataTabs"]
         horse["comments"] = {
