@@ -19,20 +19,37 @@ COLOR_KEYS = ("sireBackground", "damText", "damsireBackground", "sireLineBackgro
 def clean_text(value: str) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
+def style_declarations(value):
+    result = {}
+    for declaration in (value or "").split(";"):
+        if ":" not in declaration:
+            continue
+        key, val = declaration.split(":", 1)
+        result[key.strip().lower()] = val.strip()
+    return result
+
 class TargetTableParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.rows, self.row, self.cell, self.in_font = [], None, None, 0
     def handle_starttag(self, tag, attrs):
         a = {k.lower(): v for k, v in attrs}
+        css = style_declarations(a.get("style"))
         if tag.lower() == "tr":
             self.row = []
         elif tag.lower() == "td" and self.row is not None:
-            self.cell = {"text": [], "background": a.get("bgcolor"), "textColor": None}
-        elif tag.lower() == "font" and self.cell is not None:
-            self.in_font += 1
-            if self.cell["textColor"] is None and a.get("color"):
-                self.cell["textColor"] = a["color"]
+            self.cell = {
+                "text": [],
+                "background": a.get("bgcolor") or css.get("background-color") or css.get("background"),
+                "textColor": a.get("color") or css.get("color")
+            }
+        elif self.cell is not None:
+            if tag.lower() == "font":
+                self.in_font += 1
+            if self.cell["textColor"] is None:
+                self.cell["textColor"] = a.get("color") or css.get("color")
+            if self.cell["background"] is None:
+                self.cell["background"] = a.get("bgcolor") or css.get("background-color") or css.get("background")
     def handle_endtag(self, tag):
         t = tag.lower()
         if t == "font" and self.in_font:
