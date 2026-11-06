@@ -115,3 +115,12 @@ Updated: 2026-11-06
 - The legacy parser's explicit distance-band allowlist contains only four bands (1000–1300, 1400–1600, 1700–2000, 2100–2400). The supplied dirt export uses those four, but the work table records a possible additional 2500–3600 band in other display examples; the legacy allowlist would not capture an additional band unless extended. This is a coverage risk, not a claim that the current supplied race contains that band.
 - The legacy parser does include both turf/dirt slope/flat/going labels, surface-specific full-course distance labels, and `近５平` variants, but the new locked display spec excludes `近５平` unless later confirmed. Do not treat extraction support as display approval.
 - Action: do not copy the old DATE2 parser wholesale into the new structured pipeline. Build the new mapper against observed source labels, preserve unknown rows for audit, and map only explicitly approved fields into the four fixed card positions. Require per-horse name/number alignment and a zero-mismatch source comparison before accepting a race.
+
+
+## 18-horse TARGET extractor capacity test (2026-11-06)
+
+- Executed the available 90-cell extractor against a synthetic HTML fixture containing 18 sequential horse rows, each with exactly 90 cells.
+- Result: PASS, 18/18 rows extracted; sequential horse numbers 1–18; each horse had the expected 7 profile style slots, 3 recent-run style groups, 4 passing-order style slots per run, and 5 pedigree cells.
+- This verifies the extractor's row-count handling and 90-cell structural mapping at 18 rows. It is a synthetic structural test, not a real 18-horse TARGET export; source-specific markup, actual horse names, colors, and merged DATE2 values still require a real 18-horse sample.
+- Renderer tests already cover 6, 8, 9, 16, 17, and 18 horses for card count, four tabs per horse, and three recent runs per horse. Combined with this extractor test, the generic 18-horse path is structurally supported.
+- No raw synthetic fixture or source files were committed. Main/live remain untouched.
