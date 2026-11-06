@@ -31,6 +31,7 @@ jobs:
           node --check js/race-renderer.js
           node --check tools/validate-race.mjs
           node --check tools/test-renderer.mjs
+          node --check tools/test-browser.mjs
       - name: Check Python extractor syntax
         run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py tools/map-date2-approved.py tools/merge-race-sources.py tools/test-merge-race-sources.py tools/extract-target-race.py tools/test-extract-target-race.py tools/build-race.py
       - name: Check required project files
@@ -47,7 +48,23 @@ jobs:
           test -s tools/test-extract-target-race.py
           test -s tools/build-race.py
           test -s tools/test-merge-race-sources.py
+          test -s tools/test-browser.mjs
       - name: Test TARGET raw extraction contracts
         run: python tools/test-extract-target-race.py
       - name: Test three-source merge contracts
         run: python tools/test-merge-race-sources.py
+      - name: Install browser test dependency
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Test renderer contract
+        run: node tools/test-renderer.mjs data/races/2026-11-01-tokyo-9.json
+      - name: Test full browser flow and responsive layout
+        run: node tools/test-browser.mjs
+      - name: Upload browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kido-browser-smoke-screenshots
+          path: /tmp/kido-*.png
+          if-no-files-found: ignore
