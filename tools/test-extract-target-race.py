@@ -52,7 +52,7 @@ class TargetRaceExtractorTests(unittest.TestCase):
         self.assertEqual(len(result["horses"]), 6)
         self.assertEqual(result["horses"][0]["profile"]["trainer"], "調教師")
         self.assertEqual(len(result["horses"][0]["recentRuns"]), 3)
-        self.assertEqual(result["horses"][0]["pedigree"]["sire"], "父馬1")
+        self.assertEqual(result["horses"][0]["pedigree"]["sire"], "馬1")
         self.assertEqual(result["horses"][0]["sourceStyles"]["recentRuns"][0]["passingOrder"], [
             {"backgroundColor": "#FFC0FF", "textColor": None}
         ] * 4)
