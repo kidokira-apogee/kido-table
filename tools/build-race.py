@@ -71,6 +71,7 @@ def main():
             raise ValueError(f'競馬場・コースから回り方向を確定できません: {race.get("venue")} {race.get("surface")}{race.get("distanceM")}m')
         race["direction"] = direction
         race["directionSource"] = "固定JRA競馬場コース情報"
+        target_json.write_text(json.dumps(target, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
 
         run([sys.executable, TOOLS / "extract-date2-rows.py",
              args.date2_text, "--output", date2_rows])
