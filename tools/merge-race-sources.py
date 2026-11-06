@@ -115,7 +115,7 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
 
     ichioshi_numbers = [
         horse["horseNumber"] for horse in merged
-        if horse["comments"]["current"]["isIchioshi"]
+        if horse["comments"]["current"].get("isIchioshi", False)
     ]
     return {
         "schemaVersion": "1.0.0",
@@ -125,8 +125,8 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
             "horseNumberNameMatch": f"{len(merged)}/{len(merged)}",
             "targetRows": len(target),
             "date2Rows": len(date2),
-            "tospoCurrentComments": sum(bool(h["comments"]["current"]["text"]) for h in merged),
-            "tospoPreviousComments": sum(bool(h["comments"]["previousRun"]["text"]) for h in merged),
+            "tospoCurrentComments": sum(bool(h["comments"]["current"].get("text")) for h in merged),
+            "tospoPreviousComments": sum(bool(h["comments"]["previousRun"].get("text")) for h in merged),
             "ichioshiHorseNumbers": ichioshi_numbers,
             "raceMetadataSource": "① TARGET only",
             "date2Role": "② 各馬の実績データのみ。レース基本情報の参照・補完には使用しない",
