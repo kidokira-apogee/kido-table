@@ -59,7 +59,11 @@
     const passingStyleCell = (styles?.passingOrder || []).find(v => v && (v.textColor || v.backgroundColor));
     const metricHtml = fields.map(([label, value, key]) => {
       const cls = 'metric' + (key === 'index' ? indexClass : '');
-      return '<div class="' + cls + '"' + styleAttr(styles?.[key], applyColors) + '><small>' + label + '</small><b>' + display(value) + '</b></div>';
+      // 指数は正本の指数別配色を優先し、TARGET背景色で上書きさせない。文字色は保持する。
+      const cellStyle = key === 'index'
+        ? styleAttr({ textColor: styles?.[key]?.textColor }, applyColors)
+        : styleAttr(styles?.[key], applyColors);
+      return '<div class="' + cls + '"' + cellStyle + '><small>' + label + '</small><b>' + display(value) + '</b></div>';
     }).join('');
     const bodyWeight = run.bodyWeight ? display(run.bodyWeight) + 'kg' : '—';
     const weight = run.weight ? display(run.weight) + 'kg' : '—';
