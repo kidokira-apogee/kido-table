@@ -32,7 +32,7 @@ jobs:
           node --check tools/validate-race.mjs
           node --check tools/test-renderer.mjs
       - name: Check Python extractor syntax
-        run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py tools/map-date2-approved.py tools/merge-race-sources.py tools/test-merge-race-sources.py tools/extract-target-race.py tools/test-extract-target-race.py
+        run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py tools/map-date2-approved.py tools/merge-race-sources.py tools/test-merge-race-sources.py tools/extract-target-race.py tools/test-extract-target-race.py tools/build-race.py
       - name: Check required project files
         run: |
           test -s index.html
@@ -45,6 +45,7 @@ jobs:
           test -s tools/merge-race-sources.py
           test -s tools/extract-target-race.py
           test -s tools/test-extract-target-race.py
+          test -s tools/build-race.py
           test -s tools/test-merge-race-sources.py
       - name: Test TARGET raw extraction contracts
         run: python tools/test-extract-target-race.py
