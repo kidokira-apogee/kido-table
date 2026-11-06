@@ -71,11 +71,23 @@ class MergeContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "① TARGET"):
             MERGER.merge(target, date2, tospo)
 
-    def test_rejects_missing_tospo_comment(self):
+    def test_allows_missing_previous_comment_without_placeholder(self):
         target, date2, tospo = fixtures()
         tospo["horses"][0]["previousRunComment"] = None
-        with self.assertRaisesRegex(ValueError, "今回・前走コメントが不足"):
-            MERGER.merge(target, date2, tospo)
+        result = MERGER.merge(target, date2, tospo)
+        comments = result["horses"][0]["comments"]
+        self.assertEqual(comments["current"]["text"], "今回コメント1")
+        self.assertEqual(comments["previousRun"], {})
+
+    def test_allows_missing_current_comment_and_disables_ichioshi(self):
+        target, date2, tospo = fixtures()
+        tospo["horses"][0]["currentComment"] = None
+        tospo["horses"][0]["isIchioshi"] = True
+        result = MERGER.merge(target, date2, tospo)
+        comments = result["horses"][0]["comments"]
+        self.assertEqual(comments["current"], {})
+        self.assertEqual(comments["previousRun"]["text"], "前走コメント1")
+        self.assertFalse(comments["current"].get("isIchioshi", False))
 
 
 if __name__ == "__main__":
