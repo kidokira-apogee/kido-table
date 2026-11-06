@@ -82,7 +82,7 @@
   function isPlaceRateHit(item) {
     const record = item?.record;
     if (!Array.isArray(record) || record.length !== 4) return false;
-    const values = record.map(value => /^\\d+$/.test(String(value ?? '').trim()) ? Number(value) : NaN);
+    const values = record.map(value => /^\d+$/.test(String(value ?? '').trim()) ? Number(value) : NaN);
     if (values.some(value => !Number.isFinite(value) || value < 0)) return false;
     const total = values.reduce((sum, value) => sum + value, 0);
     return total >= 3 && (values[0] + values[1] + values[2]) / total >= 0.5;
