@@ -101,7 +101,7 @@
     "htmlRenderVerification": "未完了",
     "productionDeployment": "未実施",
     "complete": false,
-    "turnSummaryAllHorses": "14/14 DATE 2左回行を原文照合済み",
+    "turnSummaryAllHorses": "1〜13番は左回行を含む37項目を照合済み。14番は原文続き未取得のため全件照合扱いにしない。",
     "date2Continuation": "既知のDATE 2原文は14番の全着・全芝・全ダで終端。続きファイルの正確な参照先を現在のファイル群から再特定できていない。過去の作業メモにある値だけで全項目の原文照合済みとは扱わない。",
     "date2VerifiedHorseCount": "13/14頭（1〜13番の37項目一致確認）",
     "date2Horse14": "部分確認のみ：全着2-3-1-10、全芝0-0-0-0、全ダ2-3-1-10。続き資料未取得のため残り項目は全件未照合。"
