@@ -152,7 +152,7 @@ if (!isObject(data)) {
           for (const [key, style] of Object.entries(runStyle)) {
             const list = key === 'passingOrder';
             const styles = list ? style : [style];
-            if (list && (!Array.isArray(style) || style.length !== 4)) { fail(rp + '.passingOrder must contain four styles'); continue; }
+            if (list && (!Array.isArray(style) || style.length !== 4)) { fail(rp + '.passingOrder must contain four styles'); return; }
             for (const [j, cellStyle] of styles.entries()) {
               if (!isObject(cellStyle)) { fail(rp + '.' + key + (list ? '[' + j + ']' : '') + ' must be an object'); continue; }
               required(cellStyle, ['backgroundColor', 'textColor'], rp + '.' + key);
