@@ -32,6 +32,8 @@ class Parser(HTMLParser):
         self.text_parts = []
     def handle_starttag(self, tag, attrs):
         a = {k.lower(): v for k, v in attrs}
+        if tag.lower() in ("br", "tr"):
+            self.text_parts.append("\\n")
         css = style_declarations(a.get("style"))
         if tag.lower() == "tr":
             self.row = []
