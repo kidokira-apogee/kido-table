@@ -98,13 +98,14 @@
     "targetHorseCellStructureVerified": true,
     "date2FourTabRebuild": "部分検証済み：1〜13番は正本の承認対象37項目を全件照合し現行JSONと一致。14番は正本が全着・全芝・全ダで途切れるため、続き原文の再取得・全項目照合が未完了。完了扱い禁止。",
     "tospoOriginalTextReconciliation": "未完了",
-    "htmlRenderVerification": "未完了",
+    "htmlRenderVerification": "部分検証：14カード・14コメント・56タブのHTML構造と1〜13番のサマリー値を静的確認。実ブラウザでの表示・タブ操作確認は未完了。",
     "productionDeployment": "未実施",
     "complete": false,
     "turnSummaryAllHorses": "1〜13番は左回行を含む37項目を照合済み。14番は原文続き未取得のため全件照合扱いにしない。",
     "date2Continuation": "既知のDATE 2原文は14番の全着・全芝・全ダで終端。続きファイルの正確な参照先を現在のファイル群から再特定できていない。過去の作業メモにある値だけで全項目の原文照合済みとは扱わない。",
     "date2VerifiedHorseCount": "13/14頭（1〜13番の37項目一致確認）",
-    "date2Horse14": "部分確認のみ：全着2-3-1-10、全芝0-0-0-0、全ダ2-3-1-10。続き資料未取得のため残り項目は全件未照合。"
+    "date2Horse14": "部分確認のみ：全着2-3-1-10、全芝0-0-0-0、全ダ2-3-1-10。続き資料未取得のため残り項目は全件未照合。",
+    "htmlStructureCheck": "JSON内render.htmlを静的検査：馬カード14、コメント領域14、DATAタブ56（各馬4タブ）。1〜13番の上部サマリー値5項目はJSONとHTML内の存在を照合済み。ブラウザ実描画・操作確認は未実施。"
   },
   "criticalRule": "DATE 2の各馬・各項目には元データが存在する。原文が途中で切れている場合は欠損扱いせず、続き資料を探す。元データ上の0-0-0-0または－のみをそのまま保持する。既存HTML・JSONを元データとして再利用しない。照合していない項目を完了扱いしない。"
 }
