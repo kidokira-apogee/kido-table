@@ -113,7 +113,7 @@ def parse_race_metadata(raw: str, text: str):
         "name": name,
         "surface": ("芝" if surface_match.group(1) == "芝" else "ダート") if surface_match else None,
         "distanceM": int(surface_match.group(2)) if surface_match else None,
-        "direction": None,
+        "direction": "不明",
         "going": None,
         "weather": None,
         "class": class_text,
