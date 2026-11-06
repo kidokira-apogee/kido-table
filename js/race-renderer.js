@@ -5,11 +5,11 @@ const txt=v=>v===null||v===undefined||v===''?'－':esc(v);
 const validColor=value=>value!==null&&value!==undefined&&value!==''&&/^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\(\s*[0-9.%\s,\/]+\)|hsla?\(\s*[0-9.%\s,\/]+\))$/i.test(String(value).trim());
 const isGraySourceColor=value=>{
  if(value===null||value===undefined||value==='')return false;
- const v=String(value).trim().toLowerCase().replace(/\\s+/g,' ');
+ const v=String(value).trim().toLowerCase().replace(/\s+/g,' ');
  if(['silver','gray','grey','#c0c0c0','#808080','#a9a9a9','#d3d3d3','#e8e8e8','#bfbfbf','#d9d9d9','#f0f0f0'].includes(v))return true;
  let rgb=null,m=v.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
  if(m){const h=m[1].length===3?m[1].split('').map(x=>x+x).join(''):m[1];rgb=[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
- else{m=v.match(/^rgba?\\(\\s*(\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+)/);if(m)rgb=[Number(m[1]),Number(m[2]),Number(m[3])];}
+ else{m=v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);if(m)rgb=[Number(m[1]),Number(m[2]),Number(m[3])];}
  return !!rgb&&Math.max(...rgb)-Math.min(...rgb)<=8&&rgb[0]>=110&&rgb[0]<=245;
 };
 const sourceStyle=(cell,bgFallback,textFallback,bgOverride)=>{
