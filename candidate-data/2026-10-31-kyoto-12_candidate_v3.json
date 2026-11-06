@@ -26257,6 +26257,6 @@
     "render.preserveSourceColors remains false until actual rendering is compared against the Tokyo 9 production reference.",
     "The renderer integration remains an unmerged PR #3 draft; candidate JSON is not production data.",
     "Race date and basic identity are set from ① TARGET only; other-source date labels are retained as raw audit data but excluded from identity decisions.",
-    "DATE 2 display categories were reviewed against master sections 8-2 to 8-4; the venue-only overall row (京都) is excluded. Exact source-value and fixed-renderer verification remain pending."
+    "DATE 2 display categories were reviewed against master sections 8-2 to 8-4; the venue-only overall row (京都) is excluded. All candidate labels, values and source-line positions for the adopted DATE 2 fields were checked against the original text with no mismatches; fixed-renderer display verification remains pending."
   ]
 }
