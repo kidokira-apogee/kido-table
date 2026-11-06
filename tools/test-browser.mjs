@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 import { buildStructuredBrowserFixture } from './structured-browser-fixture.mjs';
 
@@ -73,6 +74,39 @@ try {
     assert.equal(await page.locator('#race-list-view').isVisible(), true);
     await page.close();
   }
+  const actualRace = JSON.parse(readFileSync(new URL('../data/races/2026-11-01-tokyo-12.json', import.meta.url), 'utf8'));
+  for (const width of [390, 1280]) {
+    const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: 1 });
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    const response = await page.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' });
+    assert.equal(response.status(), 200);
+    await page.evaluate(data => {
+      document.getElementById('race-list-view').hidden = true;
+      const detail = document.getElementById('race-detail-container');
+      detail.hidden = false;
+      detail.innerHTML = window.KidoRaceRenderer.renderRace(data);
+    }, actualRace);
+    await page.waitForSelector('.horse-card');
+    assert.equal(await page.locator('.horse-card').count(), 14, width + 'px Kiyosato horse cards');
+    assert.equal(await page.locator('.data-tab').count(), 56, width + 'px Kiyosato tabs');
+    assert.equal(await page.locator('.run').count(), 42, width + 'px Kiyosato recent runs');
+    assert.equal(await page.locator('.data-chip').count(), 70, width + 'px Kiyosato summary chips');
+    assert.equal(await page.locator('.comments').count(), 14, width + 'px Kiyosato comments');
+    assert.equal((await page.locator('.racehead').innerText()).includes('清里特別'), true);
+    assert.equal(await page.locator('.data-tab').filter({ hasText: '枠順・脚質' }).count(), 14);
+    assert.equal(await page.locator('.data-tab').filter({ hasText: '枠順・連対実績' }).count(), 0);
+    assert.equal(await page.locator('.horse-card').first().locator('[data-data-content="detail"]').innerText().then(t => t.includes('東京')), true);
+    const tab = page.locator('.horse-card').first().locator('.data-tab').nth(1);
+    await tab.click();
+    assert.equal(await tab.getAttribute('aria-selected'), 'true');
+    assert.equal(await page.locator('.horse-card').first().locator('.data-panel.active').count(), 1);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth), false, width + 'px Kiyosato horizontal overflow');
+    await page.screenshot({ path: '/tmp/kido-kiyosato-' + width + '.png', fullPage: true });
+    assert.deepEqual(errors, [], width + 'px Kiyosato page errors');
+    await page.close();
+  }
+  console.log('PASS: archive fixture and actual Kiyosato structured data at 390px and 1280px; 14 horses, 4 tabs, 3 runs, 5 chips, comments, tab interaction, no horizontal overflow.');
   console.log('PASS: structured renderer via archive flow at 390px and 1280px; 14 horses, 4 tabs, 3 runs, 5 chips, comments, collapse, navigation; screenshots saved.');
 } finally {
   if (browser) await browser.close();
