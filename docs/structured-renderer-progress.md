@@ -228,3 +228,13 @@ Updated: 2026-11-06
 - Latest push-triggered browser workflow for commit `9c36798c04bbaff6817849eb9365164622de0826`: SUCCESS. Pull-request-triggered duplicate run is still completing.
 - This smoke check exercises the current archived HTML layout and navigation. It is not a pixel-perfect comparison of the new structured renderer against the locked Tokyo 9R baseline; that comparison remains separate.
 - Main/live remain untouched.
+
+
+## Structured renderer browser validation (2026-11-06)
+
+- Added a test-only structured race fixture builder and changed the Playwright flow to intercept the Tokyo 9R archive JSON request with structured data. This exercises the production `openRace()` path and `KidoRaceRenderer.renderRace()`, rather than the archived `render.html` fallback.
+- At 390px and 1280px, verified 14 structured horse cards, 56 tabs, 42 recent-run blocks, 70 summary chips, 14 comment sections, tab switching, recent-form collapse, return navigation, no horizontal overflow, and no uncaught browser errors.
+- Compared the bounding-box left edges and widths of the race header, first horse card, profile, recent-run section, and data section against the existing archived Tokyo 9R screen at both viewport widths. All tested horizontal geometry matched within 2px.
+- Browser test screenshots are uploaded as GitHub Actions artifacts. Latest run for commit `ec80cefdf1a49383db9f66e9c5a15faabe7dcc34`: SUCCESS.
+- Scope: the new browser fixture is synthetic test data, not the actual 2026-11-01 Tokyo 9R merged production dataset. This confirms the structured renderer's screen flow and horizontal layout geometry; it is not a pixel-perfect comparison or a data-content equivalence test.
+- Main/live remain unchanged.
