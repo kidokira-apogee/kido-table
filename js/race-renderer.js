@@ -46,7 +46,7 @@ function tabPanel(h,key){
 }
 function formatCourse(raw){
  const value=String(raw||'').trim();
- const match=value.match(/^([^･・]+)[･・]([TD])(\\d{2,4})$/);
+ const match=value.match(/^([^･・]+)[･・]([TD])([0-9]{2,4})$/);
  if(!match)return {label:value,attrs:''};
  const code=match[1],surface=match[2],digits=match[3];
  const distance=digits.length<=2?Number(digits)*100:Number(digits);
