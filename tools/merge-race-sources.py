@@ -96,6 +96,9 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
         if not isinstance(ichioshi, bool):
             raise ValueError(f"東スポ 馬番{number}: isIchioshiが真偽値ではありません")
 
+        if not current:
+            ichioshi = False
+
         horse = {
             key: value for key, value in base.items()
             if key not in ("topSummary", "dataTabs", "comments", "date2Audit")
