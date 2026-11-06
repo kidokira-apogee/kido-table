@@ -192,7 +192,7 @@ def extract(path: Path):
         "targetCellsPerHorse": 90,
         "horseNumberSequence": numbers,
         "rawHtmlStored": False,
-        "unknownRaceMetadata": [k for k in ("direction", "going", "weather") if metadata[k] is None]
+        "unknownRaceMetadata": [k for k in ("direction", "going", "weather") if metadata[k] in (None, "", "不明")]
     }}
 
 def main():
