@@ -95,7 +95,8 @@
     const rows = items.map(item => {
       const value = recordText(item);
       const good = isPlaceRateHit(item) ? ' good' : '';
-      return '<div class="stat-row"><span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong></div>';
+      // 正本の .stats は span / strong を直接2列グリッドに配置する。
+      return '<span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong>';
     }).join('');
     return '<section class="panel-card"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
   }
@@ -167,8 +168,8 @@
       '<span class="basic"><label>騎手</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors) + '>' + display(p.jockeyRaw) + '</b></span>' +
       '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors) + '>' + display(p.trainer) + '</b></span>' +
       '</div></div></div></div>' +
-      '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, true) + '>父　' + display(pedigree.sire) + '</strong>' +
-      '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, true) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, true) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
+      '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, applyColors) + '>父　' + display(pedigree.sire) + '</strong>' +
+      '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, applyColors) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
       '<section class="runs-section"><div class="runs">' + runs.map((run, i) => runHtml(run, i, runStyles[i] || {}, applyColors)).join('') + '</div></section>' +
       '<section class="data-section">' + summaryHtml + '<div aria-label="DATA項目" class="data-tabs" role="tablist">' + tabButtons + '</div>' + panels + '</section>' + comments + '</section>';
   }
