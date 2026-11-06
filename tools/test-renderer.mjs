@@ -67,6 +67,22 @@ assert.ok(escapedHtml.includes('&lt;svg onload=alert(2)&gt;'));
 assert.ok(escapedHtml.includes('&lt;script&gt;alert(3)&lt;/script&gt;'));
 assert.ok(!escapedHtml.includes('<script>alert(3)</script>'));
 
+const commentProbe = structuredClone(raceData);
+commentProbe.horses[0].comments = { current: { text: '今回のみ', isIchioshi: true }, previousRun: {} };
+let commentHtml = renderRace(commentProbe);
+assert.ok(commentHtml.includes('今回のみ'));
+assert.ok(commentHtml.includes('is-ichioshi'));
+assert.ok(!commentHtml.includes('comment-previous'));
+commentProbe.horses[0].comments = { current: {}, previousRun: { text: '前走のみ' } };
+commentHtml = renderRace(commentProbe);
+assert.ok(commentHtml.includes('前走のみ'));
+assert.ok(!commentHtml.includes('comment-current'));
+assert.ok(commentHtml.includes('厩舎・陣営コメント'));
+commentProbe.horses[0].comments = { current: {}, previousRun: {} };
+commentHtml = renderRace(commentProbe);
+assert.ok(!commentHtml.includes('厩舎・陣営コメント'));
+assert.ok(!commentHtml.includes('class="comments"'));
+
 const courseProbe = structuredClone(raceData);
 courseProbe.horses[0].recentRuns[0].courseRaw = '札･D17';
 const courseHtml = renderRace(courseProbe);
