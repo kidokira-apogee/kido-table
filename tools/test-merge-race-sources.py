@@ -29,7 +29,7 @@ def fixtures():
             "profile": {"sexAge": "牡3"}, "pedigree": {}, "recentRuns": []
         })
         date2["horses"].append({
-            "horseNumber": n, "horseName": name,
+            "horseNumber": n, "frameNumber": (n + 1) // 2, "horseName": name,
             "topSummary": {"allRecord": {"label": "全着", "record": ["1","0","0","0"]}},
             "dataTabs": {"detail": {}, "distanceCourse": {}, "conditions": {}, "frameAndTop2": {}}
         })
@@ -50,6 +50,7 @@ class MergeContractTests(unittest.TestCase):
         self.assertEqual(len(result["horses"]), 6)
         self.assertEqual(result["sourceAudit"]["ichioshiHorseNumbers"], [2])
         self.assertEqual(result["horses"][1]["comments"]["current"]["isIchioshi"], True)
+        self.assertEqual(result["horses"][1]["frameNumber"], 1)
         self.assertNotIn("isIchioshi", result["horses"][1]["comments"]["previousRun"])
 
     def test_rejects_horse_number_set_mismatch(self):
