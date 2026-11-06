@@ -906,7 +906,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 1
     },
     {
       "horseNumber": 2,
@@ -1779,7 +1779,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 2
     },
     {
       "horseNumber": 3,
@@ -2652,7 +2652,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 3
     },
     {
       "horseNumber": 4,
@@ -3525,7 +3525,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 3
     },
     {
       "horseNumber": 5,
@@ -4398,7 +4398,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 4
     },
     {
       "horseNumber": 6,
@@ -5271,7 +5271,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 4
     },
     {
       "horseNumber": 7,
@@ -6144,7 +6144,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 5
     },
     {
       "horseNumber": 8,
@@ -7017,7 +7017,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 5
     },
     {
       "horseNumber": 9,
@@ -7890,7 +7890,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 6
     },
     {
       "horseNumber": 10,
@@ -8763,7 +8763,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 6
     },
     {
       "horseNumber": 11,
@@ -9636,7 +9636,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 7
     },
     {
       "horseNumber": 12,
@@ -10509,7 +10509,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 7
     },
     {
       "horseNumber": 13,
@@ -11382,7 +11382,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 8
     },
     {
       "horseNumber": 14,
@@ -12255,7 +12255,7 @@
         "splitStatus": "split by explicit '前走' label and visible horse sections",
         "splitEvidence": "Per-horse current comment appears before explicit 前走 section; previous-run race header and comment follow it."
       },
-      "frameNumber": null
+      "frameNumber": 8
     }
   ],
   "integrationStatus": {
