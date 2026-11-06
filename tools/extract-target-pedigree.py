@@ -71,6 +71,10 @@ def extract(path: Path):
             cells[0]["background"], cells[1]["textColor"], cells[2]["background"],
             cells[3]["background"], cells[4]["background"]
         ]))
+        ped["sourceStyles"] = {
+            key: {"backgroundColor": cell["background"], "textColor": cell["textColor"]}
+            for key, cell in zip(KEYS, cells)
+        }
         found.append({"horseNumber": number, "horseName": row[1]["text"], "pedigree": ped})
     found.sort(key=lambda x: x["horseNumber"])
     nums = [x["horseNumber"] for x in found]
