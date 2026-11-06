@@ -23346,7 +23346,7 @@
   ],
   "render": {
     "layoutId": "tokyo9-production-locked",
-    "preserveSourceColors": true
+    "preserveSourceColors": false
   },
   "integrationStatus": "SOURCE_EXTRACTION_COMPLETE; CANDIDATE_V3; DATE2_SUMMARY_RECALCULATED; MASTER_WHITELIST_REVIEWED; FINAL_SOURCE_AUDIT_AND_RENDER_VERIFICATION_PENDING",
   "candidateLimitations": [
