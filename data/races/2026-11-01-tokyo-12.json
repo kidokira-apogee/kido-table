@@ -9241,9 +9241,11 @@
   ],
   "integrationStatus": {
     "target": "structured from TARGET source; 90 cells per horse retained in staging",
-    "date2": "four approved tabs mapped; venue-derived Tokyo left-turn summary populated; horse 14 source row absent and shown as —",
+    "date2": "14/14頭：今回ユーザーが提示したDATE 2全馬分の表を根拠に承認対象項目を照合。掲載対象外の同コース・近距離最高タイム等は抽出・表示しない。14番の距離帯・コース別実績も照合済み。",
     "tospo": "14/14 comments split and attached; ichioshi current comments only",
-    "html": "rebuilt with shared renderer; visual browser verification pending",
-    "production": "not deployed"
+    "html": "4タブ×14頭を維持。全14頭の詳細成績から当会場行を削除。タブ表記は「枠順・脚質」。HTML静的検証済み。実ブラウザでの描画・タブ操作確認は未完了。",
+    "production": "not deployed",
+    "extractionPolicy": "掲載項目ホワイトリスト方式。元データは保持し、HTML用JSON・HTMLにはマスター第15-5項で掲載指定された項目だけを格納・表示する。",
+    "lastAudit": "2026-11-06：14番DATE 2照合完了、当会場行14頭分を削除、4タブ構造・禁止項目を静的検証。"
   }
 }
