@@ -585,7 +585,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const data=await response.json();
    detail.innerHTML=data.render&&data.render.html?data.render.html:window.KidoRaceRenderer.renderRace(data);
    normalizeRunningStyle(detail);
-   normalizeSourceGray(detail);
+   // TARGET source cell colors are preserved by the renderer; do not strip gray source fills.
    normalizeLegacyComments(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
