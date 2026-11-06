@@ -94,6 +94,8 @@ try {
     assert.equal(await page.locator('.data-tab').count(), 56, width + 'px Kiyosato tabs');
     assert.equal(await page.locator('.run').count(), 42, width + 'px Kiyosato recent runs');
     assert.equal(await page.locator('.data-chip').count(), 70, width + 'px Kiyosato summary chips');
+    assert.equal(await page.locator('.data-chip.late').count(), 7, width + 'px Kiyosato late-start highlight threshold');
+    assert.deepEqual(await page.locator('.horse-card .data-existing .data-chip:last-child b').allTextContents(), ['36%','50%','14%','7%','28%','27%','52%','23%','22%','40%','11%','0%','11%','38%'], width + 'px Kiyosato late-start rates');
     assert.equal(await page.locator('.comments').count(), 14, width + 'px Kiyosato comments');
     assert.equal((await page.locator('.racehead').innerText()).includes('清里特別'), true);
     assert.equal(await page.locator('.data-tab').filter({ hasText: '枠順・脚質' }).count(), 14);
