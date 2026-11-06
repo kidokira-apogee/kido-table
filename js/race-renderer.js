@@ -99,7 +99,7 @@ function renderRace(data){
  if(!data||!data.race||!Array.isArray(data.horses))throw new Error('Invalid structured race data');
  const r=data.race;
  const date=new Date(r.date+'T00:00:00');
- const dateLabel=isNaN(date)?r.date:(date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日（日月火水木金土'[date.getDay()]+'）');
+ const dateLabel=isNaN(date)?r.date:(date.getFullYear()+'年'+(date.getMonth()+1)+'月'+date.getDate()+'日（'+'日月火水木金土'[date.getDay()]+'）');
  const dirt=r.surface==='ダート';
  const dateItems=[dateLabel,r.meetingLabel,r.venue,r.fieldSize!==undefined?String(r.fieldSize)+'頭':null,r.startTime?String(r.startTime)+'発走':null].filter(Boolean);
  const coursePill=r.courseLabel?'<span class="pill">'+esc(r.courseLabel)+'</span>':'';
