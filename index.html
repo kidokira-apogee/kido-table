@@ -454,6 +454,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    return Math.max(r,g,b)-Math.min(r,g,b)<=8&&r>=110&&r<=245;
   };
   root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
+   // Pedigree colors are meaningful TARGET source data, including gray-like values.
+   if(node.closest('.pedigree-inline'))return;
    const inline=node.getAttribute('style')||'';
    const bg=node.style.backgroundColor||node.style.background||'';
    const attr=node.getAttribute('bgcolor')||'';
