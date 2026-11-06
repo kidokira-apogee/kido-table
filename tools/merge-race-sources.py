@@ -88,8 +88,10 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
             raise ValueError(f"DATE2 馬番{number}: topSummary/dataTabsがありません")
         current = comments.get("currentComment")
         previous = comments.get("previousRunComment")
-        if not isinstance(current, str) or not isinstance(previous, str):
-            raise ValueError(f"東スポ 馬番{number}: 今回・前走コメントが不足")
+        if current is not None and not isinstance(current, str):
+            raise ValueError(f"東スポ 馬番{number}: 今回コメントの形式が不正")
+        if previous is not None and not isinstance(previous, str):
+            raise ValueError(f"東スポ 馬番{number}: 前走コメントの形式が不正")
         ichioshi = comments.get("isIchioshi", False)
         if not isinstance(ichioshi, bool):
             raise ValueError(f"東スポ 馬番{number}: isIchioshiが真偽値ではありません")
@@ -103,10 +105,8 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
         horse["topSummary"] = stats["topSummary"]
         horse["dataTabs"] = stats["dataTabs"]
         horse["comments"] = {
-            "current": {
-                "text": current, "source": "東スポ", "isIchioshi": ichioshi
-            },
-            "previousRun": {"text": previous, "source": "東スポ"}
+            "current": ({"text": current, "source": "東スポ", "isIchioshi": ichioshi} if current else {}),
+            "previousRun": ({"text": previous, "source": "東スポ"} if previous else {})
         }
         merged.append(horse)
 
