@@ -82,3 +82,5 @@ Updated: 2026-11-06
 - Still pending: run the committed validator against the fully merged fixture using the repository's exact schema, verify separate turf and dirt TARGET exports, commit a source-styled sample fixture to the test branch if appropriate, and complete browser visual comparison with the locked Tokyo 9R layout. Main/live remain untouched.
 
 - Additional verification: latest renderer syntax and dynamic render tests PASS for 6/8/9/14/16/17/18 horses; latest validator module syntax PASS; schema JSON parse PASS. The gray-color fallback precedence change was included in those renderer tests.
+
+- Validator execution check: a six-horse synthetic fixture with the complete 90-cell style structure passed the current validator logic (5 summary slots, 4 tabs, 3 recent runs, pedigree and root source styles). This confirms validator behavior on the new shape, but the exact 14-horse merged sample has not yet been passed through the repository validator binary.
