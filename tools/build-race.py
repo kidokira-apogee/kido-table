@@ -15,6 +15,23 @@ from pathlib import Path
 
 TOOLS = Path(__file__).resolve().parent
 
+# Fixed JRA course-direction metadata. TARGET's exported race header does not
+# include direction; resolve it from the racecourse and known straight-course
+# exception rather than guessing from the horse statistics.
+COURSE_DIRECTIONS = {
+    "札幌": "右", "函館": "右", "福島": "右", "新潟": "左",
+    "東京": "左", "中山": "右", "中京": "左", "京都": "右",
+    "阪神": "右", "小倉": "右",
+}
+
+def resolve_direction(race):
+    venue = race.get("venue")
+    surface = race.get("surface")
+    distance = race.get("distanceM")
+    if venue == "新潟" and surface == "芝" and distance == 1000:
+        return "直線"
+    return COURSE_DIRECTIONS.get(venue, "不明")
+
 def run(command):
     subprocess.run([str(part) for part in command], check=True)
 
@@ -47,7 +64,13 @@ def main():
         if race.get("surface") not in ("芝", "ダート") or not race.get("venue") or not race.get("distanceM"):
             raise ValueError("TARGETからDATE2マッピングに必要な競馬場・芝ダート・距離を確定できません")
         course_label = f'{race["venue"]}{"ダ" if race["surface"] == "ダート" else "芝"}{race["distanceM"]}m'
-        direction = race.get("direction") if race.get("direction") in ("左", "右") else "不明"
+        direction = race.get("direction")
+        if direction not in ("左", "右", "直線"):
+            direction = resolve_direction(race)
+        if direction not in ("左", "右", "直線"):
+            raise ValueError(f'競馬場・コースから回り方向を確定できません: {race.get("venue")} {race.get("surface")}{race.get("distanceM")}m')
+        race["direction"] = direction
+        race["directionSource"] = "固定JRA競馬場コース情報"
 
         run([sys.executable, TOOLS / "extract-date2-rows.py",
              args.date2_text, "--output", date2_rows])
