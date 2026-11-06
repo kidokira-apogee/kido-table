@@ -115,6 +115,7 @@ def merge(target_doc: dict, date2_doc: dict, tospo_doc: dict) -> dict:
     return {
         "schemaVersion": "1.0.0",
         "race": race,
+        "render": {"layoutId": "tokyo9-production-locked", "preserveSourceColors": True},
         "sourceAudit": {
             "horseNumberNameMatch": f"{len(merged)}/{len(merged)}",
             "targetRows": len(target),
