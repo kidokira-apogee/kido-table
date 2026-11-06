@@ -1,0 +1,79 @@
+name: Validate structured race renderer and actual race data (direction-persisted)
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [feature/structured-race-renderer-v1]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate JSON schema syntax
+        run: python -m json.tool schema/race-v1.schema.json > /dev/null
+      - name: Check JavaScript syntax
+        run: |
+          node --check js/race-renderer.js
+          node --check tools/validate-race.mjs
+          node --check tools/test-renderer.mjs
+          node --check tools/test-browser.mjs
+          node --check tools/structured-browser-fixture.mjs
+          node --check tools/test-validator.mjs
+      - name: Check Python extractor syntax
+        run: python -m py_compile tools/extract-target-pedigree.py tools/extract-date2-rows.py tools/map-date2-approved.py tools/merge-race-sources.py tools/test-merge-race-sources.py tools/test-build-race.py tools/extract-target-race.py tools/test-extract-target-race.py tools/build-race.py
+      - name: Check required project files
+        run: |
+          test -s index.html
+          test -s js/race-renderer.js
+          test -s schema/race-v1.schema.json
+          test -s tools/validate-race.mjs
+          test -s tools/extract-target-pedigree.py
+          test -s tools/extract-date2-rows.py
+          test -s tools/map-date2-approved.py
+          test -s tools/merge-race-sources.py
+          test -s tools/extract-target-race.py
+          test -s tools/test-extract-target-race.py
+          test -s tools/build-race.py
+          test -s tools/test-merge-race-sources.py
+          test -s tools/test-build-race.py
+          test -s tools/test-browser.mjs
+          test -s tools/structured-browser-fixture.mjs
+          test -s tools/test-validator.mjs
+      - name: Test structured race validation contracts
+        run: node tools/test-validator.mjs
+      - name: Validate Kiyosato Tokubetsu structured race data
+        run: node tools/validate-race.mjs data/races/2026-11-01-tokyo-12.json
+      - name: Test TARGET raw extraction contracts
+        run: python tools/test-extract-target-race.py
+      - name: Test three-source merge contracts
+        run: python tools/test-merge-race-sources.py
+      - name: Test end-to-end turf and dirt race build pipeline
+        run: python tools/test-build-race.py
+      - name: Install browser test dependency
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Test full browser flow and responsive layout
+        run: node tools/test-browser.mjs
+      - name: Upload browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kido-browser-smoke-screenshots
+          path: /tmp/kido-*.png
+          if-no-files-found: ignore

@@ -408,7 +408,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .race-list-state{font-size:7px}
 }
 </style>
-</head>
+\n<style>.racehead-dirt{background:linear-gradient(115deg,#56321f 0%,#70452F 58%,#956447 100%)}.racehead-dirt .race-no{color:#f0d8c7}</style>\n</head>
 <body>
 <main class="page">
 <section class="race-list-view" id="race-list-view">
@@ -422,6 +422,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 <section class="list-section"><div class="list-section-head" id="race-list-heading">登録レース</div><div id="race-list-items"></div></section>
 </section>
 <section hidden id="race-detail-container"></section></main>
+<script src="js/race-renderer.js"></script>
 <script>
 (async function(){
  const listView=document.getElementById('race-list-view');
@@ -453,6 +454,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    return Math.max(r,g,b)-Math.min(r,g,b)<=8&&r>=110&&r<=245;
   };
   root.querySelectorAll('[style],[bgcolor]').forEach(node=>{
+   // Pedigree colors are meaningful TARGET source data, including gray-like values.
+   if(node.closest('.pedigree-inline'))return;
    const inline=node.getAttribute('style')||'';
    const bg=node.style.backgroundColor||node.style.background||'';
    const attr=node.getAttribute('bgcolor')||'';
@@ -534,20 +537,23 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   const races=dayRaces.filter(r=>r.venue===selectedVenue).sort((a,b)=>Number(a.raceNo)-Number(b.raceNo));
   races.forEach(r=>{
    const complete=r.status==='complete';
+   const stateLabel=r.status==='in_progress'?'作成中':'状態不明';
    const button=document.createElement('button');
    button.type='button';button.className='race-list-item'+(complete?'':' in-progress');
+   button.disabled=!complete;
+   button.setAttribute('aria-disabled',String(!complete));
    button.dataset.raceId=r.id;
    const raceNo=escapeHtml(r.raceNo??'');
    const distance=r.distance?' ・ '+escapeHtml(r.distance):'';
    const raceTitle=r.title?escapeHtml(r.title):(escapeHtml(r.venue)+raceNo+'R');
    const meta=[r.classLabel,r.horseCount?String(r.horseCount)+'頭':''].filter(Boolean).map(escapeHtml).join('　｜　');
-   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">作成中　›</span>');
-   button.addEventListener('click',()=>openRace(r));
+   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">'+stateLabel+'</span>');
+   if(complete)button.addEventListener('click',()=>openRace(r));
    listItems.appendChild(button);
   });
  }
  function renderDates(){
-  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek&&r.date<=addDays(selectedWeek,4)).map(r=>r.date))].sort().reverse();
+  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek).map(r=>r.date))].sort().reverse();
   if(!dates.includes(selectedDate))selectedDate=dates[0]||'';
   setChoices(dateTabs,dates,selectedDate,v=>{selectedDate=v;renderDates();renderVenueAndRaces();},v=>shortDate(v)+'（'+weekday(v)+'）');
   renderVenueAndRaces();
@@ -555,7 +561,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  function renderWeeks(){
   const weeks=[...new Set(racesInMonth().map(r=>saturdayKey(r.date)))].sort().reverse();
   if(!weeks.includes(selectedWeek))selectedWeek=weeks[0]||'';
-  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'–'+shortDate(addDays(v,4)));
+  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'週');
   renderDates();
  }
  function renderArchive(){
@@ -572,13 +578,14 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  }
  monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedWeek='';selectedDate='';selectedVenue='';renderWeeks();});
  async function openRace(r){
+  if(!r||r.status!=='complete')return;
   try{
    const response=await fetch('data/races/'+encodeURIComponent(r.file||r.id+'.json'),{cache:'no-store'});
    if(!response.ok)throw new Error('HTTP '+response.status);
    const data=await response.json();
-   detail.innerHTML=data.render.html;
+   detail.innerHTML=data.render&&data.render.html?data.render.html:window.KidoRaceRenderer.renderRace(data);
    normalizeRunningStyle(detail);
-   normalizeSourceGray(detail);
+   // TARGET source cell colors are preserved by the renderer; do not strip gray source fills.
    normalizeLegacyComments(detail);
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
    initRace(detail);
@@ -637,6 +644,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    });
    const size=Number(card.dataset.fieldSize);
    card.querySelectorAll('.frame-no[data-horse]').forEach(node=>{
+    if(node.hasAttribute('data-frame-number')){
+     const supplied=Number(node.dataset.frameNumber);
+     if(Number.isInteger(supplied)&&supplied>=1&&supplied<=8){
+      node.className='frame-no frame-'+supplied;
+      node.setAttribute('aria-label',Number(node.dataset.horse)+'番・'+supplied+'枠');
+     }else{
+      node.className='frame-no';
+      node.removeAttribute('aria-label');
+     }
+     return;
+    }
     const horseNo=Number(node.dataset.horse);let frame=horseNo;
     if(size>8&&size<=16){const singles=16-size;frame=horseNo<=singles?horseNo:singles+Math.ceil((horseNo-singles)/2);}
     else if(size>16){const doubles=24-size;frame=horseNo<=doubles*2?Math.ceil(horseNo/2):doubles+Math.ceil((horseNo-doubles*2)/3);}
