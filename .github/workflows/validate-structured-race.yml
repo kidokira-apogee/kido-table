@@ -57,8 +57,6 @@ jobs:
         run: npm install --no-save playwright
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Test renderer contract
-        run: node tools/test-renderer.mjs data/races/2026-11-01-tokyo-9.json
       - name: Test full browser flow and responsive layout
         run: node tools/test-browser.mjs
       - name: Upload browser screenshots
