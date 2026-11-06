@@ -1,4 +1,4 @@
-name: Validate structured race renderer
+name: Validate structured race renderer and actual race data
 
 on:
   pull_request:
