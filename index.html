@@ -644,6 +644,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    });
    const size=Number(card.dataset.fieldSize);
    card.querySelectorAll('.frame-no[data-horse]').forEach(node=>{
+    if(node.hasAttribute('data-frame-number')){
+     const supplied=Number(node.dataset.frameNumber);
+     if(Number.isInteger(supplied)&&supplied>=1&&supplied<=8){
+      node.className='frame-no frame-'+supplied;
+      node.setAttribute('aria-label',Number(node.dataset.horse)+'番・'+supplied+'枠');
+     }else{
+      node.className='frame-no';
+      node.removeAttribute('aria-label');
+     }
+     return;
+    }
     const horseNo=Number(node.dataset.horse);let frame=horseNo;
     if(size>8&&size<=16){const singles=16-size;frame=horseNo<=singles?horseNo:singles+Math.ceil((horseNo-singles)/2);}
     else if(size>16){const doubles=24-size;frame=horseNo<=doubles*2?Math.ceil(horseNo/2):doubles+Math.ceil((horseNo-doubles*2)/3);}
