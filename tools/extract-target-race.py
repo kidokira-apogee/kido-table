@@ -114,8 +114,6 @@ def parse_race_metadata(raw: str, text: str):
         "surface": ("芝" if surface_match.group(1) == "芝" else "ダート") if surface_match else None,
         "distanceM": int(surface_match.group(2)) if surface_match else None,
         "direction": "不明",
-        "going": None,
-        "weather": None,
         "class": class_text,
         "conditionsRaw": class_text,
         "weightType": weight_type,
@@ -191,8 +189,7 @@ def extract(path: Path):
         "horseRows": len(records),
         "targetCellsPerHorse": 90,
         "horseNumberSequence": numbers,
-        "rawHtmlStored": False,
-        "unknownRaceMetadata": [k for k in ("direction", "going", "weather") if metadata[k] in (None, "", "不明")]
+        "rawHtmlStored": False
     }}
 
 def main():
