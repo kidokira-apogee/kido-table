@@ -186,3 +186,12 @@ Updated: 2026-11-06
 - TARGET's 90-cell horse row does not contain a frame number. The pipeline therefore retains null from TARGET extraction, uses DATE2's explicit frame number to select each horse's frame-specific DATE2 record, and carries that DATE2-sourced frame number into the final horse object. This provenance is limited to the horse-level frame field; TARGET remains the sole race-metadata source.
 - The runner has not yet completed a real end-to-end run because no raw Tospo export or confirmed normalized Tospo input from that export is available. Synthetic Tospo contract tests remain tests of the merge contract only.
 - The raw race extractor was relaxed to accept nonconsecutive horse numbers within 1–18, since scratches or source-specific omissions must not be mistaken for parser corruption. Uniqueness, row count, exact horse-name joins, and TARGET field-size agreement remain enforced.
+
+
+## Latest display-output rule (2026-11-06)
+
+- Apply the user's latest instruction: only items explicitly authorized by the current master and approved layout may be extracted into display content or rendered on the race page.
+- Do not add out-of-scope explanatory text, supplemental labels, unknown/unverified information, or confirmation prompts to the published race page.
+- Absence of an out-of-scope item is not a defect to explain or a reason to ask the user. Do not create a display placeholder or extra audit note for it.
+- Source originals are handled according to the master; this rule limits extracted/display output, not the preservation of received source material during processing.
+- Implementation adjustment: removed the `unknownRaceMetadata` supplemental list from TARGET extraction output, and the renderer now omits the going-condition pill when no value is supplied instead of rendering an empty pill. Existing approved display fields and layout remain unchanged.
