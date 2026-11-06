@@ -238,3 +238,12 @@ Updated: 2026-11-06
 - Browser test screenshots are uploaded as GitHub Actions artifacts. Latest run for commit `ec80cefdf1a49383db9f66e9c5a15faabe7dcc34`: SUCCESS.
 - Scope: the new browser fixture is synthetic test data, not the actual 2026-11-01 Tokyo 9R merged production dataset. This confirms the structured renderer's screen flow and horizontal layout geometry; it is not a pixel-perfect comparison or a data-content equivalence test.
 - Main/live remain unchanged.
+
+
+## Validator alignment for optional comments (2026-11-06)
+
+- Found a contract mismatch: the merge accepts current-only, previous-only, and both-comments-absent cases, but the JSON validator still required both comment texts and the current ichioshi flag.
+- Updated the validator so comment text is optional, current ichioshi is required only when a current comment exists, and ichioshi remains prohibited on the previous-run comment.
+- Added CI tests for both comments present, both absent, current-only, previous-only, ichioshi without current text, and ichioshi on the previous comment.
+- The schema-valid synthetic test fixture now includes the required pedigree and source-style structures and uses schema version `1.0.0`.
+- Latest GitHub Actions validation for commit `a287fe5499f75f255beb38d5c5195372d9c0ffee`: SUCCESS. Main/live remain unchanged.
