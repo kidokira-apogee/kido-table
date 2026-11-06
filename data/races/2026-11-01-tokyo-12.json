@@ -12270,6 +12270,7 @@
     "actualRaceDataValidation": "PASS: node tools/validate-race.mjs data/races/2026-11-01-tokyo-12.json",
     "browserWorkflowRun": "42193560867",
     "complete": false,
-    "commentDisplayVerification": "PASS: 14 horses retain rawCombined and explicit 前走 split markers; current/previous display text contains no reporter-name parentheticals. Ichioshi is limited to current comments for horses 8 and 13; no previousRun comment carries an ichioshi flag."
+    "commentDisplayVerification": "PASS: 14 horses retain rawCombined and explicit 前走 split markers; current/previous display text contains no reporter-name parentheticals. Ichioshi is limited to current comments for horses 8 and 13; no previousRun comment carries an ichioshi flag.",
+    "frameNumberVerification": "PASS: DATE2 source first-column frame values were restored for all 14 horses: 1,2,3,3,4,4,5,5,6,6,7,7,8,8."
   }
 }
