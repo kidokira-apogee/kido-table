@@ -32,7 +32,7 @@ const itemRows=items=>(items||[]).map(x=>'<div class="stats"><span>'+txt(x.label
 const card=(title,items)=>'<section class="panel-card"><h4>'+esc(title)+'</h4>'+itemRows(items)+'</section>';
 const recordCard=(title,items)=>card(title,items);
 const tabs=[
- ['detail','詳細成績'],['distanceCourse','距離・コース'],['conditions','条件別'],['frameAndTop2','枠順・連対実績']
+ ['detail','詳細成績'],['distanceCourse','距離・コース'],['conditions','条件別'],['frameAndTop2','枠順・脚質']
 ];
 function summaryChip(x,label){
  const rec=x?.record;
