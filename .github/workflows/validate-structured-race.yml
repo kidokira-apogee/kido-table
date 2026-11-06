@@ -1,4 +1,4 @@
-name: Validate structured race renderer and actual race data (pipeline-audited)
+name: Validate structured race renderer and actual race data (direction-resolved)
 
 on:
   pull_request:
