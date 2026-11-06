@@ -124,3 +124,12 @@ Updated: 2026-11-06
 - This verifies the extractor's row-count handling and 90-cell structural mapping at 18 rows. It is a synthetic structural test, not a real 18-horse TARGET export; source-specific markup, actual horse names, colors, and merged DATE2 values still require a real 18-horse sample.
 - Renderer tests already cover 6, 8, 9, 16, 17, and 18 horses for card count, four tabs per horse, and three recent runs per horse. Combined with this extractor test, the generic 18-horse path is structurally supported.
 - No raw synthetic fixture or source files were committed. Main/live remain untouched.
+
+
+## Production hardening foundation (2026-11-06)
+
+- Added `.github/workflows/validate-structured-race.yml` on the renderer feature branch.
+- CI triggers on pull requests targeting `main`, pushes to this feature branch, and manual dispatch.
+- CI checks schema JSON syntax, JavaScript syntax for renderer/validator/tests, Python extractor syntax, and presence of required project files.
+- This is a validation foundation only. It does not deploy or alter the live GitHub Pages site. Production deployment remains gated until DATE2 structured extraction, real turf/dirt integration, real 18-horse end-to-end validation, and browser visual QA are complete.
+- Main/live remain unchanged.
