@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import unicodedata
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -71,8 +72,10 @@ def parse_date(line: str):
 
 def parse_race_metadata(raw: str, text: str):
     title = re.search(r"<TITLE>\s*出馬表・([^<]+)</TITLE>", raw, re.I)
-    title_text = clean(title.group(1)) if title else ""
+    title_text = unicodedata.normalize("NFKC", clean(title.group(1))) if title else ""
     lines = [clean(x) for x in text.splitlines() if clean(x)]
+    normalized_text = unicodedata.normalize("NFKC", text)
+    normalized_lines = [clean(x) for x in normalized_text.splitlines() if clean(x)]
     date_line = next((x for x in lines if re.search(r"\d{4}年.*\d{1,2}月.*\d{1,2}日", x)), "")
     race_line = next((x for x in lines if "Ｒ】" in x or "R】" in x), "")
     condition_line = next((x for x in lines if re.search(r"(歳以上|歳以下|歳・)", x) and ("クラス" in x or "未勝利" in x or "オープン" in x)), "")
