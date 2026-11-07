@@ -22,6 +22,17 @@ function validate(value, rule, at, errors) {
     errors.push(at + ': expected ' + [].concat(rule.type).join('|'));
     return;
   }
+  if (Object.prototype.hasOwnProperty.call(rule, 'const') && value !== rule.const) errors.push(at + ': const mismatch');
+  if (rule.enum && !rule.enum.includes(value)) errors.push(at + ': value is not in enum');
+  if (typeof value === 'string') {
+    if (rule.pattern && !(new RegExp(rule.pattern)).test(value)) errors.push(at + ': pattern mismatch');
+    if (rule.minLength !== undefined && value.length < rule.minLength) errors.push(at + ': below minLength');
+    if (rule.maxLength !== undefined && value.length > rule.maxLength) errors.push(at + ': above maxLength');
+  }
+  if (typeof value === 'number') {
+    if (rule.minimum !== undefined && value < rule.minimum) errors.push(at + ': below minimum');
+    if (rule.maximum !== undefined && value > rule.maximum) errors.push(at + ': above maximum');
+  }
   if (rule.type === 'object' && value && typeof value === 'object' && !Array.isArray(value)) {
     for (const key of rule.required || []) {
       if (!Object.prototype.hasOwnProperty.call(value, key)) errors.push(at + '.' + key + ': required property missing');
@@ -35,8 +46,10 @@ function validate(value, rule, at, errors) {
       if (Object.prototype.hasOwnProperty.call(value, key)) validate(value[key], child, at + '.' + key, errors);
     }
   }
-  if (rule.type === 'array' && Array.isArray(value) && rule.items) {
-    value.forEach((item, index) => validate(item, rule.items, at + '[' + index + ']', errors));
+  if (rule.type === 'array' && Array.isArray(value)) {
+    if (rule.minItems !== undefined && value.length < rule.minItems) errors.push(at + ': below minItems');
+    if (rule.maxItems !== undefined && value.length > rule.maxItems) errors.push(at + ': above maxItems');
+    if (rule.items) value.forEach((item, index) => validate(item, rule.items, at + '[' + index + ']', errors));
   }
 }
 let failed = false;
