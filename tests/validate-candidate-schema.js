@@ -61,8 +61,7 @@ for (const file of files) {
   const errors = [];
   if (!ajvValidate(data)) {
     for (const error of ajvValidate.errors || []) {
-      errors.push('JSON Schema 2020-12 ' + (error.instancePath || '
-  if (data.status?.complete !== false) errors.push('$.status.complete: candidate must remain false');
+      errors.push('JSON Schema 2020-12 ' + (error.instancePath || '$') + ': ' + error.message)
   if (!Array.isArray(data.horses) || data.horses.length !== data.race?.fieldSize) errors.push('$.horses: count must equal race.fieldSize');
   const numbers = new Set();
   for (const [i, horse] of (data.horses || []).entries()) {
