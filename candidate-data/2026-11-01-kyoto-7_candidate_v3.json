@@ -47,7 +47,7 @@
     },
     "horseNumberNameMatch": "16/16; all three sources match",
     "targetCellsPerHorse": 90,
-    "targetCellColors": "captured in sourceStyles and full raw cell-attribute audit; display comparison pending",
+    "targetCellColors": "TARGET原資料→JSONの色属性は3,060/3,060セル一致。実際の正本CSS・レンダラーを使ったChromium headlessのComputed Style照合も全922プロパティで不一致0件。実機スマートフォン確認と正式承認は未完了。",
     "date2MasterBasedExtract": "2026-11-06 master category rules; four tabs and five summary fields; source line references retained; exact row-level whitelist is not separately machine-readable in the master",
     "date2Excluded": [
       "course best times",
@@ -23351,9 +23351,9 @@
   "integrationStatus": "SOURCE_EXTRACTION_COMPLETE; CANDIDATE_V3; DATE2_SUMMARY_RECALCULATED; MASTER_WHITELIST_REVIEWED; FINAL_SOURCE_AUDIT_AND_RENDER_VERIFICATION_PENDING",
   "candidateLimitations": [
     "Not a production display JSON.",
-    "render.preserveSourceColors remains false until actual rendering is compared against the Tokyo 9 production reference.",
+    "render.preserveSourceColors is true after successful Chromium headless integration verification against the canonical Tokyo 9 layout; physical smartphone validation and formal approval remain outstanding.",
     "The renderer integration remains an unmerged PR #3 draft; candidate JSON is not production data.",
     "Race date and basic identity are based only on ① TARGET; other-source date labels are retained as raw audit data but excluded from identity decisions.",
-    "DATE 2 display categories were reviewed against master sections 8-2 to 8-4; the venue-only overall row (京都) is excluded. All candidate labels, values and source-line positions for the adopted DATE 2 fields were checked against the original text with no mismatches; fixed-renderer display verification remains pending."
+    "DATE 2 display categories were reviewed against master sections 8-2 to 8-4; the venue-only overall row (京都) is excluded. All candidate labels, values and source-line positions for the adopted DATE 2 fields were checked against the original text with no mismatches; full-page Chromium rendering, DATA-tab interaction and TARGET source-color Computed Style checks are complete. Physical smartphone validation and formal approval remain outstanding."
   ]
 }
