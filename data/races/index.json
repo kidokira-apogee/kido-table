@@ -15,19 +15,6 @@
       "horseCount": 13
     },
     {
-      "id": "2026-11-01-tokyo-9",
-      "file": "2026-11-01-tokyo-9.json",
-      "date": "2026-11-01",
-      "dateLabel": "2026年11月1日（日）",
-      "venue": "東京",
-      "raceNo": 9,
-      "title": "紅葉ステークス",
-      "distance": "芝1600m（B）",
-      "classLabel": "3歳以上・3勝クラス",
-      "horseCount": 14,
-      "status": "complete"
-    },
-    {
       "id": "2026-11-01-tokyo-10",
       "file": "2026-11-01-tokyo-10.json",
       "date": "2026-11-01",
@@ -38,32 +25,6 @@
       "distance": "ダート1300m",
       "classLabel": "3歳以上・3勝クラス",
       "horseCount": 16,
-      "status": "complete"
-    },
-    {
-      "id": "2026-11-01-tokyo-11",
-      "file": "2026-11-01-tokyo-11.json",
-      "date": "2026-11-01",
-      "dateLabel": "2026年11月1日（日）",
-      "venue": "東京",
-      "raceNo": 11,
-      "title": "第174回 天皇賞（秋）",
-      "distance": "芝2000m（B）",
-      "classLabel": "3歳以上・GⅠ",
-      "horseCount": 17,
-      "status": "complete"
-    },
-    {
-      "id": "2026-11-01-tokyo-12",
-      "file": "2026-11-01-tokyo-12.json",
-      "date": "2026-11-01",
-      "dateLabel": "2026年11月1日（日）",
-      "venue": "東京",
-      "raceNo": 12,
-      "title": "清里特別",
-      "distance": "ダート1600m",
-      "classLabel": "3歳以上・2勝クラス",
-      "horseCount": 14,
       "status": "complete"
     }
   ]
