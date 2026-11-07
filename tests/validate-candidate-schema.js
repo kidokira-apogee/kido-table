@@ -26,7 +26,12 @@ function validate(value, rule, at, errors) {
     for (const key of rule.required || []) {
       if (!Object.prototype.hasOwnProperty.call(value, key)) errors.push(at + '.' + key + ': required property missing');
     }
-    if (rule.additionalProperties === false) {\n      for (const key of Object.keys(value)) {\n        if (!Object.prototype.hasOwnProperty.call(rule.properties || {}, key)) errors.push(at + '.' + key + ': additional property is not allowed');\n      }\n    }\n    for (const [key, child] of Object.entries(rule.properties || {})) {
+    if (rule.additionalProperties === false) {
+      for (const key of Object.keys(value)) {
+        if (!Object.prototype.hasOwnProperty.call(rule.properties || {}, key)) errors.push(at + '.' + key + ': additional property is not allowed');
+      }
+    }
+    for (const [key, child] of Object.entries(rule.properties || {})) {
       if (Object.prototype.hasOwnProperty.call(value, key)) validate(value[key], child, at + '.' + key, errors);
     }
   }
