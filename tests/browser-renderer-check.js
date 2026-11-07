@@ -217,6 +217,50 @@ async function verifyMissingValueDisplay(page, data) {
   }, data);
 }
 
+async function verifyMobileRunLayout(page, expectedCards) {
+  return page.evaluate(expectedCards => {
+    const errors = [];
+    const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
+    if (cards.length !== expectedCards) errors.push('horse card count ' + cards.length + '/' + expectedCards);
+
+    for (const card of cards) {
+      const cardRect = card.getBoundingClientRect();
+      const runs = [...card.querySelectorAll('.runs > .run')];
+      for (const [runIndex, run] of runs.entries()) {
+        const details = run.querySelector('.run-details');
+        const metrics = [...(details?.querySelectorAll(':scope > .metric') || [])];
+        if (metrics.length !== 10) {
+          errors.push(card.id + ' run ' + (runIndex + 1) + ': expected 10 metrics, got ' + metrics.length);
+          continue;
+        }
+        const rects = metrics.map(node => node.getBoundingClientRect());
+        const tops = rects.map(rect => rect.top);
+        if (Math.max(...tops) - Math.min(...tops) > 1) {
+          errors.push(card.id + ' run ' + (runIndex + 1) + ': 10 metrics are not on one row');
+        }
+        if (rects.some(rect => rect.left < cardRect.left - 1 || rect.right > cardRect.right + 1)) {
+          errors.push(card.id + ' run ' + (runIndex + 1) + ': a metric extends outside the horse card');
+        }
+        const gridColumns = getComputedStyle(details).gridTemplateColumns.trim().split(/\s+/).filter(Boolean);
+        if (gridColumns.length !== 10) {
+          errors.push(card.id + ' run ' + (runIndex + 1) + ': expected 10 grid columns, got ' + gridColumns.length);
+        }
+
+        const condition = run.querySelector('.run-subline span:not(.run-course)');
+        if (condition) {
+          const range = document.createRange();
+          range.selectNodeContents(condition);
+          const textRect = range.getBoundingClientRect();
+          if (textRect.width > 0 && (textRect.left < cardRect.left - 1 || textRect.right > cardRect.right + 1)) {
+            errors.push(card.id + ' run ' + (runIndex + 1) + ': course-condition line is clipped by the horse card');
+          }
+        }
+      }
+    }
+    return errors;
+  }, expectedCards);
+}
+
 async function verifyTabs(page, expectedCards) {
   return page.evaluate(expectedCards => {
     const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
@@ -307,6 +351,8 @@ async function main() {
         race.key + ': mobile horizontal overflow ' + JSON.stringify(mobileMetrics));
       assert.ok(mobileMetrics.cardLeft >= -1 && mobileMetrics.cardRight <= mobileMetrics.viewport + 1,
         race.key + ': mobile horse card outside viewport ' + JSON.stringify(mobileMetrics));
+      const mobileRunLayoutErrors = await verifyMobileRunLayout(page, count);
+      assert.deepEqual(mobileRunLayoutErrors, [], race.key + ': mobile 10-metric single-row layout');
       await page.screenshot({ path: path.join(ARTIFACTS, race.key + '-mobile.png'), fullPage: true });
 
       report.races.push({
