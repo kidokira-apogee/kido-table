@@ -275,7 +275,7 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const report = {
     generatedAt: new Date().toISOString(),
-    baseline: { ref: 'main', race: '2026-11-01-tokyo-9', horses: legacyData.race.fieldSize },
+    baseline: { ref: 'main', race: '2026-11-01-tokyo-9', horses: legacyData.race.horseCount },
     candidate: { ref: 'feature/structured-renderer-integration-v2', race: candidateData.race.id, horses: candidateData.horses.length },
     browser: 'Chromium headless',
     viewports: [],
@@ -299,7 +299,7 @@ async function main() {
     assert.deepEqual(openedCandidate.errors, [], 'structured candidate page errors');
 
     const expectedCounts = {
-      baseline: legacyData.race.fieldSize,
+      baseline: legacyData.race.horseCount,
       candidate: candidateData.horses.length
     };
     assert.equal(await baselinePage.locator('#race-detail-container .horse-card').count(), expectedCounts.baseline);
