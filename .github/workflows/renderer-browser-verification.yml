@@ -9,7 +9,7 @@ on:
       - 'structured-renderer.js'
       - 'structured-renderer-integration-adapter.js'
       - 'candidate-data/**'
-      - 'tests/browser-renderer-check.js'
+      - 'tests/browser-renderer-check.js'\n      - 'tests/validate-candidate-schema.js'\n      - 'schemas/**'
       - '.github/workflows/renderer-browser-verification.yml'
   workflow_dispatch:
 
