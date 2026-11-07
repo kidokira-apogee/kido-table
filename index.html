@@ -659,8 +659,10 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   if(!response.ok)throw new Error('HTTP '+response.status);
   archive=await response.json();
   archive.races=Array.isArray(archive.races)?archive.races:[];
-  renderArchive();
+  if(archive.races.length===1){await openRace(archive.races[0]);}
+  else{renderArchive();}
  }catch(e){
+  listView.hidden=false;
   listItems.innerHTML='<div class="list-section-head">レース一覧を読み込めませんでした：'+escapeHtml(e.message)+'</div>';
  }
 })();
