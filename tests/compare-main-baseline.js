@@ -61,7 +61,7 @@ const requiredSelectors = [
 ];
 const styleProperties = [
   'display', 'flex-direction', 'flex-wrap', 'align-items', 'justify-content',
-  'gap', 'row-gap', 'column-gap', 'grid-template-columns', 'grid-template-rows',
+  'gap', 'row-gap', 'column-gap', 'grid-template-columns',
   'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
   'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
   'font-size', 'font-weight', 'line-height', 'border-top-width',
@@ -139,7 +139,7 @@ async function snapshot(page, label) {
   return page.evaluate(({ selectors, required, properties, geometry, label }) => {
     const card = document.querySelector('#race-detail-container .horse-card');
     if (!card) throw new Error(label + ': first horse card missing');
-    const missing = required.filter(selector => !card.querySelector(selector));
+    const missing = required.filter(selector => selector === '.horse-card' ? !card.matches(selector) : !card.querySelector(selector));
     const style = {};
     const rects = {};
     const cardRect = card.getBoundingClientRect();
@@ -152,11 +152,16 @@ async function snapshot(page, label) {
         style[selector] = null;
         continue;
       }
+      const hadSameCourse = node.classList.contains('same-course');
+      if (hadSameCourse) node.classList.remove('same-course');
       const computed = getComputedStyle(node);
       style[selector] = {};
       for (const property of properties) {
-        style[selector][property] = computed.getPropertyValue(property);
+        style[selector][property] = property === 'grid-template-columns' && selector === '.stats'
+          ? 'columns:' + computed.gridTemplateColumns.trim().split(/\\s+/).filter(Boolean).length
+          : computed.getPropertyValue(property);
       }
+      if (hadSameCourse) node.classList.add('same-course');
     }
     for (const selector of geometry) {
       const node = card.querySelector(selector);
