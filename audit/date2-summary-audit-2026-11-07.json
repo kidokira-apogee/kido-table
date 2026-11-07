@@ -1,0 +1,2289 @@
+{
+  "auditVersion": "1.0.0",
+  "createdOn": "2026-11-07",
+  "purpose": "DATE 2上部サマリー再計算監査。候補JSONへの統合前の独立監査データ。",
+  "rules": {
+    "fourColumns": [
+      "1着",
+      "2着",
+      "3着",
+      "着外"
+    ],
+    "placeRate": "(1着+2着+3着)/(1着+2着+3着+着外)",
+    "redHighlight": "分母>=3 かつ 複勝率>=50%",
+    "lateStartBlueHighlight": "出遅れ率>=25%",
+    "zeroDenominator": "複勝率なし・強調なし"
+  },
+  "races": [
+    {
+      "raceId": "2026-11-01-kyoto-7",
+      "venue": "京都",
+      "raceNumber": 7,
+      "fieldSize": 16,
+      "sourceFile": "貼り付けたテキスト（1）(20261106-123840).txt",
+      "fileId": "file_0000000035a882098c732759a2771aa2",
+      "surfaceLabel": "全ダ",
+      "courseLabel": "京都ダ1400m",
+      "extractedBlockCount": 16,
+      "horses": [
+        {
+          "horseNumber": 1,
+          "horseName": "リテラシー",
+          "allRecord": {
+            "sourceLine": 75,
+            "record": [
+              1,
+              0,
+              1,
+              2
+            ],
+            "denominator": 4,
+            "placed": 2,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 77,
+            "record": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "denominator": 3,
+            "placed": 2,
+            "placeRate": 66.67,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 83,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 101,
+            "record": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "denominator": 3,
+            "placed": 2,
+            "placeRate": 66.67,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 122,
+            "value": "50%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 2,
+          "horseName": "ブレイジングスター",
+          "allRecord": {
+            "sourceLine": 146,
+            "record": [
+              1,
+              2,
+              2,
+              18
+            ],
+            "denominator": 23,
+            "placed": 5,
+            "placeRate": 21.74,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 148,
+            "record": [
+              1,
+              2,
+              2,
+              16
+            ],
+            "denominator": 21,
+            "placed": 5,
+            "placeRate": 23.81,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 154,
+            "record": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 172,
+            "record": [
+              0,
+              2,
+              1,
+              13
+            ],
+            "denominator": 16,
+            "placed": 3,
+            "placeRate": 18.75,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 193,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 3,
+          "horseName": "サリカリーフォリア",
+          "allRecord": {
+            "sourceLine": 217,
+            "record": [
+              1,
+              1,
+              0,
+              5
+            ],
+            "denominator": 7,
+            "placed": 2,
+            "placeRate": 28.57,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 219,
+            "record": [
+              1,
+              1,
+              0,
+              5
+            ],
+            "denominator": 7,
+            "placed": 2,
+            "placeRate": 28.57,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 225,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 243,
+            "record": [
+              1,
+              1,
+              0,
+              4
+            ],
+            "denominator": 6,
+            "placed": 2,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 264,
+            "value": "14%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 4,
+          "horseName": "ヴェルジーネ",
+          "allRecord": {
+            "sourceLine": 288,
+            "record": [
+              1,
+              1,
+              0,
+              4
+            ],
+            "denominator": 6,
+            "placed": 2,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 290,
+            "record": [
+              1,
+              1,
+              0,
+              4
+            ],
+            "denominator": 6,
+            "placed": 2,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 296,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 314,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 335,
+            "value": "17%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 5,
+          "horseName": "ムテキシャチョウ",
+          "allRecord": {
+            "sourceLine": 359,
+            "record": [
+              1,
+              2,
+              1,
+              5
+            ],
+            "denominator": 9,
+            "placed": 4,
+            "placeRate": 44.44,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 361,
+            "record": [
+              1,
+              2,
+              1,
+              5
+            ],
+            "denominator": 9,
+            "placed": 4,
+            "placeRate": 44.44,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 367,
+            "record": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "denominator": 3,
+            "placed": 2,
+            "placeRate": 66.67,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 385,
+            "record": [
+              1,
+              1,
+              0,
+              3
+            ],
+            "denominator": 5,
+            "placed": 2,
+            "placeRate": 40,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 406,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 6,
+          "horseName": "マリリンバローズ",
+          "allRecord": {
+            "sourceLine": 430,
+            "record": [
+              1,
+              4,
+              2,
+              1
+            ],
+            "denominator": 8,
+            "placed": 7,
+            "placeRate": 87.5,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 432,
+            "record": [
+              1,
+              4,
+              2,
+              1
+            ],
+            "denominator": 8,
+            "placed": 7,
+            "placeRate": 87.5,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 438,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 456,
+            "record": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "denominator": 6,
+            "placed": 6,
+            "placeRate": 100,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 477,
+            "value": "13%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 7,
+          "horseName": "モズジェネラル",
+          "allRecord": {
+            "sourceLine": 501,
+            "record": [
+              1,
+              0,
+              0,
+              9
+            ],
+            "denominator": 10,
+            "placed": 1,
+            "placeRate": 10,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 503,
+            "record": [
+              1,
+              0,
+              0,
+              8
+            ],
+            "denominator": 9,
+            "placed": 1,
+            "placeRate": 11.11,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 509,
+            "record": [
+              0,
+              0,
+              0,
+              3
+            ],
+            "denominator": 3,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 527,
+            "record": [
+              1,
+              0,
+              0,
+              8
+            ],
+            "denominator": 9,
+            "placed": 1,
+            "placeRate": 11.11,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 548,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 8,
+          "horseName": "マルモア",
+          "allRecord": {
+            "sourceLine": 572,
+            "record": [
+              1,
+              0,
+              0,
+              11
+            ],
+            "denominator": 12,
+            "placed": 1,
+            "placeRate": 8.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 574,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 580,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 598,
+            "record": [
+              0,
+              0,
+              0,
+              4
+            ],
+            "denominator": 4,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 619,
+            "value": "58%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 9,
+          "horseName": "インピッシュ",
+          "allRecord": {
+            "sourceLine": 643,
+            "record": [
+              2,
+              4,
+              0,
+              12
+            ],
+            "denominator": 18,
+            "placed": 6,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 645,
+            "record": [
+              2,
+              4,
+              0,
+              11
+            ],
+            "denominator": 17,
+            "placed": 6,
+            "placeRate": 35.29,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 651,
+            "record": [
+              0,
+              0,
+              0,
+              5
+            ],
+            "denominator": 5,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 669,
+            "record": [
+              0,
+              1,
+              0,
+              10
+            ],
+            "denominator": 11,
+            "placed": 1,
+            "placeRate": 9.09,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 690,
+            "value": "22%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 10,
+          "horseName": "スズノソレイユ",
+          "allRecord": {
+            "sourceLine": 714,
+            "record": [
+              1,
+              0,
+              1,
+              7
+            ],
+            "denominator": 9,
+            "placed": 2,
+            "placeRate": 22.22,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 716,
+            "record": [
+              1,
+              0,
+              1,
+              7
+            ],
+            "denominator": 9,
+            "placed": 2,
+            "placeRate": 22.22,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 722,
+            "record": [
+              0,
+              0,
+              0,
+              2
+            ],
+            "denominator": 2,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 740,
+            "record": [
+              1,
+              0,
+              1,
+              6
+            ],
+            "denominator": 8,
+            "placed": 2,
+            "placeRate": 25,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 761,
+            "value": "11%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 11,
+          "horseName": "ブロンテス",
+          "allRecord": {
+            "sourceLine": 785,
+            "record": [
+              1,
+              2,
+              2,
+              3
+            ],
+            "denominator": 8,
+            "placed": 5,
+            "placeRate": 62.5,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 787,
+            "record": [
+              1,
+              2,
+              2,
+              3
+            ],
+            "denominator": 8,
+            "placed": 5,
+            "placeRate": 62.5,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 793,
+            "record": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "denominator": 4,
+            "placed": 3,
+            "placeRate": 75,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 811,
+            "record": [
+              1,
+              2,
+              2,
+              3
+            ],
+            "denominator": 8,
+            "placed": 5,
+            "placeRate": 62.5,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 832,
+            "value": "13%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 12,
+          "horseName": "メイショウビストロ",
+          "allRecord": {
+            "sourceLine": 856,
+            "record": [
+              1,
+              3,
+              2,
+              9
+            ],
+            "denominator": 15,
+            "placed": 6,
+            "placeRate": 40,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 858,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 864,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 882,
+            "record": [
+              1,
+              1,
+              1,
+              3
+            ],
+            "denominator": 6,
+            "placed": 3,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 903,
+            "value": "53%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 13,
+          "horseName": "デュアルロール",
+          "allRecord": {
+            "sourceLine": 927,
+            "record": [
+              1,
+              0,
+              0,
+              12
+            ],
+            "denominator": 13,
+            "placed": 1,
+            "placeRate": 7.69,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 929,
+            "record": [
+              1,
+              0,
+              0,
+              11
+            ],
+            "denominator": 12,
+            "placed": 1,
+            "placeRate": 8.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 935,
+            "record": [
+              1,
+              0,
+              0,
+              6
+            ],
+            "denominator": 7,
+            "placed": 1,
+            "placeRate": 14.29,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 953,
+            "record": [
+              1,
+              0,
+              0,
+              11
+            ],
+            "denominator": 12,
+            "placed": 1,
+            "placeRate": 8.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 974,
+            "value": "31%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 14,
+          "horseName": "タガノプディング",
+          "allRecord": {
+            "sourceLine": 998,
+            "record": [
+              1,
+              4,
+              0,
+              2
+            ],
+            "denominator": 7,
+            "placed": 5,
+            "placeRate": 71.43,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1000,
+            "record": [
+              1,
+              4,
+              0,
+              2
+            ],
+            "denominator": 7,
+            "placed": 5,
+            "placeRate": 71.43,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1006,
+            "record": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1024,
+            "record": [
+              0,
+              3,
+              0,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1045,
+            "value": "14%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 15,
+          "horseName": "バトルアックス",
+          "allRecord": {
+            "sourceLine": 1069,
+            "record": [
+              1,
+              2,
+              0,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1071,
+            "record": [
+              1,
+              2,
+              0,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1077,
+            "record": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1095,
+            "record": [
+              1,
+              2,
+              0,
+              0
+            ],
+            "denominator": 3,
+            "placed": 3,
+            "placeRate": 100,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1116,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 16,
+          "horseName": "ダノンクロム",
+          "allRecord": {
+            "sourceLine": 1140,
+            "record": [
+              1,
+              2,
+              3,
+              26
+            ],
+            "denominator": 32,
+            "placed": 6,
+            "placeRate": 18.75,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1142,
+            "record": [
+              0,
+              1,
+              0,
+              9
+            ],
+            "denominator": 10,
+            "placed": 1,
+            "placeRate": 10,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1148,
+            "record": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1166,
+            "record": [
+              1,
+              2,
+              2,
+              21
+            ],
+            "denominator": 26,
+            "placed": 5,
+            "placeRate": 19.23,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1187,
+            "value": "6%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        }
+      ]
+    },
+    {
+      "raceId": "2026-10-31-kyoto-12",
+      "venue": "京都",
+      "raceNumber": 12,
+      "fieldSize": 18,
+      "sourceFile": "貼り付けたテキスト（1）(20261106-124851).txt",
+      "fileId": "file_000000008ab082099bbd765000235863",
+      "surfaceLabel": "全芝",
+      "courseLabel": "京都芝1600m",
+      "extractedBlockCount": 18,
+      "horses": [
+        {
+          "horseNumber": 1,
+          "horseName": "スマートティアナ",
+          "allRecord": {
+            "sourceLine": 75,
+            "record": [
+              1,
+              1,
+              0,
+              2
+            ],
+            "denominator": 4,
+            "placed": 2,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 76,
+            "record": [
+              1,
+              1,
+              0,
+              2
+            ],
+            "denominator": 4,
+            "placed": 2,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 83,
+            "record": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 101,
+            "record": [
+              1,
+              1,
+              0,
+              1
+            ],
+            "denominator": 3,
+            "placed": 2,
+            "placeRate": 66.67,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 122,
+            "value": "50%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 2,
+          "horseName": "テイエムスティール",
+          "allRecord": {
+            "sourceLine": 146,
+            "record": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "denominator": 6,
+            "placed": 3,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 147,
+            "record": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "denominator": 6,
+            "placed": 3,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 154,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 172,
+            "record": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "denominator": 4,
+            "placed": 3,
+            "placeRate": 75,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 193,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 3,
+          "horseName": "ラパンドール",
+          "allRecord": {
+            "sourceLine": 217,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 218,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 225,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 243,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 264,
+            "value": "20%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 4,
+          "horseName": "ザラタン",
+          "allRecord": {
+            "sourceLine": 288,
+            "record": [
+              1,
+              1,
+              1,
+              15
+            ],
+            "denominator": 18,
+            "placed": 3,
+            "placeRate": 16.67,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 289,
+            "record": [
+              1,
+              0,
+              1,
+              10
+            ],
+            "denominator": 12,
+            "placed": 2,
+            "placeRate": 16.67,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 296,
+            "record": [
+              0,
+              0,
+              0,
+              2
+            ],
+            "denominator": 2,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 314,
+            "record": [
+              0,
+              0,
+              0,
+              12
+            ],
+            "denominator": 12,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 335,
+            "value": "17%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 5,
+          "horseName": "サマーブリザード",
+          "allRecord": {
+            "sourceLine": 359,
+            "record": [
+              1,
+              1,
+              0,
+              8
+            ],
+            "denominator": 10,
+            "placed": 2,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 360,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 367,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 385,
+            "record": [
+              1,
+              1,
+              0,
+              6
+            ],
+            "denominator": 8,
+            "placed": 2,
+            "placeRate": 25,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 406,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 6,
+          "horseName": "パスコード",
+          "allRecord": {
+            "sourceLine": 430,
+            "record": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "denominator": 17,
+            "placed": 9,
+            "placeRate": 52.94,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 431,
+            "record": [
+              1,
+              2,
+              6,
+              8
+            ],
+            "denominator": 17,
+            "placed": 9,
+            "placeRate": 52.94,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 438,
+            "record": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "denominator": 3,
+            "placed": 2,
+            "placeRate": 66.67,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 456,
+            "record": [
+              1,
+              1,
+              5,
+              6
+            ],
+            "denominator": 13,
+            "placed": 7,
+            "placeRate": 53.85,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 477,
+            "value": "29%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 7,
+          "horseName": "エスティヴァリス",
+          "allRecord": {
+            "sourceLine": 501,
+            "record": [
+              1,
+              0,
+              1,
+              9
+            ],
+            "denominator": 11,
+            "placed": 2,
+            "placeRate": 18.18,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 502,
+            "record": [
+              1,
+              0,
+              1,
+              8
+            ],
+            "denominator": 10,
+            "placed": 2,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 509,
+            "record": [
+              0,
+              0,
+              0,
+              2
+            ],
+            "denominator": 2,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 527,
+            "record": [
+              1,
+              0,
+              0,
+              7
+            ],
+            "denominator": 8,
+            "placed": 1,
+            "placeRate": 12.5,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 548,
+            "value": "9%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 8,
+          "horseName": "エイズルブルーム",
+          "allRecord": {
+            "sourceLine": 572,
+            "record": [
+              1,
+              0,
+              2,
+              5
+            ],
+            "denominator": 8,
+            "placed": 3,
+            "placeRate": 37.5,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 573,
+            "record": [
+              1,
+              0,
+              2,
+              5
+            ],
+            "denominator": 8,
+            "placed": 3,
+            "placeRate": 37.5,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 580,
+            "record": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "denominator": 2,
+            "placed": 1,
+            "placeRate": 50,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 598,
+            "record": [
+              1,
+              0,
+              1,
+              3
+            ],
+            "denominator": 5,
+            "placed": 2,
+            "placeRate": 40,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 619,
+            "value": "13%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 9,
+          "horseName": "アイスヴィレッジ",
+          "allRecord": {
+            "sourceLine": 643,
+            "record": [
+              3,
+              1,
+              0,
+              11
+            ],
+            "denominator": 15,
+            "placed": 4,
+            "placeRate": 26.67,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 644,
+            "record": [
+              0,
+              0,
+              0,
+              6
+            ],
+            "denominator": 6,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 651,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 669,
+            "record": [
+              3,
+              1,
+              0,
+              10
+            ],
+            "denominator": 14,
+            "placed": 4,
+            "placeRate": 28.57,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 690,
+            "value": "13%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 10,
+          "horseName": "ラヴリーティアラ",
+          "allRecord": {
+            "sourceLine": 714,
+            "record": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "denominator": 3,
+            "placed": 1,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 715,
+            "record": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "denominator": 3,
+            "placed": 1,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 722,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 740,
+            "record": [
+              1,
+              0,
+              0,
+              2
+            ],
+            "denominator": 3,
+            "placed": 1,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 761,
+            "value": "100%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 11,
+          "horseName": "タイムレスキス",
+          "allRecord": {
+            "sourceLine": 785,
+            "record": [
+              1,
+              2,
+              0,
+              4
+            ],
+            "denominator": 7,
+            "placed": 3,
+            "placeRate": 42.86,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 786,
+            "record": [
+              1,
+              2,
+              0,
+              4
+            ],
+            "denominator": 7,
+            "placed": 3,
+            "placeRate": 42.86,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 793,
+            "record": [
+              1,
+              2,
+              0,
+              1
+            ],
+            "denominator": 4,
+            "placed": 3,
+            "placeRate": 75,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 811,
+            "record": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "denominator": 6,
+            "placed": 3,
+            "placeRate": 50,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 832,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 12,
+          "horseName": "マテンロウネイビー",
+          "allRecord": {
+            "sourceLine": 856,
+            "record": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "denominator": 2,
+            "placed": 1,
+            "placeRate": 50,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 857,
+            "record": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "denominator": 2,
+            "placed": 1,
+            "placeRate": 50,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 864,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 882,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 903,
+            "value": "50%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 13,
+          "horseName": "カポレイラ",
+          "allRecord": {
+            "sourceLine": 927,
+            "record": [
+              1,
+              0,
+              0,
+              13
+            ],
+            "denominator": 14,
+            "placed": 1,
+            "placeRate": 7.14,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 928,
+            "record": [
+              1,
+              0,
+              0,
+              9
+            ],
+            "denominator": 10,
+            "placed": 1,
+            "placeRate": 10,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 935,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 953,
+            "record": [
+              0,
+              0,
+              0,
+              6
+            ],
+            "denominator": 6,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 974,
+            "value": "7%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 14,
+          "horseName": "ナムラヒナギク",
+          "allRecord": {
+            "sourceLine": 998,
+            "record": [
+              1,
+              0,
+              5,
+              10
+            ],
+            "denominator": 16,
+            "placed": 6,
+            "placeRate": 37.5,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 999,
+            "record": [
+              1,
+              0,
+              5,
+              10
+            ],
+            "denominator": 16,
+            "placed": 6,
+            "placeRate": 37.5,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1006,
+            "record": [
+              0,
+              0,
+              1,
+              2
+            ],
+            "denominator": 3,
+            "placed": 1,
+            "placeRate": 33.33,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1024,
+            "record": [
+              1,
+              0,
+              5,
+              8
+            ],
+            "denominator": 14,
+            "placed": 6,
+            "placeRate": 42.86,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1045,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 15,
+          "horseName": "メイショウトウコウ",
+          "allRecord": {
+            "sourceLine": 1069,
+            "record": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1070,
+            "record": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1077,
+            "record": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "denominator": 1,
+            "placed": 1,
+            "placeRate": 100,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1095,
+            "record": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "denominator": 5,
+            "placed": 3,
+            "placeRate": 60,
+            "highlight": true,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1116,
+            "value": "80%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 16,
+          "horseName": "エングルマン",
+          "allRecord": {
+            "sourceLine": 1140,
+            "record": [
+              0,
+              0,
+              0,
+              3
+            ],
+            "denominator": 3,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1141,
+            "record": [
+              0,
+              0,
+              0,
+              3
+            ],
+            "denominator": 3,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1148,
+            "record": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "denominator": 0,
+            "placed": 0,
+            "placeRate": null,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1166,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1187,
+            "value": "0%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 17,
+          "horseName": "フォルナックス",
+          "allRecord": {
+            "sourceLine": 1211,
+            "record": [
+              1,
+              0,
+              1,
+              5
+            ],
+            "denominator": 7,
+            "placed": 2,
+            "placeRate": 28.57,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1212,
+            "record": [
+              1,
+              0,
+              1,
+              5
+            ],
+            "denominator": 7,
+            "placed": 2,
+            "placeRate": 28.57,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1219,
+            "record": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "denominator": 1,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1237,
+            "record": [
+              1,
+              0,
+              1,
+              3
+            ],
+            "denominator": 5,
+            "placed": 2,
+            "placeRate": 40,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1258,
+            "value": "57%",
+            "highlight": true,
+            "status": "source_percent"
+          }
+        },
+        {
+          "horseNumber": 18,
+          "horseName": "サトノセプター",
+          "allRecord": {
+            "sourceLine": 1282,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "surfaceRecord": {
+            "sourceLine": 1283,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "courseRecord": {
+            "sourceLine": 1290,
+            "record": [
+              0,
+              0,
+              0,
+              3
+            ],
+            "denominator": 3,
+            "placed": 0,
+            "placeRate": 0,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "turnRecord": {
+            "sourceLine": 1308,
+            "record": [
+              1,
+              0,
+              0,
+              4
+            ],
+            "denominator": 5,
+            "placed": 1,
+            "placeRate": 20,
+            "highlight": false,
+            "status": "calculated"
+          },
+          "lateStartRate": {
+            "sourceLine": 1329,
+            "value": "20%",
+            "highlight": false,
+            "status": "source_percent"
+          }
+        }
+      ]
+    }
+  ]
+}

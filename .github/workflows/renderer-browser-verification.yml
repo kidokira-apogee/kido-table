@@ -1,0 +1,60 @@
+name: Renderer browser verification
+
+on:
+  push:
+    branches:
+      - finish-live-race-pages-2026-11-08
+    paths:
+      - 'index.html'
+      - 'structured-renderer.js'
+      - 'structured-renderer-integration-adapter.js'
+      - 'candidate-data/**'
+      - 'data/races/**'
+      - 'tests/browser-renderer-check.js'
+      - 'tests/compare-main-baseline.js'
+      - 'tests/validate-candidate-schema.js'
+      - 'tests/validate-master-whitelist.js'
+      - 'schemas/**'
+      - '.github/workflows/renderer-browser-verification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out work branch
+        uses: actions/checkout@v4
+      - name: Check out canonical Tokyo 9 baseline
+        uses: actions/checkout@v4
+        with:
+          ref: af09ea37069e92ed2ce66ccbe473753c65f5c3dc
+          path: baseline
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: npm install --no-save --package-lock=false playwright ajv
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate master whitelist and exclusions
+        run: node tests/validate-master-whitelist.js
+      - name: Validate candidate JSON schema
+        run: node tests/validate-candidate-schema.js
+      - name: Run full-page browser verification
+        run: node tests/browser-renderer-check.js
+      - name: Compare main and structured renderer in Chromium
+        run: node tests/compare-main-baseline.js
+        env:
+          MAIN_BASELINE_DIR: baseline
+      - name: Upload browser report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: renderer-browser-verification
+          path: artifacts/
+          if-no-files-found: warn
