@@ -407,7 +407,6 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .archive-choice{padding:6px 8px;font-size:9px}
  .race-list-state{font-size:7px}
 }
-.sample-pages-note{margin:0;padding:0 2px 8px;color:#66766d;font-size:10px;line-height:1.5}.sample-page-item .race-list-state{color:#6c776f}
 </style>
 </head>
 <body>
@@ -421,8 +420,6 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   <div class="archive-filter-group"><span class="archive-label">VENUE</span><div class="archive-choice-row" id="archive-venue-tabs"></div></div>
 </section>
 <section class="list-section"><div class="list-section-head" id="race-list-heading">登録レース</div><div id="race-list-items"></div></section>
-<section class="list-section" id="sample-pages-section"><div class="list-section-head">表示確認用サンプル</div><p class="sample-pages-note">芝・ダートの表示確認用データです。バックナンバーとは分離しており、いずれも未完成の候補データです。</p><div id="sample-page-items"></div></section>
-
 </section>
 <section hidden id="race-detail-container"></section></main>
 <script src="structured-renderer.js"></script>
@@ -431,7 +428,6 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 (async function(){
  const listView=document.getElementById('race-list-view');
  const listItems=document.getElementById('race-list-items');
- const sampleItems=document.getElementById('sample-page-items');
  const detail=document.getElementById('race-detail-container');
  const manifestUrl='data/races/index.json';
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -657,36 +653,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    });
   });
  }
- async function loadSamples(){
-  try{
-   const response=await fetch('samples/index.json',{cache:'no-store'});
-   if(!response.ok)throw new Error('HTTP '+response.status);
-   const registry=await response.json();
-   const samples=Array.isArray(registry.samples)?registry.samples:[];
-   sampleItems.innerHTML='';
-   samples.forEach(sample=>{
-    const button=document.createElement('button');
-    button.type='button';button.className='race-list-item sample-page-item';
-    button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(sample.surface)+'　'+escapeHtml(sample.distanceM)+'m</span><strong class="race-list-title">'+escapeHtml(sample.title)+'</strong><span class="race-list-sub">'+escapeHtml(sample.subtitle||'')+'</span></span><span class="race-list-state">サンプル・未完成</span>';
-    button.addEventListener('click',async()=>{
-     try{
-      const check=await fetch(sample.file,{cache:'no-store'});
-      if(!check.ok)throw new Error('HTTP '+check.status);
-      const data=await check.json();
-      if(data.status?.complete!==false||sample.complete!==false||sample.status!=='in-progress'){
-       throw new Error('サンプルの未完成ステータスが確認できません');
-      }
-      await openRace(sample,sample.file);
-     }catch(e){alert('サンプルを読み込めませんでした：'+e.message);}
-    });
-    sampleItems.appendChild(button);
-   });
-  }catch(e){
-   sampleItems.innerHTML='<div class="list-section-head">サンプル一覧を読み込めませんでした：'+escapeHtml(e.message)+'</div>';
-  }
- }
+
  try{
-  loadSamples();
   const response=await fetch(manifestUrl,{cache:'no-store'});
   if(!response.ok)throw new Error('HTTP '+response.status);
   archive=await response.json();
