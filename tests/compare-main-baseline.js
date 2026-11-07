@@ -137,131 +137,197 @@ async function openRacePage(browser, config) {
 
 async function snapshot(page, label) {
   return page.evaluate(({ selectors, required, properties, geometry, label }) => {
-    const card = document.querySelector('#race-detail-container .horse-card');
-    if (!card) throw new Error(label + ': first horse card missing');
-    const missing = required.filter(selector => selector === '.horse-card' ? !card.matches(selector) : !card.querySelector(selector));
-    const style = {};
-    const rects = {};
-    const cardRect = card.getBoundingClientRect();
-
-    for (const selector of selectors) {
-      const node = selector === '.racehead'
-        ? document.querySelector('#race-detail-container .racehead')
-        : card.querySelector(selector);
-      if (!node) {
-        style[selector] = null;
-        continue;
-      }
+    const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
+    const racehead = document.querySelector('#race-detail-container .racehead');
+    const readStyles = (node, selector) => {
       const hadSameCourse = node.classList.contains('same-course');
       if (hadSameCourse) node.classList.remove('same-course');
       const computed = getComputedStyle(node);
-      style[selector] = {};
+      const result = {};
       for (const property of properties) {
-        style[selector][property] = property === 'grid-template-columns' && selector === '.stats'
+        result[property] = property === 'grid-template-columns' && selector === '.stats'
           ? 'columns:' + computed.gridTemplateColumns.trim().split(/\s+/).filter(Boolean).length
           : computed.getPropertyValue(property);
       }
       if (hadSameCourse) node.classList.add('same-course');
-    }
-    for (const selector of geometry) {
-      const node = card.querySelector(selector);
-      if (!node) {
-        rects[selector] = null;
-        continue;
-      }
+      return result;
+    };
+    const readRect = (node, cardRect) => {
       const rect = node.getBoundingClientRect();
-      rects[selector] = {
+      return {
         width: Number(rect.width.toFixed(2)),
         leftWithinCard: Number((rect.left - cardRect.left).toFixed(2))
       };
-    }
-    const tabs = [...card.querySelectorAll('.data-tab')];
-    const panels = [...card.querySelectorAll('.data-panel')];
+    };
+    const cardSnapshots = cards.map((card, cardIndex) => {
+      const missing = required.filter(selector =>
+        selector === '.horse-card' ? !card.matches(selector) : !card.querySelector(selector));
+      const cardRect = card.getBoundingClientRect();
+      const styles = {};
+      const rects = {};
+      for (const selector of selectors) {
+        const nodes = [...card.querySelectorAll(selector)];
+        styles[selector] = nodes.map(node => readStyles(node, selector));
+        if (geometry.includes(selector)) rects[selector] = nodes.map(node => readRect(node, cardRect));
+      }
+      const tabs = [...card.querySelectorAll('.data-tab')];
+      const panels = [...card.querySelectorAll('.data-panel')];
+      return {
+        cardIndex,
+        horseNumber: card.id.replace(/^horse-/, ''),
+        missing,
+        runs: card.querySelectorAll('.runs > .run').length,
+        tabs: tabs.length,
+        panels: panels.length,
+        dataChips: card.querySelectorAll('.data-existing > .data-chip').length,
+        tabLabels: tabs.map(tab => tab.textContent.trim()),
+        panelKeys: tabs.map(tab => tab.dataset.panel),
+        activePanels: panels.filter(panel => panel.classList.contains('active')).length,
+        comments: card.querySelectorAll('.stable-comment').length,
+        styles,
+        rects,
+        width: Number(cardRect.width.toFixed(2)),
+        left: Number(cardRect.left.toFixed(2)),
+        right: Number(cardRect.right.toFixed(2))
+      };
+    });
+    const headStyle = racehead ? readStyles(racehead, '.racehead') : null;
     return {
       label,
-      missing,
-      horseCards: document.querySelectorAll('#race-detail-container .horse-card').length,
-      runs: card.querySelectorAll('.runs > .run').length,
-      tabs: tabs.length,
-      panels: panels.length,
-      style,
-      rects,
+      cards: cardSnapshots,
+      racehead: headStyle,
       viewport: innerWidth,
       documentWidth: document.documentElement.scrollWidth,
-      cardWidth: Number(cardRect.width.toFixed(2)),
-      cardLeft: Number(cardRect.left.toFixed(2)),
-      cardRight: Number(cardRect.right.toFixed(2))
+      cardWidth: cardSnapshots[0]?.width ?? null,
+      cardLeft: cardSnapshots[0]?.left ?? null,
+      cardRight: cardSnapshots[0]?.right ?? null
     };
-  }, { selectors: layoutSelectors, required: requiredSelectors, properties: styleProperties, geometry: geometrySelectors, label });
+  }, {
+    selectors: selectors.filter(selector => selector !== '.racehead'),
+    required: requiredSelectors,
+    properties: styleProperties,
+    geometry: geometrySelectors,
+    label
+  });
 }
 
-function compareSnapshots(base, candidate, viewportLabel) {
+function compareCardSnapshots(base, candidate, label) {
   const errors = [];
   for (const selector of requiredSelectors) {
     if (base.missing.includes(selector) || candidate.missing.includes(selector)) {
-      errors.push(viewportLabel + ' required structure missing: ' + selector);
+      errors.push(label + ' required structure missing: ' + selector);
     }
   }
-  for (const selector of layoutSelectors) {
-    const a = base.style[selector];
-    const b = candidate.style[selector];
-    if (!a || !b) {
-      if (Boolean(a) !== Boolean(b)) errors.push(viewportLabel + ' selector presence differs: ' + selector);
+  if (base.runs !== 3 || candidate.runs !== 3) errors.push(label + ' recent-run count must be 3');
+  if (base.tabs !== 4 || candidate.tabs !== 4 || base.panels !== 4 || candidate.panels !== 4) {
+    errors.push(label + ' DATA tab/panel count must be 4');
+  }
+  if (base.dataChips !== 5 || candidate.dataChips !== 5) errors.push(label + ' summary chip count must be 5');
+  const expectedLabels = ['詳細成績', '距離・コース', '条件別', '枠順・連対実績'];
+  if (JSON.stringify(base.tabLabels) !== JSON.stringify(expectedLabels) ||
+      JSON.stringify(candidate.tabLabels) !== JSON.stringify(expectedLabels)) {
+    errors.push(label + ' DATA tab labels/order differ from master');
+  }
+  if (base.activePanels !== 1 || candidate.activePanels !== 1) errors.push(label + ' initial active panel count must be 1');
+
+  for (const selector of layoutSelectors.filter(value => value !== '.racehead')) {
+    const a = base.styles[selector] || [];
+    const b = candidate.styles[selector] || [];
+    if (!a.length || !b.length) {
+      if (Boolean(a.length) !== Boolean(b.length) &&
+          !['.stable-comment', '.stable-comment-head', '.stable-comment-body'].includes(selector)) {
+        errors.push(label + ' selector presence differs: ' + selector);
+      }
       continue;
     }
-    for (const property of styleProperties) {
-      if (a[property] !== b[property]) {
-        errors.push(viewportLabel + ' computed style differs: ' + selector + ' ' + property +
-          ' baseline=' + JSON.stringify(a[property]) + ' structured=' + JSON.stringify(b[property]));
+    const compareCount = Math.min(a.length, b.length);
+    for (let index = 0; index < compareCount; index++) {
+      for (const property of styleProperties) {
+        if (a[index][property] !== b[index][property]) {
+          errors.push(label + ' computed style differs: ' + selector + '[' + index + '] ' + property +
+            ' baseline=' + JSON.stringify(a[index][property]) + ' structured=' + JSON.stringify(b[index][property]));
+        }
       }
     }
   }
   for (const selector of geometrySelectors) {
-    const a = base.rects[selector];
-    const b = candidate.rects[selector];
-    if (!a || !b) {
-      if (Boolean(a) !== Boolean(b)) errors.push(viewportLabel + ' geometry selector presence differs: ' + selector);
-      continue;
-    }
-    if (Math.abs(a.width - b.width) > 1) {
-      errors.push(viewportLabel + ' width differs: ' + selector + ' baseline=' + a.width + ' structured=' + b.width);
-    }
-    if (Math.abs(a.leftWithinCard - b.leftWithinCard) > 1) {
-      errors.push(viewportLabel + ' horizontal position differs: ' + selector +
-        ' baseline=' + a.leftWithinCard + ' structured=' + b.leftWithinCard);
+    const a = base.rects[selector] || [];
+    const b = candidate.rects[selector] || [];
+    const compareCount = Math.min(a.length, b.length);
+    for (let index = 0; index < compareCount; index++) {
+      if (Math.abs(a[index].width - b[index].width) > 1) {
+        errors.push(label + ' width differs: ' + selector + '[' + index + '] ' +
+          a[index].width + ' vs ' + b[index].width);
+      }
+      if (Math.abs(a[index].leftWithinCard - b[index].leftWithinCard) > 1) {
+        errors.push(label + ' horizontal position differs: ' + selector + '[' + index + '] ' +
+          a[index].leftWithinCard + ' vs ' + b[index].leftWithinCard);
+      }
     }
   }
-  if (base.runs !== 3 || candidate.runs !== 3) errors.push(viewportLabel + ' recent-run count must be 3 in both views');
-  if (base.tabs !== 4 || candidate.tabs !== 4 || base.panels !== 4 || candidate.panels !== 4) {
-    errors.push(viewportLabel + ' DATA tab/panel count must be 4 in both views');
+  if (Math.abs(base.width - candidate.width) > 1 ||
+      Math.abs(base.left - candidate.left) > 1 ||
+      Math.abs(base.right - candidate.right) > 1) {
+    errors.push(label + ' horse-card bounds differ');
   }
+  return errors;
+}
+
+function compareSnapshots(base, candidate, viewportLabel) {
+  const errors = [];
   if (base.documentWidth > base.viewport + 1 || candidate.documentWidth > candidate.viewport + 1) {
     errors.push(viewportLabel + ' horizontal overflow detected');
   }
-  if (Math.abs(base.cardWidth - candidate.cardWidth) > 1) {
-    errors.push(viewportLabel + ' horse-card width differs: ' + base.cardWidth + ' vs ' + candidate.cardWidth);
+  if (Math.abs(base.cardWidth - candidate.cardWidth) > 1 ||
+      Math.abs(base.cardLeft - candidate.cardLeft) > 1 ||
+      Math.abs(base.cardRight - candidate.cardRight) > 1) {
+    errors.push(viewportLabel + ' first horse-card bounds differ');
   }
-  if (Math.abs(base.cardLeft - candidate.cardLeft) > 1 || Math.abs(base.cardRight - candidate.cardRight) > 1) {
-    errors.push(viewportLabel + ' horse-card horizontal bounds differ');
+  for (const property of styleProperties) {
+    if (base.racehead?.[property] !== candidate.racehead?.[property]) {
+      errors.push(viewportLabel + ' racehead computed style differs: ' + property);
+    }
+  }
+
+  const sharedCount = Math.min(base.cards.length, candidate.cards.length);
+  for (let index = 0; index < sharedCount; index++) {
+    errors.push(...compareCardSnapshots(base.cards[index], candidate.cards[index],
+      viewportLabel + ' horse-number-' + base.cards[index].horseNumber + '-vs-' + candidate.cards[index].horseNumber));
+  }
+  for (let index = sharedCount; index < base.cards.length; index++) {
+    errors.push(...compareCardSnapshots(base.cards[index], candidate.cards[0],
+      viewportLabel + ' baseline-extra-card-' + base.cards[index].horseNumber));
+  }
+  for (let index = sharedCount; index < candidate.cards.length; index++) {
+    errors.push(...compareCardSnapshots(base.cards[0], candidate.cards[index],
+      viewportLabel + ' structured-extra-card-' + candidate.cards[index].horseNumber));
   }
   return errors;
 }
 
 async function verifyTabs(page, label) {
   return page.evaluate(label => {
-    const card = document.querySelector('#race-detail-container .horse-card');
-    const tabs = [...card.querySelectorAll('.data-tab')];
-    const panels = [...card.querySelectorAll('.data-panel')];
+    const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
     const errors = [];
-    for (const tab of tabs) {
-      tab.click();
-      const active = panels.filter(panel => panel.classList.contains('active'));
-      if (active.length !== 1 || active[0].dataset.dataContent !== tab.dataset.panel) {
-        errors.push(label + ': tab failed: ' + tab.textContent.trim());
+    let clicks = 0;
+    for (const card of cards) {
+      const tabs = [...card.querySelectorAll('.data-tab')];
+      const panels = [...card.querySelectorAll('.data-panel')];
+      if (tabs.length !== 4 || panels.length !== 4) {
+        errors.push(label + ': ' + card.id + ' tab/panel count ' + tabs.length + '/' + panels.length);
+        continue;
       }
+      for (const tab of tabs) {
+        tab.click();
+        clicks++;
+        const active = panels.filter(panel => panel.classList.contains('active'));
+        if (active.length !== 1 || active[0].dataset.dataContent !== tab.dataset.panel) {
+          errors.push(label + ': ' + card.id + ' tab failed: ' + tab.textContent.trim());
+        }
+      }
+      tabs[0]?.click();
     }
-    tabs[0]?.click();
-    return { clicks: tabs.length, errors };
+    return { clicks, cards: cards.length, errors };
   }, label);
 }
 
