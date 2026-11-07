@@ -1,0 +1,47 @@
+name: Renderer browser verification
+
+on:
+  push:
+    branches:
+      - feature/structured-renderer-integration-v2
+    paths:
+      - 'index.html'
+      - 'structured-renderer.js'
+      - 'structured-renderer-integration-adapter.js'
+      - 'candidate-data/**'
+      - 'tests/browser-renderer-check.js'
+      - 'tests/validate-candidate-schema.js'
+      - 'tests/validate-master-whitelist.js'
+      - 'schemas/**'
+      - '.github/workflows/renderer-browser-verification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out work branch
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: npm install --no-save --package-lock=false playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validate master whitelist and exclusions
+        run: node tests/validate-master-whitelist.js
+      - name: Run full-page browser verification
+        run: node tests/browser-renderer-check.js
+      - name: Upload browser report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: renderer-browser-verification
+          path: artifacts/
+          if-no-files-found: warn

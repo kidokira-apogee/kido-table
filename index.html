@@ -422,6 +422,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 <section class="list-section"><div class="list-section-head" id="race-list-heading">登録レース</div><div id="race-list-items"></div></section>
 </section>
 <section hidden id="race-detail-container"></section></main>
+<script src="structured-renderer.js"></script>
+<script src="structured-renderer-integration-adapter.js"></script>
 <script>
 (async function(){
  const listView=document.getElementById('race-list-view');
@@ -571,22 +573,27 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   renderWeeks();
  }
  monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedWeek='';selectedDate='';selectedVenue='';renderWeeks();});
- async function openRace(r){
+ async function openRace(r,filePath=null){
   try{
-   const response=await fetch('data/races/'+encodeURIComponent(r.file||r.id+'.json'),{cache:'no-store'});
+   const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
    if(!response.ok)throw new Error('HTTP '+response.status);
    const data=await response.json();
-   detail.innerHTML=data.render.html;
+   const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
+   detail.innerHTML=rendered.html;
    normalizeRunningStyle(detail);
+   // TARGET由来の灰色背景だけは、構造化JSON・旧HTMLの両方で正本ルールに従い除去する。
    normalizeSourceGray(detail);
-   normalizeLegacyComments(detail);
+   // 旧HTML専用のコメント正規化。
+   if(!rendered.structured){
+    normalizeLegacyComments(detail);
+   }
    listView.hidden=true;detail.hidden=false;window.scrollTo({top:0,behavior:'auto'});
-   initRace(detail);
+   initRace(detail,rendered.structured);
   }catch(e){
    alert('レースデータを読み込めませんでした：'+e.message);
   }
  }
- function initRace(root){
+ function initRace(root,structured=false){
   const back=root.querySelector('.race-nav button');
   if(back)back.addEventListener('click',()=>{detail.hidden=true;detail.innerHTML='';listView.hidden=false;window.scrollTo({top:0,behavior:'auto'});});
   root.querySelectorAll('.horse-card').forEach(card=>{
@@ -606,6 +613,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     panels.forEach(panel=>panel.classList.toggle('active',panel.dataset.dataContent===button.dataset.panel));
    }));
   });
+  if(!structured){
   root.querySelectorAll('.record').forEach(node=>{
    node.classList.remove('good');
    const m=node.textContent.match(/\(?\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*-\s*(\d+)\s*\)?/);
@@ -620,6 +628,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const [w,p,t,o]=m.slice(1).map(Number),total=w+p+t+o;
    if(total>=3&&(w+p+t)/total>=.5)node.classList.add('hit');
   });
+  }
   root.querySelectorAll('[data-rate]').forEach(node=>{
    const rate=Number(node.dataset.rate);
    if(Number.isFinite(rate)&&rate>=25)node.classList.add('rate-hit');
@@ -644,6 +653,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    });
   });
  }
+
  try{
   const response=await fetch(manifestUrl,{cache:'no-store'});
   if(!response.ok)throw new Error('HTTP '+response.status);

@@ -1,0 +1,3594 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "race": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "raceNumber": {
+          "type": [
+            "integer",
+            "number"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "surface": {
+          "type": "string"
+        },
+        "distanceM": {
+          "type": [
+            "integer",
+            "number"
+          ]
+        },
+        "direction": {
+          "type": "string"
+        },
+        "fieldSize": {
+          "type": [
+            "integer",
+            "number"
+          ]
+        },
+        "metadataSource": {
+          "type": "string"
+        },
+        "directionSource": {
+          "type": "string"
+        },
+        "meetingLabel": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "weightType": {
+          "type": "string"
+        },
+        "classLabel": {
+          "type": "string"
+        },
+        "currentGoing": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "venue",
+        "raceNumber",
+        "name",
+        "surface",
+        "distanceM",
+        "direction",
+        "fieldSize",
+        "metadataSource",
+        "directionSource",
+        "meetingLabel",
+        "startTime",
+        "weightType",
+        "classLabel",
+        "currentGoing"
+      ],
+      "additionalProperties": false
+    },
+    "sourceAudit": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "object",
+          "properties": {
+            "TARGET": {
+              "type": "object",
+              "properties": {
+                "file": {
+                  "type": "string"
+                },
+                "materializedTextFile": {
+                  "type": "string"
+                },
+                "recordedSha256": {
+                  "type": "string"
+                },
+                "libraryFileId": {
+                  "type": "string"
+                },
+                "rawByteSha256Recomputed": {
+                  "type": "boolean"
+                },
+                "materialization": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file",
+                "materializedTextFile",
+                "recordedSha256",
+                "libraryFileId",
+                "rawByteSha256Recomputed",
+                "materialization"
+              ],
+              "additionalProperties": false
+            },
+            "DATE2": {
+              "type": "object",
+              "properties": {
+                "file": {
+                  "type": "string"
+                },
+                "materializedTextFile": {
+                  "type": "string"
+                },
+                "recordedSha256": {
+                  "type": "string"
+                },
+                "libraryFileId": {
+                  "type": "string"
+                },
+                "rawByteSha256Recomputed": {
+                  "type": "boolean"
+                },
+                "materialization": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file",
+                "materializedTextFile",
+                "recordedSha256",
+                "libraryFileId",
+                "rawByteSha256Recomputed",
+                "materialization"
+              ],
+              "additionalProperties": false
+            },
+            "東スポ": {
+              "type": "object",
+              "properties": {
+                "file": {
+                  "type": "string"
+                },
+                "materializedTextFile": {
+                  "type": "string"
+                },
+                "recordedSha256": {
+                  "type": "string"
+                },
+                "libraryFileId": {
+                  "type": "string"
+                },
+                "rawByteSha256Recomputed": {
+                  "type": "boolean"
+                },
+                "materialization": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file",
+                "materializedTextFile",
+                "recordedSha256",
+                "libraryFileId",
+                "rawByteSha256Recomputed",
+                "materialization"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "TARGET",
+            "DATE2",
+            "東スポ"
+          ],
+          "additionalProperties": false
+        },
+        "horseNumberNameMatch": {
+          "type": "string"
+        },
+        "targetCellsPerHorse": {
+          "type": [
+            "integer",
+            "number"
+          ]
+        },
+        "targetCellColors": {
+          "type": "string"
+        },
+        "date2MasterBasedExtract": {
+          "type": "string"
+        },
+        "date2Excluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "date2RedHighlight": {
+          "type": "string"
+        },
+        "tospoComments": {
+          "type": "string"
+        },
+        "dateAudit": {
+          "type": "object",
+          "properties": {
+            "TARGETHeaderDate": {
+              "type": "string"
+            },
+            "identityDecision": {
+              "type": "string"
+            },
+            "outOfScopeDateLabels": {
+              "type": "object",
+              "properties": {
+                "DATE2": {
+                  "type": "string"
+                },
+                "Tospo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "DATE2",
+                "Tospo"
+              ],
+              "additionalProperties": false
+            },
+            "TARGETHeader": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "TARGETHeaderDate",
+            "identityDecision",
+            "outOfScopeDateLabels"
+          ],
+          "additionalProperties": false
+        },
+        "rawAuditFiles": {
+          "type": "object",
+          "properties": {
+            "sourceExtractionAudit": {
+              "type": "string"
+            },
+            "date2MasterBasedExtract": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sourceExtractionAudit",
+            "date2MasterBasedExtract"
+          ],
+          "additionalProperties": false
+        },
+        "date2SummaryRecalculation": {
+          "type": "object",
+          "properties": {
+            "auditFile": {
+              "type": "string"
+            },
+            "horseCount": {
+              "type": [
+                "integer",
+                "number"
+              ]
+            },
+            "highlightCounts": {
+              "type": "object",
+              "properties": {
+                "all": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                },
+                "surface": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                },
+                "course": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                },
+                "turn": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                },
+                "late": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                }
+              },
+              "required": [
+                "all",
+                "surface",
+                "course",
+                "turn",
+                "late"
+              ],
+              "additionalProperties": false
+            },
+            "source": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "auditFile",
+            "horseCount",
+            "highlightCounts",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "date2WhitelistAudit": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "summaryFields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tabs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "excludedFromDetailOverall": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "excludedItems": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "venueSpecificCourseRecordRetained": {
+              "type": "boolean"
+            },
+            "performanceRetainedAs": {
+              "type": "string"
+            },
+            "perHorseReview": {
+              "type": "object",
+              "properties": {
+                "horseCount": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                },
+                "removedVenueRows": {
+                  "type": [
+                    "integer",
+                    "number"
+                  ]
+                }
+              },
+              "required": [
+                "horseCount",
+                "removedVenueRows"
+              ],
+              "additionalProperties": false
+            },
+            "result": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "summaryFields",
+            "tabs",
+            "excludedFromDetailOverall",
+            "excludedItems",
+            "venueSpecificCourseRecordRetained",
+            "performanceRetainedAs",
+            "perHorseReview",
+            "result"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "sources",
+        "horseNumberNameMatch",
+        "targetCellsPerHorse",
+        "targetCellColors",
+        "date2MasterBasedExtract",
+        "date2Excluded",
+        "date2RedHighlight",
+        "tospoComments",
+        "dateAudit",
+        "rawAuditFiles",
+        "date2SummaryRecalculation",
+        "date2WhitelistAudit"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "boolean"
+        },
+        "date2": {
+          "type": "boolean"
+        },
+        "tospo": {
+          "type": "boolean"
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "target",
+        "date2",
+        "tospo",
+        "complete"
+      ],
+      "additionalProperties": false
+    },
+    "horses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "horseNumber": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          },
+          "frameNumber": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          },
+          "horseName": {
+            "type": "string"
+          },
+          "profile": {
+            "type": "object",
+            "properties": {
+              "horseNumber": {
+                "type": "string"
+              },
+              "horseName": {
+                "type": "string"
+              },
+              "sexAge": {
+                "type": "string"
+              },
+              "handicapWeight": {
+                "type": "string"
+              },
+              "jockeyRaw": {
+                "type": "string"
+              },
+              "jockey": {
+                "type": "string"
+              },
+              "affiliation": {
+                "type": "string"
+              },
+              "trainer": {
+                "type": "string"
+              },
+              "sourceCells": {
+                "type": "object",
+                "properties": {
+                  "horseNumber": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "horseName": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "sexAge": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "handicapWeight": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "jockeyRaw": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "affiliation": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "trainer": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "horseNumber",
+                  "horseName",
+                  "sexAge",
+                  "handicapWeight",
+                  "jockeyRaw",
+                  "affiliation",
+                  "trainer"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "horseNumber",
+              "horseName",
+              "sexAge",
+              "handicapWeight",
+              "jockeyRaw",
+              "jockey",
+              "affiliation",
+              "trainer",
+              "sourceCells"
+            ],
+            "additionalProperties": false
+          },
+          "pedigree": {
+            "type": "object",
+            "properties": {
+              "sire": {
+                "type": "string"
+              },
+              "dam": {
+                "type": "string"
+              },
+              "damsire": {
+                "type": "string"
+              },
+              "sireLine": {
+                "type": "string"
+              },
+              "damsireLine": {
+                "type": "string"
+              },
+              "colors": {
+                "type": "object",
+                "properties": {
+                  "sireBackground": {
+                    "type": "string"
+                  },
+                  "damText": {
+                    "type": "string"
+                  },
+                  "damsireBackground": {
+                    "type": "string"
+                  },
+                  "sireLineBackground": {
+                    "type": "string"
+                  },
+                  "damsireLineBackground": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sireBackground",
+                  "damText",
+                  "damsireBackground",
+                  "sireLineBackground",
+                  "damsireLineBackground"
+                ],
+                "additionalProperties": false
+              },
+              "sourceStyles": {
+                "type": "object",
+                "properties": {
+                  "sire": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "dam": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "damsire": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "sireLine": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "damsireLine": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "sire",
+                  "dam",
+                  "damsire",
+                  "sireLine",
+                  "damsireLine"
+                ],
+                "additionalProperties": false
+              },
+              "sourceCells": {
+                "type": "object",
+                "properties": {
+                  "sire": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "dam": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "damsire": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "sireLine": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "damsireLine": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "cellIndex": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "cellIndex",
+                      "horseNumber",
+                      "horseName"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "sire",
+                  "dam",
+                  "damsire",
+                  "sireLine",
+                  "damsireLine"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "sire",
+              "dam",
+              "damsire",
+              "sireLine",
+              "damsireLine",
+              "colors",
+              "sourceStyles",
+              "sourceCells"
+            ],
+            "additionalProperties": false
+          },
+          "recentRuns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "dateRaw": {
+                  "type": "string"
+                },
+                "courseRaw": {
+                  "type": "string"
+                },
+                "ageClass": {
+                  "type": "string"
+                },
+                "class": {
+                  "type": "string"
+                },
+                "raceName": {
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "string"
+                },
+                "jockey": {
+                  "type": "string"
+                },
+                "bodyWeight": {
+                  "type": "string"
+                },
+                "bodyWeightChange": {
+                  "type": "string"
+                },
+                "going": {
+                  "type": "string"
+                },
+                "mark": {
+                  "type": "string"
+                },
+                "fieldSize": {
+                  "type": "string"
+                },
+                "horseNumber": {
+                  "type": "string"
+                },
+                "popularity": {
+                  "type": "string"
+                },
+                "finish": {
+                  "type": "string"
+                },
+                "margin": {
+                  "type": "string"
+                },
+                "index": {
+                  "type": "string"
+                },
+                "last3F": {
+                  "type": "string"
+                },
+                "last3FRank": {
+                  "type": "string"
+                },
+                "interval": {
+                  "type": "string"
+                },
+                "blinkers": {
+                  "type": "string"
+                },
+                "runningStyleRaw": {
+                  "type": "string"
+                },
+                "passingOrder": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "file": {
+                      "type": "string"
+                    },
+                    "sourceRowIndex": {
+                      "type": [
+                        "integer",
+                        "number"
+                      ]
+                    },
+                    "sourceCellStart": {
+                      "type": [
+                        "integer",
+                        "number"
+                      ]
+                    },
+                    "sourceCellEnd": {
+                      "type": [
+                        "integer",
+                        "number"
+                      ]
+                    },
+                    "horseNumber": {
+                      "type": [
+                        "integer",
+                        "number"
+                      ]
+                    },
+                    "horseName": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "file",
+                    "sourceRowIndex",
+                    "sourceCellStart",
+                    "sourceCellEnd",
+                    "horseNumber",
+                    "horseName",
+                    "status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "label",
+                "dateRaw",
+                "courseRaw",
+                "ageClass",
+                "class",
+                "raceName",
+                "weight",
+                "jockey",
+                "bodyWeight",
+                "bodyWeightChange",
+                "going",
+                "mark",
+                "fieldSize",
+                "horseNumber",
+                "popularity",
+                "finish",
+                "margin",
+                "index",
+                "last3F",
+                "last3FRank",
+                "interval",
+                "blinkers",
+                "runningStyleRaw",
+                "passingOrder",
+                "source"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "topSummary": {
+            "type": "object",
+            "properties": {
+              "allRecord": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "sourceLabel": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "sourceLines": {
+                        "type": "null"
+                      },
+                      "sourcePosition": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "sourceLine",
+                      "sourceLines",
+                      "sourcePosition",
+                      "horseNumber",
+                      "horseName",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "record": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "apply": {
+                        "type": "boolean"
+                      },
+                      "numerator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "denominator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "ratePercent": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "apply",
+                      "numerator",
+                      "denominator",
+                      "ratePercent",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "label",
+                  "sourceLabel",
+                  "source",
+                  "record",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              },
+              "surfaceRecord": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "sourceLabel": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "sourceLines": {
+                        "type": "null"
+                      },
+                      "sourcePosition": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "sourceLine",
+                      "sourceLines",
+                      "sourcePosition",
+                      "horseNumber",
+                      "horseName",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "record": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "apply": {
+                        "type": "boolean"
+                      },
+                      "numerator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "denominator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "ratePercent": {
+                        "type": [
+                          "number",
+                          "null",
+                          "integer"
+                        ]
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "apply",
+                      "numerator",
+                      "denominator",
+                      "ratePercent",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "label",
+                  "sourceLabel",
+                  "source",
+                  "record",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              },
+              "courseRecord": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "sourceLabel": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "sourceLines": {
+                        "type": "null"
+                      },
+                      "sourcePosition": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "sourceLine",
+                      "sourceLines",
+                      "sourcePosition",
+                      "horseNumber",
+                      "horseName",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "record": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "apply": {
+                        "type": "boolean"
+                      },
+                      "numerator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "denominator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "ratePercent": {
+                        "type": [
+                          "integer",
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "apply",
+                      "numerator",
+                      "denominator",
+                      "ratePercent",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "label",
+                  "sourceLabel",
+                  "source",
+                  "record",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              },
+              "turnRecord": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "sourceLabel": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "sourceLines": {
+                        "type": "null"
+                      },
+                      "sourcePosition": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "sourceLine",
+                      "sourceLines",
+                      "sourcePosition",
+                      "horseNumber",
+                      "horseName",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "record": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "apply": {
+                        "type": "boolean"
+                      },
+                      "numerator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "denominator": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "ratePercent": {
+                        "type": [
+                          "number",
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "apply",
+                      "numerator",
+                      "denominator",
+                      "ratePercent",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "label",
+                  "sourceLabel",
+                  "source",
+                  "record",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              },
+              "lateStartRate": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "sourceLabel": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "sourceLines": {
+                        "type": "null"
+                      },
+                      "sourcePosition": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseNumber": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "horseName": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file",
+                      "sourceLine",
+                      "sourceLines",
+                      "sourcePosition",
+                      "horseNumber",
+                      "horseName",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "highlight": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "thresholdPercent": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      },
+                      "apply": {
+                        "type": "boolean"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "thresholdPercent",
+                      "apply",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "label",
+                  "sourceLabel",
+                  "source",
+                  "value",
+                  "highlight"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "allRecord",
+              "surfaceRecord",
+              "courseRecord",
+              "turnRecord",
+              "lateStartRate"
+            ],
+            "additionalProperties": false
+          },
+          "dataTabs": {
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "object",
+                "properties": {
+                  "overall": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "surfaceConditions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "overall",
+                  "surfaceConditions"
+                ],
+                "additionalProperties": false
+              },
+              "distanceCourse": {
+                "type": "object",
+                "properties": {
+                  "distanceBands": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "courseRecords": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "performance": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "distanceBands",
+                  "courseRecords",
+                  "performance"
+                ],
+                "additionalProperties": false
+              },
+              "conditions": {
+                "type": "object",
+                "properties": {
+                  "rotation": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "record": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "source": {
+                        "type": "object",
+                        "properties": {
+                          "file": {
+                            "type": "string"
+                          },
+                          "sourceLines": {
+                            "type": "array",
+                            "items": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            }
+                          },
+                          "horseNumber": {
+                            "type": [
+                              "integer",
+                              "number"
+                            ]
+                          },
+                          "horseName": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "file",
+                          "sourceLines",
+                          "horseNumber",
+                          "horseName",
+                          "status"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "label",
+                      "record",
+                      "source"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "season": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "record": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "source": {
+                        "type": "object",
+                        "properties": {
+                          "file": {
+                            "type": "string"
+                          },
+                          "sourceLines": {
+                            "type": "array",
+                            "items": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            }
+                          },
+                          "horseNumber": {
+                            "type": [
+                              "integer",
+                              "number"
+                            ]
+                          },
+                          "horseName": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "file",
+                          "sourceLines",
+                          "horseNumber",
+                          "horseName",
+                          "status"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "label",
+                      "record",
+                      "source"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "pace": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "turn": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "fieldSizeAndPopularity": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "rotation",
+                  "season",
+                  "pace",
+                  "turn",
+                  "fieldSizeAndPopularity"
+                ],
+                "additionalProperties": false
+              },
+              "frameAndTop2": {
+                "type": "object",
+                "properties": {
+                  "frameRecords": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "record": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "record"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "top2Records": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "file": {
+                              "type": "string"
+                            },
+                            "sourceLine": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourceLines": {
+                              "type": "null"
+                            },
+                            "sourcePosition": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "sourcePositions": {
+                              "type": "null"
+                            },
+                            "horseNumber": {
+                              "type": [
+                                "integer",
+                                "number"
+                              ]
+                            },
+                            "horseName": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "file",
+                            "sourceLine",
+                            "sourceLines",
+                            "sourcePosition",
+                            "sourcePositions",
+                            "horseNumber",
+                            "horseName",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "frameRecords",
+                  "top2Records"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "detail",
+              "distanceCourse",
+              "conditions",
+              "frameAndTop2"
+            ],
+            "additionalProperties": false
+          },
+          "comments": {
+            "type": "object",
+            "properties": {
+              "current": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "isIchioshi": {
+                    "type": "boolean"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "file": {
+                        "type": "string"
+                      },
+                      "section": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "file",
+                      "section",
+                      "sourceLine"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reporterAttributionRemoved": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text",
+                  "isIchioshi",
+                  "source",
+                  "reporterAttributionRemoved"
+                ],
+                "additionalProperties": false
+              },
+              "previousRun": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "file": {
+                        "type": "string"
+                      },
+                      "section": {
+                        "type": "string"
+                      },
+                      "sourceLine": {
+                        "type": [
+                          "integer",
+                          "number"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "file",
+                      "section",
+                      "sourceLine"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "previousRace": {
+                    "type": "string"
+                  },
+                  "reporterAttributionRemoved": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text",
+                  "source",
+                  "previousRace",
+                  "reporterAttributionRemoved"
+                ],
+                "additionalProperties": false
+              },
+              "rawCombined": {
+                "type": "string"
+              },
+              "splitStatus": {
+                "type": "string"
+              },
+              "splitEvidence": {
+                "type": "object",
+                "properties": {
+                  "currentHeading": {
+                    "type": "string"
+                  },
+                  "previousRaceHeading": {
+                    "type": "string"
+                  },
+                  "previousCommentHeading": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "currentHeading",
+                  "previousRaceHeading",
+                  "previousCommentHeading"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "current",
+              "previousRun",
+              "rawCombined",
+              "splitStatus",
+              "splitEvidence"
+            ],
+            "additionalProperties": false
+          },
+          "sourceStyles": {
+            "type": "object",
+            "properties": {
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "horseNumber": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "horseName": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "sexAge": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "handicapWeight": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "null"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "jockeyRaw": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "affiliation": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "trainer": {
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "null"
+                      },
+                      "textColor": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "backgroundColor",
+                      "textColor"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "horseNumber",
+                  "horseName",
+                  "sexAge",
+                  "handicapWeight",
+                  "jockeyRaw",
+                  "affiliation",
+                  "trainer"
+                ],
+                "additionalProperties": false
+              },
+              "recentRuns": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "dateRaw": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "courseRaw": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "ageClass": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "class": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "raceName": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "weight": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "jockey": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "bodyWeight": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "bodyWeightChange": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "going": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "mark": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "fieldSize": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "horseNumber": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "popularity": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "finish": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "margin": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "index": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "last3F": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "last3FRank": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "interval": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "blinkers": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": "null"
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "runningStyleRaw": {
+                      "type": "object",
+                      "properties": {
+                        "backgroundColor": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        },
+                        "textColor": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "backgroundColor",
+                        "textColor"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "passingOrder": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "backgroundColor": {
+                            "type": "null"
+                          },
+                          "textColor": {
+                            "type": [
+                              "null",
+                              "string"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "backgroundColor",
+                          "textColor"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "dateRaw",
+                    "courseRaw",
+                    "ageClass",
+                    "class",
+                    "raceName",
+                    "weight",
+                    "jockey",
+                    "bodyWeight",
+                    "bodyWeightChange",
+                    "going",
+                    "mark",
+                    "fieldSize",
+                    "horseNumber",
+                    "popularity",
+                    "finish",
+                    "margin",
+                    "index",
+                    "last3F",
+                    "last3FRank",
+                    "interval",
+                    "blinkers",
+                    "runningStyleRaw",
+                    "passingOrder"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "profile",
+              "recentRuns"
+            ],
+            "additionalProperties": false
+          },
+          "sourceRefs": {
+            "type": "object",
+            "properties": {
+              "TARGET": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string"
+                  },
+                  "horseNumber": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "horseName": {
+                    "type": "string"
+                  },
+                  "sourceRowIndex": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "cells": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  }
+                },
+                "required": [
+                  "file",
+                  "horseNumber",
+                  "horseName",
+                  "sourceRowIndex",
+                  "cells"
+                ],
+                "additionalProperties": false
+              },
+              "DATE2": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string"
+                  },
+                  "horseNumber": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "horseName": {
+                    "type": "string"
+                  },
+                  "sourceLineStart": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "sourceLineEnd": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  }
+                },
+                "required": [
+                  "file",
+                  "horseNumber",
+                  "horseName",
+                  "sourceLineStart",
+                  "sourceLineEnd"
+                ],
+                "additionalProperties": false
+              },
+              "東スポ": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string"
+                  },
+                  "horseNumber": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "horseName": {
+                    "type": "string"
+                  },
+                  "sourceLineStart": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  },
+                  "sourceLineEnd": {
+                    "type": [
+                      "integer",
+                      "number"
+                    ]
+                  }
+                },
+                "required": [
+                  "file",
+                  "horseNumber",
+                  "horseName",
+                  "sourceLineStart",
+                  "sourceLineEnd"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "TARGET",
+              "DATE2",
+              "東スポ"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "horseNumber",
+          "frameNumber",
+          "horseName",
+          "profile",
+          "pedigree",
+          "recentRuns",
+          "topSummary",
+          "dataTabs",
+          "comments",
+          "sourceStyles",
+          "sourceRefs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "render": {
+      "type": "object",
+      "properties": {
+        "layoutId": {
+          "type": "string"
+        },
+        "preserveSourceColors": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "layoutId",
+        "preserveSourceColors"
+      ],
+      "additionalProperties": false
+    },
+    "integrationStatus": {
+      "type": "string"
+    },
+    "candidateLimitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "race",
+    "sourceAudit",
+    "status",
+    "horses",
+    "render",
+    "integrationStatus",
+    "candidateLimitations"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kidokira-apogee.github.io/kido-table/schemas/race-candidate-v1.schema.json",
+  "title": "木戸表電子版 レース候補データ構造スキーマ",
+  "description": "2026-11-07時点の京都7R・京都12R候補v3の実データ構造と既存マスター項目を基準にした構造検証用スキーマ。項目追加や表示レイアウトの正本指定を行うものではない。",
+  "x-contract-notes": {
+    "fieldPolicy": "既存マスタープロンプトで確定した項目を維持する。新規項目を追加しない。",
+    "visualReference": "東京9Rは過去の画面参考資料であり、このデータスキーマの正本ではない。",
+    "candidateStatus": "候補データはstatus.complete=falseのまま。正式登録を意味しない。",
+    "validationScope": "構造・型の検査。原資料との値一致、必須項目の業務ルール、表示結果の検査は別途行う。",
+    "samples": [
+      "candidate-data/2026-11-01-kyoto-7_candidate_v3.json",
+      "candidate-data/2026-10-31-kyoto-12_candidate_v3.json"
+    ]
+  }
+}
