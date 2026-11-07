@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 22
       - name: Install Playwright
-        run: npm install --no-save --package-lock=false playwright
+        run: npm install --no-save --package-lock=false playwright ajv
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Validate master whitelist and exclusions
