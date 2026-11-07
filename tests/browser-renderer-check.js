@@ -274,6 +274,8 @@ async function main() {
 
       const tabResult = await verifyTabs(page, count);
       assert.deepEqual(tabResult.errors, [], race.key + ': DATA tab interaction');
+      const missingValueErrors = await verifyMissingValueDisplay(page, data);
+      assert.deepEqual(missingValueErrors, [], race.key + ': missing-value display');
       const colorResult = await verifyColors(page, data, race.key);
       assert.deepEqual(colorResult.mismatches, [], race.key + ': TARGET source colors');
 
@@ -304,7 +306,7 @@ async function main() {
       report.races.push({
         id: data.race.id, horses: count,
         recentRuns: data.horses.reduce((n,h)=>n+Math.min(3,(h.recentRuns||[]).length),0),
-        tabClicks: tabResult.tested, colorPropertiesChecked: colorResult.checked,
+        tabClicks: tabResult.tested, missingValueChecks: 'passed', colorPropertiesChecked: colorResult.checked,
         desktop: desktopMetrics, mobile: mobileMetrics
       });
       await page.locator('#race-detail-container .race-nav button').click();
