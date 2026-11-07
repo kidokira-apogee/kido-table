@@ -9,7 +9,7 @@ on:
       - 'structured-renderer.js'
       - 'structured-renderer-integration-adapter.js'
       - 'candidate-data/**'
-      - 'tests/browser-renderer-check.js'\n      - 'tests/validate-candidate-schema.js'\n      - 'schemas/**'
+      - 'tests/browser-renderer-check.js'\n      - 'tests/validate-candidate-schema.js'\n      - 'tests/validate-master-whitelist.js'\n      - 'schemas/**'
       - '.github/workflows/renderer-browser-verification.yml'
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
         run: npm install --no-save --package-lock=false playwright
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Run full-page browser verification
+      - name: Validate master whitelist and exclusions\n        run: node tests/validate-master-whitelist.js\n      - name: Run full-page browser verification
         run: node tests/browser-renderer-check.js
       - name: Upload browser report and screenshots
         if: always()
