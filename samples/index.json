@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "date-independent-preview",
+  "samples": [
+    {
+      "id": "sample-dirt-1400",
+      "title": "ダート 1400m",
+      "subtitle": "京都7R｜1勝クラス｜16頭",
+      "surface": "ダート",
+      "distanceM": 1400,
+      "venue": "京都",
+      "raceDate": "2026-11-01",
+      "file": "candidate-data/2026-11-01-kyoto-7_candidate_v3.json",
+      "status": "in-progress",
+      "complete": false
+    },
+    {
+      "id": "sample-turf-1600",
+      "title": "芝 1600m",
+      "subtitle": "京都12R｜1勝クラス｜18頭",
+      "surface": "芝",
+      "distanceM": 1600,
+      "venue": "京都",
+      "raceDate": "2026-10-31",
+      "file": "candidate-data/2026-10-31-kyoto-12_candidate_v3.json",
+      "status": "in-progress",
+      "complete": false
+    }
+  ]
+}
