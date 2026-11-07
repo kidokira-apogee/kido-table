@@ -33,7 +33,7 @@ function exactKeys(value, keys, where, errors) {
   for (const k of wanted) if (!Object.hasOwn(value,k)) fail(errors,where,'missing key '+k);
   for (const k of actual) if (!wanted.includes(k)) fail(errors,where,'unexpected key '+k);
 }
-function norm(v) { return String(v ?? '').replace(/[\\s　]+/g,' ').trim(); }
+function norm(v) { return String(v ?? '').replace(/[\s　]+/g,' ').trim(); }
 function checkSource(h, item, where, errors) {
   const s = item?.source;
   if (!s || s.status !== 'extracted') { fail(errors,where,'source must be explicitly extracted'); return; }
@@ -43,7 +43,7 @@ function checkSource(h, item, where, errors) {
 }
 function checkRecord(h, item, where, errors) {
   checkSource(h,item,where,errors);
-  if (!Array.isArray(item.record) || item.record.length !== 4 || item.record.some(v => !/^\\d+$/.test(String(v)))) fail(errors,where,'record must contain four numeric columns (1着・2着・3着・着外)');
+  if (!Array.isArray(item.record) || item.record.length !== 4 || item.record.some(v => !/^\d+$/.test(String(v)))) fail(errors,where,'record must contain four numeric columns (1着・2着・3着・着外)');
 }
 function checkLabelList(h, list, labels, where, errors, record=true) {
   if (!Array.isArray(list)) { fail(errors,where,'array required'); return; }
@@ -71,7 +71,7 @@ function validateHorse(h, data, at, errors) {
   exactKeys(h,expected.horse,at,errors);
   if (!Number.isInteger(h.horseNumber) || h.horseNumber<1) fail(errors,at,'invalid horse number');
   if (!h.horseName) fail(errors,at,'horse name required');
-  if (h.profile?.horseNumber !== h.horseNumber || h.profile?.horseName !== h.horseName) fail(errors,at+'.profile','identity mismatch');
+  if (String(h.profile?.horseNumber ?? '') !== String(h.horseNumber) || h.profile?.horseName !== h.horseName) fail(errors,at+'.profile','identity mismatch');
   if (!Array.isArray(h.recentRuns) || h.recentRuns.length!==3) fail(errors,at+'.recentRuns','exactly three runs required');
   else {
     const runLabels=['前走','2走前','3走前'];
@@ -116,7 +116,7 @@ function validateHorse(h, data, at, errors) {
     if(item?.label!==label) fail(errors,at+'.topSummary.'+k,'display label mismatch');
     if(k==='lateStartRate') {
       checkSource(h,item,at+'.topSummary.'+k,errors);
-      if(typeof item.value!=='string'||!/^\\d+(?:\\.\\d+)?%$/.test(item.value)) fail(errors,at+'.topSummary.'+k,'percentage value required');
+      if(typeof item.value!=='string'||!/^\d+(?:\.\d+)?%$/.test(item.value)) fail(errors,at+'.topSummary.'+k,'percentage value required');
     } else {
       const expectedSource=k==='surfaceRecord'?'全'+surface:k==='courseRecord'?course:k==='turnRecord'?'右回':sourceLabel;
       if(item?.sourceLabel!==expectedSource) fail(errors,at+'.topSummary.'+k,'source label mismatch');
