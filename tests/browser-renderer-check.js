@@ -223,6 +223,13 @@ async function verifyTabs(page, expectedCards) {
     let tested = 0;
     const errors = [];
     if (cards.length !== expectedCards) errors.push('horse cards ' + cards.length + '/' + expectedCards);
+    const jumpNav = document.querySelector('#race-detail-container .horse-jump-nav');
+    const jumpButtons = [...(jumpNav?.querySelectorAll('.horse-jump-button') || [])];
+    if (!jumpNav) errors.push('horse jump navigation is missing');
+    if (jumpButtons.length !== expectedCards) errors.push('horse jump buttons ' + jumpButtons.length + '/' + expectedCards);
+    if (jumpButtons.some((button, index) => button.getAttribute('aria-label') !== '馬番' + (index + 1) + ' ' + (cards[index]?.querySelector('.horse-name')?.textContent.trim() || '') + 'へ移動')) {
+      errors.push('horse jump navigation labels do not match horse cards');
+    }
     for (const card of cards) {
       const tabs = [...card.querySelectorAll('.data-tab')];
       const panels = [...card.querySelectorAll('.data-panel')];
