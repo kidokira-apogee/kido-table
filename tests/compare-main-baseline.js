@@ -141,7 +141,9 @@ async function snapshot(page, label) {
     const racehead = document.querySelector('#race-detail-container .racehead');
     const readStyles = (node, selector) => {
       const hadSameCourse = node.classList.contains('same-course');
+      const hadIchioshi = node.classList.contains('is-ichioshi');
       if (hadSameCourse) node.classList.remove('same-course');
+      if (selector === '.stable-comment-body' && hadIchioshi) node.classList.remove('is-ichioshi');
       const computed = getComputedStyle(node);
       const result = {};
       for (const property of properties) {
@@ -150,6 +152,7 @@ async function snapshot(page, label) {
           : computed.getPropertyValue(property);
       }
       if (hadSameCourse) node.classList.add('same-course');
+      if (selector === '.stable-comment-body' && hadIchioshi) node.classList.add('is-ichioshi');
       return result;
     };
     const readRect = (node, cardRect) => {
@@ -223,10 +226,13 @@ function compareCardSnapshots(base, candidate, label) {
     errors.push(label + ' DATA tab/panel count must be 4');
   }
   if (base.dataChips !== 5 || candidate.dataChips !== 5) errors.push(label + ' summary chip count must be 5');
-  const expectedLabels = ['詳細成績', '距離・コース', '条件別', '枠順・連対実績'];
-  if (JSON.stringify(base.tabLabels) !== JSON.stringify(expectedLabels) ||
-      JSON.stringify(candidate.tabLabels) !== JSON.stringify(expectedLabels)) {
-    errors.push(label + ' DATA tab labels/order differ from master');
+  const legacyLabels = ['詳細成績', '距離・コース', '条件別', '枠順・脚質'];
+  const masterLabels = ['詳細成績', '距離・コース', '条件別', '枠順・連対実績'];
+  if (JSON.stringify(base.tabLabels) !== JSON.stringify(legacyLabels)) {
+    errors.push(label + ' main baseline DATA tab labels differ from recorded legacy reference');
+  }
+  if (JSON.stringify(candidate.tabLabels) !== JSON.stringify(masterLabels)) {
+    errors.push(label + ' structured DATA tab labels/order differ from current master');
   }
   if (base.activePanels !== 1 || candidate.activePanels !== 1) errors.push(label + ' initial active panel count must be 1');
 
