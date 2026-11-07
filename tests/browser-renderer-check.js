@@ -317,6 +317,17 @@ async function main() {
       });
       await page.locator('#race-detail-container .race-nav button').click();
     }
+    // The date-independent sample registry must expose both surfaces outside the archive filters.
+    const sampleButtons = page.locator('#sample-page-items .sample-page-item');
+    await sampleButtons.first().waitFor();
+    assert.equal(await sampleButtons.count(), 2, 'date-independent sample count');
+    for (const [index, expected] of [[0,16],[1,18]]) {
+      await sampleButtons.nth(index).click();
+      await page.locator('#race-detail-container .horse-card').first().waitFor();
+      assert.equal(await page.locator('#race-detail-container .horse-card').count(), expected,
+        'sample page horse count ' + index);
+      await page.locator('#race-detail-container .race-nav button').click();
+    }
     assert.deepEqual(pageErrors, [], 'browser page errors');
     report.pageErrors = pageErrors;
     fs.writeFileSync(path.join(ARTIFACTS, 'browser-verification.json'), JSON.stringify(report, null, 2));
