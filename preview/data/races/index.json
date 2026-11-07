@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "races": [
+    {
+      "id": "2026-11-01-kyoto-7",
+      "file": "2026-11-01-kyoto-7_candidate_v3.json",
+      "date": "2026-11-01",
+      "dateLabel": "2026年11月1日（日）",
+      "venue": "京都",
+      "raceNo": 7,
+      "title": "1勝クラス",
+      "distance": "ダート1400m",
+      "classLabel": "3歳以上・1勝クラス",
+      "horseCount": 16,
+      "status": "in-progress"
+    },
+    {
+      "id": "2026-10-31-kyoto-12",
+      "file": "2026-10-31-kyoto-12_candidate_v3.json",
+      "date": "2026-10-31",
+      "dateLabel": "2026年10月31日（土）",
+      "venue": "京都",
+      "raceNo": 12,
+      "title": "1勝クラス",
+      "distance": "芝外1600m",
+      "classLabel": "3歳以上・1勝クラス",
+      "horseCount": 18,
+      "status": "in-progress"
+    }
+  ]
+}
