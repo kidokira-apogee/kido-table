@@ -18,112 +18,8 @@
     "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]",
     "currentGoing": "稍"
   },
-  "sourceAudit": {
-    "sources": {
-      "TARGET": {
-        "file": "貼り付けたテキスト（1）(20261106-120019).txt",
-        "materializedTextFile": "貼り付けたテキスト（1）(20261106-120019).txt",
-        "recordedSha256": "5141a57bda98fa89c7decd837b313e5143a4a7ee2bee36dc722b3f00492f7985",
-        "libraryFileId": "file_00000000be0c8209aadde81761dc8e40",
-        "rawByteSha256Recomputed": false,
-        "materialization": "text representation"
-      },
-      "DATE2": {
-        "file": "貼り付けたテキスト（1）(20261106-123840).txt",
-        "materializedTextFile": "貼り付けたテキスト（1）(20261106-123840)_full.txt",
-        "recordedSha256": "b7e568f8cf09d42ea0f0220c265dbce0f5d17788c1db8fd483099f232216a9a3",
-        "libraryFileId": "file_0000000035a882098c732759a2771aa2",
-        "rawByteSha256Recomputed": false,
-        "materialization": "text representation"
-      },
-      "東スポ": {
-        "file": "2026-11-01_京都7R_東スポ③原本_ダート1400m.txt",
-        "materializedTextFile": "2026-11-01_京都7R_東スポ③原本_ダート1400m.txt",
-        "recordedSha256": "9a235befabdb39bc57dc1ef87a7f4554fdab06b91ddad9eb86749127b2a569a5",
-        "libraryFileId": "file_0000000068ec82099c19b817d8998b4e",
-        "rawByteSha256Recomputed": false,
-        "materialization": "text representation"
-      }
-    },
-    "horseNumberNameMatch": "16/16; all three sources match",
-    "targetCellsPerHorse": 90,
-    "targetCellColors": "TARGET原資料→JSONの色属性は3,060/3,060セル一致。実際の正本CSS・レンダラーを使ったChromium headlessのComputed Style照合も全922プロパティで不一致0件。実機スマートフォン確認と正式承認は未完了。",
-    "date2MasterBasedExtract": "2026-11-06 master category rules; four tabs and five summary fields; source line references retained; exact row-level whitelist is not separately machine-readable in the master",
-    "date2Excluded": [
-      "course best times",
-      "venue-specific surface row",
-      "pair-rate block",
-      "running-style distribution",
-      "recent five runs",
-      "people/connection statistics",
-      "venue-only overall row (京都) excluded from display data under master 8-3"
-    ],
-    "date2RedHighlight": "recalculated for all 16 horses using 1着・2着・3着・着外; denominator=sum of four columns; numerator=sum of first three; threshold denominator>=3 and placeRate>=50%",
-    "tospoComments": "current/previous split by explicit headings; reporter attribution removed from display text only; rawCombined retained",
-    "dateAudit": {
-      "TARGETHeaderDate": "2026-11-01",
-      "identityDecision": "race date and basic identification are based only on ① TARGET",
-      "outOfScopeDateLabels": {
-        "DATE2": "calendar date not explicit; meeting label is not used as a calendar-date substitute",
-        "Tospo": "2026-11-01 source header retained in raw audit but not used for race identity"
-      }
-    },
-    "rawAuditFiles": {
-      "sourceExtractionAudit": "2026-11-01-kyoto-7_source_extraction_audit.json",
-      "date2MasterBasedExtract": "date2_master_based_extract.json"
-    },
-    "date2SummaryRecalculation": {
-      "auditFile": "audit/date2-summary-audit-2026-11-07.json",
-      "horseCount": 16,
-      "highlightCounts": {
-        "all": 5,
-        "surface": 5,
-        "course": 2,
-        "turn": 6,
-        "late": 4
-      },
-      "source": "② DATE 2 only"
-    },
-    "date2WhitelistAudit": {
-      "status": "reviewed_against_master_2026-11-06_sections_8-2_to_8-4",
-      "summaryFields": [
-        "全成績",
-        "今回馬場",
-        "今回コース条件",
-        "今回周り",
-        "出遅れ率"
-      ],
-      "tabs": [
-        "詳細成績",
-        "距離・コース",
-        "条件別",
-        "枠順・連対実績"
-      ],
-      "excludedFromDetailOverall": [
-        "京都（当会場単独行）"
-      ],
-      "excludedItems": [
-        "連対率",
-        "同コース最高タイム",
-        "近距離最高タイム",
-        "関係者成績",
-        "通算脚質",
-        "最近5走",
-        "連対脚質"
-      ],
-      "venueSpecificCourseRecordRetained": true,
-      "performanceRetainedAs": "上がり性能（当距離・芝最高・ダ最高・近５平）",
-      "perHorseReview": {
-        "horseCount": 16,
-        "removedVenueRows": 16
-      },
-      "result": "PASS_FOR_CANDIDATE; final source-value and renderer verification remain separate"
-    }
-  },
   "status": {
-    "target": true,
-    "date2": true,
-    "tospo": true,
+    "sample": true,
     "complete": false
   },
   "horses": [
@@ -23348,12 +23244,5 @@
     "layoutId": "tokyo9-production-locked",
     "preserveSourceColors": true
   },
-  "integrationStatus": "SOURCE_EXTRACTION_COMPLETE; CANDIDATE_V3; DATE2_SUMMARY_RECALCULATED; MASTER_WHITELIST_REVIEWED; FINAL_SOURCE_AUDIT_AND_RENDER_VERIFICATION_PENDING",
-  "candidateLimitations": [
-    "Not a production display JSON.",
-    "render.preserveSourceColors is true after successful Chromium headless integration verification against the canonical Tokyo 9 layout; physical smartphone validation and formal approval remain outstanding.",
-    "The renderer integration remains an unmerged PR #3 draft; candidate JSON is not production data.",
-    "Race date and basic identity are based only on ① TARGET; other-source date labels are retained as raw audit data but excluded from identity decisions.",
-    "DATE 2 display categories were reviewed against master sections 8-2 to 8-4; the venue-only overall row (京都) is excluded. All candidate labels, values and source-line positions for the adopted DATE 2 fields were checked against the original text with no mismatches; full-page Chromium rendering, DATA-tab interaction and TARGET source-color Computed Style checks are complete. Physical smartphone validation and formal approval remain outstanding."
-  ]
+  "sampleLabel": "ダートサンプル"
 }
