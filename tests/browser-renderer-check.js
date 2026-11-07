@@ -25,9 +25,9 @@ const RACES = [
 const loaded = new Map();
 for (const race of RACES) {
   const data = JSON.parse(fs.readFileSync(path.join(ROOT, race.file), 'utf8'));
-  data.render = data.render || {};
-  // Enable source colors only in the isolated test response; repository JSON is untouched.
-  data.render.preserveSourceColors = true;
+  if (data.render?.preserveSourceColors !== true) {
+    throw new Error(race.key + ': candidate render.preserveSourceColors must be true after browser color verification');
+  }
   loaded.set(race.key, data);
 }
 
