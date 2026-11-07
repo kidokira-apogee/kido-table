@@ -2,8 +2,11 @@
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
+const Ajv2020 = require('ajv/dist/2020').default;
 const root = path.resolve(__dirname, '..');
 const schema = JSON.parse(fs.readFileSync(path.join(root, 'schemas/race-candidate-v1.schema.json'), 'utf8'));
+const ajv = new Ajv2020({ allErrors: true, strict: false });
+const ajvValidate = ajv.compile(schema);
 const files = [
   'candidate-data/2026-11-01-kyoto-7_candidate_v3.json',
   'candidate-data/2026-10-31-kyoto-12_candidate_v3.json'
@@ -56,7 +59,74 @@ let failed = false;
 for (const file of files) {
   const data = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
   const errors = [];
-  validate(data, schema, '$', errors);
+  if (!ajvValidate(data)) {
+    for (const error of ajvValidate.errors || []) {
+      errors.push('JSON Schema 2020-12 ' + (error.instancePath || '
+  if (data.status?.complete !== false) errors.push('$.status.complete: candidate must remain false');
+  if (!Array.isArray(data.horses) || data.horses.length !== data.race?.fieldSize) errors.push('$.horses: count must equal race.fieldSize');
+  const numbers = new Set();
+  for (const [i, horse] of (data.horses || []).entries()) {
+    const at = '$.horses[' + i + ']';
+    if (!Number.isInteger(horse.horseNumber) || horse.horseNumber < 1) errors.push(at + '.horseNumber: invalid horse number');
+    if (numbers.has(horse.horseNumber)) errors.push(at + '.horseNumber: duplicate horse number ' + horse.horseNumber);
+    numbers.add(horse.horseNumber);
+    if (typeof horse.horseName !== 'string' || !horse.horseName.trim()) errors.push(at + '.horseName: empty identity');
+    if (horse.profile?.horseName !== horse.horseName) errors.push(at + '.profile.horseName: identity mismatch');
+    if (String(horse.profile?.horseNumber) !== String(horse.horseNumber)) errors.push(at + '.profile.horseNumber: identity mismatch');
+    if (!Array.isArray(horse.recentRuns) || horse.recentRuns.length !== 3) errors.push(at + '.recentRuns: exactly three rows required');
+    for (const source of ['TARGET', 'DATE2', '東スポ']) {
+      const ref = horse.sourceRefs?.[source];
+      if (!ref) errors.push(at + '.sourceRefs.' + source + ': source reference missing');
+      else if (ref.horseNumber !== horse.horseNumber || ref.horseName !== horse.horseName) errors.push(at + '.sourceRefs.' + source + ': horse identity mismatch');
+    }
+    for (const tab of ['detail', 'distanceCourse', 'conditions', 'frameAndTop2']) {
+      if (!horse.dataTabs || !Object.prototype.hasOwnProperty.call(horse.dataTabs, tab)) errors.push(at + '.dataTabs.' + tab + ': tab missing');
+    }
+  }
+  if (errors.length) {
+    failed = true;
+    console.error('FAIL ' + file + '\\n' + errors.slice(0, 50).join('\\n'));
+  } else {
+    console.log('PASS ' + file + ' (' + data.horses.length + ' horses; identity, source refs, 3-run rows, and four tabs checked)');
+  }
+}
+if (failed) process.exit(1);
+) + ': ' + error.message);
+    }
+  } else {
+    console.log('AJV 2020-12 PASS ' + file);
+  }
+  validate(data, schema, '
+  if (data.status?.complete !== false) errors.push('$.status.complete: candidate must remain false');
+  if (!Array.isArray(data.horses) || data.horses.length !== data.race?.fieldSize) errors.push('$.horses: count must equal race.fieldSize');
+  const numbers = new Set();
+  for (const [i, horse] of (data.horses || []).entries()) {
+    const at = '$.horses[' + i + ']';
+    if (!Number.isInteger(horse.horseNumber) || horse.horseNumber < 1) errors.push(at + '.horseNumber: invalid horse number');
+    if (numbers.has(horse.horseNumber)) errors.push(at + '.horseNumber: duplicate horse number ' + horse.horseNumber);
+    numbers.add(horse.horseNumber);
+    if (typeof horse.horseName !== 'string' || !horse.horseName.trim()) errors.push(at + '.horseName: empty identity');
+    if (horse.profile?.horseName !== horse.horseName) errors.push(at + '.profile.horseName: identity mismatch');
+    if (String(horse.profile?.horseNumber) !== String(horse.horseNumber)) errors.push(at + '.profile.horseNumber: identity mismatch');
+    if (!Array.isArray(horse.recentRuns) || horse.recentRuns.length !== 3) errors.push(at + '.recentRuns: exactly three rows required');
+    for (const source of ['TARGET', 'DATE2', '東スポ']) {
+      const ref = horse.sourceRefs?.[source];
+      if (!ref) errors.push(at + '.sourceRefs.' + source + ': source reference missing');
+      else if (ref.horseNumber !== horse.horseNumber || ref.horseName !== horse.horseName) errors.push(at + '.sourceRefs.' + source + ': horse identity mismatch');
+    }
+    for (const tab of ['detail', 'distanceCourse', 'conditions', 'frameAndTop2']) {
+      if (!horse.dataTabs || !Object.prototype.hasOwnProperty.call(horse.dataTabs, tab)) errors.push(at + '.dataTabs.' + tab + ': tab missing');
+    }
+  }
+  if (errors.length) {
+    failed = true;
+    console.error('FAIL ' + file + '\\n' + errors.slice(0, 50).join('\\n'));
+  } else {
+    console.log('PASS ' + file + ' (' + data.horses.length + ' horses; identity, source refs, 3-run rows, and four tabs checked)');
+  }
+}
+if (failed) process.exit(1);
+, errors);
   if (data.status?.complete !== false) errors.push('$.status.complete: candidate must remain false');
   if (!Array.isArray(data.horses) || data.horses.length !== data.race?.fieldSize) errors.push('$.horses: count must equal race.fieldSize');
   const numbers = new Set();
