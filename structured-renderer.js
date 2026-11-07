@@ -68,8 +68,23 @@
     const bodyWeight = run.bodyWeight ? display(run.bodyWeight) + 'kg' : '—';
     const weight = run.weight ? display(run.weight) + 'kg' : '—';
     const change = run.bodyWeightChange ? ' ( ' + display(run.bodyWeightChange) + ' )' : '';
-    const subline = [run.ageClass, run.class, run.jockey, weight, bodyWeight + change, run.going]
-      .filter(v => v !== null && v !== undefined && v !== '').map(display).join('　');
+    // Keep the existing single subline wrapper and spacing, but render each source field
+    // separately so TARGET colors are applied only to the field that owns the source style.
+    const sublineField = (key, value, content = display(value)) =>
+      value === null || value === undefined || value === ''
+        ? ''
+        : '<span' + styleAttr(styles?.[key], applyColors) + '>' + content + '</span>';
+    const subline = [
+      sublineField('ageClass', run.ageClass),
+      sublineField('class', run.class),
+      sublineField('jockey', run.jockey),
+      sublineField('weight', weight),
+      sublineField('bodyWeight', bodyWeight,
+        bodyWeight + (change
+          ? ' ( <span' + styleAttr(styles?.bodyWeightChange, applyColors) + '>' + display(run.bodyWeightChange) + '</span> )'
+          : '')),
+      sublineField('going', run.going)
+    ].filter(Boolean).join('　');
     return '<article class="run">' +
       '<div class="run-head"><strong>' + display(run.label || ['前走','2走前','3走前'][index]) + '</strong><span class="run-date"' + styleAttr(styles?.dateRaw, applyColors) + '>' + display(run.dateRaw) + '</span></div>' +
       '<div class="run-three-rows"><div class="run-summary"><strong' + styleAttr(styles?.raceName, applyColors) + '>' + display(run.raceName) + '</strong>' +
