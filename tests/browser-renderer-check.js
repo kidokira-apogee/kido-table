@@ -25,6 +25,12 @@ const RACES = [
 const loaded = new Map();
 for (const race of RACES) {
   const data = JSON.parse(fs.readFileSync(path.join(ROOT, race.file), 'utf8'));
+  if (data.status?.complete !== false) {
+    throw new Error(race.key + ': sample candidate must remain status.complete=false');
+  }
+  if (race.manifest.status !== 'in-progress') {
+    throw new Error(race.key + ': sample manifest entry must remain in-progress');
+  }
   if (data.render?.preserveSourceColors !== true) {
     throw new Error(race.key + ': candidate render.preserveSourceColors must be true after browser color verification');
   }
