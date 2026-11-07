@@ -70,10 +70,14 @@
     const change = run.bodyWeightChange ? ' ( ' + display(run.bodyWeightChange) + ' )' : '';
     // Keep the existing single subline wrapper and spacing, but render each source field
     // separately so TARGET colors are applied only to the field that owns the source style.
+    const sublineStyle = cell => {
+      const attrs = styleAttr(cell, applyColors);
+      return attrs ? attrs.replace(' style="', ' style="font-style:normal;') : ' style="font-style:normal"';
+    };
     const sublineField = (key, value, content = display(value)) =>
       value === null || value === undefined || value === ''
         ? ''
-        : '<span' + styleAttr(styles?.[key], applyColors) + '>' + content + '</span>';
+        : '<i' + sublineStyle(styles?.[key]) + '>' + content + '</i>';
     const subline = [
       sublineField('ageClass', run.ageClass),
       sublineField('class', run.class),
@@ -81,7 +85,7 @@
       sublineField('weight', weight),
       sublineField('bodyWeight', bodyWeight,
         bodyWeight + (change
-          ? ' ( <span' + styleAttr(styles?.bodyWeightChange, applyColors) + '>' + display(run.bodyWeightChange) + '</span> )'
+          ? ' ( <i' + sublineStyle(styles?.bodyWeightChange) + '>' + display(run.bodyWeightChange) + '</i> )'
           : '')),
       sublineField('going', run.going)
     ].filter(Boolean).join('　');
@@ -110,8 +114,8 @@
     const rows = items.map(item => {
       const value = recordText(item);
       const good = isPlaceRateHit(item) ? ' good' : '';
-      // 正本の .stats は span / strong を直接2列グリッドに配置する。
-      return '<span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong>';
+      // 正本HTMLの各成績行は stat-row で包む。行ラッパーを維持する。
+      return '<div class="stat-row"><span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong></div>';
     }).join('');
     return '<section class="panel-card"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
   }
