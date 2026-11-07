@@ -14,11 +14,11 @@
   })[ch]);
   const display = value => value === null || value === undefined || value === '' ? '—' : esc(value);
   const validColor = value => typeof value === 'string' && /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\([0-9.%\s,\/]+\)|hsla?\([0-9.%\s,\/]+\))$/i.test(value.trim());
-  const styleAttr = (cell, enabled) => {
+  const styleAttr = (cell, enabled, importantText = false) => {
     if (!enabled || !cell) return '';
     const styles = [];
     if (validColor(cell.backgroundColor)) styles.push('background-color:' + cell.backgroundColor.trim());
-    if (validColor(cell.textColor)) styles.push('color:' + cell.textColor.trim());
+    if (validColor(cell.textColor)) styles.push('color:' + cell.textColor.trim() + (importantText ? '!important' : ''));
     return styles.length ? ' style="' + esc(styles.join(';')) + '"' : '';
   };
   const recordText = item => {
@@ -180,8 +180,8 @@
       '<div class="identity-main"><strong class="horse-name"' + styleAttr(profileStyles.horseName, applyColors) + '>' + display(horse.horseName) + '</strong><div class="horse-facts">' +
       '<span class="basic sex-age-pill"><label>性齢</label><b' + styleAttr(profileStyles.sexAge, applyColors) + '>' + display(p.sexAge) + '</b></span>' +
       '<span class="basic weight-pill"><label>斤量</label><b' + styleAttr(profileStyles.handicapWeight, applyColors) + '>' + (p.handicapWeight !== null && p.handicapWeight !== undefined && p.handicapWeight !== '' ? display(p.handicapWeight) + 'kg' : '—') + '</b></span>' +
-      '<span class="basic"><label>騎手</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors) + '>' + display(p.jockeyRaw) + '</b></span>' +
-      '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors) + '>' + display(p.trainer) + '</b></span>' +
+      '<span class="basic"><label>騎手</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors, true) + '>' + display(p.jockeyRaw) + '</b></span>' +
+      '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors, true) + '>' + display(p.trainer) + '</b></span>' +
       '</div></div></div></div>' +
       '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, applyColors) + '>父　' + display(pedigree.sire) + '</strong>' +
       '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, applyColors) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
