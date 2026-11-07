@@ -204,7 +204,7 @@ async function verifyMissingValueDisplay(page, data) {
       });
     });
     const badTokens = cards.flatMap(card => [...card.querySelectorAll('*')])
-      .filter(node => node.children.length === 0 && /\\b(undefined|null)\\b/i.test(node.textContent || ''))
+      .filter(node => node.children.length === 0 && /\b(undefined|null)\b/i.test(node.textContent || ''))
       .map(node => node.textContent.trim());
     if (badTokens.length) errors.push('visible undefined/null tokens: ' + JSON.stringify(badTokens.slice(0,10)));
     return errors;
