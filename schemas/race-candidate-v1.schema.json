@@ -2,7 +2,8 @@
   "type": "object",
   "properties": {
     "schemaVersion": {
-      "type": "string"
+      "type": "string",
+      "const": "1.0.0"
     },
     "race": {
       "type": "object",
@@ -41,7 +42,9 @@
           "type": [
             "integer",
             "number"
-          ]
+          ],
+          "minimum": 6,
+          "maximum": 18
         },
         "metadataSource": {
           "type": "string"
@@ -466,13 +469,17 @@
             "type": [
               "integer",
               "number"
-            ]
+            ],
+            "minimum": 1,
+            "maximum": 18
           },
           "frameNumber": {
             "type": [
               "integer",
               "number"
-            ]
+            ],
+            "minimum": 1,
+            "maximum": 8
           },
           "horseName": {
             "type": "string"
@@ -1064,7 +1071,12 @@
               "type": "object",
               "properties": {
                 "label": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "前走",
+                    "2走前",
+                    "3走前"
+                  ]
                 },
                 "dateRaw": {
                   "type": "string"
@@ -1215,7 +1227,9 @@
                 "source"
               ],
               "additionalProperties": false
-            }
+            },
+            "minItems": 3,
+            "maxItems": 3
           },
           "topSummary": {
             "type": "object",
@@ -1277,8 +1291,11 @@
                   "record": {
                     "type": "array",
                     "items": {
-                      "type": "string"
-                    }
+                      "type": "string",
+                      "pattern": "^[0-9]+$"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
                   },
                   "highlight": {
                     "type": "object",
@@ -1304,7 +1321,8 @@
                       "ratePercent": {
                         "type": [
                           "integer",
-                          "number"
+                          "number",
+                          "null"
                         ]
                       },
                       "status": {
@@ -1388,8 +1406,11 @@
                   "record": {
                     "type": "array",
                     "items": {
-                      "type": "string"
-                    }
+                      "type": "string",
+                      "pattern": "^[0-9]+$"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
                   },
                   "highlight": {
                     "type": "object",
@@ -1500,8 +1521,11 @@
                   "record": {
                     "type": "array",
                     "items": {
-                      "type": "string"
-                    }
+                      "type": "string",
+                      "pattern": "^[0-9]+$"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
                   },
                   "highlight": {
                     "type": "object",
@@ -1612,8 +1636,11 @@
                   "record": {
                     "type": "array",
                     "items": {
-                      "type": "string"
-                    }
+                      "type": "string",
+                      "pattern": "^[0-9]+$"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
                   },
                   "highlight": {
                     "type": "object",
@@ -1837,8 +1864,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -1909,8 +1939,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -1991,8 +2024,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -2063,8 +2099,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -2164,8 +2203,11 @@
                       "record": {
                         "type": "array",
                         "items": {
-                          "type": "string"
-                        }
+                          "type": "string",
+                          "pattern": "^[0-9]+$"
+                        },
+                        "minItems": 4,
+                        "maxItems": 4
                       },
                       "source": {
                         "type": "object",
@@ -2221,8 +2263,11 @@
                       "record": {
                         "type": "array",
                         "items": {
-                          "type": "string"
-                        }
+                          "type": "string",
+                          "pattern": "^[0-9]+$"
+                        },
+                        "minItems": 4,
+                        "maxItems": 4
                       },
                       "source": {
                         "type": "object",
@@ -2329,8 +2374,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -2401,8 +2449,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -2473,8 +2524,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -2558,8 +2612,11 @@
                         "record": {
                           "type": "array",
                           "items": {
-                            "type": "string"
-                          }
+                            "type": "string",
+                            "pattern": "^[0-9]+$"
+                          },
+                          "minItems": 4,
+                          "maxItems": 4
                         }
                       },
                       "required": [
@@ -3392,7 +3449,9 @@
                     "passingOrder"
                   ],
                   "additionalProperties": false
-                }
+                },
+                "minItems": 3,
+                "maxItems": 3
               }
             },
             "required": [
@@ -3538,13 +3597,16 @@
           "sourceRefs"
         ],
         "additionalProperties": false
-      }
+      },
+      "minItems": 6,
+      "maxItems": 18
     },
     "render": {
       "type": "object",
       "properties": {
         "layoutId": {
-          "type": "string"
+          "type": "string",
+          "const": "tokyo9-production-locked"
         },
         "preserveSourceColors": {
           "type": "boolean"
@@ -3580,12 +3642,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://kidokira-apogee.github.io/kido-table/schemas/race-candidate-v1.schema.json",
   "title": "木戸表電子版 レース候補データ構造スキーマ",
-  "description": "2026-11-07時点の京都7R・京都12R候補v3の実データ構造と既存マスター項目を基準にした構造検証用スキーマ。項目追加や表示レイアウトの正本指定を行うものではない。",
+  "description": "マスタープロンプトの明示的な構造制約（6～18頭、近3走3行、成績4区分等）と、現行候補データの監査構造を検証するスキーマ。原文値・欠損状態・項目採否・表示結果の業務検証は別工程で行う。",
   "x-contract-notes": {
     "fieldPolicy": "既存マスタープロンプトで確定した項目を維持する。新規項目を追加しない。",
     "visualReference": "東京9Rは過去の画面参考資料であり、このデータスキーマの正本ではない。",
     "candidateStatus": "候補データはstatus.complete=falseのまま。正式登録を意味しない。",
-    "validationScope": "構造・型の検査。原資料との値一致、必須項目の業務ルール、表示結果の検査は別途行う。",
+    "validationScope": "JSON構造・型・明示的配列長・4区分数値形式の検査。原資料との値一致、フィールド別状態、項目採否、計算式、表示結果は別工程で検証する。",
     "samples": [
       "candidate-data/2026-11-01-kyoto-7_candidate_v3.json",
       "candidate-data/2026-10-31-kyoto-12_candidate_v3.json"
