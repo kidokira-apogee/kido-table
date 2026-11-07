@@ -9,23 +9,11 @@
       "venue": "京都",
       "raceNo": 12,
       "title": "1勝クラス",
-      "distance": "芝外B1600m",
-      "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]",
-      "horseCount": 18,
-      "status": "in_progress"
-    },
-    {
-      "id": "2026-11-01-tokyo-9",
-      "file": "2026-11-01-tokyo-9.json",
-      "date": "2026-11-01",
-      "dateLabel": "2026年11月1日（日）",
-      "venue": "東京",
-      "raceNo": 9,
-      "title": "紅葉ステークス",
-      "distance": "芝1600m（B）",
-      "classLabel": "3歳以上・3勝クラス",
-      "horseCount": 14,
-      "status": "complete"
+      "distance": "芝外1600m",
+      "classLabel": "3歳以上・1勝クラス",
+      "status": "sample",
+      "sampleLabel": "芝サンプル",
+      "horseCount": 18
     },
     {
       "id": "2026-11-01-kyoto-7",
@@ -36,9 +24,10 @@
       "raceNo": 7,
       "title": "1勝クラス",
       "distance": "ダート1400m",
-      "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]",
-      "horseCount": 16,
-      "status": "in_progress"
+      "classLabel": "3歳以上・1勝クラス",
+      "status": "sample",
+      "sampleLabel": "ダートサンプル",
+      "horseCount": 16
     }
   ]
 }
