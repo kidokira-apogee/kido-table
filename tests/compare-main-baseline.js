@@ -158,7 +158,7 @@ async function snapshot(page, label) {
       style[selector] = {};
       for (const property of properties) {
         style[selector][property] = property === 'grid-template-columns' && selector === '.stats'
-          ? 'columns:' + computed.gridTemplateColumns.trim().split(/\\s+/).filter(Boolean).length
+          ? 'columns:' + computed.gridTemplateColumns.trim().split(/\s+/).filter(Boolean).length
           : computed.getPropertyValue(property);
       }
       if (hadSameCourse) node.classList.add('same-course');
