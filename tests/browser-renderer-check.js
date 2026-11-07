@@ -13,12 +13,12 @@ const RACES = [
   {
     key: 'kyoto-7',
     file: 'candidate-data/2026-11-01-kyoto-7_candidate_v3.json',
-    manifest: { id: '2026-11-01-kyoto-7', date: '2026-11-01', venue: '京都', raceNo: 7, file: 'kyoto-7.json', title: '1勝クラス', classLabel: '３歳以上・１勝クラス', horseCount: 16, distance: 'ダ1400m', status: 'complete' }
+    manifest: { id: '2026-11-01-kyoto-7', date: '2026-11-01', venue: '京都', raceNo: 7, file: 'kyoto-7.json', title: '1勝クラス', classLabel: '３歳以上・１勝クラス', horseCount: 16, distance: 'ダ1400m', status: 'in-progress' }
   },
   {
     key: 'kyoto-12',
     file: 'candidate-data/2026-10-31-kyoto-12_candidate_v3.json',
-    manifest: { id: '2026-10-31-kyoto-12', date: '2026-10-31', venue: '京都', raceNo: 12, file: 'kyoto-12.json', title: '1勝クラス', classLabel: '３歳以上・１勝クラス', horseCount: 18, distance: '芝1600m', status: 'complete' }
+    manifest: { id: '2026-10-31-kyoto-12', date: '2026-10-31', venue: '京都', raceNo: 12, file: 'kyoto-12.json', title: '1勝クラス', classLabel: '３歳以上・１勝クラス', horseCount: 18, distance: '芝1600m', status: 'in-progress' }
   }
 ];
 
