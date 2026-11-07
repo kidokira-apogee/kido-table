@@ -105,7 +105,8 @@ function validateHorse(h, data, at, errors) {
   checkLabelList(h,t.conditions?.pace,['Sペ','Hペ'],at+'.pace',errors);
   checkLabelList(h,t.conditions?.turn,['右回','左回'],at+'.turn',errors);
   checkLabelList(h,t.conditions?.fieldSizeAndPopularity,['９頭下','10頭上','３人上','４人下'],at+'.fieldSizeAndPopularity',errors);
-  const frameLabel=String(h.frameNumber).replace(/[0-9]/g,d=>'０１２３４５６７８９'[Number(d)])+'枠';\n  checkLabelList(h,t.frameAndTop2?.frameRecords,['内枠','中枠','外枠',frameLabel],at+'.frameRecords',errors);
+  const frameLabel=String(h.frameNumber).replace(/[0-9]/g,d=>'０１２３４５６７８９'[Number(d)])+'枠';
+  checkLabelList(h,t.frameAndTop2?.frameRecords,['内枠','中枠','外枠',frameLabel],at+'.frameRecords',errors);
   if(!Array.isArray(t.frameAndTop2?.top2Records) || t.frameAndTop2.top2Records.map(x=>x.label).join('|')!==expected.top2.join('|')) fail(errors,at+'.top2Records','連対実績 labels/order mismatch');
   else t.frameAndTop2.top2Records.forEach((item,i)=>{checkSource(h,item,at+'.top2Records['+i+']',errors);if(typeof item.value!=='string')fail(errors,at+'.top2Records['+i+']','value string required');});
   const s=h.topSummary||{};
