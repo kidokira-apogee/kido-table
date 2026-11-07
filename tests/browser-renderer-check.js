@@ -219,6 +219,8 @@ async function main() {
       await page.locator('#race-detail-container .horse-card').first().waitFor();
       const data = loaded.get(race.key);
       const count = data.horses.length;
+      // Reset viewport for each race before the desktop pass.
+      await page.setViewportSize({ width: 1440, height: 1000 });
       const actualCards = await page.locator('#race-detail-container .horse-card').count();
       assert.equal(actualCards, count, race.key + ': rendered horse count');
 
