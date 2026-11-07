@@ -412,7 +412,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 <body>
 <main class="page">
 <section class="race-list-view" id="race-list-view">
-<header class="list-brand"><strong>木戸表 電子版</strong><span>開催月・週・日付・競馬場からレースを選択</span></header>
+<header class="list-brand"><strong>木戸表 電子版</strong><span>芝・ダートの完成レイアウト見本</span></header>
 <section class="archive-controls" aria-label="バックナンバー選択">
   <div class="archive-control-row"><label for="archive-month">MONTH</label><select id="archive-month" aria-label="開催月"></select></div>
   <div class="archive-filter-group"><span class="archive-label">WEEK</span><div class="archive-choice-row" id="archive-week-tabs"></div></div>
@@ -561,6 +561,24 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   renderDates();
  }
  function renderArchive(){
+  if(archive.races.length && archive.races.every(r=>r.status==='sample')){
+   document.querySelector('.archive-controls').hidden=true;
+   listHeading.textContent='芝・ダート 完成レイアウト見本';
+   listItems.innerHTML='';
+   archive.races.forEach(r=>{
+    const button=document.createElement('button');
+    button.type='button';button.className='race-list-item';
+    const raceNo=escapeHtml(r.raceNo??'');
+    const distance=r.distance?' ・ '+escapeHtml(r.distance):'';
+    const label=escapeHtml(r.sampleLabel||'サンプル');
+    const title=escapeHtml(r.title||'');
+    const meta=[r.classLabel,r.horseCount?String(r.horseCount)+'頭':''].filter(Boolean).map(escapeHtml).join('　｜　');
+    button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+label+'　'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+title+'</strong><span class="race-list-sub">'+meta+'</span></span><span aria-hidden="true" class="race-list-arrow">›</span>';
+    button.addEventListener('click',()=>openRace(r));
+    listItems.appendChild(button);
+   });
+   return;
+  }
   const months=[...new Set(archive.races.map(r=>saturdayKey(r.date).slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
   monthSelect.innerHTML='';
   months.forEach(m=>{
