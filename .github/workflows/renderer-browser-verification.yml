@@ -42,6 +42,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Validate master whitelist and exclusions
         run: node tests/validate-master-whitelist.js
+      - name: Validate candidate JSON schema
+        run: node tests/validate-candidate-schema.js
       - name: Run full-page browser verification
         run: node tests/browser-renderer-check.js
       - name: Compare main and structured renderer in Chromium
