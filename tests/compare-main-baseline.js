@@ -203,7 +203,7 @@ async function snapshot(page, label) {
       cardRight: cardSnapshots[0]?.right ?? null
     };
   }, {
-    selectors: selectors.filter(selector => selector !== '.racehead'),
+    selectors: layoutSelectors.filter(selector => selector !== '.racehead'),
     required: requiredSelectors,
     properties: styleProperties,
     geometry: geometrySelectors,
