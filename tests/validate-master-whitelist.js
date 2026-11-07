@@ -129,7 +129,13 @@ function validateHorse(h, data, at, errors) {
     if(!c[k]?.source) fail(errors,at+'.comments.'+k,'comment source reference required');
   }
   if(typeof c.rawCombined!=='string') fail(errors,at+'.comments.rawCombined','raw combined comment required');
-  if(c.splitStatus!=='split_by_explicit_labels') fail(errors,at+'.comments.splitStatus','explicit split status required');
+  if(!['split_by_explicit_labels','unclassified_requires_review'].includes(c.splitStatus)) {
+    fail(errors,at+'.comments.splitStatus','unsupported comment split status');
+  } else if(c.splitStatus==='unclassified_requires_review') {
+    if(c.current?.text!=='' || c.previousRun?.text!=='') fail(errors,at+'.comments','unclassified comments must not be assigned to current/previous text');
+    if(c.current?.isIchioshi===true) fail(errors,at+'.comments.current.isIchioshi','ichioshi cannot be assigned to an unclassified comment');
+    if(!c.rawCombined.trim()) fail(errors,at+'.comments.rawCombined','unclassified source text must be retained');
+  }
   if(!c.splitEvidence) fail(errors,at+'.comments.splitEvidence','split evidence required');
   inspectForbidden(t,at+'.dataTabs',errors);
 }
