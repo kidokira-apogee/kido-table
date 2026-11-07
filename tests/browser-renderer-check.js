@@ -163,6 +163,54 @@ async function verifyColors(page, data, label) {
   }, { raceData: data, label });
 }
 
+async function verifyMissingValueDisplay(page, data) {
+  return page.evaluate(raceData => {
+    const errors = [];
+    const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
+    const metricKeys = ['fieldSize','horseNumber','popularity','finish','margin','index','last3F','last3FRank','interval','blinkers'];
+    raceData.horses.slice().sort((a,b)=>a.horseNumber-b.horseNumber).forEach((horse, hi) => {
+      const card = cards[hi];
+      if (!card) return;
+      const runs = (horse.recentRuns || []).slice(0,3);
+      const runCards = [...card.querySelectorAll('.runs > .run')];
+      runs.forEach((run, ri) => {
+        const runCard = runCards[ri];
+        if (!runCard) return;
+        const metrics = [...runCard.querySelectorAll('.run-details > .metric')];
+        metricKeys.forEach((key, mi) => {
+          const value = run[key];
+          if (value === null || value === undefined || value === '') {
+            const actual = metrics[mi]?.querySelector('b')?.textContent.trim();
+            if (actual !== '—') errors.push('horse ' + horse.horseNumber + ' run ' + (ri+1) + ' ' + key + ': expected em dash, got ' + JSON.stringify(actual));
+          }
+        });
+        const checks = [
+          ['dateRaw', run.dateRaw, runCard.querySelector('.run-date')],
+          ['raceName', run.raceName, runCard.querySelector('.run-summary > strong')],
+          ['courseRaw', run.courseRaw, runCard.querySelector('.run-course')]
+        ];
+        for (const [key, value, node] of checks) {
+          if ((value === null || value === undefined || value === '') && node?.textContent.trim() !== '—') {
+            errors.push('horse ' + horse.horseNumber + ' run ' + (ri+1) + ' ' + key + ': missing value was not rendered as em dash');
+          }
+        }
+        if (!run.runningStyleRaw && runCard.querySelector('.run-passage > span:first-child b')?.textContent.trim() !== '—') {
+          errors.push('horse ' + horse.horseNumber + ' run ' + (ri+1) + ' runningStyleRaw: missing value was not rendered as em dash');
+        }
+        const passing = (run.passingOrder || []).filter(v => v !== null && v !== undefined && String(v).trim() !== '');
+        if (!passing.length && runCard.querySelector('.run-passage > span:nth-child(2) b')?.textContent.trim() !== '—') {
+          errors.push('horse ' + horse.horseNumber + ' run ' + (ri+1) + ' passingOrder: missing value was not rendered as em dash');
+        }
+      });
+    });
+    const badTokens = cards.flatMap(card => [...card.querySelectorAll('*')])
+      .filter(node => node.children.length === 0 && /\\b(undefined|null)\\b/i.test(node.textContent || ''))
+      .map(node => node.textContent.trim());
+    if (badTokens.length) errors.push('visible undefined/null tokens: ' + JSON.stringify(badTokens.slice(0,10)));
+    return errors;
+  }, data);
+}
+
 async function verifyTabs(page, expectedCards) {
   return page.evaluate(expectedCards => {
     const cards = [...document.querySelectorAll('#race-detail-container .horse-card')];
