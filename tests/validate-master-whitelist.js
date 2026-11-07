@@ -94,7 +94,7 @@ function validateHorse(h, data, at, errors) {
   const surface=data.race?.surface==='芝'?'芝':'ダ';
   checkLabelList(h,t.detail?.surfaceConditions,['坂有'+surface,'平坦'+surface,'重不'+surface],at+'.detail.surfaceConditions',errors);
   checkLabelList(h,t.distanceCourse?.distanceBands,['1000m-1300m','1400m-1600m','1700m-2000m','2100m-2400m'],at+'.distanceBands',errors);
-  const course=data.race?.venue+' '+surface+data.race?.distanceM+'m';
+  const course=data.race?.venue+surface+data.race?.distanceM+'m';
   const courseLabels=[course,'全場'+surface+(surface==='芝'?'1400m':'1200m'),'全場'+surface+(surface==='芝'?'1600m':'1400m'),'全場'+surface+(surface==='芝'?'1800m':'1600m')];
   checkLabelList(h,t.distanceCourse?.courseRecords,courseLabels,at+'.courseRecords',errors);
   checkLabelList(h,t.distanceCourse?.performance,expected.performance,at+'.performance',errors,false);
@@ -105,7 +105,7 @@ function validateHorse(h, data, at, errors) {
   checkLabelList(h,t.conditions?.pace,['Sペ','Hペ'],at+'.pace',errors);
   checkLabelList(h,t.conditions?.turn,['右回','左回'],at+'.turn',errors);
   checkLabelList(h,t.conditions?.fieldSizeAndPopularity,['９頭下','10頭上','３人上','４人下'],at+'.fieldSizeAndPopularity',errors);
-  checkLabelList(h,t.frameAndTop2?.frameRecords,['内枠','中枠','外枠',...Array.from({length:8},(_,i)=>(i+1)+'枠')].slice(0,4),at+'.frameRecords',errors);
+  const frameLabel=String(h.frameNumber).replace(/[0-9]/g,d=>'０１２３４５６７８９'[Number(d)])+'枠';\n  checkLabelList(h,t.frameAndTop2?.frameRecords,['内枠','中枠','外枠',frameLabel],at+'.frameRecords',errors);
   if(!Array.isArray(t.frameAndTop2?.top2Records) || t.frameAndTop2.top2Records.map(x=>x.label).join('|')!==expected.top2.join('|')) fail(errors,at+'.top2Records','連対実績 labels/order mismatch');
   else t.frameAndTop2.top2Records.forEach((item,i)=>{checkSource(h,item,at+'.top2Records['+i+']',errors);if(typeof item.value!=='string')fail(errors,at+'.top2Records['+i+']','value string required');});
   const s=h.topSummary||{};
@@ -128,7 +128,7 @@ function validateHorse(h, data, at, errors) {
     if(!c[k]?.source) fail(errors,at+'.comments.'+k,'comment source reference required');
   }
   if(typeof c.rawCombined!=='string') fail(errors,at+'.comments.rawCombined','raw combined comment required');
-  if(!['split_by_explicit_markers','split_confirmed'].includes(c.splitStatus)) fail(errors,at+'.comments.splitStatus','explicit split status required');
+  if(c.splitStatus!=='split_by_explicit_labels') fail(errors,at+'.comments.splitStatus','explicit split status required');
   if(!c.splitEvidence) fail(errors,at+'.comments.splitEvidence','split evidence required');
   inspectForbidden(t,at+'.dataTabs',errors);
 }
