@@ -41,22 +41,22 @@ def style(cell):
     return {"textColor": text_color, "backgroundColor": background}
 
 def race_date(header):
-    m = re.search(r"(\\d{4})年\\s*(\\d{1,2})月\\s*(\\d{1,2})日", header)
+    m = re.search(r"(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日", header)
     if not m: raise ValueError("A1から開催日を読み取れません")
     return f"{int(m[1]):04d}-{int(m[2]):02d}-{int(m[3]):02d}"
 
 def race_header(header):
-    m = re.search(r"【\\s*([０-９0-9]{1,2})\\s*Ｒ】\\s*(.*)", header)
+    m = re.search(r"【\s*([０-９0-9]{1,2})\s*Ｒ】\s*(.*)", header)
     if not m: raise ValueError("A2からレース番号・レース名を読み取れません")
     digits = m[1].translate(str.maketrans("０１２３４５６７８９","0123456789"))
     return int(digits), m[2].strip()
 
 def venue_name(header):
-    m = re.search(r"\\d+回([^\\d]+?)\\d+日目", header)
+    m = re.search(r"\d+回([^\d]+?)\d+日目", header)
     return m[1].strip() if m else ""
 
 def race_condition(text):
-    m = re.search(r"(芝|ダート|ダ)\\s*([0-9,]+)\\s*m", text)
+    m = re.search(r"(芝|ダート|ダ)\s*([0-9,]+)\s*m", text)
     return ("芝" if m and m[1] == "芝" else "ダート" if m else ""), (int(m[2].replace(",","")) if m else None)
 
 def extract_sheet(ws, workbook_name):
