@@ -170,8 +170,13 @@
     const summary = horse.topSummary || {};
     const frame = Number(horse.frameNumber);
     const frameClass = Number.isInteger(frame) && frame >= 1 && frame <= 8 ? ' frame-' + frame : '';
-    const affiliation = p.affiliation === '美浦' ? 'miho' : p.affiliation === '栗東' ? 'ritto' : '';
-    const affiliationLabel = p.affiliation ? '・' + p.affiliation + '所属' : '';
+    // 騎手・調教師の所属は別々に扱う。未確認の所属は着色しない。
+    // 旧データの affiliation は調教師側の所属として互換利用する。
+    const jockeyAffiliation = p.jockeyAffiliation === '美浦' ? 'miho' : p.jockeyAffiliation === '栗東' ? 'ritto' : '';
+    const trainerAffiliationValue = p.trainerAffiliation || p.affiliation || '';
+    const trainerAffiliation = trainerAffiliationValue === '美浦' ? 'miho' : trainerAffiliationValue === '栗東' ? 'ritto' : '';
+    const jockeyAffiliationLabel = p.jockeyAffiliation ? '・' + p.jockeyAffiliation + '所属' : '';
+    const trainerAffiliationLabel = trainerAffiliationValue ? '・' + trainerAffiliationValue + '所属' : '';
     const current = horse.comments?.current || {};
     const previous = horse.comments?.previousRun || {};
     const runs = (horse.recentRuns || []).slice(0, 3);
@@ -201,8 +206,8 @@
       '<div class="identity-main"><strong class="horse-name"' + styleAttr(profileStyles.horseName, applyColors) + '>' + display(horse.horseName) + '</strong><div class="horse-facts">' +
       '<span class="basic sex-age-pill"><label>性齢</label><b' + styleAttr(profileStyles.sexAge, applyColors) + '>' + display(p.sexAge) + '</b></span>' +
       '<span class="basic weight-pill"><label>斤量</label><b' + styleAttr(profileStyles.handicapWeight, applyColors) + '>' + (p.handicapWeight !== null && p.handicapWeight !== undefined && p.handicapWeight !== '' ? display(p.handicapWeight) + 'kg' : '—') + '</b></span>' +
-      '<span class="basic"><label>騎手</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors, true) + '>' + display(p.jockeyRaw) + '</b></span>' +
-      '<span class="basic"><label>調教師</label><b class="affiliation ' + affiliation + '" aria-label="' + esc(p.trainer) + esc(affiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors, true) + '>' + display(p.trainer) + '</b></span>' +
+      '<span class="basic"><label>騎手</label><b class="affiliation ' + jockeyAffiliation + '" aria-label="' + esc(p.jockeyRaw) + esc(jockeyAffiliationLabel) + '"' + styleAttr(profileStyles.jockeyRaw, applyColors, true) + '>' + display(p.jockeyRaw) + '</b></span>' +
+      '<span class="basic"><label>調教師</label><b class="affiliation ' + trainerAffiliation + '" aria-label="' + esc(p.trainer) + esc(trainerAffiliationLabel) + '"' + styleAttr(profileStyles.trainer, applyColors, true) + '>' + display(p.trainer) + '</b></span>' +
       '</div></div></div></div>' +
       '<div class="pedigree-inline"><strong class="pedigree-father"' + styleAttr(pedigreeStyles.sire, applyColors) + '>父　' + display(pedigree.sire) + '</strong>' +
       '<strong class="pedigree-mother"' + styleAttr(pedigreeStyles.damsire, applyColors) + '><span class="dam-name"' + styleAttr({ textColor: pedigreeStyles.dam?.textColor }, applyColors) + '>' + display(pedigree.dam) + '</span><span class="dam-line">（' + display(pedigree.damsire) + '）</span></strong></div></div>' +
