@@ -123,7 +123,7 @@
   function dataPanel(horse, key, race) {
     const data = horse.dataTabs?.[key] || {};
     if (key === 'detail') return '<div class="panel-grid">' +
-      statsCard('通算成績', data.overall) + statsCard(race.surface === '芝' ? '芝成績' : 'ダート成績', data.surfaceConditions) + '</div>';
+      statsCard('通算成績', data.overall) + statsCard('芝・ダート成績', data.surfaceConditions) + '</div>';
     if (key === 'distanceCourse') return '<div class="panel-grid">' +
       statsCard('距離別成績', data.distanceBands) + statsCard('同コース成績', data.courseRecords) + '</div>';
     if (key === 'conditions') {
