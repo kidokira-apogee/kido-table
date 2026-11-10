@@ -28,6 +28,19 @@
       "status": "sample",
       "sampleLabel": "ダートサンプル",
       "horseCount": 16
+    },
+    {
+      "id": "2026-11-08-tokyo-11",
+      "file": "2026-11-08-tokyo-11.json",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "東京",
+      "raceNo": 11,
+      "title": "第64回アルゼンチン共和国杯",
+      "distance": "芝2500m",
+      "classLabel": "3歳以上・オープン・GⅡ（ハンデ）",
+      "status": "published",
+      "horseCount": 18
     }
   ]
 }

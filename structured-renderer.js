@@ -123,16 +123,17 @@
   function dataPanel(horse, key, race) {
     const data = horse.dataTabs?.[key] || {};
     if (key === 'detail') return '<div class="panel-grid">' +
-      statsCard('通算成績', data.overall) + statsCard(race.surface === '芝' ? '芝条件' : 'ダート条件', data.surfaceConditions) + '</div>';
+      statsCard('通算成績', data.overall) + statsCard('芝・ダート成績', data.surfaceConditions) + '</div>';
     if (key === 'distanceCourse') return '<div class="panel-grid">' +
-      statsCard('距離帯別実績', data.distanceBands) + statsCard('コース別実績', data.courseRecords) + statsCard('上がり性能', data.performance) + '</div>';
+      statsCard('距離別成績', data.distanceBands) + statsCard('同コース成績', data.courseRecords) + '</div>';
     if (key === 'conditions') {
       const rotationSeason = [data.rotation, data.season].filter(Boolean);
-      const paceTurn = [...(data.pace || []), ...(data.turn || [])];
-      return '<div class="panel-grid">' + statsCard('ローテーション・季節', rotationSeason) +
-        statsCard('ペース・回り', paceTurn) + statsCard('頭数・人気別', data.fieldSizeAndPopularity) + '</div>';
+      return '<div class="panel-grid">' +
+        statsCard('ローテーション・季節', rotationSeason) +
+        statsCard('馬場・コース条件', data.terrain) +
+        statsCard('右回り・左回り', data.turn) + '</div>';
     }
-    return '<div class="panel-grid">' + statsCard('枠順別実績', data.frameRecords) + statsCard('連対実績', data.top2Records) + '</div>';
+    return '<div class="panel-grid"></div>';
   }
 
   function summaryChip(item, label, kind) {
@@ -160,9 +161,8 @@
     const runStyles = horseStyles.recentRuns || [];
     const tabs = [
       ['detail','詳細成績','detail'],
-      ['distanceCourse','距離・コース','distance'],
       ['conditions','条件別','conditions'],
-      ['frameAndTop2','枠順・連対実績','frame']
+      ['distanceCourse','距離・コース','distance']
     ];
     const tabButtons = tabs.map((tab, i) => '<button aria-selected="' + (i === 0 ? 'true' : 'false') + '" class="data-tab" data-panel="' + tab[2] + '-' + horse.horseNumber + '" role="tab" type="button">' + tab[1] + '</button>').join('');
     const panels = tabs.map((tab, i) => '<section class="data-panel' + (i === 0 ? ' active' : '') + '" id="' + tab[2] + '-' + horse.horseNumber + '" data-data-content="' + tab[2] + '-' + horse.horseNumber + '">' + dataPanel(horse, tab[0], race) + '</section>').join('');
