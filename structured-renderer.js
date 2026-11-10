@@ -13,6 +13,14 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[ch]);
   const display = value => value === null || value === undefined || value === '' ? '—' : esc(value);
+  // 着差だけはゼロの符号を保持し、小数第1位で表示する（0.0 / -0.0）。
+  const displayMargin = value => {
+    if (value === null || value === undefined || value === '') return '—';
+    const raw = String(value).trim();
+    if (/^[+-]?0(?:\.0+)?$/.test(raw)) return raw.startsWith('-') ? '-0.0' : '0.0';
+    if (typeof value === 'number' && Object.is(value, -0)) return '-0.0';
+    return display(value);
+  };
   const validColor = value => typeof value === 'string' && /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\([0-9.%\s,\/]+\)|hsla?\([0-9.%\s,\/]+\))$/i.test(value.trim());
   // Excelの既定ベース色とグレー塗りは、意味を持つ着色としてWebへ引き継がない。
   const isNeutralSourceFill = value => {
@@ -80,7 +88,8 @@
       const cellStyle = key === 'index'
         ? styleAttr({ textColor: styles?.[key]?.textColor }, applyColors)
         : styleAttr(styles?.[key], applyColors);
-      return '<div class="' + cls + '"' + cellStyle + '><small>' + label + '</small><b>' + display(value) + '</b></div>';
+      const shownValue = key === 'margin' ? displayMargin(value) : display(value);
+      return '<div class="' + cls + '"' + cellStyle + '><small>' + label + '</small><b>' + shownValue + '</b></div>';
     }).join('');
     const bodyWeight = run.bodyWeight ? display(run.bodyWeight) + 'kg' : '—';
     const weight = run.weight ? display(run.weight) + 'kg' : '—';
