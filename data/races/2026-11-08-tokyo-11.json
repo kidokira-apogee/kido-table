@@ -1,0 +1,7087 @@
+{
+  "schemaVersion": "2.0.0",
+  "race": {
+    "id": "2026-11-08-tokyo-11",
+    "date": "2026-11-08",
+    "venue": "東京",
+    "raceNumber": 11,
+    "name": "第64回アルゼンチン共和国杯",
+    "surface": "芝",
+    "distanceM": 2500,
+    "direction": "左",
+    "fieldSize": 18,
+    "meetingLabel": "5回東京2日目",
+    "startTime": "15:30",
+    "weightType": "ハンデ",
+    "classLabel": "３歳以上・オープン・Ｇ２(ハンデ)(国際)(特指)",
+    "currentGoing": null,
+    "courseLabel": "芝2500m (B)"
+  },
+  "status": {
+    "sample": false,
+    "complete": true,
+    "sourceWorkbook": "4_デ－タ.xlsx"
+  },
+  "horses": [
+    {
+      "horseNumber": 1,
+      "frameNumber": 1,
+      "horseName": "ジーティーダーリン",
+      "profile": {
+        "horseNumber": "1",
+        "horseName": "ジーティーダーリン",
+        "sexAge": "牡4",
+        "handicapWeight": "55",
+        "jockeyRaw": "大野拓弥",
+        "jockey": "大野拓弥",
+        "affiliation": "栗東",
+        "trainer": "田中克典"
+      },
+      "pedigree": {
+        "sire": "サートゥルナーリア",
+        "dam": "ディアマイダーリン",
+        "damsire": "ハーツクライ",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "9.12",
+          "courseRaw": "阪･T20",
+          "ageClass": "３上",
+          "class": "Ｇ３",
+          "raceName": "チャレンＨG3",
+          "weight": "55",
+          "jockey": "松本大輝",
+          "bodyWeight": "516",
+          "bodyWeightChange": "8",
+          "going": "良",
+          "fieldSize": "16",
+          "horseNumber": "2",
+          "popularity": "8",
+          "finish": "15",
+          "margin": "3.1",
+          "index": "56",
+          "last3F": "38",
+          "last3FRank": "15",
+          "interval": "14",
+          "blinkers": "",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "2"
+          ],
+          "runningStyleRaw": "逃"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6. 6",
+          "courseRaw": "阪･T20",
+          "ageClass": "３上",
+          "class": "3勝",
+          "raceName": "垂水Ｓ･3勝",
+          "weight": "58",
+          "jockey": "松本大輝",
+          "bodyWeight": "508",
+          "bodyWeightChange": "-2",
+          "going": "良",
+          "fieldSize": "11",
+          "horseNumber": "2",
+          "popularity": "7",
+          "finish": "1",
+          "margin": "-0.3",
+          "index": "77",
+          "last3F": "34.1",
+          "last3FRank": "7",
+          "interval": "15",
+          "blinkers": "",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "runningStyleRaw": "逃"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "2.21",
+          "courseRaw": "東･D21",
+          "ageClass": "４上",
+          "class": "3勝",
+          "raceName": "金蹄Ｓ･3勝",
+          "weight": "57",
+          "jockey": "ルメール",
+          "bodyWeight": "510",
+          "bodyWeightChange": "0",
+          "going": "良",
+          "fieldSize": "16",
+          "horseNumber": "14",
+          "popularity": "1",
+          "finish": "14",
+          "margin": "3.7",
+          "index": "40",
+          "last3F": "40.9",
+          "last3FRank": "14",
+          "interval": "3",
+          "blinkers": "",
+          "passingOrder": [
+            "6",
+            "6",
+            "6",
+            "6"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "0",
+            "1",
+            "5"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "2",
+            "0",
+            "0",
+            "4"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "2",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "0",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "2",
+                "0",
+                "1",
+                "1"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "2",
+                "0",
+                "1",
+                "1"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中7～9週",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "0",
+              "0",
+              "1",
+              "3"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "2",
+                "0",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "0",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【杉浦助手】ハンデは手頃で1週前追いに騎乗してくれた鞍上の感触も良かった。前走は後続につつかれて厳しいペースだったのですんなり運べるようなら",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【杉浦助手】2週続けてジョッキー騎乗で追い切って上々の動き。仕上がりはいいね。他馬が苦にするなら道悪は歓迎。ハンデ差を生かせるようなら",
+          "previousRace": "2026年09月12日阪神11R\nチャレンジカップＧⅢ15着(8人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 2,
+      "frameNumber": 1,
+      "horseName": "ビザンチンドリーム",
+      "profile": {
+        "horseNumber": "2",
+        "horseName": "ビザンチンドリーム",
+        "sexAge": "牡5",
+        "handicapWeight": "59.5",
+        "jockeyRaw": "国分優作",
+        "jockey": "国分優作",
+        "affiliation": "栗東",
+        "trainer": "坂口智康"
+      },
+      "pedigree": {
+        "sire": "エピファネイア",
+        "dam": "ジャポニカーラ",
+        "damsire": "ジャングルポケット",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#00FF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "6.14",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "宝塚記念G1",
+          "weight": "58",
+          "jockey": "西村淳也",
+          "bodyWeight": "466",
+          "bodyWeightChange": "",
+          "going": "重",
+          "fieldSize": "18",
+          "horseNumber": "6",
+          "popularity": "7",
+          "finish": "15",
+          "margin": "3",
+          "index": "66",
+          "last3F": "37.1",
+          "last3FRank": "15",
+          "interval": "17",
+          "blinkers": "",
+          "passingOrder": [
+            "16",
+            "16",
+            "12",
+            "11"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "2.14",
+          "courseRaw": "ｶﾀ･T24",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "アミＴG2",
+          "weight": "58",
+          "jockey": "デムーロ",
+          "bodyWeight": "---",
+          "bodyWeightChange": "",
+          "going": "良",
+          "fieldSize": "7",
+          "horseNumber": "1",
+          "popularity": "--",
+          "finish": "7",
+          "margin": "----",
+          "index": "",
+          "last3F": "----",
+          "last3FRank": "",
+          "interval": "19",
+          "blinkers": "",
+          "passingOrder": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "runningStyleRaw": ""
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "10. 5",
+          "courseRaw": "仏･T24",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "凱旋門G1",
+          "weight": "59.5",
+          "jockey": "マーフィ",
+          "bodyWeight": "---",
+          "bodyWeightChange": "",
+          "going": "重",
+          "fieldSize": "17",
+          "horseNumber": "6",
+          "popularity": "--",
+          "finish": "5",
+          "margin": "0.9",
+          "index": "",
+          "last3F": "----",
+          "last3FRank": "",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "runningStyleRaw": "－"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "1",
+            "0",
+            "8"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "1",
+            "0",
+            "8"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "54%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "1",
+                "0",
+                "8"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "1",
+                "0",
+                "8"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "1",
+                "0",
+                "8"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中15週以上",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "3"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "3"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "5"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "3",
+                "1",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "3",
+                "1",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【三津谷助手】放牧明け。前走は直前の雨で馬場が悪くなり過ぎた。いつも通り状態はやるたびに良くなっている。ジョッキーも普段からずっとコンタクトを取ってくれている。周りとの斤量差がどうかも、仕上がりは悪くない",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【坂口調教師】前走はいつもよりテンションの高いところがあった。中間は落ち着きも問題ないし、この1年で体も成長している。少しスタートの遅いところはあるが、流れが向けば阪神2200mもこなせると思う。心肺機能の優れた馬。そこを生かした競馬をしてほしい",
+          "previousRace": "2026年06月14日阪神11R\n宝塚記念ＧⅠ15着(7人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 3,
+      "frameNumber": 2,
+      "horseName": "マイネルエンペラー",
+      "profile": {
+        "horseNumber": "3",
+        "horseName": "マイネルエンペラー",
+        "sexAge": "牡6",
+        "handicapWeight": "58.5",
+        "jockeyRaw": "吉村誠之",
+        "jockey": "吉村誠之",
+        "affiliation": "栗東",
+        "trainer": "清水久詞"
+      },
+      "pedigree": {
+        "sire": "ゴールドシップ",
+        "dam": "マイネテレジア",
+        "damsire": "ロージズインメイ",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "57",
+          "jockey": "吉村誠之",
+          "bodyWeight": "488",
+          "bodyWeightChange": "2",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "10",
+          "popularity": "8",
+          "finish": "2",
+          "margin": "0.1",
+          "index": "88",
+          "last3F": "34.7",
+          "last3FRank": "3",
+          "interval": "16",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "4",
+            "4",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6.14",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "宝塚記念G1",
+          "weight": "58",
+          "jockey": "川田将雅",
+          "bodyWeight": "486",
+          "bodyWeightChange": "-4",
+          "going": "重",
+          "fieldSize": "18",
+          "horseNumber": "12",
+          "popularity": "13",
+          "finish": "10",
+          "margin": "1.7",
+          "index": "79",
+          "last3F": "36.9",
+          "last3FRank": "13",
+          "interval": "12",
+          "blinkers": "",
+          "passingOrder": [
+            "3",
+            "3",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "3.22",
+          "courseRaw": "阪･T30",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "阪神大賞G2",
+          "weight": "58",
+          "jockey": "丹内祐次",
+          "bodyWeight": "490",
+          "bodyWeightChange": "-4",
+          "going": "良",
+          "fieldSize": "10",
+          "horseNumber": "7",
+          "popularity": "4",
+          "finish": "5",
+          "margin": "1",
+          "index": "98",
+          "last3F": "35.3",
+          "last3FRank": "5",
+          "interval": "8",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "5",
+            "2",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "5",
+            "6",
+            "2",
+            "13"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "5",
+            "6",
+            "2",
+            "13"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "1",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "2",
+            "2",
+            "1"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "4%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "5",
+                "6",
+                "2",
+                "13"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "6",
+                "2",
+                "13"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "6",
+                "2",
+                "13"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "2",
+              "4",
+              "1",
+              "1"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "2",
+                "2",
+                "7"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "2",
+                "4",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "4",
+                "4",
+                "0",
+                "12"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "2",
+                "2",
+                "1"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "2",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "2",
+                "4",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "3"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "3",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【清水久調教師】ここまで順調にきている。前走は惜しい競馬だった。競馬場はどこでも大丈夫なタイプ。追い切り後の雰囲気も良かったし、一回使って馬も良く見える",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【清水久調教師】具合はいい。6歳になるが、まだまだ馬は若い。もともと使えば良くなるタイプなので、休み明けの分がどうか。ここでいい内容のレースをして次につなげたい",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ2着(8人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 4,
+      "frameNumber": 2,
+      "horseName": "ミラージュナイト",
+      "profile": {
+        "horseNumber": "4",
+        "horseName": "ミラージュナイト",
+        "sexAge": "牡4",
+        "handicapWeight": "57",
+        "jockeyRaw": "西村淳也",
+        "jockey": "西村淳也",
+        "affiliation": "栗東",
+        "trainer": "杉山佳明"
+      },
+      "pedigree": {
+        "sire": "バゴ",
+        "dam": "ラキシス",
+        "damsire": "ディープインパクト",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FF00",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "7.26",
+          "courseRaw": "札･T26",
+          "ageClass": "３上",
+          "class": "OP(L)",
+          "raceName": "札幌日経(L)",
+          "weight": "57",
+          "jockey": "西村淳也",
+          "bodyWeight": "490",
+          "bodyWeightChange": "-8",
+          "going": "良",
+          "fieldSize": "13",
+          "horseNumber": "2",
+          "popularity": "1",
+          "finish": "1",
+          "margin": "-0.2",
+          "index": "71",
+          "last3F": "35.2",
+          "last3FRank": "3",
+          "interval": "8",
+          "blinkers": "",
+          "passingOrder": [
+            "7",
+            "8",
+            "4",
+            "2"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "5.31",
+          "courseRaw": "東･T25",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "目黒記念ＨG2",
+          "weight": "56",
+          "jockey": "西村淳也",
+          "bodyWeight": "498",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "8",
+          "popularity": "4",
+          "finish": "4",
+          "margin": "0.2",
+          "index": "84",
+          "last3F": "33.6",
+          "last3FRank": "3",
+          "interval": "15",
+          "blinkers": "",
+          "passingOrder": [
+            "7",
+            "8",
+            "8",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "2.14",
+          "courseRaw": "京･T20",
+          "ageClass": "４上",
+          "class": "3勝",
+          "raceName": "飛鳥Ｓ･3勝",
+          "weight": "57",
+          "jockey": "藤岡佑介",
+          "bodyWeight": "504",
+          "bodyWeightChange": "-2",
+          "going": "良",
+          "fieldSize": "16",
+          "horseNumber": "2",
+          "popularity": "1",
+          "finish": "1",
+          "margin": "-0.1",
+          "index": "77",
+          "last3F": "34.8",
+          "last3FRank": "1",
+          "interval": "2",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "6",
+            "5",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "5",
+            "2",
+            "2",
+            "3"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "5",
+            "2",
+            "2",
+            "3"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "1",
+            "1",
+            "2"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "8%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "5",
+                "2",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "2",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "2",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中10～14週",
+            "record": [
+              "1",
+              "0",
+              "1",
+              "1"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "0",
+              "1",
+              "0",
+              "2"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "2",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "4",
+                "0",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "1",
+                "1",
+                "2"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "0",
+                "1",
+                "1",
+                "0"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【杉山佳調教師】暑さを考慮してここまで待った。涼しくなって顕著に元気が出てきた。追うたびに良くなっているという言葉がピッタリ。57キロの斤量は想定内だし、スムーズな競馬をしてくれれば",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【杉山佳調教師】転厩初戦。1週前に栗東でしっかりと追い切って札幌へ。まだ良くなりそうな馬だが、態勢は整ったと思う。品があっていい雰囲気。好レースを期待したい",
+          "previousRace": "2026年07月26日札幌11R\n札幌日経賞リステッド1着(1人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 5,
+      "frameNumber": 3,
+      "horseName": "ドゥラドーレス",
+      "profile": {
+        "horseNumber": "5",
+        "horseName": "ドゥラドーレス",
+        "sexAge": "セ7",
+        "handicapWeight": "58",
+        "jockeyRaw": "ルメール",
+        "jockey": "ルメール",
+        "affiliation": "美浦",
+        "trainer": "宮田敬介"
+      },
+      "pedigree": {
+        "sire": "ドゥラメンテ",
+        "dam": "ロカ",
+        "damsire": "ハービンジャー",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "5.16",
+          "courseRaw": "新･T20",
+          "ageClass": "４上",
+          "class": "Ｇ３",
+          "raceName": "新潟大賞ＨG3",
+          "weight": "58",
+          "jockey": "ルメール",
+          "bodyWeight": "500",
+          "bodyWeightChange": "2",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "6",
+          "popularity": "1",
+          "finish": "4",
+          "margin": "0.2",
+          "index": "87",
+          "last3F": "33.7",
+          "last3FRank": "2",
+          "interval": "9",
+          "blinkers": "",
+          "passingOrder": [
+            "",
+            "",
+            "8",
+            "8"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "3.15",
+          "courseRaw": "名･T20",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "金鯱賞G2",
+          "weight": "57",
+          "jockey": "戸崎圭太",
+          "bodyWeight": "498",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "1",
+          "popularity": "2",
+          "finish": "5",
+          "margin": "0.1",
+          "index": "88",
+          "last3F": "33.9",
+          "last3FRank": "4",
+          "interval": "7",
+          "blinkers": "",
+          "passingOrder": [
+            "9",
+            "8",
+            "8",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "1.25",
+          "courseRaw": "中･T22",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "アメリカG2",
+          "weight": "57",
+          "jockey": "ルメール",
+          "bodyWeight": "504",
+          "bodyWeightChange": "6",
+          "going": "良",
+          "fieldSize": "16",
+          "horseNumber": "14",
+          "popularity": "1",
+          "finish": "2",
+          "margin": "0.3",
+          "index": "90",
+          "last3F": "34.5",
+          "last3FRank": "2",
+          "interval": "18",
+          "blinkers": "",
+          "passingOrder": [
+            "12",
+            "12",
+            "9",
+            "8"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "5",
+            "4",
+            "2",
+            "4"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "5",
+            "4",
+            "2",
+            "4"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "3",
+            "1",
+            "1",
+            "3"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "40%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "5",
+                "4",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "4",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "4",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中15週以上",
+            "record": [
+              "2",
+              "1",
+              "0",
+              "1"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "1",
+              "0",
+              "2"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "3",
+                "1",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "4",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "2",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "2",
+                "3",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "3",
+                "1",
+                "1",
+                "3"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "5",
+                "2",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "0",
+                "2",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【宮田調教師】去勢明け。いい頃に比べると筋肉の張りは物足りないが、動きは悪くない。ここ2走よりはバランスもいい。ここ数戦はズブさが出ているので、距離が延びるのは良さそう。極端な上がり勝負よりタフな流れになる方がいい",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【宮田調教師】前走は進路が狭くなる不利もあり、脚を余した感も。前走時に馬場入りをゴネる面を見せたので、今回は飽きがこないよう工夫し、狙い通りに調整できた。長く脚を使えるので、新潟外回りはフィットしそう。今のタフな馬場もむしろいいのでは。ここで重賞を取らせたい",
+          "previousRace": "2026年05月16日新潟11R\n新潟大賞典ＧⅢ4着(1人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 6,
+      "frameNumber": 3,
+      "horseName": "ファミリータイム",
+      "profile": {
+        "horseNumber": "6",
+        "horseName": "ファミリータイム",
+        "sexAge": "牡5",
+        "handicapWeight": "56",
+        "jockeyRaw": "菅原明良",
+        "jockey": "菅原明良",
+        "affiliation": "栗東",
+        "trainer": "石坂公一"
+      },
+      "pedigree": {
+        "sire": "リアルスティール",
+        "dam": "プリオバーン",
+        "damsire": "Galileo",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "57",
+          "jockey": "鮫島克駿",
+          "bodyWeight": "484",
+          "bodyWeightChange": "2",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "11",
+          "popularity": "9",
+          "finish": "12",
+          "margin": "1",
+          "index": "79",
+          "last3F": "35.1",
+          "last3FRank": "11",
+          "interval": "16",
+          "blinkers": "",
+          "passingOrder": [
+            "8",
+            "8",
+            "11",
+            "12"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6.14",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "宝塚記念G1",
+          "weight": "58",
+          "jockey": "幸英明",
+          "bodyWeight": "482",
+          "bodyWeightChange": "0",
+          "going": "重",
+          "fieldSize": "18",
+          "horseNumber": "7",
+          "popularity": "18",
+          "finish": "6",
+          "margin": "1.4",
+          "index": "82",
+          "last3F": "36.1",
+          "last3FRank": "6",
+          "interval": "12",
+          "blinkers": "",
+          "passingOrder": [
+            "9",
+            "9",
+            "8",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "3.22",
+          "courseRaw": "阪･T30",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "阪神大賞G2",
+          "weight": "57",
+          "jockey": "松山弘平",
+          "bodyWeight": "482",
+          "bodyWeightChange": "2",
+          "going": "良",
+          "fieldSize": "10",
+          "horseNumber": "3",
+          "popularity": "5",
+          "finish": "9",
+          "margin": "2.4",
+          "index": "84",
+          "last3F": "36.3",
+          "last3FRank": "9",
+          "interval": "9",
+          "blinkers": "",
+          "passingOrder": [
+            "2",
+            "2",
+            "2",
+            "8"
+          ],
+          "runningStyleRaw": "後"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "5",
+            "1",
+            "8"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "5",
+            "1",
+            "8"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "3",
+            "2",
+            "0",
+            "3"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "6%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "5",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "5",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "5",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "0",
+              "2",
+              "0",
+              "1"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "1",
+              "0",
+              "1"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "4",
+                "3",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "2",
+                "1",
+                "4"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "2",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "1",
+                "3",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "3",
+                "2",
+                "0",
+                "3"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "0",
+                "2",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "4",
+                "3",
+                "1",
+                "4"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "3",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【金折助手】短期放牧を挟んで順調な仕上がり。東京コースへの対応がカギとなりそうですが、積極的に前々でレースを進めて、しぶとさを生かせるようならですね",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【金折助手】ＧⅠで見せ場をつくれた前走。直前の雨が味方したところもあると思います。自分のリズムで走ればしぶとさを発揮するタイプ。少し時計はかかってほしいですね",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ12着(9人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 7,
+      "frameNumber": 4,
+      "horseName": "ファイアンクランツ",
+      "profile": {
+        "horseNumber": "7",
+        "horseName": "ファイアンクランツ",
+        "sexAge": "牡4",
+        "handicapWeight": "58",
+        "jockeyRaw": "岩田望来",
+        "jockey": "岩田望来",
+        "affiliation": "美浦",
+        "trainer": "堀宣行"
+      },
+      "pedigree": {
+        "sire": "ドゥラメンテ",
+        "dam": "カラフルブラッサム",
+        "damsire": "ハーツクライ",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "5.31",
+          "courseRaw": "東･T25",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "目黒記念ＨG2",
+          "weight": "56",
+          "jockey": "レーン",
+          "bodyWeight": "476",
+          "bodyWeightChange": "6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "4",
+          "popularity": "3",
+          "finish": "1",
+          "margin": "0",
+          "index": "86",
+          "last3F": "33.7",
+          "last3FRank": "5",
+          "interval": "14",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "5",
+            "5",
+            "4"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "2.21",
+          "courseRaw": "東･T34",
+          "ageClass": "４上",
+          "class": "Ｇ３",
+          "raceName": "ダイヤモＨG3",
+          "weight": "54",
+          "jockey": "大野拓弥",
+          "bodyWeight": "470",
+          "bodyWeightChange": "10",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "3",
+          "popularity": "3",
+          "finish": "2",
+          "margin": "0.2",
+          "index": "47",
+          "last3F": "34.4",
+          "last3FRank": "1",
+          "interval": "23",
+          "blinkers": "",
+          "passingOrder": [
+            "9",
+            "10",
+            "10",
+            "8"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "9.15",
+          "courseRaw": "中･T22",
+          "ageClass": "３歳",
+          "class": "Ｇ２",
+          "raceName": "セントラG2",
+          "weight": "57",
+          "jockey": "モレイラ",
+          "bodyWeight": "460",
+          "bodyWeightChange": "4",
+          "going": "良",
+          "fieldSize": "12",
+          "horseNumber": "9",
+          "popularity": "3",
+          "finish": "12",
+          "margin": "1.8",
+          "index": "69",
+          "last3F": "36.4",
+          "last3FRank": "12",
+          "interval": "15",
+          "blinkers": "",
+          "passingOrder": [
+            "9",
+            "9",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "マ"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "2",
+            "3",
+            "2",
+            "3"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "2",
+            "3",
+            "2",
+            "3"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "1",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "3",
+            "0",
+            "2"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "2",
+                "3",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "2",
+                "3",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "2",
+                "3",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中15週以上",
+            "record": [
+              "0",
+              "1",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "0",
+              "0",
+              "0",
+              "2"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "3",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "3",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "0"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "1",
+                "0",
+                "2",
+                "1"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "3",
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "0",
+                "2",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "2",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【堀調教師】晩成型の長距離タイプでフットワークが大きいので、瞬発力を鍛えるよりも長所を伸ばしたいと考えています。特にこの馬のリズムとペースを一致させることが大事です。直前は3頭併せの真ん中で気を抜かせないようにしましたが、折り合いはついていたし、この馬とすれば反応良く、速いラップを刻むことができました。特に強調したいのが息がいいこと、仕上がりは良好です",
+          "isIchioshi": true
+        },
+        "previousRun": {
+          "text": "【堀調教師】2日に帰厩。20日の調教後の馬体重は483キロ。先週に引き続きレーン騎手で追い切り、ゲートの確認もして態勢は整った。ダイヤモンドＳの時のテンションは許容範囲内。当日落ち着いていれば、力を発揮できる",
+          "previousRace": "2026年05月31日東京12R\n目黒記念ＧⅡ1着(3人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 8,
+      "frameNumber": 4,
+      "horseName": "ジョイボーイ",
+      "profile": {
+        "horseNumber": "8",
+        "horseName": "ジョイボーイ",
+        "sexAge": "牡4",
+        "handicapWeight": "55",
+        "jockeyRaw": "横山武史",
+        "jockey": "横山武史",
+        "affiliation": "栗東",
+        "trainer": "四位洋文"
+      },
+      "pedigree": {
+        "sire": "レイデオロ",
+        "dam": "マンハイム",
+        "damsire": "ダイワメジャー",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "9.21",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "3勝",
+          "raceName": "キタサＨ･3勝",
+          "weight": "56",
+          "jockey": "松山弘平",
+          "bodyWeight": "488",
+          "bodyWeightChange": "10",
+          "going": "良",
+          "fieldSize": "16",
+          "horseNumber": "11",
+          "popularity": "4",
+          "finish": "1",
+          "margin": "-0.1",
+          "index": "72",
+          "last3F": "34.5",
+          "last3FRank": "7",
+          "interval": "14",
+          "blinkers": "",
+          "passingOrder": [
+            "6",
+            "8",
+            "7",
+            "5"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6.14",
+          "courseRaw": "東･T24",
+          "ageClass": "３上",
+          "class": "3勝",
+          "raceName": "江の島Ｓ･3勝",
+          "weight": "58",
+          "jockey": "石橋脩",
+          "bodyWeight": "478",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "8",
+          "popularity": "6",
+          "finish": "4",
+          "margin": "0.5",
+          "index": "79",
+          "last3F": "34.6",
+          "last3FRank": "4",
+          "interval": "34",
+          "blinkers": "",
+          "passingOrder": [
+            "13",
+            "11",
+            "9",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "10.18",
+          "courseRaw": "京･T22",
+          "ageClass": "３上",
+          "class": "2勝",
+          "raceName": "清滝特別･2勝",
+          "weight": "55",
+          "jockey": "岩田望来",
+          "bodyWeight": "484",
+          "bodyWeightChange": "0",
+          "going": "良",
+          "fieldSize": "10",
+          "horseNumber": "2",
+          "popularity": "1",
+          "finish": "1",
+          "margin": "-0.1",
+          "index": "64",
+          "last3F": "33.6",
+          "last3FRank": "1",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "3",
+            "3",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "1",
+            "1",
+            "2"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "1",
+            "1",
+            "2"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "50%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "2",
+              "1",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "2",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "3",
+                "1",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "3",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【四位調教師】前走内容や馬体を見ると、こちらが思っている以上に力をつけていると感じさせます。東京コース、ハンデ、デキともにいいですし、強い相手ですがどれだけやれるか楽しみです",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【四位調教師】前走は長欠明けで初の左回りもこなして見せ場十分。夏場は適鞍がなく、休養させてここへ。調教をしっかりやれて道中の行きっぷりもいいし、あとは内回りにうまく対応できれば",
+          "previousRace": "2026年09月21日阪神10R\nキタサンブラックカップ1着(4人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 9,
+      "frameNumber": 5,
+      "horseName": "レッドバンデ",
+      "profile": {
+        "horseNumber": "9",
+        "horseName": "レッドバンデ",
+        "sexAge": "牡4",
+        "handicapWeight": "57",
+        "jockeyRaw": "佐々木大",
+        "jockey": "佐々木大",
+        "affiliation": "美浦",
+        "trainer": "大竹正博"
+      },
+      "pedigree": {
+        "sire": "キズナ",
+        "dam": "フィオドラ",
+        "damsire": "Lord of England",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#00FF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10.12",
+          "courseRaw": "東･T24",
+          "ageClass": "３上",
+          "class": "3勝",
+          "raceName": "昇仙峡Ｓ･3勝",
+          "weight": "58",
+          "jockey": "ルメール",
+          "bodyWeight": "496",
+          "bodyWeightChange": "16",
+          "going": "良",
+          "fieldSize": "11",
+          "horseNumber": "11",
+          "popularity": "1",
+          "finish": "1",
+          "margin": "-0.1",
+          "index": "76",
+          "last3F": "34",
+          "last3FRank": "1",
+          "interval": "29",
+          "blinkers": "",
+          "passingOrder": [
+            "7",
+            "6",
+            "5",
+            "4"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "3.22",
+          "courseRaw": "阪･T30",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "阪神大賞G2",
+          "weight": "56",
+          "jockey": "佐々木大",
+          "bodyWeight": "480",
+          "bodyWeightChange": "-12",
+          "going": "良",
+          "fieldSize": "10",
+          "horseNumber": "6",
+          "popularity": "3",
+          "finish": "7",
+          "margin": "1.8",
+          "index": "90",
+          "last3F": "36",
+          "last3FRank": "8",
+          "interval": "5",
+          "blinkers": "",
+          "passingOrder": [
+            "8",
+            "8",
+            "5",
+            "3"
+          ],
+          "runningStyleRaw": "マ"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "2.14",
+          "courseRaw": "東･T24",
+          "ageClass": "４上",
+          "class": "2勝",
+          "raceName": "箱根特別･2勝",
+          "weight": "57",
+          "jockey": "佐々木大",
+          "bodyWeight": "492",
+          "bodyWeightChange": "-2",
+          "going": "良",
+          "fieldSize": "8",
+          "horseNumber": "7",
+          "popularity": "1",
+          "finish": "1",
+          "margin": "-0.2",
+          "index": "77",
+          "last3F": "33",
+          "last3FRank": "1",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "4",
+            "4",
+            "4",
+            "4"
+          ],
+          "runningStyleRaw": "先"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "0",
+            "2",
+            "4"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "0",
+            "2",
+            "4"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "3",
+            "0",
+            "1",
+            "1"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "30%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "0",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "0",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "0",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中3週",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "1",
+              "1"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "3",
+                "0",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "4",
+                "0",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "3",
+                "0",
+                "1",
+                "1"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "0",
+                "0",
+                "1",
+                "0"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "4",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "3",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【大竹調教師】1週前にある程度やったこともあり当週の追い切りはいい反応を見せていたと思う。復帰戦だった前走とは違ってしっかり仕上がった。東京は好相性の競馬場。今後長くＧⅠの舞台で活躍してもらうためにも、ここはいい結果を期待したい",
+          "isIchioshi": true
+        },
+        "previousRun": {
+          "text": "【大竹調教師】さすがに結構な間隔が空いたので動きに関しては何とか間に合った印象ですね。前走は距離というよりも外々を回るロスが大きかった。体調はいいので自己条件に戻して地力でどこまでやれるか",
+          "previousRace": "2026年10月12日東京10R\n昇仙峡ステークス1着(1人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 10,
+      "frameNumber": 5,
+      "horseName": "ボーンディスウェイ",
+      "profile": {
+        "horseNumber": "10",
+        "horseName": "ボーンディスウェイ",
+        "sexAge": "牡7",
+        "handicapWeight": "56",
+        "jockeyRaw": "マーカン",
+        "jockey": "マーカン",
+        "affiliation": "美浦",
+        "trainer": "牧光二"
+      },
+      "pedigree": {
+        "sire": "ハーツクライ",
+        "dam": "ウィンドハック",
+        "damsire": "Platini",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC080",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10.12",
+          "courseRaw": "東･T20",
+          "ageClass": "３上",
+          "class": "OP(L)",
+          "raceName": "オクトＨ(L)",
+          "weight": "56",
+          "jockey": "木幡巧也",
+          "bodyWeight": "496",
+          "bodyWeightChange": "6",
+          "going": "良",
+          "fieldSize": "18",
+          "horseNumber": "5",
+          "popularity": "6",
+          "finish": "9",
+          "margin": "1",
+          "index": "73",
+          "last3F": "35.2",
+          "last3FRank": "12",
+          "interval": "6",
+          "blinkers": "B",
+          "passingOrder": [
+            "",
+            "6",
+            "8",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "8.3",
+          "courseRaw": "新･T20",
+          "ageClass": "３上",
+          "class": "Ｇ３",
+          "raceName": "新潟記念G3",
+          "weight": "57",
+          "jockey": "丸山元気",
+          "bodyWeight": "490",
+          "bodyWeightChange": "-4",
+          "going": "稍",
+          "fieldSize": "11",
+          "horseNumber": "1",
+          "popularity": "11",
+          "finish": "7",
+          "margin": "0.4",
+          "index": "84",
+          "last3F": "34.5",
+          "last3FRank": "10",
+          "interval": "7",
+          "blinkers": "B",
+          "passingOrder": [
+            "",
+            "",
+            "2",
+            "2"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "7.12",
+          "courseRaw": "福･T20",
+          "ageClass": "３上",
+          "class": "Ｇ３",
+          "raceName": "七夕賞ＨG3",
+          "weight": "56",
+          "jockey": "丸山元気",
+          "bodyWeight": "494",
+          "bodyWeightChange": "-2",
+          "going": "稍",
+          "fieldSize": "16",
+          "horseNumber": "1",
+          "popularity": "14",
+          "finish": "5",
+          "margin": "0.8",
+          "index": "88",
+          "last3F": "35.8",
+          "last3FRank": "3",
+          "interval": "6",
+          "blinkers": "B",
+          "passingOrder": [
+            "11",
+            "10",
+            "10",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "5",
+            "4",
+            "5",
+            "23"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "5",
+            "4",
+            "5",
+            "23"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "2",
+            "0",
+            "2",
+            "9"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "5",
+                "4",
+                "5",
+                "23"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "4",
+                "5",
+                "23"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "4",
+                "5",
+                "23"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中3週",
+            "record": [
+              "0",
+              "1",
+              "0",
+              "2"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "2",
+              "0",
+              "1",
+              "6"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "2",
+                "0",
+                "2",
+                "7"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "5",
+                "4",
+                "5",
+                "19"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "3",
+                "4",
+                "3",
+                "14"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "2",
+                "0",
+                "2",
+                "9"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "5",
+                "4",
+                "5",
+                "15"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "4"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【牧調教師】今週の追い切りはすごく良くて、近走では一番の気配。昨年も着順ほど負けていなかったし、道中うまくタメを利かせられれば",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【牧調教師】年齢的にガラッと変わった感じはないが、体調はいいし、ここは相性のいいレース。今年も好戦を期待したい",
+          "previousRace": "2026年10月12日東京11R\nオクトーバーステークスリステッド9着(6人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 11,
+      "frameNumber": 6,
+      "horseName": "ウエストナウ",
+      "profile": {
+        "horseNumber": "11",
+        "horseName": "ウエストナウ",
+        "sexAge": "牡5",
+        "handicapWeight": "57.5",
+        "jockeyRaw": "横山典弘",
+        "jockey": "横山典弘",
+        "affiliation": "栗東",
+        "trainer": "寺島良"
+      },
+      "pedigree": {
+        "sire": "キズナ",
+        "dam": "ファヴォーラ",
+        "damsire": "Frankel",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "57",
+          "jockey": "横山和生",
+          "bodyWeight": "508",
+          "bodyWeightChange": "4",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "1",
+          "popularity": "4",
+          "finish": "6",
+          "margin": "0.4",
+          "index": "85",
+          "last3F": "34.8",
+          "last3FRank": "5",
+          "interval": "11",
+          "blinkers": "",
+          "passingOrder": [
+            "6",
+            "6",
+            "7",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "7.19",
+          "courseRaw": "小･T20",
+          "ageClass": "３上",
+          "class": "Ｇ３",
+          "raceName": "小倉記念ＨG3",
+          "weight": "57.5",
+          "jockey": "高杉吏麒",
+          "bodyWeight": "504",
+          "bodyWeightChange": "8",
+          "going": "良",
+          "fieldSize": "18",
+          "horseNumber": "14",
+          "popularity": "5",
+          "finish": "8",
+          "margin": "0.7",
+          "index": "82",
+          "last3F": "35.3",
+          "last3FRank": "7",
+          "interval": "10",
+          "blinkers": "",
+          "passingOrder": [
+            "8",
+            "9",
+            "8",
+            "8"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "5.1",
+          "courseRaw": "東･T24",
+          "ageClass": "４上",
+          "class": "OP(L)",
+          "raceName": "メトロポ(L)",
+          "weight": "58",
+          "jockey": "高杉吏麒",
+          "bodyWeight": "496",
+          "bodyWeightChange": "-4",
+          "going": "良",
+          "fieldSize": "12",
+          "horseNumber": "12",
+          "popularity": "3",
+          "finish": "1",
+          "margin": "0",
+          "index": "85",
+          "last3F": "33.7",
+          "last3FRank": "2",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "5",
+            "5",
+            "5"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "2",
+            "0",
+            "10"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "2",
+            "0",
+            "10"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "2",
+                "0",
+                "10"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "0",
+                "10"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "0",
+                "10"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "4"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "3",
+                "2",
+                "0",
+                "8"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "3",
+                "0",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【寺島調教師】短期放牧を挟んだけど、ここを目標に乗り込んで状態面は問題ない。前走は他馬と接触して1列後ろからになったのが痛かった。東京コースは勝っている舞台で2500mのほうが自分のリズムで運びやすい。スムーズなら",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【寺島調教師】前走は馬場が合わなかった。距離は長いほうが嫌気が差すことなく走ってくれる。稽古に乗ってくれた2人（横山典、横山和）の感触がすごくいい。京都外回りコースで見直したい",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ6着(4人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 12,
+      "frameNumber": 6,
+      "horseName": "メイショウゲキリン",
+      "profile": {
+        "horseNumber": "12",
+        "horseName": "メイショウゲキリン",
+        "sexAge": "牡7",
+        "handicapWeight": "58",
+        "jockeyRaw": "田辺裕信",
+        "jockey": "田辺裕信",
+        "affiliation": "栗東",
+        "trainer": "笹田和秀"
+      },
+      "pedigree": {
+        "sire": "キズナ",
+        "dam": "メイショウスズラン",
+        "damsire": "キングカメハメハ",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "9.2",
+          "courseRaw": "中･T22",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "オールカG2",
+          "weight": "57",
+          "jockey": "田辺裕信",
+          "bodyWeight": "520",
+          "bodyWeightChange": "-8",
+          "going": "重",
+          "fieldSize": "13",
+          "horseNumber": "8",
+          "popularity": "9",
+          "finish": "1",
+          "margin": "0",
+          "index": "",
+          "last3F": "37.1",
+          "last3FRank": "2",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "runningStyleRaw": "逃"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "8.23",
+          "courseRaw": "名･S30",
+          "ageClass": "３上",
+          "class": "未勝利",
+          "raceName": "障害未勝利",
+          "weight": "60",
+          "jockey": "小牧加矢",
+          "bodyWeight": "528",
+          "bodyWeightChange": "4",
+          "going": "良",
+          "fieldSize": "8",
+          "horseNumber": "4",
+          "popularity": "2",
+          "finish": "6",
+          "margin": "6.6",
+          "index": "",
+          "last3F": "13.7",
+          "last3FRank": "",
+          "interval": "20",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "5",
+            "6",
+            "7"
+          ],
+          "runningStyleRaw": "後"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "4. 4",
+          "courseRaw": "中･S28",
+          "ageClass": "４上",
+          "class": "未勝利",
+          "raceName": "障害未勝利",
+          "weight": "60",
+          "jockey": "小牧加矢",
+          "bodyWeight": "524",
+          "bodyWeightChange": "-2",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "4",
+          "popularity": "1",
+          "finish": "8",
+          "margin": "3.5",
+          "index": "",
+          "last3F": "14",
+          "last3FRank": "",
+          "interval": "9",
+          "blinkers": "",
+          "passingOrder": [
+            "10",
+            "10",
+            "9",
+            "9"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "5",
+            "5",
+            "6",
+            "17"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "3",
+            "4",
+            "5",
+            "9"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "1",
+            "3",
+            "3"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "6%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "5",
+                "5",
+                "6",
+                "17"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "3",
+                "4",
+                "5",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "2",
+                "1",
+                "1",
+                "6"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "3",
+                "4",
+                "5",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "2",
+                "1",
+                "1",
+                "6"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "0",
+              "1",
+              "1",
+              "2"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "2",
+              "3",
+              "1",
+              "3"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "2",
+                "2",
+                "5"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "2",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "4",
+                "4",
+                "3",
+                "14"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "1",
+                "3",
+                "3"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "2",
+                "2",
+                "11"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "3",
+                "3",
+                "4",
+                "4"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【笹田調教師】前走はスッとハナを切れたのも良かったけど、障害練習の効果で背腰がしっかりしたのもあった。今週もいい動きで状態はキープ。東京の広い馬場は競馬もしやすいと思うし、自分のペースで走れれば",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【笹田調教師】障害で結果が出なかったので平地へ戻す。障害を使った効果で腰がしっかりしてきた感じはある。モマれずに競馬ができるようなら",
+          "previousRace": "2026年09月20日中山11R\nオールカマーＧⅡ1着(9人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 13,
+      "frameNumber": 7,
+      "horseName": "マイネルカンパーナ",
+      "profile": {
+        "horseNumber": "13",
+        "horseName": "マイネルカンパーナ",
+        "sexAge": "牡6",
+        "handicapWeight": "56",
+        "jockeyRaw": "津村明秀",
+        "jockey": "津村明秀",
+        "affiliation": "美浦",
+        "trainer": "青木孝文"
+      },
+      "pedigree": {
+        "sire": "ゴールドシップ",
+        "dam": "マンバラ",
+        "damsire": "Linamix",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "9. 6",
+          "courseRaw": "札･T26",
+          "ageClass": "３上",
+          "class": "ｵｰﾌﾟﾝ",
+          "raceName": "丹頂ＳＨ",
+          "weight": "56",
+          "jockey": "丹内祐次",
+          "bodyWeight": "408",
+          "bodyWeightChange": "-10",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "10",
+          "popularity": "8",
+          "finish": "6",
+          "margin": "1.7",
+          "index": "74",
+          "last3F": "37.5",
+          "last3FRank": "7",
+          "interval": "18",
+          "blinkers": "",
+          "passingOrder": [
+            "10",
+            "7",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "5. 3",
+          "courseRaw": "京･T32",
+          "ageClass": "４上",
+          "class": "Ｇ１",
+          "raceName": "天皇賞春G1",
+          "weight": "58",
+          "jockey": "津村明秀",
+          "bodyWeight": "418",
+          "bodyWeightChange": "-4",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "10",
+          "popularity": "10",
+          "finish": "10",
+          "margin": "1.6",
+          "index": "80",
+          "last3F": "36.6",
+          "last3FRank": "11",
+          "interval": "10",
+          "blinkers": "",
+          "passingOrder": [
+            "4",
+            "5",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "2.21",
+          "courseRaw": "東･T34",
+          "ageClass": "４上",
+          "class": "Ｇ３",
+          "raceName": "ダイヤモＨG3",
+          "weight": "56.5",
+          "jockey": "津村明秀",
+          "bodyWeight": "422",
+          "bodyWeightChange": "8",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "14",
+          "popularity": "5",
+          "finish": "7",
+          "margin": "0.8",
+          "index": "41",
+          "last3F": "35.3",
+          "last3FRank": "10",
+          "interval": "11",
+          "blinkers": "",
+          "passingOrder": [
+            "2",
+            "2",
+            "3",
+            "5"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "3",
+            "1",
+            "25"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "3",
+            "1",
+            "25"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "2"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "2",
+            "2",
+            "0",
+            "14"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "21%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "3",
+                "1",
+                "25"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "3",
+                "1",
+                "25"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "3",
+                "1",
+                "25"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中7～9週",
+            "record": [
+              "0",
+              "0",
+              "1",
+              "5"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "13"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "9"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "3",
+                "0",
+                "17"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "2",
+                "1",
+                "1",
+                "11"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "2",
+                "2",
+                "0",
+                "14"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "12"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "3",
+                "2",
+                "0",
+                "6"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "1",
+                "1",
+                "7"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "3",
+                "1",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "1",
+                "3"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【青木調教師】追い切りはもう少し時計が出ても良かったが、稽古で動く3歳馬を相手にいい併せ馬ができた。今回は普段の乗り込み量を増やして、長めに乗って負荷を強めているからね。6歳でレース数も使っているが、まったく消耗はなく元気いっぱい。楽しみ",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【圓谷助手】テンションが高いため、落ち着かせることを重視。普段からパドックや馬場を見せて精神面は安定してきた。昨年5着時より体つきも良く、秋へ向けて格好をつけたい",
+          "previousRace": "2026年09月06日札幌11R\n丹頂ステークス6着(8人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 14,
+      "frameNumber": 7,
+      "horseName": "ミクニインスパイア",
+      "profile": {
+        "horseNumber": "14",
+        "horseName": "ミクニインスパイア",
+        "sexAge": "牡4",
+        "handicapWeight": "56",
+        "jockeyRaw": "岩田康誠",
+        "jockey": "岩田康誠",
+        "affiliation": "美浦",
+        "trainer": "林徹"
+      },
+      "pedigree": {
+        "sire": "アドマイヤマーズ",
+        "dam": "シルクヴィーナス",
+        "damsire": "ティンバーカントリー",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "57",
+          "jockey": "Ｍ．デム",
+          "bodyWeight": "500",
+          "bodyWeightChange": "2",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "8",
+          "popularity": "6",
+          "finish": "18",
+          "margin": "1.6",
+          "index": "73",
+          "last3F": "36.1",
+          "last3FRank": "17",
+          "interval": "16",
+          "blinkers": "B",
+          "passingOrder": [
+            "8",
+            "9",
+            "4",
+            "7"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6.14",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "宝塚記念G1",
+          "weight": "58",
+          "jockey": "丹内祐次",
+          "bodyWeight": "498",
+          "bodyWeightChange": "-6",
+          "going": "重",
+          "fieldSize": "18",
+          "horseNumber": "4",
+          "popularity": "9",
+          "finish": "12",
+          "margin": "2.4",
+          "index": "72",
+          "last3F": "36.8",
+          "last3FRank": "12",
+          "interval": "11",
+          "blinkers": "",
+          "passingOrder": [
+            "7",
+            "7",
+            "10",
+            "11"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "3.28",
+          "courseRaw": "中･T25",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "日経賞G2",
+          "weight": "56",
+          "jockey": "丹内祐次",
+          "bodyWeight": "504",
+          "bodyWeightChange": "-4",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "1",
+          "popularity": "2",
+          "finish": "2",
+          "margin": "0.2",
+          "index": "96",
+          "last3F": "35.7",
+          "last3FRank": "4",
+          "interval": "13",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "5",
+            "5",
+            "6"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "2",
+            "1",
+            "3"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "2",
+            "1",
+            "3"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "2",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "0",
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "30%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "4",
+                "1",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "0",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "2",
+                "1",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【林調教師】中間は十分過ぎるほど長めに乗っている。馬群は問題ないし、せかさずに競馬した方が良さそう。タフな展開になって、長くいい脚が使える持ち味が生きれば",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【林調教師】宝塚記念は直前で悪化した馬場の中、強いメンバーと戦ってよく頑張った。いい経験になったと思う。中間は渋いところが出て馬具を試した。多少効果はあるかもしれない。乗り込んで息遣いは良いので、自分の形に持ち込めれば",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ18着(6人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 15,
+      "frameNumber": 7,
+      "horseName": "ホーエリート",
+      "profile": {
+        "horseNumber": "15",
+        "horseName": "ホーエリート",
+        "sexAge": "牝5",
+        "handicapWeight": "56.5",
+        "jockeyRaw": "戸崎圭太",
+        "jockey": "戸崎圭太",
+        "affiliation": "美浦",
+        "trainer": "田島俊明"
+      },
+      "pedigree": {
+        "sire": "ルーラーシップ",
+        "dam": "ゴールデンハープ",
+        "damsire": "ステイゴールド",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "5. 3",
+          "courseRaw": "京･T32",
+          "ageClass": "４上",
+          "class": "Ｇ１",
+          "raceName": "天皇賞春G1",
+          "weight": "56",
+          "jockey": "戸崎圭太",
+          "bodyWeight": "482",
+          "bodyWeightChange": "-4",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "14",
+          "popularity": "7",
+          "finish": "14",
+          "margin": "2.4",
+          "index": "72",
+          "last3F": "37.4",
+          "last3FRank": "14",
+          "interval": "10",
+          "blinkers": "",
+          "passingOrder": [
+            "2",
+            "2",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "2.21",
+          "courseRaw": "東･T34",
+          "ageClass": "４上",
+          "class": "Ｇ３",
+          "raceName": "ダイヤモＨG3",
+          "weight": "56.5",
+          "jockey": "戸崎圭太",
+          "bodyWeight": "486",
+          "bodyWeightChange": "10",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "12",
+          "popularity": "2",
+          "finish": "5",
+          "margin": "0.6",
+          "index": "43",
+          "last3F": "35",
+          "last3FRank": "6",
+          "interval": "11",
+          "blinkers": "",
+          "passingOrder": [
+            "5",
+            "4",
+            "5",
+            "6"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "12. 6",
+          "courseRaw": "中･T36",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "ステイヤG2",
+          "weight": "55",
+          "jockey": "戸崎圭太",
+          "bodyWeight": "476",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "3",
+          "popularity": "2",
+          "finish": "1",
+          "margin": "-0.1",
+          "index": "43",
+          "last3F": "34",
+          "last3FRank": "5",
+          "interval": "4",
+          "blinkers": "",
+          "passingOrder": [
+            "3",
+            "4",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "3",
+            "3",
+            "1",
+            "10"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "3",
+            "3",
+            "1",
+            "10"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "1",
+            "0",
+            "1"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "1",
+            "0",
+            "5"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "10"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "10"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "10"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中15週以上",
+            "record": [
+              "0",
+              "0",
+              "0",
+              "2"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "1",
+              "0",
+              "0",
+              "5"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "5"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "2",
+                "2",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "5"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "1",
+                "2",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "3"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【田島調教師】レース間隔は空いたが、帰厩後は順調に稽古をこなしています。多少体が増えているけど太くはないし、息もできている。頑張ってほしい",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【田島調教師】中間もジョッキーが付きっきりで調教をつけてくれていて、ガラッと変わった感じはないけど高いレベルでいいデキを保てている。長く脚を使える馬。いい位置で流れに乗れれば結果はついてくると思っているし、輸送も特に問題ありません",
+          "previousRace": "2026年05月03日京都11R\n天皇賞・春ＧⅠ14着(7人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 16,
+      "frameNumber": 8,
+      "horseName": "キングズパレス",
+      "profile": {
+        "horseNumber": "16",
+        "horseName": "キングズパレス",
+        "sexAge": "牡7",
+        "handicapWeight": "57",
+        "jockeyRaw": "松岡正海",
+        "jockey": "松岡正海",
+        "affiliation": "美浦",
+        "trainer": "戸田博文"
+      },
+      "pedigree": {
+        "sire": "キングカメハメハ",
+        "dam": "ドバウィハイツ",
+        "damsire": "Dubawi",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "5.31",
+          "courseRaw": "東･T25",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "目黒記念ＨG2",
+          "weight": "57",
+          "jockey": "松岡正海",
+          "bodyWeight": "498",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "12",
+          "popularity": "11",
+          "finish": "7",
+          "margin": "0.5",
+          "index": "81",
+          "last3F": "34.3",
+          "last3FRank": "12",
+          "interval": "11",
+          "blinkers": "",
+          "passingOrder": [
+            "3",
+            "3",
+            "3",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "3.15",
+          "courseRaw": "名･T20",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "金鯱賞G2",
+          "weight": "57",
+          "jockey": "菊沢一樹",
+          "bodyWeight": "504",
+          "bodyWeightChange": "-6",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "11",
+          "popularity": "11",
+          "finish": "8",
+          "margin": "0.5",
+          "index": "84",
+          "last3F": "33.7",
+          "last3FRank": "2",
+          "interval": "6",
+          "blinkers": "",
+          "passingOrder": [
+            "14",
+            "14",
+            "14",
+            "13"
+          ],
+          "runningStyleRaw": "後"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "1.31",
+          "courseRaw": "東･T20",
+          "ageClass": "４上",
+          "class": "OP(L)",
+          "raceName": "白富士Ｓ(L)",
+          "weight": "59",
+          "jockey": "横山武史",
+          "bodyWeight": "510",
+          "bodyWeightChange": "8",
+          "going": "良",
+          "fieldSize": "10",
+          "horseNumber": "5",
+          "popularity": "9",
+          "finish": "6",
+          "margin": "1.1",
+          "index": "85",
+          "last3F": "32.9",
+          "last3FRank": "2",
+          "interval": "46",
+          "blinkers": "",
+          "passingOrder": [
+            "",
+            "10",
+            "10",
+            "9"
+          ],
+          "runningStyleRaw": "後"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "10",
+            "4",
+            "9"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "10",
+            "4",
+            "9"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "1",
+            "0",
+            "1"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "6",
+            "2",
+            "8"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "22%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "10",
+                "4",
+                "9"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "10",
+                "4",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "10",
+                "4",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中15週以上",
+            "record": [
+              "0",
+              "2",
+              "1",
+              "1"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "0",
+              "3",
+              "1",
+              "2"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "5",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "4",
+                "8",
+                "3",
+                "8"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "0",
+                "2",
+                "1",
+                "1"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "1",
+                "1",
+                "0"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "3",
+                "4",
+                "2",
+                "1"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "6",
+                "2",
+                "8"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "5",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "2",
+                "4",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "4",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【戸田調教師】前走は暑さで軽い熱中症になり、歩様が乱れてレース後に下馬した。うまく立ち直って雰囲気はいい。左回りの長距離はベスト。改めて期待したい",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【戸田調教師】この馬なりに良くなっている。前走もラストは差を詰め上々の内容。距離の不安もないし、この馬の癖を知る騎手に戻る。流れひとつ",
+          "previousRace": "2026年05月31日東京12R\n目黒記念ＧⅡ7着(11人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 17,
+      "frameNumber": 8,
+      "horseName": "キングスコール",
+      "profile": {
+        "horseNumber": "17",
+        "horseName": "キングスコール",
+        "sexAge": "牡4",
+        "handicapWeight": "55",
+        "jockeyRaw": "吉田豊",
+        "jockey": "吉田豊",
+        "affiliation": "栗東",
+        "trainer": "矢作芳人"
+      },
+      "pedigree": {
+        "sire": "ドゥラメンテ",
+        "dam": "レインオンザデューン",
+        "damsire": "Frankel",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#00FFFF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "57",
+          "jockey": "吉田豊",
+          "bodyWeight": "502",
+          "bodyWeightChange": "10",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "17",
+          "popularity": "12",
+          "finish": "16",
+          "margin": "1.3",
+          "index": "76",
+          "last3F": "36.1",
+          "last3FRank": "17",
+          "interval": "18",
+          "blinkers": "B",
+          "passingOrder": [
+            "3",
+            "4",
+            "2",
+            "3"
+          ],
+          "runningStyleRaw": "先"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "5.31",
+          "courseRaw": "東･T25",
+          "ageClass": "４上",
+          "class": "Ｇ２",
+          "raceName": "目黒記念ＨG2",
+          "weight": "55",
+          "jockey": "坂井瑠星",
+          "bodyWeight": "492",
+          "bodyWeightChange": "2",
+          "going": "良",
+          "fieldSize": "14",
+          "horseNumber": "14",
+          "popularity": "7",
+          "finish": "5",
+          "margin": "0.2",
+          "index": "84",
+          "last3F": "34.2",
+          "last3FRank": "10",
+          "interval": "2",
+          "blinkers": "B",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "runningStyleRaw": "逃"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "5.16",
+          "courseRaw": "東･T24",
+          "ageClass": "４上",
+          "class": "3勝",
+          "raceName": "六社Ｓ･3勝",
+          "weight": "58",
+          "jockey": "吉田豊",
+          "bodyWeight": "490",
+          "bodyWeightChange": "-8",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "7",
+          "popularity": "5",
+          "finish": "1",
+          "margin": "-0.2",
+          "index": "80",
+          "last3F": "33.3",
+          "last3FRank": "2",
+          "interval": "5",
+          "blinkers": "B",
+          "passingOrder": [
+            "9",
+            "8",
+            "9",
+            "9"
+          ],
+          "runningStyleRaw": "中"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "4",
+            "2",
+            "1",
+            "9"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "4",
+            "2",
+            "1",
+            "9"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "0%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "9"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "4",
+                "2",
+                "1",
+                "9"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "1",
+              "1",
+              "0",
+              "1"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "0",
+              "0",
+              "0",
+              "3"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "1",
+                "1",
+                "1",
+                "4"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "3",
+                "1",
+                "0",
+                "5"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "1",
+                "1"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "3",
+                "2",
+                "1",
+                "8"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "2",
+                "1",
+                "1",
+                "4"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "1"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【荒木助手】休み明けの前走は仕上げに難しさもありました。涼しくなってきたことで体調良化。ハンデ差を生かして見せ場をつくることができれば",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【岡助手】昇級戦で重賞挑戦の前走が好内容。もともと能力のあった馬が、ブリンカーを着けてからの2走ではかみ合ってきた感じに。放牧明けでリフレッシュされた雰囲気にあります",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ16着(12人気)"
+        }
+      }
+    },
+    {
+      "horseNumber": 18,
+      "frameNumber": 8,
+      "horseName": "ミステリーウェイ",
+      "profile": {
+        "horseNumber": "18",
+        "horseName": "ミステリーウェイ",
+        "sexAge": "セ8",
+        "handicapWeight": "58",
+        "jockeyRaw": "松本大輝",
+        "jockey": "松本大輝",
+        "affiliation": "栗東",
+        "trainer": "小林真也"
+      },
+      "pedigree": {
+        "sire": "ジャスタウェイ",
+        "dam": "ジプシーハイウェイ",
+        "damsire": "High Chaparral",
+        "sourceStyles": {
+          "sire": {
+            "backgroundColor": "#FFC0FF",
+            "textColor": null
+          },
+          "dam": {
+            "backgroundColor": "#E8E8C8",
+            "textColor": null
+          },
+          "damsire": {
+            "backgroundColor": "#FFFF00",
+            "textColor": null
+          }
+        }
+      },
+      "recentRuns": [
+        {
+          "label": "前走",
+          "dateRaw": "10. 4",
+          "courseRaw": "京･T24",
+          "ageClass": "３上",
+          "class": "Ｇ２",
+          "raceName": "京都大賞G2",
+          "weight": "58",
+          "jockey": "松本大輝",
+          "bodyWeight": "506",
+          "bodyWeightChange": "8",
+          "going": "稍",
+          "fieldSize": "18",
+          "horseNumber": "9",
+          "popularity": "14",
+          "finish": "11",
+          "margin": "1",
+          "index": "79",
+          "last3F": "35.9",
+          "last3FRank": "16",
+          "interval": "16",
+          "blinkers": "",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "runningStyleRaw": "逃"
+        },
+        {
+          "label": "2走前",
+          "dateRaw": "6.14",
+          "courseRaw": "阪･T22",
+          "ageClass": "３上",
+          "class": "Ｇ１",
+          "raceName": "宝塚記念G1",
+          "weight": "58",
+          "jockey": "松本大輝",
+          "bodyWeight": "498",
+          "bodyWeightChange": "-8",
+          "going": "重",
+          "fieldSize": "18",
+          "horseNumber": "18",
+          "popularity": "16",
+          "finish": "16",
+          "margin": "3.1",
+          "index": "65",
+          "last3F": "37.6",
+          "last3FRank": "16",
+          "interval": "6",
+          "blinkers": "",
+          "passingOrder": [
+            "11",
+            "10",
+            "8",
+            "11"
+          ],
+          "runningStyleRaw": "中"
+        },
+        {
+          "label": "3走前",
+          "dateRaw": "5. 3",
+          "courseRaw": "京･T32",
+          "ageClass": "４上",
+          "class": "Ｇ１",
+          "raceName": "天皇賞春G1",
+          "weight": "58",
+          "jockey": "松本大輝",
+          "bodyWeight": "506",
+          "bodyWeightChange": "6",
+          "going": "良",
+          "fieldSize": "15",
+          "horseNumber": "13",
+          "popularity": "8",
+          "finish": "8",
+          "margin": "1.1",
+          "index": "85",
+          "last3F": "36.5",
+          "last3FRank": "10",
+          "interval": "5",
+          "blinkers": "",
+          "passingOrder": [
+            "1",
+            "1",
+            "1",
+            "2"
+          ],
+          "runningStyleRaw": "逃"
+        }
+      ],
+      "topSummary": {
+        "allRecord": {
+          "label": "全成績",
+          "sourceLabel": "全着",
+          "record": [
+            "6",
+            "8",
+            "3",
+            "24"
+          ]
+        },
+        "surfaceRecord": {
+          "label": "全芝",
+          "sourceLabel": "全芝",
+          "record": [
+            "5",
+            "6",
+            "3",
+            "19"
+          ]
+        },
+        "courseRecord": {
+          "label": "今回距離",
+          "sourceLabel": "全場芝2500m",
+          "record": [
+            "1",
+            "2",
+            "0",
+            "2"
+          ]
+        },
+        "turnRecord": {
+          "label": "左回り",
+          "sourceLabel": "左回",
+          "record": [
+            "1",
+            "1",
+            "1",
+            "8"
+          ]
+        },
+        "lateStartRate": {
+          "label": "出遅れ率",
+          "sourceLabel": "出遅れ率",
+          "value": "5%"
+        }
+      },
+      "dataTabs": {
+        "detail": {
+          "overall": [
+            {
+              "label": "全着",
+              "record": [
+                "6",
+                "8",
+                "3",
+                "24"
+              ]
+            },
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "6",
+                "3",
+                "19"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "1",
+                "2",
+                "0",
+                "5"
+              ]
+            }
+          ],
+          "surfaceConditions": [
+            {
+              "label": "全芝",
+              "record": [
+                "5",
+                "6",
+                "3",
+                "19"
+              ]
+            },
+            {
+              "label": "全ダ",
+              "record": [
+                "1",
+                "2",
+                "0",
+                "5"
+              ]
+            }
+          ]
+        },
+        "conditions": {
+          "rotation": {
+            "label": "中4～6週",
+            "record": [
+              "3",
+              "1",
+              "0",
+              "3"
+            ]
+          },
+          "season": {
+            "label": "9月～11月",
+            "record": [
+              "3",
+              "1",
+              "0",
+              "6"
+            ]
+          },
+          "terrain": [
+            {
+              "label": "東京芝",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "0"
+              ]
+            },
+            {
+              "label": "坂有芝",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "11"
+              ]
+            },
+            {
+              "label": "平坦芝",
+              "record": [
+                "2",
+                "3",
+                "2",
+                "8"
+              ]
+            },
+            {
+              "label": "重不芝",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "5"
+              ]
+            }
+          ],
+          "turn": [
+            {
+              "label": "右回",
+              "record": [
+                "5",
+                "7",
+                "2",
+                "16"
+              ]
+            },
+            {
+              "label": "左回",
+              "record": [
+                "1",
+                "1",
+                "1",
+                "8"
+              ]
+            }
+          ]
+        },
+        "distanceCourse": {
+          "distanceBands": [
+            {
+              "label": "1400m-1600m",
+              "record": [
+                "0",
+                "0",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "label": "1700m-2000m",
+              "record": [
+                "1",
+                "1",
+                "0",
+                "5"
+              ]
+            },
+            {
+              "label": "2100m-2400m",
+              "record": [
+                "1",
+                "1",
+                "2",
+                "9"
+              ]
+            },
+            {
+              "label": "2500m-3600m",
+              "record": [
+                "4",
+                "6",
+                "1",
+                "9"
+              ]
+            }
+          ],
+          "courseRecords": [
+            {
+              "label": "東京芝2500m",
+              "record": [
+                "1",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            {
+              "label": "全場芝2400m",
+              "record": [
+                "1",
+                "0",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "label": "全場芝2500m",
+              "record": [
+                "1",
+                "2",
+                "0",
+                "2"
+              ]
+            },
+            {
+              "label": "全場芝2600m",
+              "record": [
+                "3",
+                "3",
+                "1",
+                "4"
+              ]
+            }
+          ]
+        }
+      },
+      "comments": {
+        "current": {
+          "text": "【和泉助手】2週前に帰厩してからはコースで乗り込んでいます。特に状態面に変わりはないですね。近走でヤメている面も出ていたので、前走後に協議して実戦ではブリンカーを着用します",
+          "isIchioshi": false
+        },
+        "previousRun": {
+          "text": "【和泉助手】宝塚記念は周りも速くてあの位置からに。直前の大雨もあり、動き切れなかったですね。しっかり休ませたことで気持ちの面でリフレッシュできています。距離が2400mに延び、1コーナーまで距離があるこの条件はいい。厳しい展開で踏ん張れた天皇賞からも京都は合っているので、うまく先行できたら",
+          "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ11着(14人気)"
+        }
+      }
+    }
+  ],
+  "render": {
+    "layoutId": "tokyo9-production-locked",
+    "preserveSourceColors": true
+  }
+}
