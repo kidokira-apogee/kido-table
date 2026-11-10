@@ -14,10 +14,27 @@
   })[ch]);
   const display = value => value === null || value === undefined || value === '' ? '—' : esc(value);
   const validColor = value => typeof value === 'string' && /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\([0-9.%\s,\/]+\)|hsla?\([0-9.%\s,\/]+\))$/i.test(value.trim());
+  // Excelの既定ベース色とグレー塗りは、意味を持つ着色としてWebへ引き継がない。
+  const isNeutralSourceFill = value => {
+    if (!validColor(value)) return false;
+    const color = value.trim().toLowerCase();
+    const namedNeutral = new Set(['gray', 'grey', 'silver', 'lightgray', 'lightgrey', 'darkgray', 'darkgrey']);
+    if (namedNeutral.has(color)) return true;
+    const hex = color.match(/^#([0-9a-f]{6})(?:[0-9a-f]{2})?$/i);
+    if (!hex) return false;
+    const rgb = hex[1].toUpperCase();
+    if (rgb === 'E8E8C8') return true; // Excelでベース背景として使われている色
+    const r = parseInt(rgb.slice(0, 2), 16);
+    const g = parseInt(rgb.slice(2, 4), 16);
+    const b = parseInt(rgb.slice(4, 6), 16);
+    return r === g && g === b; // 灰色系の塗り
+  };
   const styleAttr = (cell, enabled, importantText = false) => {
     if (!enabled || !cell) return '';
     const styles = [];
-    if (validColor(cell.backgroundColor)) styles.push('background-color:' + cell.backgroundColor.trim());
+    if (validColor(cell.backgroundColor) && !isNeutralSourceFill(cell.backgroundColor)) {
+      styles.push('background-color:' + cell.backgroundColor.trim());
+    }
     if (validColor(cell.textColor)) styles.push('color:' + cell.textColor.trim() + (importantText ? '!important' : ''));
     return styles.length ? ' style="' + esc(styles.join(';')) + '"' : '';
   };
@@ -59,7 +76,7 @@
     const passingStyleCell = (styles?.passingOrder || []).find(v => v && (v.textColor || v.backgroundColor));
     const metricHtml = fields.map(([label, value, key]) => {
       const cls = 'metric' + (key === 'index' ? indexClass : '');
-      // 指数は正本の指数別配色を優先し、TARGET背景色で上書きさせない。文字色は保持する。
+      // 指数は指数専用の配色を最優先し、Excelセルの背景色は適用しない。文字色は保持する。
       const cellStyle = key === 'index'
         ? styleAttr({ textColor: styles?.[key]?.textColor }, applyColors)
         : styleAttr(styles?.[key], applyColors);
