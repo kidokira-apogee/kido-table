@@ -513,7 +513,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   listHeading.textContent=selectedVenue+'競馬場｜登録レース';
   const races=dayRaces.filter(r=>r.venue===selectedVenue).sort((a,b)=>Number(a.raceNo)-Number(b.raceNo));
   races.forEach(r=>{
-   const complete=r.status==='complete';
+   const complete=['complete','published'].includes(r.status);
    const button=document.createElement('button');
    button.type='button';button.className='race-list-item'+(complete?'':' in-progress');
    button.dataset.raceId=r.id;
