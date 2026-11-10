@@ -17,9 +17,12 @@
   const displayMargin = value => {
     if (value === null || value === undefined || value === '') return '—';
     const raw = String(value).trim();
-    if (/^[+-]?0(?:\.0+)?$/.test(raw)) return raw.startsWith('-') ? '-0.0' : '0.0';
-    if (typeof value === 'number' && Object.is(value, -0)) return '-0.0';
-    return display(value);
+    // 着差の数値はすべて小数第1位に統一。負のゼロも符号を保持する。
+    if (!/^[+-]?(?:\d+\.?\d*|\.\d+)$/.test(raw)) return display(value);
+    const number = Number(raw);
+    if (!Number.isFinite(number)) return display(value);
+    if (number === 0 && raw.startsWith('-')) return '-0.0';
+    return number.toFixed(1);
   };
   const validColor = value => typeof value === 'string' && /^(#[0-9a-f]{3,4}|#[0-9a-f]{6}|#[0-9a-f]{8}|[a-z]{1,30}|rgba?\([0-9.%\s,\/]+\)|hsla?\([0-9.%\s,\/]+\))$/i.test(value.trim());
   // Excelの既定ベース色とグレー塗りは、意味を持つ着色としてWebへ引き継がない。
