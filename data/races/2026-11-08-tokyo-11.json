@@ -35,7 +35,8 @@
         "jockeyRaw": "大野拓弥",
         "jockey": "大野拓弥",
         "affiliation": "栗東",
-        "trainer": "田中克典"
+        "trainer": "田中克典",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "サートゥルナーリア",
@@ -413,6 +414,18 @@
           "text": "【杉浦助手】2週続けてジョッキー騎乗で追い切って上々の動き。仕上がりはいいね。他馬が苦にするなら道悪は歓迎。ハンデ差を生かせるようなら",
           "previousRace": "2026年09月12日阪神11R\nチャレンジカップＧⅢ15着(8人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -427,7 +440,8 @@
         "jockeyRaw": "国分優作",
         "jockey": "国分優作",
         "affiliation": "栗東",
-        "trainer": "坂口智康"
+        "trainer": "坂口智康",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "エピファネイア",
@@ -805,6 +819,18 @@
           "text": "【坂口調教師】前走はいつもよりテンションの高いところがあった。中間は落ち着きも問題ないし、この1年で体も成長している。少しスタートの遅いところはあるが、流れが向けば阪神2200mもこなせると思う。心肺機能の優れた馬。そこを生かした競馬をしてほしい",
           "previousRace": "2026年06月14日阪神11R\n宝塚記念ＧⅠ15着(7人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -819,7 +845,8 @@
         "jockeyRaw": "吉村誠之",
         "jockey": "吉村誠之",
         "affiliation": "栗東",
-        "trainer": "清水久詞"
+        "trainer": "清水久詞",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "ゴールドシップ",
@@ -1197,6 +1224,18 @@
           "text": "【清水久調教師】具合はいい。6歳になるが、まだまだ馬は若い。もともと使えば良くなるタイプなので、休み明けの分がどうか。ここでいい内容のレースをして次につなげたい",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ2着(8人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -1211,7 +1250,8 @@
         "jockeyRaw": "西村淳也",
         "jockey": "西村淳也",
         "affiliation": "栗東",
-        "trainer": "杉山佳明"
+        "trainer": "杉山佳明",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "バゴ",
@@ -1589,6 +1629,18 @@
           "text": "【杉山佳調教師】転厩初戦。1週前に栗東でしっかりと追い切って札幌へ。まだ良くなりそうな馬だが、態勢は整ったと思う。品があっていい雰囲気。好レースを期待したい",
           "previousRace": "2026年07月26日札幌11R\n札幌日経賞リステッド1着(1人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -1603,7 +1655,8 @@
         "jockeyRaw": "ルメール",
         "jockey": "ルメール",
         "affiliation": "美浦",
-        "trainer": "宮田敬介"
+        "trainer": "宮田敬介",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "ドゥラメンテ",
@@ -1981,6 +2034,18 @@
           "text": "【宮田調教師】前走は進路が狭くなる不利もあり、脚を余した感も。前走時に馬場入りをゴネる面を見せたので、今回は飽きがこないよう工夫し、狙い通りに調整できた。長く脚を使えるので、新潟外回りはフィットしそう。今のタフな馬場もむしろいいのでは。ここで重賞を取らせたい",
           "previousRace": "2026年05月16日新潟11R\n新潟大賞典ＧⅢ4着(1人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -1995,7 +2060,8 @@
         "jockeyRaw": "菅原明良",
         "jockey": "菅原明良",
         "affiliation": "栗東",
-        "trainer": "石坂公一"
+        "trainer": "石坂公一",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "リアルスティール",
@@ -2373,6 +2439,18 @@
           "text": "【金折助手】ＧⅠで見せ場をつくれた前走。直前の雨が味方したところもあると思います。自分のリズムで走ればしぶとさを発揮するタイプ。少し時計はかかってほしいですね",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ12着(9人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -2387,7 +2465,8 @@
         "jockeyRaw": "岩田望来",
         "jockey": "岩田望来",
         "affiliation": "美浦",
-        "trainer": "堀宣行"
+        "trainer": "堀宣行",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "ドゥラメンテ",
@@ -2765,6 +2844,18 @@
           "text": "【堀調教師】2日に帰厩。20日の調教後の馬体重は483キロ。先週に引き続きレーン騎手で追い切り、ゲートの確認もして態勢は整った。ダイヤモンドＳの時のテンションは許容範囲内。当日落ち着いていれば、力を発揮できる",
           "previousRace": "2026年05月31日東京12R\n目黒記念ＧⅡ1着(3人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -2779,7 +2870,8 @@
         "jockeyRaw": "横山武史",
         "jockey": "横山武史",
         "affiliation": "栗東",
-        "trainer": "四位洋文"
+        "trainer": "四位洋文",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "レイデオロ",
@@ -3157,6 +3249,18 @@
           "text": "【四位調教師】前走は長欠明けで初の左回りもこなして見せ場十分。夏場は適鞍がなく、休養させてここへ。調教をしっかりやれて道中の行きっぷりもいいし、あとは内回りにうまく対応できれば",
           "previousRace": "2026年09月21日阪神10R\nキタサンブラックカップ1着(4人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -3171,7 +3275,8 @@
         "jockeyRaw": "佐々木大",
         "jockey": "佐々木大",
         "affiliation": "美浦",
-        "trainer": "大竹正博"
+        "trainer": "大竹正博",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "キズナ",
@@ -3549,6 +3654,18 @@
           "text": "【大竹調教師】さすがに結構な間隔が空いたので動きに関しては何とか間に合った印象ですね。前走は距離というよりも外々を回るロスが大きかった。体調はいいので自己条件に戻して地力でどこまでやれるか",
           "previousRace": "2026年10月12日東京10R\n昇仙峡ステークス1着(1人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -3563,7 +3680,8 @@
         "jockeyRaw": "マーカン",
         "jockey": "マーカン",
         "affiliation": "美浦",
-        "trainer": "牧光二"
+        "trainer": "牧光二",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "ハーツクライ",
@@ -3941,6 +4059,18 @@
           "text": "【牧調教師】年齢的にガラッと変わった感じはないが、体調はいいし、ここは相性のいいレース。今年も好戦を期待したい",
           "previousRace": "2026年10月12日東京11R\nオクトーバーステークスリステッド9着(6人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#FF0033",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -3955,7 +4085,8 @@
         "jockeyRaw": "横山典弘",
         "jockey": "横山典弘",
         "affiliation": "栗東",
-        "trainer": "寺島良"
+        "trainer": "寺島良",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "キズナ",
@@ -4333,6 +4464,18 @@
           "text": "【寺島調教師】前走は馬場が合わなかった。距離は長いほうが嫌気が差すことなく走ってくれる。稽古に乗ってくれた2人（横山典、横山和）の感触がすごくいい。京都外回りコースで見直したい",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ6着(4人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -4347,7 +4490,8 @@
         "jockeyRaw": "田辺裕信",
         "jockey": "田辺裕信",
         "affiliation": "栗東",
-        "trainer": "笹田和秀"
+        "trainer": "笹田和秀",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "キズナ",
@@ -4725,6 +4869,18 @@
           "text": "【笹田調教師】障害で結果が出なかったので平地へ戻す。障害を使った効果で腰がしっかりしてきた感じはある。モマれずに競馬ができるようなら",
           "previousRace": "2026年09月20日中山11R\nオールカマーＧⅡ1着(9人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -4739,7 +4895,8 @@
         "jockeyRaw": "津村明秀",
         "jockey": "津村明秀",
         "affiliation": "美浦",
-        "trainer": "青木孝文"
+        "trainer": "青木孝文",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "ゴールドシップ",
@@ -5117,6 +5274,18 @@
           "text": "【圓谷助手】テンションが高いため、落ち着かせることを重視。普段からパドックや馬場を見せて精神面は安定してきた。昨年5着時より体つきも良く、秋へ向けて格好をつけたい",
           "previousRace": "2026年09月06日札幌11R\n丹頂ステークス6着(8人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -5131,7 +5300,8 @@
         "jockeyRaw": "岩田康誠",
         "jockey": "岩田康誠",
         "affiliation": "美浦",
-        "trainer": "林徹"
+        "trainer": "林徹",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "アドマイヤマーズ",
@@ -5509,6 +5679,18 @@
           "text": "【林調教師】宝塚記念は直前で悪化した馬場の中、強いメンバーと戦ってよく頑張った。いい経験になったと思う。中間は渋いところが出て馬具を試した。多少効果はあるかもしれない。乗り込んで息遣いは良いので、自分の形に持ち込めれば",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ18着(6人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -5523,7 +5705,8 @@
         "jockeyRaw": "戸崎圭太",
         "jockey": "戸崎圭太",
         "affiliation": "美浦",
-        "trainer": "田島俊明"
+        "trainer": "田島俊明",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "ルーラーシップ",
@@ -5901,6 +6084,18 @@
           "text": "【田島調教師】中間もジョッキーが付きっきりで調教をつけてくれていて、ガラッと変わった感じはないけど高いレベルでいいデキを保てている。長く脚を使える馬。いい位置で流れに乗れれば結果はついてくると思っているし、輸送も特に問題ありません",
           "previousRace": "2026年05月03日京都11R\n天皇賞・春ＧⅠ14着(7人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -5915,7 +6110,8 @@
         "jockeyRaw": "松岡正海",
         "jockey": "松岡正海",
         "affiliation": "美浦",
-        "trainer": "戸田博文"
+        "trainer": "戸田博文",
+        "trainerAffiliation": "美浦"
       },
       "pedigree": {
         "sire": "キングカメハメハ",
@@ -6293,6 +6489,18 @@
           "text": "【戸田調教師】この馬なりに良くなっている。前走もラストは差を詰め上々の内容。距離の不安もないし、この馬の癖を知る騎手に戻る。流れひとつ",
           "previousRace": "2026年05月31日東京12R\n目黒記念ＧⅡ7着(11人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": null,
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -6307,7 +6515,8 @@
         "jockeyRaw": "吉田豊",
         "jockey": "吉田豊",
         "affiliation": "栗東",
-        "trainer": "矢作芳人"
+        "trainer": "矢作芳人",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "ドゥラメンテ",
@@ -6685,6 +6894,18 @@
           "text": "【岡助手】昇級戦で重賞挑戦の前走が好内容。もともと能力のあった馬が、ブリンカーを着けてからの2走ではかみ合ってきた感じに。放牧明けでリフレッシュされた雰囲気にあります",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ16着(12人気)"
         }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": null,
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
+        }
       }
     },
     {
@@ -6699,7 +6920,8 @@
         "jockeyRaw": "松本大輝",
         "jockey": "松本大輝",
         "affiliation": "栗東",
-        "trainer": "小林真也"
+        "trainer": "小林真也",
+        "trainerAffiliation": "栗東"
       },
       "pedigree": {
         "sire": "ジャスタウェイ",
@@ -7076,6 +7298,18 @@
         "previousRun": {
           "text": "【和泉助手】宝塚記念は周りも速くてあの位置からに。直前の大雨もあり、動き切れなかったですね。しっかり休ませたことで気持ちの面でリフレッシュできています。距離が2400mに延び、1コーナーまで距離があるこの条件はいい。厳しい展開で踏ん張れた天皇賞からも京都は合っているので、うまく先行できたら",
           "previousRace": "2026年10月04日京都11R\n京都大賞典ＧⅡ11着(14人気)"
+        }
+      },
+      "sourceStyles": {
+        "profile": {
+          "jockeyRaw": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          },
+          "trainer": {
+            "textColor": "#0000FF",
+            "backgroundColor": null
+          }
         }
       }
     }
