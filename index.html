@@ -390,6 +390,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 #archive-month{min-width:0;max-width:220px;padding:8px 32px 8px 10px;border:1px solid #cbdacf;border-radius:8px;background:#fff;color:#214d34;font:850 12px system-ui}
 .archive-filter-group{display:flex;align-items:flex-start;gap:12px;min-width:0}
 .archive-choice-row{display:flex;flex:1;flex-wrap:wrap;gap:5px;min-width:0}
+#archive-date-tabs{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;white-space:nowrap;padding:0 2px 5px;scrollbar-width:thin;overscroll-behavior-x:contain}
+#archive-date-tabs .archive-choice{flex:0 0 auto;min-width:72px}
+#archive-date-tabs .archive-choice[aria-pressed="true"]{box-shadow:0 0 0 2px #b9d9c2}
 .archive-choice{appearance:none;border:1px solid #cbdacf;border-radius:999px;padding:7px 10px;background:#fff;color:#405549;font:800 10px system-ui;cursor:pointer}
 .archive-choice[aria-pressed="true"]{background:#1d593c;color:#fff;border-color:#1d593c}
 .list-section-head#race-list-heading{font-size:11px}
@@ -404,6 +407,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  .archive-control-row label,.archive-label{flex-basis:48px;font-size:8px}
  #archive-month{font-size:11px;padding:7px 27px 7px 8px}
  .archive-choice-row{gap:4px}
+ #archive-date-tabs{gap:4px}
+ #archive-date-tabs .archive-choice{min-width:66px;padding:6px 8px;font-size:9px}
  .archive-choice{padding:6px 8px;font-size:9px}
  .race-list-state{font-size:7px}
 }
@@ -412,10 +417,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 <body>
 <main class="page">
 <section class="race-list-view" id="race-list-view">
-<header class="list-brand"><strong>木戸表 電子版</strong><span>芝・ダートの完成レイアウト見本</span></header>
+<header class="list-brand"><strong>木戸表電子版</strong></header>
 <section class="archive-controls" aria-label="バックナンバー選択">
   <div class="archive-control-row"><label for="archive-month">MONTH</label><select id="archive-month" aria-label="開催月"></select></div>
-  <div class="archive-filter-group"><span class="archive-label">WEEK</span><div class="archive-choice-row" id="archive-week-tabs"></div></div>
   <div class="archive-filter-group"><span class="archive-label">DATE</span><div class="archive-choice-row" id="archive-date-tabs"></div></div>
   <div class="archive-filter-group"><span class="archive-label">VENUE</span><div class="archive-choice-row" id="archive-venue-tabs"></div></div>
 </section>
@@ -503,28 +507,17 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    body.dataset.commentNormalized='true';
   });
  }
- function saturdayKey(iso){
-  const d=new Date(iso+'T00:00:00');
-  const offset=(d.getDay()+1)%7;
-  d.setDate(d.getDate()-offset);
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
- }
- function addDays(iso,n){
-  const d=new Date(iso+'T00:00:00');d.setDate(d.getDate()+n);
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
- }
  function shortDate(iso){
   const d=new Date(iso+'T00:00:00');
   return (d.getMonth()+1)+'/'+d.getDate();
  }
  function weekday(iso){return ['日','月','火','水','木','金','土'][new Date(iso+'T00:00:00').getDay()];}
  const monthSelect=document.getElementById('archive-month');
- const weekTabs=document.getElementById('archive-week-tabs');
  const dateTabs=document.getElementById('archive-date-tabs');
  const venueTabs=document.getElementById('archive-venue-tabs');
  const listHeading=document.getElementById('race-list-heading');
- let archive={races:[]},selectedMonth='',selectedWeek='',selectedDate='',selectedVenue='';
- function racesInMonth(){return archive.races.filter(r=>/^\d{4}-\d{2}-\d{2}$/.test(String(r.date||''))&&saturdayKey(r.date).slice(0,7)===selectedMonth);}
+ let archive={races:[]},selectedMonth='',selectedDate='',selectedVenue='';
+ function racesInMonth(){return archive.races.filter(r=>/^\d{4}-\d{2}-\d{2}$/.test(String(r.date||''))&&String(r.date).slice(0,7)===selectedMonth);}
  function setChoices(container,items,current,onSelect,labelFn){
   container.innerHTML='';
   items.forEach(item=>{
@@ -565,16 +558,12 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   });
  }
  function renderDates(){
-  const dates=[...new Set(racesInMonth().filter(r=>saturdayKey(r.date)===selectedWeek&&r.date<=addDays(selectedWeek,4)).map(r=>r.date))].sort().reverse();
-  if(!dates.includes(selectedDate))selectedDate=dates[0]||'';
+  const dates=[...new Set(racesInMonth().map(r=>r.date))].sort();
+  if(!dates.includes(selectedDate))selectedDate=dates[dates.length-1]||'';
   setChoices(dateTabs,dates,selectedDate,v=>{selectedDate=v;renderDates();renderVenueAndRaces();},v=>shortDate(v)+'（'+weekday(v)+'）');
+  const active=dateTabs.querySelector('[aria-pressed="true"]');
+  if(active)active.scrollIntoView({block:'nearest',inline:'end'});
   renderVenueAndRaces();
- }
- function renderWeeks(){
-  const weeks=[...new Set(racesInMonth().map(r=>saturdayKey(r.date)))].sort().reverse();
-  if(!weeks.includes(selectedWeek))selectedWeek=weeks[0]||'';
-  setChoices(weekTabs,weeks,selectedWeek,v=>{selectedWeek=v;selectedDate='';renderDates();},v=>shortDate(v)+'–'+shortDate(addDays(v,4)));
-  renderDates();
  }
  function renderArchive(){
   if(archive.races.length && archive.races.every(r=>r.status==='sample')){
@@ -595,18 +584,18 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    });
    return;
   }
-  const months=[...new Set(archive.races.map(r=>saturdayKey(r.date).slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
+  const months=[...new Set(archive.races.map(r=>String(r.date||'').slice(0,7)).filter(v=>/^\d{4}-\d{2}$/.test(v)))].sort().reverse();
   monthSelect.innerHTML='';
   months.forEach(m=>{
    const [y,mo]=m.split('-');const option=document.createElement('option');option.value=m;
    option.textContent=y+'年'+Number(mo)+'月';monthSelect.appendChild(option);
   });
-  if(!months.length){weekTabs.innerHTML='';dateTabs.innerHTML='';venueTabs.innerHTML='';listItems.innerHTML='<div class="list-section-head">登録レースはありません。</div>';return;}
+  if(!months.length){dateTabs.innerHTML='';venueTabs.innerHTML='';listItems.innerHTML='<div class="list-section-head">登録レースはありません。</div>';return;}
   if(!months.includes(selectedMonth))selectedMonth=months[0];
   monthSelect.value=selectedMonth;
-  renderWeeks();
+  selectedDate='';selectedVenue='';renderDates();
  }
- monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedWeek='';selectedDate='';selectedVenue='';renderWeeks();});
+ monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedDate='';selectedVenue='';renderDates();});
  async function openRace(r,filePath=null){
   try{
    const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
