@@ -430,6 +430,44 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  const listItems=document.getElementById('race-list-items');
  const detail=document.getElementById('race-detail-container');
  const manifestUrl='data/races/index.json';
+ let venueRecordsPromise=null;
+ async function applyVenueRecords(data){
+  try{
+   if(!venueRecordsPromise)venueRecordsPromise=fetch('data/races/venue-records.json',{cache:'no-store'}).then(response=>{
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    return response.json();
+   });
+   const index=await venueRecordsPromise;
+   const entry=index.races?.[data?.race?.id];
+   if(!entry||entry.venue!==data.race?.venue||!Array.isArray(data.horses))return;
+   for(const horse of data.horses){
+    const sourceRecord=entry.horses?.[String(horse.horseNumber)];
+    if(!sourceRecord||sourceRecord.horseName!==horse.horseName)continue;
+    if(!horse.dataTabs)horse.dataTabs={};
+    if(!horse.dataTabs.detail)horse.dataTabs.detail={overall:[]};
+    if(!Array.isArray(horse.dataTabs.detail.overall))continue;
+    const source={file:sourceRecord.sourceFile,sourceLine:sourceRecord.sourceRow,horseNumber:horse.horseNumber,horseName:horse.horseName,status:'extracted'};
+    const overall=horse.dataTabs.detail.overall;
+    let venueItem=overall.find(item=>item?.label===entry.venue);
+    if(!venueItem){venueItem={label:entry.venue};overall.push(venueItem);}
+    venueItem.record=sourceRecord.record.map(String);
+    venueItem.source=source;
+    const values=venueItem.record.map(Number);
+    const denominator=values.reduce((sum,value)=>sum+value,0);
+    const numerator=values[0]+values[1]+values[2];
+    const apply=denominator>=3&&numerator/denominator>=0.5;
+    const summary=horse.topSummary||(horse.topSummary={});
+    summary.courseRecord={
+     ...(summary.courseRecord||{}),
+     label:'今回コース条件',
+     sourceLabel:entry.venue,
+     source,
+     record:venueItem.record,
+     highlight:{type:'placeRate',apply,numerator,denominator,ratePercent:denominator?Math.round(numerator/denominator*10000)/100:0,status:'calculated_from_DATE2_four_columns'}
+    };
+   }
+  }catch(error){console.warn('開催場成績の読み込みに失敗しました',error);}
+ }
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
  function normalizeRunningStyle(root){
   const styleNames={'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'};
@@ -583,6 +621,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    }else{
     data=await response.json();
    }
+   await applyVenueRecords(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
    normalizeRunningStyle(detail);
