@@ -612,9 +612,16 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
    if(!response.ok)throw new Error('HTTP '+response.status);
    let data;
-   if((r.file||'').endsWith('.bin')){
+   if((r.file||'').endsWith('.bin')||(r.file||'').endsWith('.b64')){
     if(typeof DecompressionStream==='undefined')throw new Error('このブラウザーは圧縮データの展開に対応していません');
-    const stream=new Blob([await response.arrayBuffer()]).stream().pipeThrough(new DecompressionStream('gzip'));
+    let compressed;
+    if((r.file||'').endsWith('.b64')){
+     const encoded=(await response.text()).trim();
+     const binary=atob(encoded);
+     compressed=new Uint8Array(binary.length);
+     for(let i=0;i<binary.length;i++)compressed[i]=binary.charCodeAt(i);
+    }else compressed=await response.arrayBuffer();
+    const stream=new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'));
     const batch=await new Response(stream).json();
     data=(batch.races||[]).find(item=>item?.race?.id===r.id);
     if(!data)throw new Error('指定レースが一括データ内にありません');
