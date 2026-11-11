@@ -573,7 +573,16 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   try{
    const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
    if(!response.ok)throw new Error('HTTP '+response.status);
-   const data=await response.json();
+   let data;
+   if((r.file||'').endsWith('.bin')){
+    if(typeof DecompressionStream==='undefined')throw new Error('このブラウザーは圧縮データの展開に対応していません');
+    const stream=new Blob([await response.arrayBuffer()]).stream().pipeThrough(new DecompressionStream('gzip'));
+    const batch=await new Response(stream).json();
+    data=(batch.races||[]).find(item=>item?.race?.id===r.id);
+    if(!data)throw new Error('指定レースが一括データ内にありません');
+   }else{
+    data=await response.json();
+   }
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
    normalizeRunningStyle(detail);

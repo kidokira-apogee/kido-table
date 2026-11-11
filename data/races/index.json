@@ -41,6 +41,71 @@
       "classLabel": "3歳以上・オープン・GⅡ（ハンデ）",
       "status": "published",
       "horseCount": 18
+    },
+    {
+      "id": "2026-11-08-tokyo-8",
+      "file": "2026-11-08-batch.bin",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "東京",
+      "raceNo": 8,
+      "title": "２勝クラス",
+      "distance": "ダート1300m",
+      "classLabel": "３歳以上・２勝クラス(定量)(混)[指定]",
+      "status": "published",
+      "horseCount": 14
+    },
+    {
+      "id": "2026-11-08-tokyo-10",
+      "file": "2026-11-08-batch.bin",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "東京",
+      "raceNo": 10,
+      "title": "錦秋Ｓ",
+      "distance": "ダート1600m",
+      "classLabel": "３歳以上・３勝クラス(定量)(混)(特指)",
+      "status": "published",
+      "horseCount": 11
+    },
+    {
+      "id": "2026-11-08-tokyo-12",
+      "file": "2026-11-08-batch.bin",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "東京",
+      "raceNo": 12,
+      "title": "２勝クラス",
+      "distance": "芝1400m (B)",
+      "classLabel": "３歳以上・２勝クラス(定量)[指定]",
+      "status": "published",
+      "horseCount": 12
+    },
+    {
+      "id": "2026-11-08-kyoto-11",
+      "file": "2026-11-08-batch.bin",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "京都",
+      "raceNo": 11,
+      "title": "第16回みやこＳ",
+      "distance": "ダート1800m",
+      "classLabel": "３歳以上・オープン・Ｇ３(別定)(国際)(指定)",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
+      "id": "2026-11-08-kyoto-12",
+      "file": "2026-11-08-batch.bin",
+      "date": "2026-11-08",
+      "dateLabel": "2026年11月8日（日）",
+      "venue": "京都",
+      "raceNo": 12,
+      "title": "１勝クラス",
+      "distance": "芝1400m・外 (B)",
+      "classLabel": "３歳以上・１勝クラス(定量)[指定]",
+      "status": "published",
+      "horseCount": 18
     }
   ]
 }
