@@ -180,6 +180,10 @@
     const horseStyles = horse.sourceStyles || {};
     const profileStyles = horseStyles.profile || {};
     const summary = horse.topSummary || {};
+    // 上部サマリーの今回コース条件は距離別ではなく開催場単位の成績を表示する。
+    // 開催場レコードが元データにない場合、距離別成績を代用せず「—」とする。
+    const venueRecord = (horse.dataTabs?.detail?.overall || []).find(item => item?.label === race.venue);
+    const summaryVenueRecord = venueRecord || { label: race.venue, value: '—' };
     const frame = Number(horse.frameNumber);
     const frameClass = Number.isInteger(frame) && frame >= 1 && frame <= 8 ? ' frame-' + frame : '';
     // 騎手・調教師の所属は別々に扱う。未確認の所属は着色しない。
@@ -204,7 +208,7 @@
     const summaryHtml = '<div class="data-existing">' +
       summaryChip(summary.allRecord, '全成績', 'record') +
       summaryChip(summary.surfaceRecord, surfaceLabel, 'record') +
-      summaryChip(summary.courseRecord, summary.courseRecord?.sourceLabel || '今回コース条件', 'record') +
+      summaryChip(summaryVenueRecord, race.venue || '今回コース条件', 'record') +
       summaryChip(summary.turnRecord, summary.turnRecord?.sourceLabel || '今回周り条件', 'record') +
       summaryChip(summary.lateStartRate, '出遅れ率', 'lateRate') + '</div>';
     const currentText = typeof current.text === 'string' ? current.text : '';
