@@ -419,15 +419,15 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .race-image-panel{margin:0 10px 11px;padding:10px;background:#fff;border:1px solid #cbdccd;border-radius:13px;box-shadow:0 3px 12px #173d2910}
 .race-image-heading{margin:0 0 8px;color:#17432f;font-size:11px;font-weight:950}
 .race-image-heading:before{content:"";display:inline-block;width:4px;height:14px;margin-right:7px;vertical-align:-3px;border-radius:4px;background:#32845b}
-.race-image-scroll{width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #dce7de;border-radius:7px;background:#f7faf7}
-.race-image-trigger{display:block;width:100%;min-width:680px;padding:0;border:0;background:#fff;cursor:zoom-in;line-height:0}
-.race-image-trigger img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;filter:none}
+.race-image-scroll{width:100%;overflow:hidden;border:1px solid #dce7de;border-radius:7px;background:#f7faf7}
+.race-image-trigger{display:block;width:100%;min-width:0;padding:0;border:0;background:#fff;cursor:zoom-in;line-height:0}
+.race-image-trigger img{display:block;width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain;filter:none}
 .race-image-hint{margin:7px 2px 0;color:#718076;font-size:9px;text-align:right}
 .race-image-modal{display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;padding:12px;background:#102018e8}
 .race-image-modal.is-open{display:flex}
 .race-image-modal img{display:block;max-width:98vw;max-height:88vh;width:auto;height:auto;object-fit:contain;background:#fff}
 .race-image-close{position:absolute;top:12px;right:12px;border:1px solid #ffffff80;border-radius:999px;background:#fff;color:#173d29;padding:8px 13px;font:800 12px system-ui;cursor:pointer}
-@media(max-width:620px){.race-image-panel{margin:0 6px 8px;padding:7px}.race-image-trigger{min-width:680px}.race-image-hint{font-size:8px}}
+@media(max-width:620px){.race-image-panel{margin:0 6px 8px;padding:7px}.race-image-trigger{min-width:0}.race-image-hint{font-size:8px}}
 </style>
 </head>
 <body>
@@ -637,7 +637,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
    if(r.id==='2026-11-08-kyoto-11'){
-    const imagePanel='<section class="race-image-panel" aria-label="レース分析画像"><div class="race-image-heading">レース分析画像</div><div class="race-image-scroll"><button type="button" class="race-image-trigger" aria-label="レース分析画像を拡大表示"><img src="assets/images/2026-11-08-kyoto-11-analysis.png" alt="2026年11月8日 京都11R みやこステークスの分析表" loading="eager"></button></div><div class="race-image-hint">横にスクロールして表全体を確認できます。タップで拡大</div></section><div class="race-image-modal" role="dialog" aria-modal="true" aria-label="レース分析画像の拡大表示"><button type="button" class="race-image-close">閉じる ×</button><img src="assets/images/2026-11-08-kyoto-11-analysis.png" alt="レース分析画像"></div>';
+    const imagePanel='<section class="race-image-panel" aria-label="レース分析画像"><div class="race-image-heading">レース分析画像</div><div class="race-image-scroll"><button type="button" class="race-image-trigger" aria-label="レース分析画像を拡大表示"><img src="assets/images/2026-11-08-kyoto-11-analysis.png" alt="2026年11月8日 京都11R みやこステークスの分析表" loading="eager"></button></div><div class="race-image-hint">画像全体を表示しています。タップで拡大</div></section><div class="race-image-modal" role="dialog" aria-modal="true" aria-label="レース分析画像の拡大表示"><button type="button" class="race-image-close">閉じる ×</button><img src="assets/images/2026-11-08-kyoto-11-analysis.png" alt="レース分析画像"></div>';
     const raceHeader=detail.querySelector('.racehead'),firstHorse=detail.querySelector('.horse-card');
     if(raceHeader)raceHeader.insertAdjacentHTML('afterend',imagePanel);else if(firstHorse)firstHorse.insertAdjacentHTML('beforebegin',imagePanel);
     const trigger=detail.querySelector('.race-image-trigger'),modal=detail.querySelector('.race-image-modal'),close=detail.querySelector('.race-image-close');
