@@ -630,7 +630,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
    if(r.id==='2026-11-08-kyoto-11'){
-    const imagePanel='<section class="race-image-panel" aria-label="レース分析画像"><div class="race-image-heading">レース分析画像</div><img class="race-analysis-image" src="assets/images/2026-11-08-kyoto-11-analysis.png" alt="2026年11月8日 京都11R みやこステークスの分析表" loading="eager"></section>';
+    const imagePanel='<section class="race-image-panel" aria-label="レース分析画像"><div class="race-image-heading">レース分析画像</div><img class="race-analysis-image" src="assets/images/2026-11-08-kyoto-11-analysis.webp" alt="2026年11月8日 京都11R みやこステークスの分析表" loading="eager"></section>';
     const raceHeader=detail.querySelector('.racehead'),firstHorse=detail.querySelector('.horse-card');
     if(raceHeader)raceHeader.insertAdjacentHTML('afterend',imagePanel);else if(firstHorse)firstHorse.insertAdjacentHTML('beforebegin',imagePanel);
    }
