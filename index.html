@@ -414,14 +414,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 }
 </style>
 
-<style>
-/* Kyoto 11R source analysis image: original image scaled proportionally */
-.race-image-panel{margin:0 10px 11px;padding:10px;background:#fff;border:1px solid #cbdccd;border-radius:13px;box-shadow:0 3px 12px #173d2910}
-.race-image-heading{margin:0 0 8px;color:#17432f;font-size:11px;font-weight:950}
-.race-image-heading:before{content:"";display:inline-block;width:4px;height:14px;margin-right:7px;vertical-align:-3px;border-radius:4px;background:#32845b}
-.race-analysis-image{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;border:1px solid #dce7de;border-radius:7px}
-@media(max-width:620px){.race-image-panel{margin:0 6px 8px;padding:7px}}
-</style>
+
 </head>
 <body>
 <main class="page">
@@ -629,10 +622,6 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    await applyVenueRecords(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
-   if(r.id==='2026-11-08-kyoto-11'){
-    const imagePanel='<section class="race-image-panel" aria-label="レース分析画像"><div class="race-image-heading">レース分析画像</div><img class="race-analysis-image" src="assets/images/2026-11-08-kyoto-11-analysis.webp" alt="2026年11月8日 京都11R みやこステークスの分析表" loading="eager"></section>';
-    const raceHeader=detail.querySelector('.racehead'),firstHorse=detail.querySelector('.horse-card');
-    if(raceHeader)raceHeader.insertAdjacentHTML('afterend',imagePanel);else if(firstHorse)firstHorse.insertAdjacentHTML('beforebegin',imagePanel);
    }
 
    normalizeRunningStyle(detail);
