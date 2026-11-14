@@ -424,7 +424,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .kido-image-preview{display:block;width:100%;height:auto;max-height:65vh;object-fit:contain;margin-top:8px;border-radius:7px;cursor:zoom-in}
 .kido-image-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px}
 .kido-image-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
-.kido-image-upload:disabled{opacity:.5;cursor:wait}
+.kido-image-upload:disabled,.kido-image-delete:disabled{opacity:.5;cursor:wait}.kido-image-delete{background:#fff7f7!important;color:#a32d35!important;border-color:#e5c4c6!important}.kido-image-note{font-size:9px;color:#718078;font-weight:700}
 </style>
 <script>
 // Set this to the deployed Cloudflare Worker URL before enabling image uploads.
@@ -491,50 +491,48 @@ window.KIDO_IMAGE_API_BASE = '';
  }
  
 async function initKidoRaceImage(panel,raceId){
- const base=String(window.KIDO_IMAGE_API_BASE||'').replace(/\/$/,'');
+ const base=String(window.KIDO_IMAGE_API_BASE||'').replace(/\\/$/,'');
  const status=panel.querySelector('.kido-image-status');
  const preview=panel.querySelector('.kido-image-preview');
- const login=panel.querySelector('.kido-image-login');
  const controls=panel.querySelector('.kido-image-controls');
  const file=panel.querySelector('.kido-image-file');
  const upload=panel.querySelector('.kido-image-upload');
- const key='kido-image-token';
+ const remove=panel.querySelector('.kido-image-delete');
+ let imageUrl='';
  function setStatus(message){status.textContent=message;}
- function getToken(){return sessionStorage.getItem(key)||'';}
- function showControls(){controls.hidden=!getToken();login.textContent=getToken()?'管理者ログイン済み':'管理者ログイン';}
  async function loadImage(){
+  if(imageUrl){URL.revokeObjectURL(imageUrl);imageUrl='';}
   try{
    const response=await fetch(base+'/image/'+encodeURIComponent(raceId),{cache:'no-store'});
-   if(response.status===404){preview.hidden=true;setStatus('まだ画像は登録されていません。');return;}
+   if(response.status===404){preview.hidden=true;remove.hidden=true;setStatus('まだ画像は登録されていません。');return;}
    if(!response.ok)throw new Error('HTTP '+response.status);
-   const blob=await response.blob();preview.src=URL.createObjectURL(blob);preview.hidden=false;
-   preview.onclick=()=>{const w=window.open();if(w){w.document.write('<img style="max-width:100%;height:auto" src="'+preview.src+'">');}};
-   setStatus('掲載画像');
-  }catch(e){setStatus('画像の読み込みに失敗しました。');}
+   const blob=await response.blob();imageUrl=URL.createObjectURL(blob);preview.src=imageUrl;preview.hidden=false;remove.hidden=false;
+   preview.onclick=()=>{const w=window.open();if(w){const img=w.document.createElement('img');img.src=imageUrl;img.style='max-width:100%;height:auto';w.document.body.appendChild(img);}};
+   setStatus('掲載画像（タップで拡大）');
+  }catch(e){preview.hidden=true;remove.hidden=true;setStatus('画像の読み込みに失敗しました。');}
  }
- login.addEventListener('click',async()=>{
-  const password=window.prompt('管理者パスワードを入力してください');if(!password)return;
-  try{
-   const response=await fetch(base+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password})});
-   if(!response.ok)throw new Error('認証に失敗しました');
-   const data=await response.json();sessionStorage.setItem(key,data.token);showControls();setStatus('管理者としてログインしました。');
-  }catch(e){setStatus(e.message);}
- });
  upload.addEventListener('click',async()=>{
-  if(!getToken()){setStatus('先に管理者ログインしてください。');return;}
   if(!file.files||!file.files[0]){setStatus('画像を選択してください。');return;}
   const image=file.files[0];
   if(!['image/png','image/jpeg','image/webp'].includes(image.type)){setStatus('PNG・JPEG・WebPのみ対応しています。');return;}
-  if(image.size>8*1024*1024){setStatus('画像は8MB以下にしてください。');return;}
+  if(image.size===0||image.size>8*1024*1024){setStatus('画像は8MB以下にしてください。');return;}
   upload.disabled=true;setStatus('アップロード中…');
   try{
-   const response=await fetch(base+'/upload/'+encodeURIComponent(raceId),{method:'PUT',headers:{'Authorization':'Bearer '+getToken(),'Content-Type':image.type},body:image});
-   if(response.status===401){sessionStorage.removeItem(key);showControls();throw new Error('ログイン期限が切れました。再ログインしてください。');}
+   const response=await fetch(base+'/upload/'+encodeURIComponent(raceId),{method:'PUT',headers:{'Content-Type':image.type},body:image});
    if(!response.ok)throw new Error('アップロードに失敗しました（HTTP '+response.status+'）');
    setStatus('保存しました。');await loadImage();file.value='';
   }catch(e){setStatus(e.message);}finally{upload.disabled=false;}
  });
- showControls();await loadImage();
+ remove.addEventListener('click',async()=>{
+  if(!window.confirm('このレースの掲載画像を削除しますか？'))return;
+  remove.disabled=true;setStatus('削除中…');
+  try{
+   const response=await fetch(base+'/image/'+encodeURIComponent(raceId),{method:'DELETE'});
+   if(!response.ok)throw new Error('削除に失敗しました（HTTP '+response.status+'）');
+   await loadImage();setStatus('画像を削除しました。');
+  }catch(e){setStatus(e.message);}finally{remove.disabled=false;}
+ });
+ await loadImage();
 }
 
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -691,12 +689,13 @@ async function initKidoRaceImage(panel,raceId){
     raceImage.className='kido-race-image';
     raceImage.dataset.raceId=r.id;
     raceImage.innerHTML=`
-      <div class="kido-race-image-head"><strong>レース画像</strong><button type="button" class="kido-image-login">管理者ログイン</button></div>
+      <div class="kido-race-image-head"><strong>レース画像</strong><span class="kido-image-note">1レース1枚</span></div>
       <div class="kido-image-status" role="status">画像を確認しています…</div>
       <img class="kido-image-preview" alt="このレースの掲載画像" hidden>
-      <div class="kido-image-controls" hidden>
+      <div class="kido-image-controls">
         <label class="kido-image-file-label">画像を選択<input class="kido-image-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
         <button type="button" class="kido-image-upload">アップロード／差し替え</button>
+        <button type="button" class="kido-image-delete" hidden>画像を削除</button>
       </div>`;
     const raceHead=detail.querySelector('.racehead');
     if(raceHead)raceHead.insertAdjacentElement('afterend',raceImage);
