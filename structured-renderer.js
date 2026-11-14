@@ -164,7 +164,7 @@
       }).join('');
       return '<div class="frame-record-entry"><strong>' + label + sourceLabel + '</strong><div class="four-counts">' + counts + '</div></div>';
     }).join('');
-    return '<section class="panel-card"><h4>枠順成績</h4>' + rows + '</section>';
+    return '<section class="panel-card frame-records-card"><h4>枠順成績</h4>' + rows + '</section>';
   }
 
   function dataPanel(horse, key, race) {
