@@ -516,6 +516,24 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    horse.dataTabs.conditions.season={label:values[2],record:values[3]};
   }
  }
+ function ensureFrameRecordSlots(root){
+  const labels=['内枠','中枠','外枠','今回の枠番'];
+  const countLabels=['1着','2着','3着','着外'];
+  const cardHtml='<section class="panel-card frame-records-card"><h4>枠順成績</h4>'+labels.map(label=>'<div class="frame-record-entry"><strong>'+label+'</strong><div class="four-counts">'+countLabels.map(name=>'<div><small>'+name+'</small><b></b></div>').join('')+'</div></div>').join('')+'</section>';
+  root.querySelectorAll('.horse-card').forEach(card=>{
+   const tab=[...card.querySelectorAll('.data-tab')].find(button=>button.textContent.trim()==='条件別');
+   if(!tab)return;
+   const key=tab.dataset.panel;
+   const panel=[...card.querySelectorAll('.data-panel')].find(node=>node.dataset.dataContent===key||node.id===key);
+   if(!panel||panel.querySelector('.frame-records-card'))return;
+   const terrain=[...panel.querySelectorAll('.panel-card')].find(node=>node.querySelector('h4')?.textContent.trim()==='馬場・コース条件');
+   if(terrain)terrain.insertAdjacentHTML('afterend',cardHtml);
+   else{
+    const grid=panel.querySelector('.panel-grid');
+    if(grid)grid.insertAdjacentHTML('beforeend',cardHtml);
+   }
+  });
+ }
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
  function normalizeRunningStyle(root){
   const styleNames={'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'};
@@ -666,6 +684,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    await applyFrameRecords(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
+   ensureFrameRecordSlots(detail);
 
    normalizeRunningStyle(detail);
    // 旧HTML専用のコメント正規化。
