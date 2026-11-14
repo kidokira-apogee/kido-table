@@ -474,6 +474,22 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    }
   }catch(error){console.warn('開催場成績の読み込みに失敗しました',error);}
  }
+ async function applyRotationSeason(data){
+  if(data?.race?.date!=='2026-11-15'||!Array.isArray(data.horses))return;
+  const response=await fetch('data/races/2026-11-15-rotation-season.json',{cache:'no-store'});
+  if(!response.ok)throw new Error('ローテーション・季節データ HTTP '+response.status);
+  const supplement=await response.json();
+  const raceSupplement=supplement.races?.[data.race.id];
+  if(!raceSupplement)return;
+  for(const horse of data.horses){
+   const values=raceSupplement[String(horse.horseNumber)];
+   if(!values)continue;
+   if(!horse.dataTabs)horse.dataTabs={};
+   if(!horse.dataTabs.conditions)horse.dataTabs.conditions={};
+   horse.dataTabs.conditions.rotation={label:values[0],record:values[1]};
+   horse.dataTabs.conditions.season={label:values[2],record:values[3]};
+  }
+ }
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
  function normalizeRunningStyle(root){
   const styleNames={'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'};
@@ -620,6 +636,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     data=await response.json();
    }
    await applyVenueRecords(data);
+   await applyRotationSeason(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
 
