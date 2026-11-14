@@ -215,9 +215,9 @@
     const runs = (horse.recentRuns || []).slice(0, 3);
     const runStyles = horseStyles.recentRuns || [];
     const tabs = [
-      ['detail','詳細成績','detail'],
       ['conditions','条件別','conditions'],
-      ['distanceCourse','距離・コース','distance']
+      ['distanceCourse','距離・コース','distance'],
+      ['detail','詳細成績','detail']
     ];
     const tabButtons = tabs.map((tab, i) => '<button aria-selected="' + (i === 0 ? 'true' : 'false') + '" class="data-tab" data-panel="' + tab[2] + '-' + horse.horseNumber + '" role="tab" type="button">' + tab[1] + '</button>').join('');
     const panels = tabs.map((tab, i) => '<section class="data-panel' + (i === 0 ? ' active' : '') + '" id="' + tab[2] + '-' + horse.horseNumber + '" data-data-content="' + tab[2] + '-' + horse.horseNumber + '">' + dataPanel(horse, tab[0], race) + '</section>').join('');
