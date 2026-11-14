@@ -637,6 +637,34 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  function initRace(root,structured=false){
   const back=root.querySelector('.race-nav button');
   if(back)back.addEventListener('click',()=>{detail.hidden=true;detail.innerHTML='';listView.hidden=false;window.scrollTo({top:0,behavior:'auto'});});
+  // 馬ごとの折りたたみ。初期状態は常に展開し、馬番・馬名だけを残して個別に最小化できる。
+  root.querySelectorAll('.horse-card').forEach(card=>{
+   const horseName=card.querySelector('.identity-main .horse-name,.horse-name');
+   const profile=card.querySelector(':scope > .profile');
+   if(horseName&&!card.querySelector('.horse-collapse-toggle')){
+    const titleRow=document.createElement('div');
+    titleRow.className='horse-title-row';
+    titleRow.style.cssText='display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:100%;min-width:0';
+    horseName.parentNode.insertBefore(titleRow,horseName);
+    titleRow.appendChild(horseName);
+    const toggle=document.createElement('button');
+    toggle.type='button';
+    toggle.className='horse-collapse-toggle';
+    toggle.textContent='− 最小化';
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-label','馬の詳細を最小化');
+    toggle.style.cssText='appearance:none;flex:0 0 auto;border:1px solid #b9d0bf;border-radius:999px;background:#f2f8f3;color:#24583a;padding:4px 9px;font:800 9px system-ui,-apple-system,sans-serif;line-height:1.2;cursor:pointer;white-space:nowrap';
+    titleRow.appendChild(toggle);
+    toggle.addEventListener('click',()=>{
+     const collapsed=card.classList.toggle('horse-collapsed');
+     toggle.setAttribute('aria-expanded',String(!collapsed));
+     toggle.setAttribute('aria-label',collapsed?'馬の詳細を展開':'馬の詳細を最小化');
+     toggle.textContent=collapsed?'＋ 展開':'− 最小化';
+     card.querySelectorAll('.horse-facts,.basics,.pedigree-inline,.pedigree').forEach(node=>{node.hidden=collapsed;});
+     Array.from(card.children).forEach(node=>{if(node!==profile)node.hidden=collapsed;});
+    });
+   }
+  });
   root.querySelectorAll('.horse-card').forEach(card=>{
    card.querySelectorAll('.section-toggle').forEach(toggle=>{
     const content=toggle.nextElementSibling;
