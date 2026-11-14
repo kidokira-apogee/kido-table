@@ -149,6 +149,24 @@
     return '<section class="panel-card"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
   }
 
+  function frameRecordsCard(items) {
+    const labels = ['内枠','中枠','外枠','今回の枠番'];
+    const byLabel = new Map((Array.isArray(items) ? items : []).map(item => [item?.label, item]));
+    const countLabels = ['1着','2着','3着','着外'];
+    const rows = labels.map(label => {
+      const item = byLabel.get(label);
+      const values = Array.isArray(item?.record) ? item.record : [];
+      const sourceLabel = label === '今回の枠番' && item?.sourceLabel
+        ? '<small class="frame-source-label">' + esc(item.sourceLabel) + '</small>' : '';
+      const counts = countLabels.map((countLabel, i) => {
+        const value = values[i] === null || values[i] === undefined || values[i] === '' ? '' : esc(values[i]);
+        return '<div><small>' + countLabel + '</small><b>' + value + '</b></div>';
+      }).join('');
+      return '<div class="frame-record-entry"><strong>' + label + sourceLabel + '</strong><div class="four-counts">' + counts + '</div></div>';
+    }).join('');
+    return '<section class="panel-card"><h4>枠順成績</h4>' + rows + '</section>';
+  }
+
   function dataPanel(horse, key, race) {
     const data = horse.dataTabs?.[key] || {};
     if (key === 'detail') return '<div class="panel-grid">' +
@@ -160,6 +178,7 @@
       return '<div class="panel-grid">' +
         statsCard('ローテーション・季節', rotationSeason) +
         statsCard('馬場・コース条件', data.terrain) +
+        frameRecordsCard(data.frameRecords) +
         statsCard('右回り・左回り', data.turn) + '</div>';
     }
     return '<div class="panel-grid"></div>';
