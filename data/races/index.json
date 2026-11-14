@@ -12,8 +12,7 @@
       "distance": "ダート1400m",
       "classLabel": "２歳・未勝利(馬齢)[指定]",
       "status": "published",
-      "horseCount": 16,
-      "startTime": "09:45"
+      "horseCount": 16
     },
     {
       "id": "2026-11-15-tokyo-6",
@@ -26,8 +25,7 @@
       "distance": "ダート1600m",
       "classLabel": "３歳以上・１勝クラス(定量)[指定]",
       "status": "published",
-      "horseCount": 16,
-      "startTime": "12:40"
+      "horseCount": 16
     },
     {
       "id": "2026-11-15-tokyo-7",
@@ -40,8 +38,7 @@
       "distance": "ダート1400m",
       "classLabel": "３歳以上・２勝クラス(定量)(混)[指定]",
       "status": "published",
-      "horseCount": 14,
-      "startTime": "13:10"
+      "horseCount": 14
     },
     {
       "id": "2026-11-15-tokyo-8",
@@ -54,8 +51,7 @@
       "distance": "芝1800m (B)",
       "classLabel": "３歳以上・２勝クラス(定量)(混)[指定]",
       "status": "published",
-      "horseCount": 12,
-      "startTime": "13:40"
+      "horseCount": 12
     },
     {
       "id": "2026-11-15-tokyo-9",
@@ -68,8 +64,7 @@
       "distance": "ダート1400m",
       "classLabel": "３歳以上・３勝クラス(ハンデ)(混)[指定]",
       "status": "published",
-      "horseCount": 16,
-      "startTime": "14:10"
+      "horseCount": 16
     },
     {
       "id": "2026-11-15-tokyo-10",
@@ -82,8 +77,7 @@
       "distance": "芝1800m (B)",
       "classLabel": "３歳以上・３勝クラス(定量)(牝)(混)(特指)",
       "status": "published",
-      "horseCount": 11,
-      "startTime": "14:45"
+      "horseCount": 11
     },
     {
       "id": "2026-11-15-tokyo-11",
@@ -96,8 +90,7 @@
       "distance": "芝1400m (B)",
       "classLabel": "３歳以上・オープン(Ｌ)(ハンデ)(国際)(特指)",
       "status": "published",
-      "horseCount": 18,
-      "startTime": "15:20"
+      "horseCount": 18
     },
     {
       "id": "2026-11-15-tokyo-12",
@@ -110,8 +103,7 @@
       "distance": "芝2000m (B)",
       "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]",
       "status": "published",
-      "horseCount": 18,
-      "startTime": "16:10"
+      "horseCount": 18
     },
     {
       "id": "2026-11-15-kyoto-11",
@@ -124,8 +116,7 @@
       "distance": "芝2200m・外 (B)",
       "classLabel": "３歳以上・オープン・Ｇ１(定量)(牝)(国際)(指定)",
       "status": "published",
-      "horseCount": 18,
-      "startTime": "15:40"
+      "horseCount": 18
     },
     {
       "id": "2026-11-15-kyoto-12",
@@ -138,8 +129,7 @@
       "distance": "芝1800m・外 (B)",
       "classLabel": "３歳以上・３勝クラス(ハンデ)(混)[指定]",
       "status": "published",
-      "horseCount": 16,
-      "startTime": "16:25"
+      "horseCount": 16
     },
     {
       "id": "2026-11-14-tokyo-7",
