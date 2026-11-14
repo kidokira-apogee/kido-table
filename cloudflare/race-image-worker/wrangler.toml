@@ -1,0 +1,10 @@
+name = "kido-race-image-api"
+main = "src/index.ts"
+compatibility_date = "2026-11-14"
+
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "kido-race-images"
+
+[vars]
+ALLOWED_ORIGIN = "https://kidokira-apogee.github.io"
