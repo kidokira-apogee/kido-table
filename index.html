@@ -431,7 +431,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 <section class="list-section"><div class="list-section-head" id="race-list-heading">登録レース</div><div id="race-list-items"></div></section>
 </section>
 <section hidden id="race-detail-container"></section></main>
-<script src="structured-renderer.js?v=20261115-frame-records"></script>
+<script src="structured-renderer.js?v=20261115-frame-record-format"></script>
 <script src="structured-renderer-integration-adapter.js"></script>
 <script>
 (async function(){
@@ -518,8 +518,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  }
  function ensureFrameRecordSlots(root){
   const labels=['内枠','中枠','外枠','今回の枠番'];
-  const countLabels=['1着','2着','3着','着外'];
-  const cardHtml='<section class="panel-card frame-records-card"><h4>枠順成績</h4>'+labels.map(label=>'<div class="frame-record-entry"><strong>'+label+'</strong><div class="four-counts">'+countLabels.map(name=>'<div><small>'+name+'</small><b></b></div>').join('')+'</div></div>').join('')+'</section>';
+  const cardHtml='<section class="panel-card frame-records-card"><h4>枠順成績</h4><div class="stats">'+labels.map(label=>'<div class="stat-row"><span>'+label+'</span><strong class="record"></strong></div>').join('')+'</div></section>';
   root.querySelectorAll('.horse-card').forEach(card=>{
    const tab=[...card.querySelectorAll('.data-tab')].find(button=>button.textContent.trim()==='条件別');
    if(!tab)return;
