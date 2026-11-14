@@ -138,7 +138,7 @@
     return denominator >= 3 && placeCount / denominator >= 0.5;
   }
 
-  function statsCard(title, items, stackedRows = false) {
+  function statsCard(title, items, stackedRows = false, twoColumnRows = false) {
     if (!Array.isArray(items)) items = items ? [items] : [];
     const rows = items.map(item => {
       const value = recordText(item);
@@ -146,7 +146,7 @@
       // 正本HTMLの各成績行は stat-row で包む。行ラッパーを維持する。
       return '<div class="stat-row"><span>' + display(item?.label) + '</span><strong class="record' + good + '">' + value + '</strong></div>';
     }).join('');
-    return '<section class="panel-card' + (stackedRows ? ' stacked-records-card' : '') + '"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
+    return '<section class="panel-card' + (stackedRows ? ' stacked-records-card' : '') + (twoColumnRows ? ' two-column-records-card' : '') + '"><h4>' + esc(title) + '</h4><div class="stats">' + rows + '</div></section>';
   }
 
   function frameRecordsCard(items) {
@@ -168,14 +168,14 @@
   function dataPanel(horse, key, race) {
     const data = horse.dataTabs?.[key] || {};
     if (key === 'detail') return '<div class="panel-grid">' +
-      statsCard('通算成績', data.overall) + statsCard('芝・ダート成績', data.surfaceConditions) + '</div>';
+      statsCard('通算成績', data.overall, false, true) + '</div>';
     if (key === 'distanceCourse') return '<div class="panel-grid">' +
       statsCard('距離別成績', data.distanceBands, true) + statsCard('同コース成績', data.courseRecords, true) + '</div>';
     if (key === 'conditions') {
       const rotationSeason = [data.rotation, data.season].filter(Boolean);
       return '<div class="panel-grid">' +
         statsCard('ローテーション・季節', rotationSeason, true) +
-        statsCard('馬場・コース条件', data.terrain) +
+        statsCard('馬場・コース条件', data.terrain, true) +
         frameRecordsCard(data.frameRecords) +
         statsCard('右回り・左回り', data.turn) + '</div>';
     }
