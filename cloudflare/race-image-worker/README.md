@@ -1,32 +1,37 @@
 # 木戸表 レース画像アップロード（Cloudflare R2）
 
-この機能はテストブランチ用です。本番サイトではまだ有効化されていません。
+この機能はテストブランチ `feature/race-image-upload-r2` に実装しています。本番サイトにはまだ反映していません。
+
+## 仕様
+- 1レースにつき画像1枚。キーは `races/{raceId}/image`。
+- 同じレースへの再アップロードで上書き。
+- ページからログインなしでアップロード・差し替え・削除。
+- PNG / JPEG / WebP、最大8MiB。
+- ファイル拡張子やブラウザ申告MIMEだけでなく、先頭バイトで画像形式を検査。
+- GET画像は公開閲覧。画像URLを知る人は表示できます。
 
 ## 構成
 - GitHub Pages: 木戸表画面
-- Cloudflare Worker: 認証と画像アップロードAPI
+- Cloudflare Worker: 画像API
 - Cloudflare R2: 画像保存
-- 1レースにつき1画像。キーは `races/{raceId}/image`。同じレースへの再アップロードで差し替えます。
 
-## 無料枠
-R2 Standardの無料枠は月10GB-month、Class A 100万操作/月、Class B 1,000万操作/月、インターネット向け転送無料。Workers Freeには日次リクエスト上限等があります。無料枠超過時に有料へ移行しないよう、Cloudflare側で課金設定・利用上限を必ず確認してください。無料枠を超えた場合に課金ゼロを技術的に保証する仕組みではありません。
-
-## Cloudflare側で必要な作業
-1. Cloudflareアカウントを作成し、R2 Standard bucket `kido-race-images` を作成。
-2. Workerをデプロイし、R2 binding名 `IMAGES` を設定。
-3. `ADMIN_PASSWORD` と十分に長いランダムな `TOKEN_SECRET` をWorker secretsに登録。
-4. `ALLOWED_ORIGIN` を実際の木戸表公開URLのoriginに設定（現在の仮値はGitHub Pages標準URL）。
-5. WorkerをデプロイしてURLを取得。
-6. `index.html` の `window.KIDO_IMAGE_API_BASE` にWorker URLを設定。
-7. テスト環境でアップロード・再読込・別レース非表示・差し替えを検証。
+## Cloudflare側の設定
+1. Cloudflareアカウントを作成。
+2. R2 Standard bucket `kido-race-images` を作成。
+3. Worker `kido-race-image-api` をデプロイ。
+4. R2 binding名 `IMAGES` をbucket `kido-race-images` に紐付け。
+5. `ALLOWED_ORIGIN` を実際の木戸表URLのoriginに設定。現在の設定値は `https://kidokira-apogee.github.io`。
+6. Workerの公開URLを取得し、`index.html` の `window.KIDO_IMAGE_API_BASE` に設定。
+7. テストブランチをPagesのプレビュー等で確認後、本番反映する。
 
 ## API
-- `POST /login` JSON `{"password":"..."}` → 8時間有効の署名トークン
-- `PUT /upload/{raceId}` Bearerトークン + PNG/JPEG/WebP、最大8MB
-- `GET /image/{raceId}` 公開画像取得
+- `GET /image/{raceId}`: 画像取得
+- `PUT /upload/{raceId}`: 画像の新規登録・差し替え
+- `DELETE /image/{raceId}`: 画像削除
 
-## 注意
-- 画像GETは公開閲覧用。機密画像を置かないこと。
-- アップロード画面はWorker URLが空なら表示されない。
-- 本実装は最初の検証用。削除UI、画像のEXIF除去、ファイル内容のマジックバイト検査、レート制限、ログ監視は未実装。
-- Cloudflareのアカウント作成・secret設定・Workerデプロイ・実機確認はこのリポジトリ変更だけでは完了しません。
+## セキュリティ上の注意
+この版はログイン認証を設けず、ブラウザのOriginを確認する簡易運用です。CORS/Origin確認は通常のブラウザ経由の誤操作や他サイトからの呼び出しを抑える助けにはなりますが、認証ではありません。HTTPクライアント等でOriginを偽装する第三者まで排除するものではありません。サイトを知る人がAPIを直接呼ぶリスクは残ります。ユーザーが限定されている個人用途を前提とした仕様です。
+画像の形式・サイズ検査は行いますが、公開前に実際の運用環境でアップロード・表示・差し替え・削除を確認してください。
+
+## 料金
+R2/Workersの料金や無料枠は変更される可能性があります。無料枠を超えた際の請求をこのコードだけで完全に防ぐことはできません。Cloudflareの現在の料金ページとアカウントの課金設定を確認してください。
