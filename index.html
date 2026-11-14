@@ -644,8 +644,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    if(horseName&&!card.querySelector('.horse-collapse-toggle')){
     const titleRow=document.createElement('div');
     titleRow.className='horse-title-row';
-    titleRow.style.cssText='display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:100%;min-width:0';
+    titleRow.style.cssText='display:flex;align-items:center;gap:8px;flex-wrap:nowrap;width:100%;max-width:100%;min-width:0;box-sizing:border-box';
     horseName.parentNode.insertBefore(titleRow,horseName);
+    horseName.style.cssText+=';flex:1 1 auto;min-width:0;width:auto;max-width:100%';
     titleRow.appendChild(horseName);
     const toggle=document.createElement('button');
     toggle.type='button';
@@ -653,7 +654,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     toggle.textContent='− 最小化';
     toggle.setAttribute('aria-expanded','true');
     toggle.setAttribute('aria-label','馬の詳細を最小化');
-    toggle.style.cssText='appearance:none;flex:0 0 auto;border:1px solid #b9d0bf;border-radius:999px;background:#f2f8f3;color:#24583a;padding:4px 9px;font:800 9px system-ui,-apple-system,sans-serif;line-height:1.2;cursor:pointer;white-space:nowrap';
+    toggle.style.cssText='appearance:none;flex:0 0 auto;margin-left:auto;border:1px solid #b9d0bf;border-radius:999px;background:#f2f8f3;color:#24583a;padding:7px 12px;min-height:32px;font:850 10px system-ui,-apple-system,sans-serif;line-height:1.2;cursor:pointer;white-space:nowrap;touch-action:manipulation';
     titleRow.appendChild(toggle);
     toggle.addEventListener('click',()=>{
      const collapsed=card.classList.toggle('horse-collapsed');
