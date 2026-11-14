@@ -646,7 +646,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     titleRow.className='horse-title-row';
     titleRow.style.cssText='display:flex;align-items:center;gap:8px;flex-wrap:nowrap;width:100%;max-width:100%;min-width:0;box-sizing:border-box';
     horseName.parentNode.insertBefore(titleRow,horseName);
-    horseName.style.cssText+=';flex:1 1 auto;min-width:0;width:auto;max-width:100%';
+    const identityMain=horseName.parentElement;
+    identityMain.style.cssText+=';flex:1 1 0%;min-width:0;width:100%;max-width:100%;box-sizing:border-box';
+    horseName.style.cssText+=';display:block;flex:1 1 auto;min-width:0;width:100%;max-width:100%;box-sizing:border-box';
     titleRow.appendChild(horseName);
     const toggle=document.createElement('button');
     toggle.type='button';
