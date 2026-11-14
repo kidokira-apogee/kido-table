@@ -415,6 +415,21 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 </style>
 
 
+
+<style>
+.kido-race-image{margin:0 0 11px;padding:10px 12px;background:#fff;border:1px solid #d5e2d8;border-radius:11px;box-shadow:0 3px 10px #173d2908}
+.kido-race-image-head{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#17432f;font-size:11px;font-weight:950}
+.kido-race-image button,.kido-image-file-label{border:1px solid #bdd0c1;border-radius:7px;background:#f7fbf7;color:#24583a;padding:7px 10px;font:800 10px system-ui;cursor:pointer}
+.kido-image-status{margin-top:7px;color:#64736a;font-size:9px}
+.kido-image-preview{display:block;width:100%;height:auto;max-height:65vh;object-fit:contain;margin-top:8px;border-radius:7px;cursor:zoom-in}
+.kido-image-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px}
+.kido-image-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.kido-image-upload:disabled{opacity:.5;cursor:wait}
+</style>
+<script>
+// Set this to the deployed Cloudflare Worker URL before enabling image uploads.
+window.KIDO_IMAGE_API_BASE = '';
+</script>
 </head>
 <body>
 <main class="page">
@@ -474,6 +489,54 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    }
   }catch(error){console.warn('開催場成績の読み込みに失敗しました',error);}
  }
+ 
+async function initKidoRaceImage(panel,raceId){
+ const base=String(window.KIDO_IMAGE_API_BASE||'').replace(/\/$/,'');
+ const status=panel.querySelector('.kido-image-status');
+ const preview=panel.querySelector('.kido-image-preview');
+ const login=panel.querySelector('.kido-image-login');
+ const controls=panel.querySelector('.kido-image-controls');
+ const file=panel.querySelector('.kido-image-file');
+ const upload=panel.querySelector('.kido-image-upload');
+ const key='kido-image-token';
+ function setStatus(message){status.textContent=message;}
+ function getToken(){return sessionStorage.getItem(key)||'';}
+ function showControls(){controls.hidden=!getToken();login.textContent=getToken()?'管理者ログイン済み':'管理者ログイン';}
+ async function loadImage(){
+  try{
+   const response=await fetch(base+'/image/'+encodeURIComponent(raceId),{cache:'no-store'});
+   if(response.status===404){preview.hidden=true;setStatus('まだ画像は登録されていません。');return;}
+   if(!response.ok)throw new Error('HTTP '+response.status);
+   const blob=await response.blob();preview.src=URL.createObjectURL(blob);preview.hidden=false;
+   preview.onclick=()=>{const w=window.open();if(w){w.document.write('<img style="max-width:100%;height:auto" src="'+preview.src+'">');}};
+   setStatus('掲載画像');
+  }catch(e){setStatus('画像の読み込みに失敗しました。');}
+ }
+ login.addEventListener('click',async()=>{
+  const password=window.prompt('管理者パスワードを入力してください');if(!password)return;
+  try{
+   const response=await fetch(base+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password})});
+   if(!response.ok)throw new Error('認証に失敗しました');
+   const data=await response.json();sessionStorage.setItem(key,data.token);showControls();setStatus('管理者としてログインしました。');
+  }catch(e){setStatus(e.message);}
+ });
+ upload.addEventListener('click',async()=>{
+  if(!getToken()){setStatus('先に管理者ログインしてください。');return;}
+  if(!file.files||!file.files[0]){setStatus('画像を選択してください。');return;}
+  const image=file.files[0];
+  if(!['image/png','image/jpeg','image/webp'].includes(image.type)){setStatus('PNG・JPEG・WebPのみ対応しています。');return;}
+  if(image.size>8*1024*1024){setStatus('画像は8MB以下にしてください。');return;}
+  upload.disabled=true;setStatus('アップロード中…');
+  try{
+   const response=await fetch(base+'/upload/'+encodeURIComponent(raceId),{method:'PUT',headers:{'Authorization':'Bearer '+getToken(),'Content-Type':image.type},body:image});
+   if(response.status===401){sessionStorage.removeItem(key);showControls();throw new Error('ログイン期限が切れました。再ログインしてください。');}
+   if(!response.ok)throw new Error('アップロードに失敗しました（HTTP '+response.status+'）');
+   setStatus('保存しました。');await loadImage();file.value='';
+  }catch(e){setStatus(e.message);}finally{upload.disabled=false;}
+ });
+ showControls();await loadImage();
+}
+
  function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
  function normalizeRunningStyle(root){
   const styleNames={'逃':'逃げ','先':'先行','中':'中団','後':'後方','マ':'マクリ'};
@@ -622,6 +685,24 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    await applyVenueRecords(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
+   // Optional R2-backed race image panel. Disabled until the Worker URL is configured.
+   if(window.KIDO_IMAGE_API_BASE){
+    const raceImage=document.createElement('section');
+    raceImage.className='kido-race-image';
+    raceImage.dataset.raceId=r.id;
+    raceImage.innerHTML=`
+      <div class="kido-race-image-head"><strong>レース画像</strong><button type="button" class="kido-image-login">管理者ログイン</button></div>
+      <div class="kido-image-status" role="status">画像を確認しています…</div>
+      <img class="kido-image-preview" alt="このレースの掲載画像" hidden>
+      <div class="kido-image-controls" hidden>
+        <label class="kido-image-file-label">画像を選択<input class="kido-image-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+        <button type="button" class="kido-image-upload">アップロード／差し替え</button>
+      </div>`;
+    const raceHead=detail.querySelector('.racehead');
+    if(raceHead)raceHead.insertAdjacentElement('afterend',raceImage);
+    else detail.prepend(raceImage);
+    initKidoRaceImage(raceImage,r.id);
+   }
 
    normalizeRunningStyle(detail);
    // 旧HTML専用のコメント正規化。
