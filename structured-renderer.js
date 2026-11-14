@@ -173,11 +173,16 @@
       statsCard('距離別成績', data.distanceBands, true) + statsCard('同コース成績', data.courseRecords, true) + '</div>';
     if (key === 'conditions') {
       const rotationSeason = [data.rotation, data.season].filter(Boolean);
-      return '<div class="panel-grid">' +
-        statsCard('ローテーション・季節', rotationSeason, true) +
-        statsCard('馬場・コース条件', data.terrain, true) +
-        frameRecordsCard(data.frameRecords) +
-        statsCard('右回り・左回り', data.turn) + '</div>';
+      return '<div class="conditions-layout">' +
+        '<div class="conditions-column conditions-column-left">' +
+          statsCard('ローテーション・季節', rotationSeason, true) +
+          statsCard('馬場・コース条件', data.terrain, true) +
+        '</div>' +
+        '<div class="conditions-column conditions-column-right">' +
+          frameRecordsCard(data.frameRecords) +
+          statsCard('右回り・左回り', data.turn) +
+        '</div>' +
+      '</div>';
     }
     return '<div class="panel-grid"></div>';
   }
