@@ -209,7 +209,7 @@
       summaryChip(summary.allRecord, '全成績', 'record') +
       summaryChip(summary.surfaceRecord, surfaceLabel, 'record') +
       summaryChip(summaryVenueRecord, race.venue || '今回コース条件', 'record') +
-      summaryChip(summary.turnRecord, summary.turnRecord?.sourceLabel || '今回周り条件', 'record') +
+      summaryChip(summary.turnRecord, (race.direction === '右' || race.direction === '左') ? race.direction + '回' : (summary.turnRecord?.sourceLabel || '回り不明'), 'record') +
       summaryChip(summary.lateStartRate, '出遅れ率', 'lateRate') + '</div>';
     const currentText = typeof current.text === 'string' ? current.text : '';
     const previousText = typeof previous.text === 'string' ? previous.text : '';
