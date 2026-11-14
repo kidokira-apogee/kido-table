@@ -443,8 +443,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .conditions-layout .frame-records-card .stats{gap:2px 0}
 .conditions-layout .stacked-records-card .stat-row,
 .conditions-layout .frame-records-card .stat-row{padding:1px 0}
-.conditions-layout .stats:not(.stacked-records-card .stats):not(.frame-records-card .stats){grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 5px}
-.conditions-layout .stats:not(.stacked-records-card .stats):not(.frame-records-card .stats) .stat-row{white-space:nowrap}
+/* The existing .stats two-column flow keeps right/left records on one line. */
 @media(max-width:360px){.conditions-layout{gap:4px}.conditions-column{gap:4px}.conditions-layout .panel-card{padding:4px 5px}.conditions-layout .panel-card h4{font-size:7.5px}.conditions-layout .stats span{font-size:7px}.conditions-layout .stats strong{font-size:7px}}
 </style>
 
