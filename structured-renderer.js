@@ -174,7 +174,7 @@
     if (key === 'conditions') {
       const rotationSeason = [data.rotation, data.season].filter(Boolean);
       return '<div class="panel-grid">' +
-        statsCard('ローテーション・季節', rotationSeason) +
+        statsCard('ローテーション・季節', rotationSeason, true) +
         statsCard('馬場・コース条件', data.terrain) +
         frameRecordsCard(data.frameRecords) +
         statsCard('右回り・左回り', data.turn) + '</div>';
