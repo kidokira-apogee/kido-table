@@ -152,19 +152,17 @@
   function frameRecordsCard(items) {
     const labels = ['内枠','中枠','外枠','今回の枠番'];
     const byLabel = new Map((Array.isArray(items) ? items : []).map(item => [item?.label, item]));
-    const countLabels = ['1着','2着','3着','着外'];
     const rows = labels.map(label => {
       const item = byLabel.get(label);
       const values = Array.isArray(item?.record) ? item.record : [];
+      const hasRecord = values.length === 4 && values.every(value => value !== null && value !== undefined && value !== '');
+      const value = hasRecord ? '(' + values.map(esc).join('-') + ')' : '';
       const sourceLabel = label === '今回の枠番' && item?.sourceLabel
-        ? '<small class="frame-source-label">' + esc(item.sourceLabel) + '</small>' : '';
-      const counts = countLabels.map((countLabel, i) => {
-        const value = values[i] === null || values[i] === undefined || values[i] === '' ? '' : esc(values[i]);
-        return '<div><small>' + countLabel + '</small><b>' + value + '</b></div>';
-      }).join('');
-      return '<div class="frame-record-entry"><strong>' + label + sourceLabel + '</strong><div class="four-counts">' + counts + '</div></div>';
+        ? ' <small class="frame-source-label">' + esc(item.sourceLabel) + '</small>' : '';
+      const good = hasRecord && isPlaceRateHit(item) ? ' good' : '';
+      return '<div class="stat-row"><span>' + label + sourceLabel + '</span><strong class="record' + good + '">' + value + '</strong></div>';
     }).join('');
-    return '<section class="panel-card frame-records-card"><h4>枠順成績</h4>' + rows + '</section>';
+    return '<section class="panel-card frame-records-card"><h4>枠順成績</h4><div class="stats">' + rows + '</div></section>';
   }
 
   function dataPanel(horse, key, race) {
