@@ -402,6 +402,18 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .frame-records-card .stat-row:last-child{border-bottom:0}
 .frame-records-card .stat-row>span{min-width:0;white-space:nowrap}
 .frame-records-card .stat-row>.record{flex:0 0 auto;text-align:right}
+
+/* Race image: enabled only for race IDs explicitly listed in data/races/images.json. */
+.race-image-block{margin:0 0 12px;padding:9px;background:#fff;border:1px solid #d7e2d9;border-radius:12px;box-shadow:0 3px 12px #173d290d}
+.race-image-open{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.race-image-open img{display:block;width:100%;height:auto;max-height:72vh;object-fit:contain;border-radius:7px}
+.race-image-caption{margin:6px 2px 0;color:#66766d;font-size:10px;text-align:center}
+.race-image-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:#000d}
+.race-image-lightbox.is-open{display:flex}
+.race-image-lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 70px);object-fit:contain}
+.race-image-lightbox-close{position:absolute;top:12px;right:12px;width:42px;height:42px;border:1px solid #ffffff80;border-radius:50%;background:#17251e;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+@media(max-width:620px){.race-image-block{margin:0 0 8px;padding:6px;border-radius:9px}.race-image-caption{font-size:9px}}
+
 </style>
 <style>.comment-week{padding:7px 10px;background:#f8fbf8;border-bottom:1px solid #e3ebe4;font-size:10px;line-height:1.55;color:#30483a}.comment-week b{color:#245b3d}@media(max-width:600px){.comment-week{padding:6px 8px;font-size:9px}}.stable-arrow{width:16px;height:16px;vertical-align:-3px;margin-right:5px}.ichioshi-mark{font-weight:950;color:#8a5a00;margin-right:4px}.comment-current .stable-arrow{display:inline-block}@media(max-width:600px){.stable-arrow{width:14px;height:14px}}\n</style>
 
@@ -687,6 +699,64 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   selectedDate='';selectedVenue='';renderDates();
  }
  monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedDate='';selectedVenue='';renderDates();});
+
+ async function insertRaceImage(r){
+  // 画像表示は、対象レースIDが明示登録された場合だけ有効にする。
+  if(r?.id!=='2026-11-08-kyoto-11')return;
+  try{
+   const response=await fetch('data/races/images.json',{cache:'no-store'});
+   if(!response.ok)return;
+   const manifest=await response.json();
+   const imagePath=manifest?.images?.[r.id];
+   if(typeof imagePath!=='string'||!imagePath.startsWith('images/races/')||imagePath.includes('..'))return;
+   const header=detail.querySelector('.racehead');
+   if(!header)return;
+   const section=document.createElement('section');
+   section.className='race-image-block';
+   const open=document.createElement('button');
+   open.type='button';
+   open.className='race-image-open';
+   open.setAttribute('aria-label','レース画像を拡大表示');
+   const img=document.createElement('img');
+   img.src=imagePath;
+   img.alt='みやこステークス レース画像';
+   img.loading='eager';
+   img.decoding='async';
+   open.appendChild(img);
+   const caption=document.createElement('div');
+   caption.className='race-image-caption';
+   caption.textContent='画像をタップすると拡大表示します';
+   section.append(open,caption);
+   header.insertAdjacentElement('afterend',section);
+   open.addEventListener('click',()=>{
+    let lightbox=document.querySelector('.race-image-lightbox');
+    if(!lightbox){
+     lightbox=document.createElement('div');
+     lightbox.className='race-image-lightbox';
+     lightbox.setAttribute('role','dialog');
+     lightbox.setAttribute('aria-modal','true');
+     lightbox.setAttribute('aria-label','レース画像の拡大表示');
+     const large=document.createElement('img');
+     const close=document.createElement('button');
+     close.type='button';close.className='race-image-lightbox-close';
+     close.setAttribute('aria-label','閉じる');close.textContent='×';
+     lightbox.append(large,close);
+     const dismiss=()=>{lightbox.classList.remove('is-open');document.body.style.overflow='';};
+     close.addEventListener('click',dismiss);
+     lightbox.addEventListener('click',event=>{if(event.target===lightbox)dismiss();});
+     document.addEventListener('keydown',event=>{if(event.key==='Escape')dismiss();});
+     document.body.appendChild(lightbox);
+    }
+    const large=lightbox.querySelector('img');
+    large.src=img.currentSrc||img.src;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow='hidden';
+    lightbox.querySelector('button').focus();
+   });
+   img.addEventListener('error',()=>section.remove(),{once:true});
+  }catch(error){console.warn('みやこステークス画像を読み込めませんでした',error);}
+ }
+
  async function openRace(r,filePath=null){
   try{
    const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
@@ -713,6 +783,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    await applyFrameRecords(data);
    const rendered=window.KidoRaceRendererAdapter.prepareRace(data);
    detail.innerHTML=rendered.html;
+   await insertRaceImage(r);
    ensureFrameRecordSlots(detail);
 
    normalizeRunningStyle(detail);
