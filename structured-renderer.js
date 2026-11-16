@@ -236,7 +236,7 @@
     const oneWeekText = typeof oneWeekBefore.text === 'string' ? oneWeekBefore.text : '';
     const comments = currentText || oneWeekText ? '<section class="stable-comment"><div class="stable-comment-head"><strong>【' + display(p.trainer) + '厩舎】</strong></div>' +
       (currentText ? '<p class="stable-comment-body' + (current.isIchioshi ? ' is-ichioshi' : '') + '">' + esc(currentText) + '</p>' : '') +
-      (oneWeekText ? '<p class="stable-comment-previous"><span class="stable-comment-label">1週間前コメント</span>' + esc(oneWeekText) + '</p>' : '') + '</section>' : '';
+      (oneWeekText ? '<p class="stable-comment-previous">' + esc(oneWeekText) + '</p>' : '') + '</section>' : '';
     const surfaceCode = race.surface === '芝' ? 'T' : 'D';
     return '<section class="horse-card" id="horse-' + horse.horseNumber + '" data-current-distance="' + esc(race.distanceM) + '" data-current-surface="' + surfaceCode + '" data-current-venue="' + esc(race.venue) + '" data-field-size="' + esc(race.fieldSize) + '" data-place-rate-min-starts="3" data-place-rate-threshold="0.5">' +
       '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><span class="frame-no' + frameClass + '" data-horse="' + esc(horse.horseNumber) + '">' + esc(horse.horseNumber) + '</span></div>' +
