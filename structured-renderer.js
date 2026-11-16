@@ -216,13 +216,12 @@
     const jockeyAffiliationLabel = p.jockeyAffiliation ? '・' + p.jockeyAffiliation + '所属' : '';
     const trainerAffiliationLabel = trainerAffiliationValue ? '・' + trainerAffiliationValue + '所属' : '';
     const current = horse.comments?.current || {};
-    const previous = horse.comments?.previousRun || {};
+    const oneWeekBefore = horse.comments?.oneWeekBefore || {};
     const runs = (horse.recentRuns || []).slice(0, 3);
     const runStyles = horseStyles.recentRuns || [];
     const tabs = [
       ['conditions','条件別','conditions'],
       ['distanceCourse','距離・コース','distance'],
-      ['detail','詳細成績','detail']
     ];
     const tabButtons = tabs.map((tab, i) => '<button aria-selected="' + (i === 0 ? 'true' : 'false') + '" class="data-tab" data-panel="' + tab[2] + '-' + horse.horseNumber + '" role="tab" type="button">' + tab[1] + '</button>').join('');
     const panels = tabs.map((tab, i) => '<section class="data-panel' + (i === 0 ? ' active' : '') + '" id="' + tab[2] + '-' + horse.horseNumber + '" data-data-content="' + tab[2] + '-' + horse.horseNumber + '">' + dataPanel(horse, tab[0], race) + '</section>').join('');
@@ -234,10 +233,10 @@
       summaryChip(summary.turnRecord, (race.direction === '右' || race.direction === '左') ? race.direction + '回' : (summary.turnRecord?.sourceLabel || '回り不明'), 'record') +
       summaryChip(summary.lateStartRate, '出遅れ率', 'lateRate') + '</div>';
     const currentText = typeof current.text === 'string' ? current.text : '';
-    const previousText = typeof previous.text === 'string' ? previous.text : '';
-    const comments = currentText || previousText ? '<section class="stable-comment"><div class="stable-comment-head"><strong>【' + display(p.trainer) + '厩舎】</strong></div>' +
+    const oneWeekText = typeof oneWeekBefore.text === 'string' ? oneWeekBefore.text : '';
+    const comments = currentText || oneWeekText ? '<section class="stable-comment"><div class="stable-comment-head"><strong>【' + display(p.trainer) + '厩舎】</strong></div>' +
       (currentText ? '<p class="stable-comment-body' + (current.isIchioshi ? ' is-ichioshi' : '') + '">' + esc(currentText) + '</p>' : '') +
-      (previousText ? '<p class="stable-comment-previous">' + esc(previousText) + '</p>' : '') + '</section>' : '';
+      (oneWeekText ? '<p class="stable-comment-previous"><span class="stable-comment-label">1週間前コメント</span>' + esc(oneWeekText) + '</p>' : '') + '</section>' : '';
     const surfaceCode = race.surface === '芝' ? 'T' : 'D';
     return '<section class="horse-card" id="horse-' + horse.horseNumber + '" data-current-distance="' + esc(race.distanceM) + '" data-current-surface="' + surfaceCode + '" data-current-venue="' + esc(race.venue) + '" data-field-size="' + esc(race.fieldSize) + '" data-place-rate-min-starts="3" data-place-rate-threshold="0.5">' +
       '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><span class="frame-no' + frameClass + '" data-horse="' + esc(horse.horseNumber) + '">' + esc(horse.horseNumber) + '</span></div>' +
