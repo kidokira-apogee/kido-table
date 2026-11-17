@@ -405,10 +405,13 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .frame-records-card .stat-row>.record{flex:0 0 auto;text-align:right}
 
 /* Race image: enabled only for race IDs explicitly listed in data/races/images.json. */
-.race-image-block{margin:0 0 12px;padding:9px;background:#fff;border:1px solid #d7e2d9;border-radius:12px;box-shadow:0 3px 12px #173d290d}
+.race-image-block{margin:0 0 12px;padding:9px;background:#fff;border:1px solid #d7e2d9;border-radius:12px;box-shadow:0 3px 12px #173d290d;position:sticky;top:calc(env(safe-area-inset-top, 0px) + 8px);z-index:100}
 .race-image-open{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
 .race-image-open img{display:block;width:100%;height:auto;max-height:72vh;object-fit:contain;border-radius:7px}
 .race-image-caption{margin:6px 2px 0;color:#66766d;font-size:10px;text-align:center}
+.race-image-block.is-compact{width:86%;max-width:760px;margin:0 auto 12px;padding:5px;box-shadow:0 4px 16px #173d2930;transition:width .18s ease,padding .18s ease,box-shadow .18s ease}
+.race-image-block.is-compact .race-image-open img{max-height:24vh;object-fit:contain}
+.race-image-block.is-compact .race-image-caption{margin-top:3px;font-size:9px}
 .race-image-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:#000d}
 .race-image-lightbox.is-open{display:flex}
 .race-image-lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 70px);object-fit:contain}
@@ -742,6 +745,14 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    caption.textContent='画像をタップすると拡大表示します';
    section.append(open,caption);
    header.insertAdjacentElement('afterend',section);
+   // 画像が画面上端に到達したら固定状態にし、スクロール中だけコンパクト表示へ切り替える。
+   const updateStickyImage=()=>{
+    const rect=section.getBoundingClientRect();
+    section.classList.toggle('is-compact',rect.top<=16);
+   };
+   window.addEventListener('scroll',updateStickyImage,{passive:true});
+   window.addEventListener('resize',updateStickyImage);
+   updateStickyImage();
    open.addEventListener('click',()=>{
     let lightbox=document.querySelector('.race-image-lightbox');
     if(!lightbox){
