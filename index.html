@@ -723,8 +723,8 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
  monthSelect.addEventListener('change',()=>{selectedMonth=monthSelect.value;selectedDate='';selectedVenue='';renderDates();});
 
  async function insertRaceImage(r){
-  // 画像表示は、対象レースIDが明示登録された場合だけ有効にする。
-  if(r?.id!=='2026-11-08-kyoto-11')return;
+  // 画像表示は、data/races/images.jsonに対象レースIDが登録されている場合に有効にする。
+  if(!r?.id)return;
   try{
    const response=await fetch('data/races/images.json',{cache:'no-store'});
    if(!response.ok)return;
@@ -741,7 +741,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    open.setAttribute('aria-label','レース画像を拡大表示');
    const img=document.createElement('img');
    img.src=imagePath;
-   img.alt='みやこステークス レース画像';
+   img.alt=(r.venue||'')+' '+(r.raceNo||'')+'R '+(r.title||'レース')+' 画像';
    img.loading='eager';
    img.decoding='async';
    open.appendChild(img);
@@ -822,7 +822,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     lightbox.querySelector('button').focus();
    });
    img.addEventListener('error',()=>section.remove(),{once:true});
-  }catch(error){console.warn('みやこステークス画像を読み込めませんでした',error);}
+  }catch(error){console.warn('レース画像を読み込めませんでした',error);}
  }
 
  async function openRace(r,filePath=null){
