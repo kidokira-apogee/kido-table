@@ -749,7 +749,7 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    // stickyの親要素制約を避け、スクロール位置に応じてfixedへ切り替える。
    const placeholder=document.createElement('div');
    placeholder.className='race-image-placeholder';
-   section.insertAdjacentElement('afterend',placeholder);
+   section.insertAdjacentElement('beforebegin',placeholder);
    const updateFixedImage=()=>{
     const top=placeholder.getBoundingClientRect().top+window.scrollY;
     const shouldFix=window.scrollY+8>=top;
