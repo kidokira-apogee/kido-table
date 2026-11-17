@@ -408,13 +408,13 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .race-image-block{width:76%;max-width:680px;margin:0 auto 12px;padding:7px;background:#fff;border:1px solid #d7e2d9;border-radius:12px;box-shadow:0 3px 12px #173d290d;position:relative}
 .race-image-open{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
 .race-image-open img{display:block;width:100%;height:auto;max-height:48vh;object-fit:contain;border-radius:7px}
-.race-image-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
-.race-image-caption{margin:0 2px;color:#66766d;font-size:9px;text-align:left}
+.race-image-controls{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:0 0 5px}
+.race-image-caption{margin:4px 2px 0;color:#66766d;font-size:9px;text-align:center}
 .race-image-track-toggle{flex:0 0 auto;appearance:none;border:1px solid #b9d0bf;border-radius:999px;background:#f2f8f3;color:#24583a;padding:5px 10px;font:850 9px system-ui;cursor:pointer;white-space:nowrap}
 .race-image-track-toggle[aria-pressed="false"]{background:#fff;color:#66766d;border-color:#d7e2d9}
 .race-image-block.is-fixed{position:fixed;top:calc(env(safe-area-inset-top, 0px) + 8px);left:50%;transform:translateX(-50%);width:58%;max-width:520px;margin:0;padding:4px;z-index:1000;box-shadow:0 4px 16px #173d2930;background:#fff;transition:width .18s ease,padding .18s ease,box-shadow .18s ease}
 .race-image-block.is-fixed .race-image-open img{max-height:16vh;object-fit:contain}
-.race-image-block.is-fixed .race-image-controls{margin-top:2px}
+.race-image-block.is-fixed .race-image-controls{margin:0 0 2px}
 .race-image-block.is-fixed .race-image-caption{font-size:8px}
 .race-image-placeholder{width:100%;pointer-events:none}
 .race-image-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:#000d}
@@ -745,9 +745,6 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    img.loading='eager';
    img.decoding='async';
    open.appendChild(img);
-   const caption=document.createElement('div');
-   caption.className='race-image-caption';
-   caption.textContent='画像をタップすると拡大表示';
    const controls=document.createElement('div');
    controls.className='race-image-controls';
    const trackingToggle=document.createElement('button');
@@ -755,16 +752,25 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
    trackingToggle.className='race-image-track-toggle';
    trackingToggle.textContent='追尾 ON';
    trackingToggle.setAttribute('aria-pressed','true');
-   controls.append(caption,trackingToggle);
-   section.append(open,controls);
+   controls.appendChild(trackingToggle);
+   const caption=document.createElement('div');
+   caption.className='race-image-caption';
+   caption.textContent='画像をタップすると拡大表示';
+   section.append(controls,open,caption);
    header.insertAdjacentElement('afterend',section);
-   // 追尾ON時だけ、画像が画面上端に達した後にfixed表示へ切り替える。
+   // 初期表示では必ず通常サイズ。ユーザーが実際にスクロールした後だけ追尾判定する。
    const placeholder=document.createElement('div');
    placeholder.className='race-image-placeholder';
    section.insertAdjacentElement('beforebegin',placeholder);
    let trackingEnabled=true;
+   let userScrollStarted=false;
    const updateFixedImage=()=>{
     if(!section.offsetHeight)return;
+    if(!userScrollStarted){
+     section.classList.remove('is-fixed');
+     placeholder.style.height='0px';
+     return;
+    }
     const top=placeholder.getBoundingClientRect().top+window.scrollY;
     const shouldFix=trackingEnabled&&window.scrollY+8>=top;
     if(shouldFix){
@@ -781,9 +787,14 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
     trackingToggle.setAttribute('aria-pressed',String(trackingEnabled));
     updateFixedImage();
    });
+   window.addEventListener('wheel',()=>{userScrollStarted=true;},{passive:true});
+   window.addEventListener('touchmove',()=>{userScrollStarted=true;},{passive:true});
+   window.addEventListener('keydown',event=>{
+    if(['ArrowDown','PageDown','Space','End'].includes(event.code)||['ArrowDown','PageDown',' ','End'].includes(event.key))userScrollStarted=true;
+   });
    window.addEventListener('scroll',updateFixedImage,{passive:true});
    window.addEventListener('resize',updateFixedImage);
-   // レース詳細がhidden解除された後に初期位置を計算する。
+   // 初期表示は縮小させず、通常サイズを維持する。
    requestAnimationFrame(()=>requestAnimationFrame(updateFixedImage));
    open.addEventListener('click',()=>{
     let lightbox=document.querySelector('.race-image-lightbox');
