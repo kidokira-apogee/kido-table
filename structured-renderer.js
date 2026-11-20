@@ -199,9 +199,9 @@
   // 本文中の人名・括弧書きや、署名か判別できない表記には触れない。
   function stripReporterSignature(value) {
     const text = typeof value === 'string' ? value : '';
-    const match = text.match(/[ \\t　]*（([^（）\\r\\n]{1,20}記者)）[ \\t　]*$/);
+    const match = text.match(/[ \t　]*（([^（）\r\n]{1,20}記者)）[ \t　]*$/);
     if (!match) return { text, removed: '' };
-    return { text: text.slice(0, match.index).replace(/[ \\t　]+$/, ''), removed: match[1] };
+    return { text: text.slice(0, match.index).replace(/[ \t　]+$/, ''), removed: match[1] };
   }
 
   function signatureAuditAttrs(result) {
