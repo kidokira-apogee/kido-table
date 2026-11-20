@@ -2,6 +2,19 @@
   "schemaVersion": 1,
   "races": [
     {
+      "id": "2026-11-22-kyoto-11",
+      "file": "2026-11-22-kyoto-11.b64",
+      "date": "2026-11-22",
+      "dateLabel": "2026年11月22日（日）",
+      "venue": "京都",
+      "raceNo": 11,
+      "title": "第43回マイルチャンピオンシップ",
+      "distance": "芝1600m・外 (C)",
+      "classLabel": "３歳以上・オープン・Ｇ１(定量)(国際)(指定)　芝1600m・外 (C)",
+      "status": "published",
+      "horseCount": 18
+    },
+    {
       "id": "2026-11-21-kyoto-12",
       "file": "2026-11-21-kyoto-12.b64",
       "date": "2026-11-21",
