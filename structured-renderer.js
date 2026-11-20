@@ -195,6 +195,20 @@
     return '<div class="data-chip' + lateClass + hitClass + '"><small>' + esc(label) + '</small><b>' + value + '</b></div>';
   }
 
+  // 末尾の明確な記者署名（全角括弧＋「記者」）だけを除外する。
+  // 本文中の人名・括弧書きや、署名か判別できない表記には触れない。
+  function stripReporterSignature(value) {
+    const text = typeof value === 'string' ? value : '';
+    const match = text.match(/[ \t　]*（([^（）\r\n]{1,20}記者)）[ \t　]*$/);
+    if (!match) return { text, removed: '' };
+    return { text: text.slice(0, match.index).replace(/[ \t　]+$/, ''), removed: match[1] };
+  }
+
+  function signatureAuditAttrs(result) {
+    return ' data-reporter-signature-status="' + (result.removed ? 'removed' : 'none') + '"' +
+      (result.removed ? ' data-removed-reporter-signature="' + esc(result.removed) + '"' : '');
+  }
+
   function horseHtml(horse, race, applyColors) {
     const p = horse.profile || {};
     const pedigree = horse.pedigree || {};
@@ -232,11 +246,13 @@
       summaryChip(summaryVenueRecord, race.venue || '今回コース条件', 'record') +
       summaryChip(summary.turnRecord, (race.direction === '右' || race.direction === '左') ? race.direction + '回' : (summary.turnRecord?.sourceLabel || '回り不明'), 'record') +
       summaryChip(summary.lateStartRate, '出遅れ率', 'lateRate') + '</div>';
-    const currentText = typeof current.text === 'string' ? current.text : '';
-    const oneWeekText = typeof oneWeekBefore.text === 'string' ? oneWeekBefore.text : '';
+    const currentComment = stripReporterSignature(current.text);
+    const oneWeekComment = stripReporterSignature(oneWeekBefore.text);
+    const currentText = currentComment.text;
+    const oneWeekText = oneWeekComment.text;
     const comments = currentText || oneWeekText ? '<section class="stable-comment"><div class="stable-comment-head"><strong>【' + display(p.trainer) + '厩舎】</strong></div>' +
-      (currentText ? '<p class="stable-comment-body' + (current.isIchioshi ? ' is-ichioshi' : '') + '">' + esc(currentText) + '</p>' : '') +
-      (oneWeekText ? '<p class="stable-comment-previous">' + esc(oneWeekText) + '</p>' : '') + '</section>' : '';
+      (currentText ? '<p class="stable-comment-body' + (current.isIchioshi ? ' is-ichioshi' : '') + '"' + signatureAuditAttrs(currentComment) + '>' + esc(currentText) + '</p>' : '') +
+      (oneWeekText ? '<p class="stable-comment-previous"' + signatureAuditAttrs(oneWeekComment) + '>' + esc(oneWeekText) + '</p>' : '') + '</section>' : '';
     const surfaceCode = race.surface === '芝' ? 'T' : 'D';
     return '<section class="horse-card" id="horse-' + horse.horseNumber + '" data-current-distance="' + esc(race.distanceM) + '" data-current-surface="' + surfaceCode + '" data-current-venue="' + esc(race.venue) + '" data-field-size="' + esc(race.fieldSize) + '" data-place-rate-min-starts="3" data-place-rate-threshold="0.5">' +
       '<div class="profile"><div class="profile-main"><div class="identity"><div class="number-wrap"><span class="frame-no' + frameClass + '" data-horse="' + esc(horse.horseNumber) + '">' + esc(horse.horseNumber) + '</span></div>' +
