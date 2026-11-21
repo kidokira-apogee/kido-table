@@ -827,13 +827,24 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 
  async function openRace(r,filePath=null){
   try{
-   const response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
+   const isSplit=Array.isArray(r.fileParts)&&r.fileParts.length>0;
+   let response;
+   if(isSplit){
+    const encodedParts=await Promise.all(r.fileParts.map(async part=>{
+     const partResponse=await fetch('data/races/'+encodeURIComponent(part),{cache:'no-store'});
+     if(!partResponse.ok)throw new Error('HTTP '+partResponse.status+' '+part);
+     return (await partResponse.text()).trim();
+    }));
+    response=new Response(encodedParts.join(''));
+   }else{
+    response=await fetch(filePath||('data/races/'+encodeURIComponent(r.file||r.id+'.json')),{cache:'no-store'});
+   }
    if(!response.ok)throw new Error('HTTP '+response.status);
    let data;
-   if((r.file||'').endsWith('.bin')||(r.file||'').endsWith('.b64')){
+   if(isSplit||(r.file||'').endsWith('.bin')||(r.file||'').endsWith('.b64')){
     if(typeof DecompressionStream==='undefined')throw new Error('このブラウザーは圧縮データの展開に対応していません');
     let compressed;
-    if((r.file||'').endsWith('.b64')){
+    if(isSplit||(r.file||'').endsWith('.b64')){
      const encoded=(await response.text()).trim();
      const binary=atob(encoded);
      compressed=new Uint8Array(binary.length);
