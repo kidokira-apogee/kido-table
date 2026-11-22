@@ -2,6 +2,150 @@
   "schemaVersion": 1,
   "races": [
     {
+      "id": "2026-11-23-tokyo-12",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 12,
+      "title": "１勝クラス",
+      "distance": "芝1600m (C)",
+      "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]　芝1600m (C)",
+      "status": "published",
+      "horseCount": 18
+    },
+    {
+      "id": "2026-11-23-tokyo-11",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 11,
+      "title": "第31回東京スポーツ杯２歳Ｓ",
+      "distance": "芝1800m (C)",
+      "classLabel": "２歳・オープン・Ｇ２(馬齢)(国際)(指定)　芝1800m (C)",
+      "status": "published",
+      "horseCount": 12
+    },
+    {
+      "id": "2026-11-23-tokyo-10",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 10,
+      "title": "レジェンドトレーナーカップ",
+      "distance": "ダート2100m",
+      "classLabel": "３歳以上・３勝クラス(ハンデ)(混)[指定]　ダート2100m",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
+      "id": "2026-11-23-tokyo-9",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 9,
+      "title": "レジェンドジョッキーカップ",
+      "distance": "芝2400m (C)",
+      "classLabel": "３歳以上・２勝クラス(定量)(混)(特指)　芝2400m (C)",
+      "status": "published",
+      "horseCount": 12
+    },
+    {
+      "id": "2026-11-23-tokyo-8",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 8,
+      "title": "２勝クラス",
+      "distance": "ダート1400m",
+      "classLabel": "３歳以上・２勝クラス(定量)(牝)[指定]　ダート1400m",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
+      "id": "2026-11-23-tokyo-7",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "東京",
+      "raceNo": 7,
+      "title": "１勝クラス",
+      "distance": "ダート1400m",
+      "classLabel": "３歳以上・１勝クラス(定量)[指定]　ダート1400m",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
+      "id": "2026-11-23-fukushima-12",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "福島",
+      "raceNo": 12,
+      "title": "１勝クラス",
+      "distance": "芝2000m (B)",
+      "classLabel": "３歳以上・１勝クラス(定量)[指定]　芝2000m (B)",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
+      "id": "2026-11-23-fukushima-11",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "福島",
+      "raceNo": 11,
+      "title": "奥羽Ｓ",
+      "distance": "ダート1700m",
+      "classLabel": "３歳以上・３勝クラス(定量)(混)(特指)　ダート1700m",
+      "status": "published",
+      "horseCount": 15
+    },
+    {
+      "id": "2026-11-23-fukushima-10",
+      "file": "2026-11-23-batch.b64",
+      "fileParts": [
+        "2026-11-23-batch.b64"
+      ],
+      "date": "2026-11-23",
+      "dateLabel": "2026年11月23日（月）",
+      "venue": "福島",
+      "raceNo": 10,
+      "title": "五色沼特別",
+      "distance": "芝2000m (B)",
+      "classLabel": "３歳以上・２勝クラス(定量)(牝)(特指)　芝2000m (B)",
+      "status": "published",
+      "horseCount": 16
+    },
+    {
       "id": "2026-11-22-kyoto-12",
       "file": "2026-11-22-batch-part01.b64",
       "fileParts": [
