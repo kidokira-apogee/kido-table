@@ -124,6 +124,9 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
 .race-list-date{font-size:9px;font-weight:750;color:#68786d}
 .race-list-title{display:block;margin-top:3px;font-size:15px;font-weight:950;color:#17432f}
 .race-list-sub{display:block;margin-top:3px;font-size:10px;color:#5d6d62}
+.race-list-count-time{display:inline-block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.race-list-item.provisional{background:#fff;cursor:pointer}
+.race-list-item.provisional .race-list-title{color:#17432f}
 .race-list-arrow{flex:0 0 auto;color:#2c7650;font-size:22px;font-weight:700}
 .race-nav{display:flex;align-items:center;gap:10px;margin:6px 0 8px}
 .race-nav button{border:1px solid #bdd0c1;border-radius:999px;background:#fff;color:#24583a;padding:7px 11px;font:800 10px system-ui;cursor:pointer}
@@ -671,15 +674,18 @@ body{margin:0;background:linear-gradient(180deg,#dcebe0 0,#f0f5ef 230px,#f2f6f0 
   races.forEach(r=>{
    const complete=['complete','published'].includes(r.status);
    const button=document.createElement('button');
-   button.type='button';button.className='race-list-item'+(complete?'':' in-progress');
+   button.type='button';button.className='race-list-item'+(complete?'':(r.file?' provisional':' in-progress'));
    button.dataset.raceId=r.id;
    const raceNo=escapeHtml(r.raceNo??'');
    const distance=r.distance?' ・ '+escapeHtml(r.distance):'';
    const raceTitle=r.title?escapeHtml(r.title):(escapeHtml(r.venue)+raceNo+'R');
+   const canOpen=complete||Boolean(r.file);
    const horseMeta=r.horseCount?String(r.horseCount)+'頭'+(r.startTime?'　'+r.startTime:''):'';
-   const meta=[r.classLabel,horseMeta].filter(Boolean).map(escapeHtml).join('　｜　');
-   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':'<span class="race-list-state">作成中　›</span>');
-   if(complete){button.addEventListener('click',()=>openRace(r));}else{button.disabled=true;button.setAttribute('aria-disabled','true');}
+   const classMeta=r.classLabel?'<span class="race-list-class">'+escapeHtml(r.classLabel)+'</span>':'';
+   const countTimeMeta=horseMeta?'<span class="race-list-count-time">'+escapeHtml(horseMeta)+'</span>':'';
+   const meta=[classMeta,countTimeMeta].filter(Boolean).join('　｜　');
+   button.innerHTML='<span class="race-list-main"><span class="race-list-date">'+escapeHtml(r.venue)+' '+raceNo+'R'+distance+'</span><strong class="race-list-title">'+raceTitle+'</strong><span class="race-list-sub">'+meta+'</span></span>'+(complete?'<span aria-hidden="true" class="race-list-arrow">›</span>':canOpen?'<span class="race-list-state">暫定版　›</span>':'<span class="race-list-state">作成中</span>');
+   if(canOpen){button.addEventListener('click',()=>openRace(r));}else{button.disabled=true;button.setAttribute('aria-disabled','true');}
    listItems.appendChild(button);
   });
  }
