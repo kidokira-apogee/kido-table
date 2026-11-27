@@ -12,8 +12,7 @@
       "classLabel": "３歳以上・３勝クラス(ハンデ)(混)[指定]　芝1400m・外 (C)",
       "status": "in_progress",
       "horseCount": 15,
-      "startTime": "15:05",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "15:05"
     },
     {
       "id": "2026-11-28-kyoto-11",
@@ -26,8 +25,7 @@
       "classLabel": "２歳・オープン・Ｇ３(馬齢)(国際)(指定)　芝2000m・内 (C)",
       "status": "in_progress",
       "horseCount": 11,
-      "startTime": "15:40",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "15:40"
     },
     {
       "id": "2026-11-28-kyoto-12",
@@ -40,8 +38,7 @@
       "classLabel": "３歳以上・２勝クラス(定量)(混)(特指)　芝1200m・内 (C)",
       "status": "in_progress",
       "horseCount": 18,
-      "startTime": "16:15",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "16:15"
     },
     {
       "id": "2026-11-28-tokyo-9",
@@ -54,8 +51,7 @@
       "classLabel": "３歳以上・２勝クラス(定量)(国際)(特指)　ダート2100m",
       "status": "in_progress",
       "horseCount": 14,
-      "startTime": "14:15",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "14:15"
     },
     {
       "id": "2026-11-28-tokyo-10",
@@ -68,8 +64,7 @@
       "classLabel": "３歳以上・３勝クラス(定量)(国際)(特指)　ダート1400m",
       "status": "in_progress",
       "horseCount": 16,
-      "startTime": "14:50",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "14:50"
     },
     {
       "id": "2026-11-28-tokyo-11",
@@ -82,8 +77,7 @@
       "classLabel": "３歳以上・オープン(Ｌ)(別定)(国際)(特指)　芝1600m (C)",
       "status": "in_progress",
       "horseCount": 18,
-      "startTime": "15:25",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "15:25"
     },
     {
       "id": "2026-11-28-tokyo-12",
@@ -96,8 +90,7 @@
       "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]　芝2400m (C)",
       "status": "in_progress",
       "horseCount": 18,
-      "startTime": "16:00",
-      "file": "2026-11-28-target-only.b64"
+      "startTime": "16:00"
     },
     {
       "id": "2026-11-23-tokyo-12",

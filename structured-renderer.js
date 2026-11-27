@@ -281,7 +281,7 @@
     const header = '<nav class="race-nav"><button id="back-to-race-list-' + esc(race.id) + '" type="button">← レース一覧</button><span>木戸表 電子版</span></nav>' +
       '<header class="racehead"' + (isDirt ? ' style="background:#70452F;color:#fff"' : '') + '><div class="head-inner"><div class="date-line">' + dateItems.map(v => '<span>' + display(v) + '</span>').join('') + '</div>' +
       '<div class="title-line"><span class="race-no">' + esc(String(race.venue).toUpperCase()) + ' ' + esc(race.raceNumber) + 'R</span><span class="race-title">' + display(race.name) + '</span></div>' +
-      '<div class="race-subtitle">' + display(subtitle) + '</div><div class="race-pills"><span class="pill">' + display(race.venue) + '</span><span class="pill">' + display(surfaceText) + '</span>' + (data.status?.provisional ? '<span class="pill">暫定版｜①TARGETのみ</span>' : '') + '</div></div></header>';
+      '<div class="race-subtitle">' + display(subtitle) + '</div><div class="race-pills"><span class="pill">' + display(race.venue) + '</span><span class="pill">' + display(surfaceText) + '</span></div></div></header>';
     const cards = data.horses.slice().sort((a, b) => a.horseNumber - b.horseNumber).map(h => horseHtml(h, race, applyColors)).join('');
     return '<div data-kido-structured-renderer="true">' + header + cards + '</div>';
   }
