@@ -10,9 +10,12 @@
       "title": "東山Ｓ",
       "distance": "芝1400m・外 (C)",
       "classLabel": "３歳以上・３勝クラス(ハンデ)(混)[指定]　芝1400m・外 (C)",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 15,
-      "startTime": "15:05"
+      "startTime": "15:05",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-kyoto-11",
@@ -23,9 +26,12 @@
       "title": "第13回ラジオNIKKEI杯京都２歳Ｓ",
       "distance": "芝2000m・内 (C)",
       "classLabel": "２歳・オープン・Ｇ３(馬齢)(国際)(指定)　芝2000m・内 (C)",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 11,
-      "startTime": "15:40"
+      "startTime": "15:40",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-kyoto-12",
@@ -36,9 +42,12 @@
       "title": "２勝クラス",
       "distance": "芝1200m・内 (C)",
       "classLabel": "３歳以上・２勝クラス(定量)(混)(特指)　芝1200m・内 (C)",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 18,
-      "startTime": "16:15"
+      "startTime": "16:15",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-tokyo-9",
@@ -49,9 +58,12 @@
       "title": "セレブレイション賞",
       "distance": "ダート2100m",
       "classLabel": "３歳以上・２勝クラス(定量)(国際)(特指)　ダート2100m",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 14,
-      "startTime": "14:15"
+      "startTime": "14:15",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-tokyo-10",
@@ -62,9 +74,12 @@
       "title": "シャングリラＳ",
       "distance": "ダート1400m",
       "classLabel": "３歳以上・３勝クラス(定量)(国際)(特指)　ダート1400m",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 16,
-      "startTime": "14:50"
+      "startTime": "14:50",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-tokyo-11",
@@ -75,9 +90,12 @@
       "title": "フランスギャロ賞キャピタルＳ",
       "distance": "芝1600m (C)",
       "classLabel": "３歳以上・オープン(Ｌ)(別定)(国際)(特指)　芝1600m (C)",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 18,
-      "startTime": "15:25"
+      "startTime": "15:25",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-28-tokyo-12",
@@ -88,9 +106,12 @@
       "title": "１勝クラス",
       "distance": "芝2400m (C)",
       "classLabel": "３歳以上・１勝クラス(定量)(混)[指定]　芝2400m (C)",
-      "status": "in_progress",
+      "status": "published",
       "horseCount": 18,
-      "startTime": "16:00"
+      "startTime": "16:00",
+      "fileParts": [
+        "2026-11-28-batch.b64"
+      ]
     },
     {
       "id": "2026-11-23-tokyo-12",
