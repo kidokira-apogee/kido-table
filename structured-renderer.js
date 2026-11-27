@@ -172,7 +172,7 @@
     if (key === 'distanceCourse') return '<div class="panel-grid">' +
       statsCard('距離別成績', data.distanceBands, true) + statsCard('同コース成績', data.courseRecords, true) + '</div>';
     if (key === 'conditions') {
-      const rotationSeason = [data.rotation, data.season].filter(Boolean);
+      const rotationSeason = [...(Array.isArray(data.rotation) ? data.rotation : []), ...(Array.isArray(data.season) ? data.season : [])];
       return '<div class="conditions-layout">' +
         '<div class="conditions-column conditions-column-left">' +
           statsCard('ローテーション・季節', rotationSeason, true) +
